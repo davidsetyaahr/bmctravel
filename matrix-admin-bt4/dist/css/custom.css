@@ -1,0 +1,42 @@
+@font-face {
+    font-family: 'poppinsextralight';
+    src: url('../../assets/webfont/poppins-extralight-webfont.woff2') format('woff2'),
+         url('../../assets/webfont/poppins-extralight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+    background: #f3f5f8 !important;
+    font-family: 'poppinsextralight';
+}
+#navbarSupportContent li a{
+    color : red !important;
+}
+.bmc-logo{
+    width: 30px;
+}
+.logo-text{
+    font-weight: bold;
+    font-size: 16px;
+}
+.active-menu{
+    border-bottom: 2px solid #2D5D7C;
+}
+.top-bottom li a i{
+    color : #2d5d7c;
+}
+.top-bottom li a{
+    color : #2d3747;
+    font-weight: bold;
+}
+.top-bottom li.active{
+    border-bottom: 2px solid #2d5d7c;
+}
+.page-top-title{
+    font-size: 20px !important;
+    font-weight: bold !important;
+}
+.page-wrapper{
+    background: #f3f5f8 !important;
+    margin-top : 4%;
+}
