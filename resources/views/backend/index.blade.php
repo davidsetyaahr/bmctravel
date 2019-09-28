@@ -1,4 +1,4 @@
-@extends('template.main');
+@extends('backend.template.main');
 @section('admin');                    
                 <div class="row">
                     <!-- Column -->
