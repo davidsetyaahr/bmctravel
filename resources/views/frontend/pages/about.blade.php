@@ -1,6 +1,6 @@
 @extends('frontend/common/template')
 @section('container')
-<div class="hero-wrap js-fullheight-page" style="background-image: url('images/bg_2.jpg');">
+<div class="hero-wrap js-fullheight-page" style="background-image: url('direngine/images/bg_2.jpg');">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight-page align-items-center justify-content-center" data-scrollax-parent="true">
@@ -60,7 +60,7 @@
 		    </div>
     	</div>
     </section>
-    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_1.jpg);">
+    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(direngine/images/bg_1.jpg);">
     	<div class="container">
     		<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
@@ -120,7 +120,7 @@
     		<div class="row justify-content-center">
     			<div class="col-md-3 ftco-animate">
             <div class="destination">
-                <div class="img d-flex justify-content-center align-items-center" style="background-image: url(images/person_1.jpg);">
+                <div class="img d-flex justify-content-center align-items-center" style="background-image: url(direngine/images/person_1.jpg);">
                 </div>
                 <div class="text p-3 text-center">
                   <h3><a href="#">John Doe</a></h3>
@@ -130,7 +130,7 @@
     			</div>
     			<div class="col-md-3 ftco-animate">
             <div class="destination">
-                <div class="img d-flex justify-content-center align-items-center" style="background-image: url(images/person_4.jpg);">
+                <div class="img d-flex justify-content-center align-items-center" style="background-image: url(direngine/images/person_4.jpg);">
                 </div>
                 <div class="text p-3 text-center">
                   <h3><a href="#">John Doe</a></h3>
@@ -140,7 +140,7 @@
     			</div>
     			<div class="col-md-3 ftco-animate">
             <div class="destination">
-                <div class="img d-flex justify-content-center align-items-center" style="background-image: url(images/person_3.jpg);">
+                <div class="img d-flex justify-content-center align-items-center" style="background-image: url(direngine/images/person_3.jpg);">
                 </div>
                 <div class="text p-3 text-center">
                   <h3><a href="#">John Doe</a></h3>
@@ -150,7 +150,7 @@
     			</div>
     			<div class="col-md-3 ftco-animate">
             <div class="destination">
-                <div class="img d-flex justify-content-center align-items-center" style="background-image: url(images/person_2.jpg);">
+                <div class="img d-flex justify-content-center align-items-center" style="background-image: url(direngine/images/person_2.jpg);">
                 </div>
                 <div class="text p-3 text-center">
                   <h3><a href="#">John Doe</a></h3>
@@ -175,12 +175,12 @@
                 <div class="partner-slider owl-carousel ftco-animate">
                   <div class="item">
                     <div class="partner">
-                      <img src="images/partner/jvto.png" alt="" class="img-fluid">
+                      <img src="direngine/images/partner/jvto.png" alt="" class="img-fluid">
                     </div>
                   </div>
                   <div class="item">
                     <div class="partner">
-                      <img src="images/partner/dj.jpeg" alt="" class="img-fluid">
+                      <img src="direngine/images/partner/dj.jpeg" alt="" class="img-fluid">
                     </div>
                   </div>
                 </div>

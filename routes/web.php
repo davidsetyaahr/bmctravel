@@ -14,6 +14,8 @@
 Route::get('/', 'frontend\Home@index');
 Route::get('/about', 'frontend\About@index');
 Route::get('/tour-package', 'frontend\TourPackage@index');
-Route::get('/destinations', 'frontend\Destination@index');
+Route::get('/tour-package/detail-package', 'frontend\TourPackage@detail');
+Route::get('/destinations', 'frontend\Destinations@index');
 Route::get('/travel-tips', 'frontend\TravelTips@index');
 Route::get('/signin', 'frontend\SignIn@index');
+

@@ -38,7 +38,7 @@
   <a href="#" class="linkedin"><i class="ion-logo-linkedin"></i></a>
   <a href="#" class="youtube"><i class="ion-logo-youtube"></i></a> 
 </div>    
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light scrolled awake" id="ftco-navbar">
     <div class="container">
       <a class="navbar-brand" href="index.html"><img src="{{ asset('direngine/images/BMC-Logo.png') }}" alt="" style="height:50px;"> BMC Travel Service.</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,8 +70,78 @@
       </div>
     </div>
   </nav>
-    <!-- END nav -->
-    @yield('container')
+    <style>
+        .login-sosmed{
+
+        }
+        .login-sosmed.login-fb{
+            color: rgb(255, 255, 255);
+            font-size: 14px;
+            font-weight: 700;
+            background: rgb(60, 81, 147);
+            border-radius: 2px;
+            padding: 5px 0px;    
+            display: block;
+            text-align: center;
+        }
+        .login-sosmed.login-gmail{
+            display: block;
+            color: rgb(255, 255, 255);
+            font-size: 14px;
+            font-weight: 700;
+            background: rgb(218, 71, 51);
+            border-radius: 2px;
+            padding: 5px 0px;            
+            text-align: center;
+        }
+        .login-sosmed i{
+            font-size: 30px;
+        }
+    </style>
+
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center mt-5 mb-5 pb-3">
+                <div class="col-md-6 p-3" style="border:1px  solid #d8d8d8">
+                  <div class="row justify-content-center">
+                    <div class="col-md-2">
+                      <img src="direngine/images/BMC-Logo.png" class="img-fluid" alt="" style="border-radius:100%;padding : 2px;border:1.5px solid #da2f29">
+                    </div>
+                  </div>
+                  <br>
+                    <center>
+                        <h4>Sign In</h4>
+                    </center>
+                    <div class="row mt-3">
+                        <div class="col-md-6">
+                            <a href="" class="login-sosmed login-fb"><i class="ion-logo-facebook"></i> <span>Facebook</span></a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="" class="login-sosmed login-gmail"><i class="ion-logo-google"></i>  <span>Gmail</span></a>
+                        </div>
+                        <div class="col-md-12 mt-4 text-center">
+                            <h5 style="color :#9e9e9e">OR</h5>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="">Email</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="col-md-12 mt-3">
+                            <label for="">Password</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="col-md-12 mt-3">
+                            <a href="">Forgot password?</a>
+                            <button class="btn btn-primary py-3 px-5 btn-block mt-3 mb-3" style="border-radius:0">Sign In</button>
+                            <div class="text-center">
+                                New here? <a href="">Sign Up</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">
         <div class="row mb-5">
