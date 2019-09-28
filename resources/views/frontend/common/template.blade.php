@@ -46,8 +46,8 @@
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="about" class="nav-link">About</a></li>
 		  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Services</a>
 			<div class="dropdown-menu animate slideIn">
 				<a class="dropdown-item" href="travel-package.html"><span class="ion-ios-planet"></span> Travel Package</a>
