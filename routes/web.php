@@ -17,6 +17,7 @@ Route::get('/admin/tour-package/add-categories', 'backend\tour_package\Categorie
 Route::get('/admin/tour-package/durations', 'backend\tour_package\Durations@index');
 Route::get('/admin/tour-package/price-categories', 'backend\tour_package\PriceCategories@index');
 Route::get('/admin/tour-package/tour-type', 'backend\tour_package\TourType@index');
+Route::get('/admin/tour-package/add-durations', 'backend\tour_package\durations@add');
 Route::get('/admin/destinations/destinations','backend\destinations\Destinations@index');
 Route::get('/admin/destinations/categories','backend\destinations\Categories@index');
 Route::get('/admin/gallery/gallery','backend\gallery\Gallery@index');
