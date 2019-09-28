@@ -11,11 +11,5 @@
 |
 */
 
-<<<<<<< HEAD
-Route::get('/', function () {
-    return view('welcome');
-});
 Route::get('admin', 'AdminController@index');
-=======
 Route::get('/', 'frontend\Home@index');
->>>>>>> master
