@@ -9,6 +9,10 @@ class Categories extends Controller
 {
     function index()
     {
-        return view('backend.tour_package.categories.index');
+        return view('backend.tour_package.categories.list-categories');
+    }
+    function add()
+    {
+        return view('backend.tour_package.categories.add-categories');
     }
 }

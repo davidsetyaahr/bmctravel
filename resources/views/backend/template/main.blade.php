@@ -181,11 +181,11 @@
                             </div>
                             <div class="col-md-12 mt-3">
                                 <ul class="nav top-bottom float-left">
-                                    <li class="nav-item active">
-                                        <a href="" class="nav-link"><i class="mdi mdi-playlist-check"></i> View All Packages</a>
+                                    <li class="nav-item @yield('view_status')">
+                                        <a href="@yield('view_link')" class="nav-link"><i class="mdi mdi-playlist-check"></i> @yield('view_caption')</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="" class="nav-link"><i class="mdi mdi-playlist-plus"></i> Insert New Package</a>
+                                    <li class="nav-item  @yield('insert_status')">
+                                        <a href="@yield('insert_link')" class="nav-link"><i class="mdi mdi-playlist-plus"></i> @yield('insert_caption')</a>
                                     </li>
                                 </ul>
                                 <ul class="nav top-bottom float-right">
@@ -289,6 +289,8 @@
             <!-- ============================================================== -->
             <!-- ============================================================== -->
             <!-- footer -->
+    </div>
+    </div>
             <!-- ============================================================== -->
             <footer class="footer text-center">
                 All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
