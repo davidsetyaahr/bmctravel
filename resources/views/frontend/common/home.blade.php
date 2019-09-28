@@ -51,10 +51,11 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 heading-section ftco-animate">
-						<span class="subheading">Featured</span>
-
-					<h2 class="mb-4 pb-3"><strong>Lorem</strong> ipsum dolor </h2>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, aperiam. Sequi fugit neque sint quia saepe possimus ullam nihil vitae ipsam consectetur. Id recusandae enim quis repellendus doloribus quisquam voluptatum.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, aperiam. Sequi fugit neque sint quia saepe possimus ullam nihil vitae ipsam consectetur. Id recusandae enim quis repellendus doloribus quisquam voluptatum.</p>
+					<h2 class="mb-4 pb-3"><strong>Sekapur Sirih</strong></h2>
+					<p>Selamat datang di BMC Travel Service. Traveling saat ini telah menjadi kebutuhan pokok disamping kebutuhan akan sandang, pangan, dan papan. Kebutuhan akan merefreshing pikiran karena penat dengan aktifitas pekerjaan dan kehidupan sehari-hari mendorong orang-orang untuk melakukan traveling untuk menyegarkan kembali pikiran. Perkembangan golongan menengah juga menjadi pendorong industri tour dan travel merespon permintaan pasar akan layanagn tour dan travel yang semakin meningkat. Selayaknya usaha di bidang jasa lainnya, BMC Travel Service selaku perusahaan di bidang tour dan travel akan selalu memberikan pelayanan yang maksimal kepada tamu-tamu kami. Peningkatan kualitas dan kuantitas layanan senantiasa kami jaga sebaik mungkin demi kepuasan tamu. Kami dengan setulus hati melayani anda, memberikan kepuasan akan layanan wisata yang terbaik yang dapat kami lakukan. Terimakasih telah memilih BMC Travel Service sebagai mitra perjalanan wisata anda.</p>
+					<p>Salam Hangat</p>
+					<h1 style="font-family: 'Sacramento', cursive;">Fajar N Eristyawan</h1>
+					<b>CEO BMC Travel Service</b>
 				</div>
 				<div class="col-md-6">
 					<div class="carousel-destinationtext owl-carousel">
