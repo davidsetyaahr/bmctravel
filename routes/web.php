@@ -26,16 +26,12 @@ Route::get('/admin/destinations/add-categories', 'backend\destinations\Categorie
 Route::get('/admin/gallery/gallery','backend\gallery\Gallery@index');
 Route::get('/admin/gallery/categories','backend\gallery\Categories@index');
 Route::get('/admin/hotel/hotel','backend\hotel\Hotel@index');
-<<<<<<< HEAD
-Route::get('/admin/travel-tips/travel-tips/list','backend\travel_tips\TravelTips@index');
-Route::get('/admin/travel-tips/travel-tips/add-travel-tips','backend\travel_tips\TravelTips@add');
-=======
 Route::get('/admin/hotel/add-hotel','backend\hotel\Hotel@add');
 Route::get('/admin/travel-tips/travel-tips','backend\travel_tips\TravelTips@index');
->>>>>>> master
 Route::get('/admin/travel-tips/tags','backend\travel_tips\Tags@index');
 Route::get('/admin/users/user','backend\users\User@index');
 Route::get('/admin/data-master/province','backend\data_master\Province@index');
+Route::get('/admin/data-master/add-province','backend\data_master\Province@add');
 Route::get('/admin/data-master/city','backend\data_master\City@index');
 Route::get('/', 'frontend\Home@index');
 Route::get('/about', 'frontend\About@index');
