@@ -22,12 +22,14 @@
                             </tr>
                         </thead>
                         <tbody>
+                        @foreach( $destination_categories as $dc )
                             <tr>
-                                <td>1</td>
-                                <td>A</td>
-                                <td>A</td>
-                                <td>A</td>
+                                <th>{{ $loop->iteration}}</th>
+                                <td>{{$dc->category_name}}</td>
+                                <td>{{$dc->id_gallery}}</td>
+                                <td>Detail</td>
                             </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>

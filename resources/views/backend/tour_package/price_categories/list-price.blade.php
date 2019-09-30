@@ -22,12 +22,14 @@
                             </tr>
                         </thead>
                         <tbody>
+                        @foreach( $price_categories as $prc )
                             <tr>
-                                <td>1</td>
-                                <td>A</td>
-                                <td>A</td>
-                                <td>A</td>
+                                <th>{{ $loop->iteration}}</th>
+                                <td>{{$prc->start_pax}}</td>
+                                <td>{{$prc->end_pax}}</td>
+                                <td>Detail</td>
                             </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
