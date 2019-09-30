@@ -9,6 +9,9 @@ class Categories extends Controller
 {
     function index()
     {
-        return view('backend.destinations.categories.index');
+        return view('backend.destinations.categories.list-categories');
+    }
+    function add(){
+        return view('backend.destinations.categories.add-categories');
     }
 }

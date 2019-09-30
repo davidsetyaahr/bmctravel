@@ -9,6 +9,9 @@ class PriceCategories extends Controller
 {
     function index()
     {
-        return view('backend.tour_package.price_categories.index');
+        return view('backend.tour_package.price_categories.list-price');
+    }
+    function add(){
+        return view('backend.tour_package.price_categories.add-price');
     }
 }

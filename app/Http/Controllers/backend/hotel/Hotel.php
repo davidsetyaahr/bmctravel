@@ -9,6 +9,9 @@ class Hotel extends Controller
 {
     function index()
     {
-        return view('backend.hotel.hotel.index');
+        return view('backend.hotel.hotel.list-hotel');
+    }
+    function add(){
+        return view('backend.hotel.hotel.add-hotel');
     }
 }
