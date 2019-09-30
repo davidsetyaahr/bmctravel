@@ -9,6 +9,10 @@ class TravelTips extends Controller
 {
     function index()
     {
-        return view('backend.travel_tips.travel_tips.index');
+        return view('backend.travel_tips.travel_tips.list');
+    }
+    function add()
+    {
+        return view('backend.travel_tips.travel_tips.add-travel-tips');
     }
 }
