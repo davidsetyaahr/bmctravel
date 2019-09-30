@@ -15,7 +15,9 @@
     <link href="{{ asset('/matrix-admin-bt4') }}/assets/libs/flot/css/float-chart.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{ asset('/matrix-admin-bt4') }}/dist/css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/matrix-admin-bt4') }}/assets/libs/quill/dist/quill.snow.css">
     <link href="{{ asset('/matrix-admin-bt4') }}/dist/css/custom.css" rel="stylesheet">
+    <link href="{{ asset('/matrix-admin-bt4') }}/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -225,7 +227,7 @@
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-find-replace"></i><span class="hide-menu">Destinations </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="{{ url('admin/destinations/destinations') }}" class="sidebar-link"><i class="mdi mdi-find-replace"></i><span class="hide-menu"> Destinations </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('admin/destinations/destinations/list') }}" class="sidebar-link"><i class="mdi mdi-find-replace"></i><span class="hide-menu"> Destinations </span></a></li>
                                 <li class="sidebar-item"><a href="{{ url('admin/destinations/categories') }}" class="sidebar-link"><i class="mdi mdi-format-list-bulleted-type"></i><span class="hide-menu"> Categories </span></a></li>
                             </ul>
                         </li>
@@ -242,7 +244,7 @@
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-help"></i><span class="hide-menu">Travel Tips </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="{{ url('admin/travel-tips/travel-tips') }}" class="sidebar-link"><i class="mdi mdi-help"></i><span class="hide-menu"> Travel Tips </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('admin/travel-tips/travel-tips/list') }}" class="sidebar-link"><i class="mdi mdi-help"></i><span class="hide-menu"> Travel Tips </span></a></li>
                                 <li class="sidebar-item"><a href="{{ url('admin/travel-tips/tags') }}" class="sidebar-link"><i class="mdi mdi-sign-caution"></i><span class="hide-menu"> Tags </span></a></li>
                             </ul>
                         </li>
@@ -332,7 +334,23 @@
     <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/flot/jquery.flot.crosshair.js"></script>
     <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
     <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/pages/chart/chart-page-init.js"></script>
+    <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/quill/dist/quill.min.js"></script>
+    <script src="{{ asset('/matrix-admin-bt4') }}/assets/extra-libs/multicheck/datatable-checkbox-init.js"></script>
+    <script src="{{ asset('/matrix-admin-bt4') }}/assets/extra-libs/multicheck/jquery.multicheck.js"></script>
+    <script src="{{ asset('/matrix-admin-bt4') }}/assets/extra-libs/DataTables/datatables.min.js"></script>
+    <script>
+        // Editor Quill
+        var quill = new Quill('#editor-overview', {
+            theme: 'snow'
+        });
+        var quill = new Quill('#editor-information', {
+            theme: 'snow'
+        });
 
+        //DataTable
+        $('#zero_config').DataTable();
+
+    </script>
 </body>
 
 </html>
