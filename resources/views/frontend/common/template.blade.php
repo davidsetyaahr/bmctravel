@@ -31,46 +31,62 @@
     <link rel="stylesheet" href="{{ asset('direngine/css/style.css') }}">
   </head>
   <body>
-<div class="icon-bar">
-  <a href="#" class="facebook"><i class="ion-logo-facebook"></i></a> 
-  <a href="#" class="twitter"><i class="ion-logo-twitter"></i></a> 
-  <a href="#" class="google"><i class="ion-logo-google"></i></a> 
-  <a href="#" class="linkedin"><i class="ion-logo-linkedin"></i></a>
-  <a href="#" class="youtube"><i class="ion-logo-youtube"></i></a> 
-</div>    
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+<div class="top-menu">
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark nav-grey" style="padding:0;background:#f2f2f2 !important">
+      <div class="container">
+
+        <!-- Links -->
+        <a href="" class="navbar-brand view-map" style="margin-right : 0">View On Map</a>
+        <span class="limit">|</span>
+        <a href="" class="navbar-brand view-map">DJ TRANS GROUP</a>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#"><span class="ion-logo-facebook"></span> Instagram</a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="#"><span class="ion-logo-whatsapp"></span> Whatsapp</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"><span class="ion-logo-youtube"></span> YouTube</a>
+    </li>
+  </ul>
+</div>  
+</nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light scrolled awake nav-white" id="ftco-navbar">
     <div class="container">
       <a class="navbar-brand" href="index.html"><img src="{{ asset('direngine/images/BMC-Logo.png') }}" alt="" style="height:50px;"> BMC Travel Service.</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="oi oi-menu"></span> Menu
       </button>
-
+      
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="about" class="nav-link">About</a></li>
-		  <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Services</a>
-			<div class="dropdown-menu animate slideIn">
+          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Services</a>
+          <div class="dropdown-menu animate slideIn">
 				<a class="dropdown-item" href="tour-package"><span class="ion-ios-planet"></span> Travel Package</a>
 				<a class="dropdown-item" href="#"><span class="ion-ios-bed"></span> Accommodation</a>
 				<a class="dropdown-item" href="#"><span class="ion-ios-car"></span> Rent Car</a>
 				<a class="dropdown-item" href="#"><span class="ion-ios-airplane"></span> Airport/City Transfer</a>
 				<a class="dropdown-item" href="#"><span class="ion-ios-paw"></span> Outbond</a>
-			  </div>			
+      </div>			
 			</li>
           <li class="nav-item"><a href="destinations" class="nav-link">Destinations</a></li>
           <li class="nav-item"><a href="travel-tips" class="nav-link">Travel Tips</a></li>
           <li class="nav-item"><a href="#" class="nav-link">
-			  <img src="{{ asset('direngine/images/icons/united-kingdom.png') }}">
-			  &nbsp;
+            <img src="{{ asset('direngine/images/icons/united-kingdom.png') }}">
+            &nbsp;
 			  <img src="{{ asset('direngine/images/icons/indonesia.png') }}">
-		</a></li>
+      </a></li>
           <li class="nav-item cta"><a href="signin" class="nav-link"><span>Sign In</span></a></li>
         </ul>
       </div>
     </div>
   </nav>
-    <!-- END nav -->
+</div>
+  <!-- END nav -->
     @yield('container')
     <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">
