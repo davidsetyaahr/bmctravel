@@ -11,4 +11,8 @@ class City extends Controller
     {
         return view('backend.data_master.city.index');
     }
+    function add()
+    {
+        return view('backend.data_master.city.add-city');
+    }
 }

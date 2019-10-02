@@ -323,6 +323,7 @@
     <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/custom.min.js"></script>
+    <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/custom-script.js"></script>
     <!--This page JavaScript -->
     <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/pages/dashboards/dashboard1.js"></script>
     <!-- Charts js Files -->

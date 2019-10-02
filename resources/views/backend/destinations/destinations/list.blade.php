@@ -20,17 +20,26 @@
                             <th>Map</th>
                             <th>Information</th>
                             <th>Gallery</th>
+                            <th>Action</th>
                         </thead>
                         <tbody>
+                        @foreach($destinations as $d)
                             <tr>
-                                <td>asadasddsad</td>
-                                <td>sadasd</td>
-                                <td>sadasdasdssa</td>
-                                <td>sadsadsa</td>
-                                <td>sadsadsad</td>
-                                <td>dafsadasd</td>
-                                <td>sad</td>
+                                <td>{{ $d->destination_name }}</td>
+                                <td>{{ $d->category_name }}</td>
+                                <td>{{ $d->city_name }}</td>
+                                <td>{{ $d->overview }}</td>
+                                <td>{{ $d->map }}</td>
+                                <td>{{ $d->Information }}</td>
+                                <td>{{ $d->img }}</td>
+                                <td>
+                                    <div class="d-inline-flex">
+                                        <a href="{{ url('admin/destinations/destinations/edit/'.$d->id_destination) }}" class="form-btn btn-sm btn-primary">Edit</a>
+                                        <a href="{{ url('admin/destinations/destinations/delete/'.$d->id_destination) }}" class="form-btn ml-1 btn-sm btn-danger">Delete</a>
+                                    </div>
+                                </td>
                             </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>

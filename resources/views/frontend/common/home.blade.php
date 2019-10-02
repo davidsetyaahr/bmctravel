@@ -1,11 +1,11 @@
 @extends('frontend/common/template')
 @section('container')
     <div class="hero-wrap js-fullheight" style="background-image: url('direngine/images/bg_1.jpg');">
-      <div class="overlay" style="background: rgb(0,0,0,0.1);height:100%"></div>
+      <div class="overlay" style="background: rgb(0,0,0,0.5);height:100%"></div>
       <div class="container">
-        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start" data-scrollax-parent="true">
+        <div class="row slider-text js-fullheight align-items-center justify-content-start justify-content-md-center" data-scrollax-parent="true">
           <div class="col-md-9 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-            <h1 class="mb-4" style="font-family: 'Blinker', sans-serif;" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><strong>One Stop <br></strong> Travel Service</h1>
+            <h1 class="mb-4 text-center"  data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><strong>ONE STOP <br></strong> Travel Service</h1>
             <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Find great places to stay, eat, shop, or visit from local experts</p>
             <div class="block-17 my-4">
               <form action="" method="post" class="d-block d-flex">
@@ -50,14 +50,14 @@
     <section class="ftco-section bg-light">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6 heading-section ftco-animate">
+				<div class="col-md-12 text-center heading-section ftco-animate">
 					<h2 class="mb-4 pb-3"><strong>Sekapur Sirih</strong></h2>
 					<p>Selamat datang di BMC Travel Service. Traveling saat ini telah menjadi kebutuhan pokok disamping kebutuhan akan sandang, pangan, dan papan. Kebutuhan akan merefreshing pikiran karena penat dengan aktifitas pekerjaan dan kehidupan sehari-hari mendorong orang-orang untuk melakukan traveling untuk menyegarkan kembali pikiran. Perkembangan golongan menengah juga menjadi pendorong industri tour dan travel merespon permintaan pasar akan layanagn tour dan travel yang semakin meningkat. Selayaknya usaha di bidang jasa lainnya, BMC Travel Service selaku perusahaan di bidang tour dan travel akan selalu memberikan pelayanan yang maksimal kepada tamu-tamu kami. Peningkatan kualitas dan kuantitas layanan senantiasa kami jaga sebaik mungkin demi kepuasan tamu. Kami dengan setulus hati melayani anda, memberikan kepuasan akan layanan wisata yang terbaik yang dapat kami lakukan. Terimakasih telah memilih BMC Travel Service sebagai mitra perjalanan wisata anda.</p>
 					<p>Salam Hangat</p>
 					<h1 style="font-family: 'Sacramento', cursive;">Fajar N Eristyawan</h1>
 					<b>CEO BMC Travel Service</b>
 				</div>
-				<div class="col-md-6">
+				<!--div class="col-md-6">
 					<div class="carousel-destinationtext owl-carousel">
 						<div class="item">
 							<img src="direngine/images/destinations/lombok.jpg" alt="" class="img-fluid">
@@ -78,282 +78,142 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div-->
 			</div>
 		</div>
     </section>
     
     <section class="ftco-section ftco-destination">
     	<div class="container">
-    		<div class="row justify-content-start mb-5 pb-3">
-				<div class="col-md-7 heading-section ftco-animate">
-					<span class="subheading">Featured</span>
-					<h2 class="mb-4"><strong>Featured</strong> Destination</h2>
+    		<div class="row">
+				<div class="col-md-10 heading-section ftco-animate">
+					<h4 class="mb-4"><strong>Featured</strong> Destination</h4>
+				</div>
+				<div class="col-md-2">
+					<a href="" class="btn border-grey">Explore More <span class="ion-md-arrow-dropright"></span> </a>
 				</div>
 			</div>
 		</div>
-		<div class="container-fluid">
+		<div class="container">
     		<div class="row">
     			<div class="col-md-12">
-    				<div class="destination-slider owl-carousel ftco-animate">
-    					<div class="item">
-		    				<div class="destination">
-		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(direngine/images/destinations/ijen.jpg);">
-		    						<div class="icon d-flex justify-content-center align-items-center">
-		    							<span class="icon-search2"></span>
-		    						</div>
-		    					</a>
-		    					<div class="text p-3">
-		    						<h3><a href="#">Explore East Java</a></h3>
-		    						<span class="listing">4 Packages</span>
-		    					</div>
-		    				</div>
-	    				</div>
-	    				<div class="item">
-		    				<div class="destination">
-		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(direngine/images/destinations/kawah-wurung.png);">
-		    						<div class="icon d-flex justify-content-center align-items-center">
-		    							<span class="icon-search2"></span>
-		    						</div>
-		    					</a>
-		    					<div class="text p-3">
-		    						<h3><a href="#">Explore Bondowoso </a></h3>
-		    						<span class="listing">3 Packages</span>
-		    					</div>
-		    				</div>
-	    				</div>
-	    				<div class="item">
-		    				<div class="destination">
-		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(direngine/images/destinations/merbabu.jpg);">
-		    						<div class="icon d-flex justify-content-center align-items-center">
-		    							<span class="icon-search2"></span>
-		    						</div>
-		    					</a>
-		    					<div class="text p-3">
-		    						<h3><a href="#">Mountain Vibes</a></h3>
-		    						<span class="listing">5 Packages</span>
-		    					</div>
-		    				</div>
-	    				</div>
-	    				<div class="item">
-		    				<div class="destination">
-		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(direngine/images/destinations/papuma.jpg);">
-		    						<div class="icon d-flex justify-content-center align-items-center">
-		    							<span class="icon-search2"></span>
-		    						</div>
-		    					</a>
-		    					<div class="text p-3">
-		    						<h3><a href="#">Beach Vibes</a></h3>
-		    						<span class="listing">5 Packages</span>
-		    					</div>
-		    				</div>
-	    				</div>
-	    				<div class="item">
-		    				<div class="destination">
-		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(direngine/images/destinations/tabuhan.jpg);">
-		    						<div class="icon d-flex justify-content-center align-items-center">
-		    							<span class="icon-search2"></span>
-		    						</div>
-		    					</a>
-		    					<div class="text p-3">
-		    						<h3><a href="#">Menjangan & Tabuhan Island</a></h3>
-		    						<span class="listing">3 Packages</span>
-		    					</div>
-		    				</div>
-	    				</div>
-	    				<div class="item">
-		    				<div class="destination">
-		    					<a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(direngine/images/destinations/bromo.jpg);">
-		    						<div class="icon d-flex justify-content-center align-items-center">
-		    							<span class="icon-search2"></span>
-		    						</div>
-		    					</a>
-		    					<div class="text p-3">
-		    						<h3><a href="#">Bromo Midnight</a></h3>
-		    						<span class="listing">2 Packages</span>
-		    					</div>
-		    				</div>
-	    				</div>
+    				<div class="destinationtext owl-carousel ftco-animate">
+						<div class="item">
+							<img src="direngine/images/destinations/kawah-wurung.png" alt="" class="img-fluid">
+							<div class="box">
+								<h6>Explore East Java</h6>
+							</div>
+						</div>
+						<div class="item">
+							<img src="direngine/images/destinations/ijen.jpg" alt="" class="img-fluid">
+							<div class="box">
+								<h6>Explore Bondowoso</h6>
+							</div>
+						</div>
+						<div class="item">
+							<img src="direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid">
+							<div class="box">
+								<h6>Mountain Vibes</h6>
+							</div>
+						</div>
+						<div class="item">
+							<img src="direngine/images/destinations/bali.jpg" alt="" class="img-fluid">
+							<div class="box">
+								<h6>Beach Vibes</h6>
+							</div>
+						</div>
+						<div class="item">
+							<img src="direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid">
+							<div class="box">
+								<h6>Menjangan & Tabuhan Island</h6>
+							</div>
+						</div>
+						<div class="item">
+							<img src="direngine/images/destinations/bromo.jpg" alt="" class="img-fluid">
+							<div class="box">
+								<h6>Bromo Midnight</h6>
+							</div>
+						</div>
     				</div>
     			</div>
     		</div>
     	</div>
     </section>
 
-    <section class="ftco-section bg-light">
+    <section class="ftco-section">
     	<div class="container">
-				<div class="row justify-content-start mb-5 pb-3">
-          <div class="col-md-7 heading-section ftco-animate">
-          	<span class="subheading">Special Offers</span>
-            <h2 class="mb-4"><strong>Top</strong> Tour Packages</h2>
-          </div>
-        </div>    		
+			<div class="row">
+				<div class="col-md-10 heading-section ftco-animate">
+					<h4 class="mb-4"><strong>Top</strong> Tour Packages</h4>
+				</div>
+				<div class="col-md-2">
+					<a href="" class="btn border-grey">Explore More  <span class="ion-md-arrow-dropright"></span></a>
+				</div>
+	        </div>
+			<div class="row mt-3">
+				<div class="col-md-12">
+					<div class="step-by-step">
+						<div class="line-step"></div>
+						<div class="this-step" style="width : 19%">
+							<span class="bullet ion-md-radio-button-on"></span>
+							<div class="text active">
+								<span class="ion-md-arrow-dropup up"></span>
+								1 to 3 days
+							</div>
+						</div>
+						<div class="this-step" style="width : 19%">
+							<span class="bullet ion-md-radio-button-off"></span>
+							<div class="text">
+								4 to 6 days
+							</div>
+						</div>
+						<div class="this-step" style="width : 19%">
+							<span class="bullet ion-md-radio-button-off"></span>
+							<div class="text">
+								7 to 9 days
+							</div>
+						</div>
+						<div class="this-step" style="width : 19%">
+							<span class="bullet ion-md-radio-button-off"></span>
+							<div class="text">
+								10 to 12 days
+							</div>
+						</div>
+						<div class="this-step" style="width : 19%">
+							<span class="bullet ion-md-radio-button-off"></span>
+							<div class="text">
+								Less than 12 days
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>    		
     	</div>
-    	<div class="container-fluid">
-    		<div class="row">
-    			<div class="col-sm col-md-4 ftco-animate">
-    				<div class="destination">
-    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(direngine/images/destinations/bromo.jpg);">
-    						<div class="icon d-flex justify-content-center align-items-center">
-    							<span class="icon-search2"></span>
-    						</div>
-    					</a>
-    					<div class="text p-3">
-    						<div class="d-flex">
-								<h3><a href="#">Package 1</a></h3>
-							</div>
-							<p class="rate">
-									<i class="icon-star"></i>
-									<i class="icon-star"></i>
-									<i class="icon-star"></i>
-									<i class="icon-star"></i>
-									<i class="icon-star-o"></i> <small>8 Rating</small>
-								</p>
-							<p>Far far away, behind the word mountains, far from the countries</p>
-    						<hr>
-    						<p class="bottom-area d-flex">
-    							<span><i class="icon-map-o"></i> 2 days 3 nights</span> 
-    							<span class="ml-auto"><a href="#">Discover</a></span>
-    						</p>
-    					</div>
+    	<div class="container">
+    		<div class="row mt-5">
+				<div class="col-sm col-md-12 ftco-animate">
+				<div class="destinationtext owl-carousel ftco-animate">
+						<div class="item">
+							<img src="direngine/images/destinations/kawah-wurung.png" alt="" class="img-fluid">
+						</div>
+						<div class="item">
+							<img src="direngine/images/destinations/ijen.jpg" alt="" class="img-fluid">
+						</div>
+						<div class="item">
+							<img src="direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid">
+						</div>
+						<div class="item">
+							<img src="direngine/images/destinations/bali.jpg" alt="" class="img-fluid">
+						</div>
+						<div class="item">
+							<img src="direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid">
+						</div>
+						<div class="item">
+							<img src="direngine/images/destinations/bromo.jpg" alt="" class="img-fluid">
+						</div>
     				</div>
-    			</div>
-    			<div class="col-sm col-md-4 ftco-animate">
-						<div class="destination">
-							<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(direngine/images/destinations/ijen.jpg);">
-								<div class="icon d-flex justify-content-center align-items-center">
-									<span class="icon-search2"></span>
-								</div>
-							</a>
-							<div class="text p-3">
-								<div class="d-flex">
-									<h3><a href="#">Package 2</a></h3>
-								</div>
-								<p class="rate">
-										<i class="icon-star"></i>
-										<i class="icon-star"></i>
-										<i class="icon-star"></i>
-										<i class="icon-star"></i>
-										<i class="icon-star-o"></i> <small>8 Rating</small>
-									</p>
-								<p>Far far away, behind the word mountains, far from the countries</p>
-								<hr>
-								<p class="bottom-area d-flex">
-									<span><i class="icon-map-o"></i> 2 days 3 nights</span> 
-									<span class="ml-auto"><a href="#">Discover</a></span>
-								</p>
-							</div>
-						</div>
-					</div>
-    			<div class="col-sm col-md-4 ftco-animate">
-    				<div class="destination">
-    					<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(direngine/images/destinations/merbabu.jpg);">
-    						<div class="icon d-flex justify-content-center align-items-center">
-    							<span class="icon-search2"></span>
-    						</div>
-    					</a>
-    					<div class="text p-3">
-    						<div class="d-flex">
-								<h3><a href="#">Package 3</a></h3>
-							</div>
-							<p class="rate">
-									<i class="icon-star"></i>
-									<i class="icon-star"></i>
-									<i class="icon-star"></i>
-									<i class="icon-star"></i>
-									<i class="icon-star-o"></i> <small>8 Rating</small>
-								</p>
-							<p>Far far away, behind the word mountains, far from the countries</p>
-    						<hr>
-    						<p class="bottom-area d-flex">
-    							<span><i class="icon-map-o"></i> 2 days 3 nights</span> 
-    							<span class="ml-auto"><a href="#">Discover</a></span>
-    						</p>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-sm col-md-4 ftco-animate">
-						<div class="destination">
-							<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(direngine/images/destinations/tabuhan.jpg);">
-								<div class="icon d-flex justify-content-center align-items-center">
-									<span class="icon-search2"></span>
-								</div>
-							</a>
-							<div class="text p-3">
-								<div class="d-flex">
-									<h3><a href="#">Package 4</a></h3>
-								</div>
-								<p class="rate">
-										<i class="icon-star"></i>
-										<i class="icon-star"></i>
-										<i class="icon-star"></i>
-										<i class="icon-star"></i>
-										<i class="icon-star-o"></i> <small>8 Rating</small>
-									</p>
-								<p>Far far away, behind the word mountains, far from the countries</p>
-								<hr>
-								<p class="bottom-area d-flex">
-									<span><i class="icon-map-o"></i> 2 days 3 nights</span> 
-									<span class="ml-auto"><a href="#">Discover</a></span>
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm col-md-4 ftco-animate">
-							<div class="destination">
-								<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(direngine/images/destinations/menjangan.jpg);">
-									<div class="icon d-flex justify-content-center align-items-center">
-										<span class="icon-search2"></span>
-									</div>
-								</a>
-								<div class="text p-3">
-									<div class="d-flex">
-										<h3><a href="#">Pakcage 5</a></h3>
-									</div>
-									<p class="rate">
-											<i class="icon-star"></i>
-											<i class="icon-star"></i>
-											<i class="icon-star"></i>
-											<i class="icon-star"></i>
-											<i class="icon-star-o"></i> <small>8 Rating</small>
-										</p>
-									<p>Far far away, behind the word mountains, far from the countries</p>
-									<hr>
-									<p class="bottom-area d-flex">
-										<span><i class="icon-map-o"></i> 2 days 3 nights</span> 
-										<span class="ml-auto"><a href="#">Discover</a></span>
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-sm col-md-4 ftco-animate">
-								<div class="destination">
-									<a href="#" class="img img-2 d-flex justify-content-center align-items-center" style="background-image: url(direngine/images/destinations/bromo.jpg);">
-										<div class="icon d-flex justify-content-center align-items-center">
-											<span class="icon-search2"></span>
-										</div>
-									</a>
-									<div class="text p-3">
-										<div class="d-flex">
-											<h3><a href="#">Package 6</a></h3>
-										</div>
-										<p class="rate">
-												<i class="icon-star"></i>
-												<i class="icon-star"></i>
-												<i class="icon-star"></i>
-												<i class="icon-star"></i>
-												<i class="icon-star-o"></i> <small>8 Rating</small>
-											</p>
-										<p>Far far away, behind the word mountains, far from the countries</p>
-										<hr>
-										<p class="bottom-area d-flex">
-											<span><i class="icon-map-o"></i> 2 days 3 nights</span> 
-											<span class="ml-auto"><a href="#">Discover</a></span>
-										</p>
-									</div>
-								</div>
-							</div>
-								</div>
+				</div>
+			</div>
     	</div>
     </section>
 
