@@ -32,6 +32,7 @@ Route::get('/admin/travel-tips/tags','backend\travel_tips\Tags@index');
 Route::get('/admin/users/user','backend\users\User@index');
 Route::get('/admin/data-master/province','backend\data_master\Province@index');
 Route::get('/admin/data-master/add-province','backend\data_master\Province@add');
+Route::get('/admin/data-master/add-city','backend\data_master\City@add');
 Route::get('/admin/data-master/city','backend\data_master\City@index');
 Route::get('/', 'frontend\Home@index');
 Route::get('/about', 'frontend\About@index');
