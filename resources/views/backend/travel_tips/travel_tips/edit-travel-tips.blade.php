@@ -15,11 +15,11 @@
                         <div class="row">
                             <div class="col-md-12 m-t-15">
                                 <label for="">Title</label>
-                                <input type="text" name="title" class="form-control" placeholder="Title">
+                                <input type="text" name="title" class="form-control" placeholder="Title" value="">
                             </div>
                             <div class="col-md-12 m-t-15">
                                 <label for="">Admin</label>
-                                <input type="text" name="id_admin" class="form-control" placeholder="Admin Name">
+                                <input type="text" name="id_admin" class="form-control" placeholder="Admin Name" value="">
                             </div>
                             <div class="col-md-12 m-t-15">
                                 <label for="">Photo Uploud</label>
