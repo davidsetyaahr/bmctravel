@@ -22,15 +22,17 @@
                             <th>Gallery</th>
                         </thead>
                         <tbody>
+                        @foreach($destinations as $d)
                             <tr>
-                                <td>asadasddsad</td>
-                                <td>sadasd</td>
-                                <td>sadasdasdssa</td>
-                                <td>sadsadsa</td>
-                                <td>sadsadsad</td>
-                                <td>dafsadasd</td>
-                                <td>sad</td>
+                                <td>{{ $d->destination_name }}</td>
+                                <td>{{ $d->category_name }}</td>
+                                <td>{{ $d->city_name }}</td>
+                                <td>{{ $d->overview }}</td>
+                                <td>{{ $d->map }}</td>
+                                <td>{{ $d->Information }}</td>
+                                <td>{{ $d->img }}</td>
                             </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>

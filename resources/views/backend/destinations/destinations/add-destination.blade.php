@@ -10,28 +10,49 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <form action="" method="post">
+            <form action="{{ url('admin/destinations/destinations/insert-destination') }}" method="post">
+                {{ csrf_field()}}
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-6 m-t-15">
                                 <label for="">Destination Name</label>
                                 <input type="text" name="destination_name" class="form-control" placeholder="Destination Name">
+                                @if($errors->has('Destination Name'))
+                                <div class="text-danger small">
+                                    {{ $errors->first('Destination Name') }}
+                                </div>
+                                @endif
                             </div>
                             <div class="col-md-6 m-t-15">
                                 <label for="">Category</label>
                                 <select class="select2 form-control custom-select select2-hidden-accessible" name="id_category" id="">
                                     <option value="">---Select---</option>
                                 </select>
+                                @if($errors->has('Category'))
+                                <div class="text-danger small">
+                                    {{ $errors->first('Category') }}
+                                </div>
+                                @endif
                             </div>
                             <div class="col-md-6 m-t-15">
                                 <label for="">City & Province</label>
                                 <select class="select2 form-control custom-select select2-hidden-accessible" name="id_city" id="">
                                     <option value="">---Select---</option>
                                 </select>
+                                @if($errors->has('City'))
+                                <div class="text-danger small">
+                                    {{ $errors->first('City') }}
+                                </div>
+                                @endif
                             </div>
                             <div class="col-md-6 m-t-15">
                                 <label for="">MAP</label>
                                 <input type="text" name="map" class="form-control">
+                                @if($errors->has('Map'))
+                                <div class="text-danger small">
+                                    {{ $errors->first('Map') }}
+                                </div>
+                                @endif
                             </div>
                             <div class="col-md-6 m-t-15">
                                 <label for="">Photo Uploud</label>
@@ -41,6 +62,11 @@
                                     Choose File...
                                     </label>
                                 </div>
+                                @if($errors->has('Gallery'))
+                                <div class="text-danger small">
+                                    {{ $errors->first('Gallery') }}
+                                </div>
+                                @endif
                             </div>
                             <div class="col-md-12 text-center m-t-30">
                                 <label for="">OverView</label>
@@ -51,6 +77,11 @@
                                         <br>
                                     </p>
                                 </div>
+                                @if($errors->has('Overview'))
+                                <div class="text-danger small">
+                                    {{ $errors->first('Overview') }}
+                                </div>
+                                @endif
                             </div>
                             <div class="col-md-12 text-center m-t-30">
                                 <label for="">Information</label>
@@ -61,6 +92,11 @@
                                         <br>
                                     </p>
                                 </div>
+                                @if($errors->has('Information'))
+                                <div class="text-danger small">
+                                    {{ $errors->first('Information') }}
+                                </div>
+                                @endif
                             </div>
                         </div>
                     </div>
