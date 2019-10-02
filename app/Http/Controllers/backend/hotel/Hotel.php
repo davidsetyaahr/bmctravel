@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use  Illuminate\Support\Facades\DB;
 
-use\App\Hotels;
+use \App\Hotels;
+use \App\Gallery;
+use \App\Gallery_categories;
 
 class Hotel extends Controller
 {
@@ -16,7 +18,9 @@ class Hotel extends Controller
         return view('backend.hotel.hotel.list-hotel', ['hotels' => $hotel]);
     }
     function create(){
-        return view('backend.hotel.hotel.add-hotel');
+        $gallery = Gallery::all();
+        $gallery_categories = Gallery_categories::all();
+        return view('backend.hotel.hotel.add-hotel', ['gallery' => $gallery, 'categories' => $gallery_categories]);
     }
     function store(Request $request)
     {

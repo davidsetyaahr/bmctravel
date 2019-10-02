@@ -10,7 +10,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                @include('backend.gallery.gallery-template.select-gallery', ['type' => 'single'])
+                @include('backend.gallery.gallery-template.select-gallery', ['type' => 'single', 'gallery' => $gallery, 'categories' => $categories])
                 <form action="/admin/hotel/add-hotel" method="post">
                 @csrf
                 <label for="">Hotel Name</label>
