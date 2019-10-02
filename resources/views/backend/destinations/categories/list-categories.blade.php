@@ -22,7 +22,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                        @foreach( $destination_categories as $dc )
+                        @foreach( $destinations_categories as $dc )
                             <tr>
                                 <th>{{ $loop->iteration}}</th>
                                 <td>{{$dc->category_name}}</td>
