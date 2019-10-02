@@ -23,13 +23,15 @@ Route::get('/admin/tour-package/tour-type', 'backend\tour_package\TourType@index
 Route::get('/admin/destinations/destinations/list','backend\destinations\Destinations@index');
 Route::get('/admin/destinations/destinations/add-destination','backend\destinations\Destinations@add');
 Route::get('/admin/destinations/categories','backend\destinations\Categories@index');
-Route::get('/admin/destinations/add-categories', 'backend\destinations\Categories@add');
+Route::get('/admin/destinations/add-categories', 'backend\destinations\Categories@create');
+Route::post('/admin/destinations/add-categories', 'backend\destinations\Categories@store');
 Route::get('/admin/gallery/gallery','backend\gallery\Gallery@index');
 Route::get('/admin/gallery/categories','backend\gallery\Categories@index');
 Route::get('/admin/hotel/hotel','backend\hotel\Hotel@index');
+Route::get('/admin/hotel/add-hotel','backend\hotel\Hotel@create');
+Route::post('/admin/hotel/add-hotel', 'backend\hotel\Hotel@store');
 Route::get('/admin/travel-tips/travel-tips/list','backend\travel_tips\TravelTips@index');
 Route::get('/admin/travel-tips/travel-tips/add-travel-tips','backend\travel_tips\TravelTips@add');
-Route::get('/admin/hotel/add-hotel','backend\hotel\Hotel@add');
 Route::get('/admin/travel-tips/travel-tips','backend\travel_tips\TravelTips@index');
 Route::get('/admin/travel-tips/tags','backend\travel_tips\Tags@index');
 Route::get('/admin/users/user','backend\users\User@index');

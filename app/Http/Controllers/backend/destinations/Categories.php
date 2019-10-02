@@ -15,7 +15,23 @@ class Categories extends Controller
         $categories = Destination_categories::all();
         return view('backend.destinations.categories.list-categories', ['destinations_categories' => $categories]);
     }
-    function add(Request $req){
-        return view('backend.tour_package.price_categories.add-price');
+    function create()
+    {
+        return view('backend.destinations.categories.add-categories');
+    }
+    function store(Request $request)
+    {
+        //validasi
+        $request->validate([
+            'category_name' => 'required',
+            'id_gallery' => 'required'
+        ]);
+        // insert
+        DB::table('destination_categories')->insert([
+        'category_name' => $request->category_name,
+        'id_gallery' => $request->id_gallery
+        ]);
+        return redirect('/admin/destinations/categories')->with('status', 'Kategori berhasil ditambahkan');
+
     }
 }
