@@ -9,6 +9,9 @@ class Durations extends Controller
 {
     function index()
     {
-        return view('backend.tour_package.durations.index');
+        return view('backend.tour_package.durations.list-durations');
+    }
+    function add(){
+        return view('backend.tour_package.durations.add-durations');
     }
 }
