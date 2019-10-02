@@ -94,6 +94,27 @@
 				}
 			}
 		});
+		$('.destinationtext').owlCarousel({
+			autoplay: true,
+			loop: true,
+			items:1,
+			margin: 30,
+			stagePadding: 0,
+			nav: true,
+			dots: true,
+			navText: ['<span class="ion-ios-arrow-back">', '<span class="ion-ios-arrow-forward">'],
+			responsive:{
+				0:{
+					items: 2
+				},
+				600:{
+					items: 4
+				},
+				1000:{
+					items: 6
+				}
+			}
+		});
 		$('.destination-detail-package').owlCarousel({
 			autoplay: true,
 			loop: true,
@@ -136,7 +157,7 @@
 				}
 			}
 		});
-		$('.carousel-testimony, .carousel-destinationtext').owlCarousel({
+		$('.carousel-testimony').owlCarousel({
 			autoplay: true,
 			animateOut : 'fadeOut',
 			loop: true,
@@ -210,24 +231,34 @@
 	});
 
 	// scroll
+	var navGreyHeight = $(".nav-grey").height()
+	var topNavHeight = $(".top-nav").height()
+	$(".hero-wrap").css({"margin-top" : topNavHeight/2})
+	$(".nav-white").css({"top" : navGreyHeight})
 	var scrollWindow = function() {
 		$(window).scroll(function(){
 			var $w = $(this),
 					st = $w.scrollTop(),
 					navbar = $('.ftco_navbar'),
 					sd = $('.js-scroll-wrap');
+			if(st>0){
+				$(".nav-white").css({"top" : "0"})
+				$(".nav-white").addClass("nav-shadow")
+			}
+			else{
+				$(".nav-white").css({"top" : navGreyHeight})
+				$(".nav-white").removeClass("nav-shadow")
+			}
 
 			if (st > 150) {
 				if ( !navbar.hasClass('scrolled') ) {
 					navbar.addClass('scrolled');	
 				}
-				$(".icon-bar").css({"opacity" : 1})
 			} 
 			if (st < 150) {
 				if ( navbar.hasClass('scrolled') ) {
 					navbar.removeClass('scrolled sleep');
 				}
-				$(".icon-bar").css({"opacity" : 0})
 			} 
 			if ( st > 350 ) {
 				if ( !navbar.hasClass('awake') ) {
