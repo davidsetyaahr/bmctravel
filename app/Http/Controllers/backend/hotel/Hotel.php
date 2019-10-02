@@ -16,6 +16,6 @@ class Hotel extends Controller
         return view('backend.hotel.hotel.list-hotel', ['hotels' => $hotel]);
     }
     function add(Request $req){
-        return view('backend.tour_package.price_categories.add-price');
+        return view('backend.hotel.hotel.add-hotel');
     }
 }

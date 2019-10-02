@@ -10,8 +10,12 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
+                @include('backend.gallery.gallery-template.select-gallery', ['type' => 'single'])
                 <label for="">Hotel Name</label>
                 <input type="text" class="form-control"><br>
+                <label for="">Image</label>
+                @include('backend.gallery.gallery-template.gallery-hidden')
+                <br>
                 <label for="">Map</label>
                 <input type="text" class="form-control"><br>
                 <label for="">Overview</label>
@@ -22,5 +26,5 @@
         </div>
     </div>
 </div>
-
+@include('backend.gallery.gallery-template.modal-gallery')
 @endsection
