@@ -5,6 +5,11 @@
     font-weight: normal;
     font-style: normal;
 }
+thead{
+    background: #dee2e6;
+    color: #2d3747;
+    font-weight: bold;
+}
 .blue-overlay .overlay{
     position: absolute;
     top : 0;
