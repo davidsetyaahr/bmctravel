@@ -1,8 +1,8 @@
 @extends('backend.template.main')
-@section('insert_caption','Insert New city')
-@section('view_caption','View All city')
-@section('insert_link','add-city')
-@section('view_link','city')
+@section('insert_caption','Insert New Province')
+@section('view_caption','View All Province')
+@section('insert_link','add-province')
+@section('view_link','province')
 @section('view_status','active')
 @section('insert_status','')
 @section('admin')
@@ -14,9 +14,9 @@
                     <table class="table table-bordered table-hover table-striped">
                         <thead>
                             <tr>
-                                <th>Id</th>
+                                <th>#</th>
                                 <th>Province</th>
-                                <th>City</th>
+                                <th>Option</th>
                             </tr>
                         </thead>
                         <tbody>

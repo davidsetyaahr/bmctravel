@@ -14,14 +14,12 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-6 m-t-15">
-                                <label for="">Destination Name</label>
-                                <input type="text" name="destination_name" class="form-control" placeholder="Destination Name">
+                                <label for="">Title</label>
+                                <input type="text" name="title" class="form-control" placeholder="Title">
                             </div>
                             <div class="col-md-6 m-t-15">
-                                <label for="">Category</label>
-                                <select class="select2 form-control custom-select select2-hidden-accessible" name="id_category" id="">
-                                    <option value="">---Select---</option>
-                                </select>
+                                <label for="">Admin</label>
+                                <input type="text" name="id_admin" class="form-control" placeholder="Admin Name">
                             </div>
                             <div class="col-md-6 m-t-15">
                                 <label for="">City & Province</label>
