@@ -34,4 +34,7 @@ class Categories extends Controller
         return redirect('/admin/destinations/categories')->with('status', 'Kategori berhasil ditambahkan');
 
     }
+    function edit($id){
+        return view('backend.destinations.categories.edit-categories');
+    }
 }

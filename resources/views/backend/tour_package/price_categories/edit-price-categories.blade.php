@@ -1,7 +1,7 @@
 @extends('backend.template.main')
 @section('insert_caption','Insert New Price')
 @section('view_caption','View All Price')
-@section('insert_link','add-price-categories')
+@section('insert_link',url("admin/tour-package/add-price-categories"))
 @section('view_link',url("admin/tour-package/price-categories"))
 @section('view_status','')
 @section('insert_status','')

@@ -41,4 +41,9 @@ class Hotel extends Controller
         return redirect('/admin/hotel/hotel')->with('status', 'Kategori hotel berhasil ditambahkan');
 
     }
+    function edit($id){
+        $gallery = Gallery::all();
+        $gallery_categories = Gallery_categories::all();
+        return view('backend.hotel.hotel.edit-hotel', ['gallery' => $gallery, 'categories' => $gallery_categories]);
+    }
 }

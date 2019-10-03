@@ -32,7 +32,17 @@
                                 <th>{{ $loop->iteration}}</th>
                                 <td>{{$dc->category_name}}</td>
                                 <td>{{$dc->id_gallery}}</td>
-                                <td>Detail</td>
+                                <td>
+                                    <div class="dropdown show">
+                                        <a class="btn btn-sm btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Options
+                                        </a>
+
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <a class="dropdown-item" href="edit-categories/{{ $dc->id_category }}">Edit</a>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>
