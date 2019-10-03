@@ -10,20 +10,22 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-            <form action="/admin/hotel/add-hotel" method="post">
-            @csrf
+                @include('backend.gallery.gallery-template.select-gallery', ['type' => 'single', 'gallery' => $gallery, 'categories' => $categories])
+                <form action="/admin/hotel/add-hotel" method="post">
+                @csrf
                 <label for="">Hotel Name</label>
                 <input type="text" class="form-control @error('hotel_name') is-invalid @enderror" name="hotel_name">
                 @error('hotel_name')
-                    <div class="invalid-feedback"> {{ $message}} </div>
-                    @enderror
+                <div class="invalid-feedback"> {{ $message}} </div>
+                @enderror
                 <br>
                 <label for="">Gallery</label>
-                <input type="text" class="form-control @error('id_gallery') is-invalid @enderror" name="id_gallery">
+                @include('backend.gallery.gallery-template.gallery-hidden')
+<!--                 <input type="text" class="form-control @error('id_gallery') is-invalid @enderror" name="id_gallery">
                 @error('id_gallery')
                     <div class="invalid-feedback"> {{ $message}} </div>
                     @enderror
-                <br>
+ -->                <br>
                 <label for="">Map</label>
                 <input type="text" class="form-control @error('map') is-invalid @enderror" name="map">
                 @error('map')
@@ -38,9 +40,10 @@
                 <br>
                 <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Save</button>
                 <button class="btn btn-secondary" type="reset"><span class="mdi mdi-refresh"></span> Reset</button>
+            </form>
             </div>
         </div>
     </div>
 </div>
-
+@include('backend.gallery.gallery-template.modal-gallery')
 @endsection

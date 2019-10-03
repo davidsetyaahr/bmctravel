@@ -20,6 +20,8 @@ Route::get('/admin/tour-package/price-categories', 'backend\tour_package\PriceCa
 Route::get('/admin/tour-package/add-price-categories', 'backend\tour_package\PriceCategories@create');
 Route::post('/admin/tour-package/add-price-categories', 'backend\tour_package\PriceCategories@store');
 Route::get('/admin/tour-package/tour-type', 'backend\tour_package\TourType@index');
+Route::get('/admin/tour-package/add-tour-type', 'backend\tour_package\TourType@add');
+Route::get('/admin/destinations/destinations','backend\destinations\Destinations@index');
 Route::get('/admin/destinations/destinations/list','backend\destinations\Destinations@index');
 Route::get('/admin/destinations/destinations/add-destination','backend\destinations\Destinations@add');
 Route::post('/admin/destinations/destinations/insert-destination','backend\destinations\Destinations@insert');
@@ -27,7 +29,9 @@ Route::get('/admin/destinations/categories','backend\destinations\Categories@ind
 Route::get('/admin/destinations/add-categories', 'backend\destinations\Categories@create');
 Route::post('/admin/destinations/add-categories', 'backend\destinations\Categories@store');
 Route::get('/admin/gallery/gallery','backend\gallery\Gallery@index');
+Route::get('/admin/gallery/add-gallery','backend\gallery\Gallery@add');
 Route::get('/admin/gallery/categories','backend\gallery\Categories@index');
+Route::get('/admin/gallery/add-categories-gallery','backend\gallery\Categories@add');
 Route::get('/admin/hotel/hotel','backend\hotel\Hotel@index');
 Route::get('/admin/travel-tips/travel-tips/list','backend\travel_tips\TravelTips@index');
 Route::get('/admin/travel-tips/travel-tips/add-travel-tips','backend\travel_tips\TravelTips@add');
@@ -37,8 +41,12 @@ Route::post('/admin/hotel/add-hotel', 'backend\hotel\Hotel@store');
 Route::get('/admin/travel-tips/travel-tips/list','backend\travel_tips\TravelTips@index');
 Route::get('/admin/travel-tips/travel-tips/add-travel-tips','backend\travel_tips\TravelTips@add');
 Route::get('/admin/travel-tips/travel-tips','backend\travel_tips\TravelTips@index');
+Route::post('/admin/travel-tips/tags','backend\travel_tips\Tags@store');
 Route::get('/admin/travel-tips/tags','backend\travel_tips\Tags@index');
+Route::get('/admin/travel-tips/add-tags','backend\travel_tips\Tags@add');
+Route::get('/admin/travel-tips/edit-tags','backend\travel_tips\Tags@show');
 Route::get('/admin/users/user','backend\users\User@index');
+Route::get('/admin/users/add-user','backend\users\User@add');
 Route::get('/admin/data-master/province','backend\data_master\Province@index');
 Route::get('/admin/data-master/add-province','backend\data_master\Province@add');
 Route::get('/admin/data-master/add-city','backend\data_master\City@add');
@@ -50,4 +58,4 @@ Route::get('/tour-package/detail-package', 'frontend\TourPackage@detail');
 Route::get('/destinations', 'frontend\Destinations@index');
 Route::get('/travel-tips', 'frontend\TravelTips@index');
 Route::get('/signin', 'frontend\SignIn@index');
-
+Route::get('/admin/tour-package/edit-price-categories/{id}', 'backend\tour_package\PriceCategories@edit');

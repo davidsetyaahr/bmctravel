@@ -34,4 +34,9 @@ class PriceCategories extends Controller
         return redirect('/admin/tour-package/price-categories')->with('status', 'Kategori harga berhasil ditambahkan');
 
     }
+    public function edit($id)
+    {
+        return view('backend.tour_package.price_categories.edit-price-categories');
+    }
+
 }
