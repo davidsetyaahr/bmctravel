@@ -13,13 +13,15 @@
             <form action="/admin/destinations/add-categories" method="post">
             @csrf
                 <label for="">Categories Name</label>
-                <input type="text" class="form-control @error('category_name') is-invalid @enderror" name="category_name">
+                <input type="text" class="form-control @error('category_name') is-invalid @enderror" name="category_name"
+                value="{{ old('category_name')}}">
                 @error('category_name')
                     <div class="invalid-feedback"> {{ $message}} </div>
                     @enderror
                 <br>
                 <label for="">Image</label>
-                <input type="text" class="form-control @error('id_gallery') is-invalid @enderror" name="id_gallery">
+                <input type="text" class="form-control @error('id_gallery') is-invalid @enderror" name="id_gallery"
+                value="{{ old('id_gallery')}}">
                 @error('id_gallery')
                     <div class="invalid-feedback"> {{ $message}} </div>
                     @enderror
