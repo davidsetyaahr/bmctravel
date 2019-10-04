@@ -13,13 +13,14 @@
             <form action="/admin/tour-package/add-price-categories" method="post">
             @csrf
                 <label for="">Start Pax</label>
-                <input type="text" class="form-control @error('start_pax') is-invalid @enderror" name="start_pax">
+                <input type="text" class="form-control @error('start_pax') is-invalid @enderror" name="start_pax" 
+                    value="{{ old('start_pax')}}">
                 @error('start_pax')
                     <div class="invalid-feedback"> {{ $message}} </div>
                     @enderror
                 <br>
                 <label for="">End Pax</label>
-                <input type="text" class="form-control @error('end_pax') is-invalid @enderror" name="end_pax">
+                <input type="text" class="form-control @error('end_pax') is-invalid @enderror" name="end_pax" value="{{ old('end_pax')}}">
                 @error('end_pax')
                     <div class="invalid-feedback"> {{ $message}} </div>
                     @enderror

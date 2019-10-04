@@ -14,7 +14,8 @@
                 <form action="/admin/hotel/add-hotel" method="post">
                 @csrf
                 <label for="">Hotel Name</label>
-                <input type="text" class="form-control @error('hotel_name') is-invalid @enderror" name="hotel_name">
+                <input type="text" class="form-control @error('hotel_name') is-invalid @enderror" name="hotel_name"
+                value="{{ old('hotel_name')}}">
                 @error('hotel_name')
                 <div class="invalid-feedback"> {{ $message}} </div>
                 @enderror
@@ -27,13 +28,15 @@
                     @enderror
  -->                <br>
                 <label for="">Map</label>
-                <input type="text" class="form-control @error('map') is-invalid @enderror" name="map">
+                <input type="text" class="form-control @error('map') is-invalid @enderror" name="map"
+                value="{{ old('map')}}">
                 @error('map')
                     <div class="invalid-feedback"> {{ $message}} </div>
                     @enderror
                 <br>
                 <label for="">Overview</label>
-                <input type="text" class="form-control @error('overview') is-invalid @enderror" name="overview">
+                <input type="text" class="form-control @error('overview') is-invalid @enderror" name="overview"
+                value="{{ old('overview')}}">
                 @error('overview')
                     <div class="invalid-feedback"> {{ $message}} </div>
                     @enderror

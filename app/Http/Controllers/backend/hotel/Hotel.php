@@ -44,6 +44,17 @@ class Hotel extends Controller
     function edit($id){
         $gallery = Gallery::all();
         $gallery_categories = Gallery_categories::all();
-        return view('backend.hotel.hotel.edit-hotel', ['gallery' => $gallery, 'categories' => $gallery_categories]);
+        $hotel = DB::table('hotels')->where('id_hotel',$id)->get();
+        return view('backend.hotel.hotel.edit-hotel', ['gallery' => $gallery, 'categories' => $gallery_categories, 'hotels' => $hotel]);
     }
+    public function update(Request $request)
+    {   
+        DB::table('hotels')->where('id_hotel',$request->id)->update([
+            'hotel_name' => $request->hotel_name,
+            'id_gallery' => $request->id_gallery,
+            'map' => $request->map,
+            'overview' => $request->overview
+        ]);
+        return redirect('/admin/hotel/hotel');
+   }
 }

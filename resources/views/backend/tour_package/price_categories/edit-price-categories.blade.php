@@ -10,16 +10,18 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-            <form action="/admin/tour-package/add-price-categories" method="post">
+            @foreach($price_categories as $prc)
+            <form action="/admin/tour-package/price-categories/update" method="post">
             @csrf
+            <input type="hidden" name="id" value="{{ $prc->id_price_category }}">
                 <label for="">Start Pax</label>
-                <input type="text" class="form-control @error('start_pax') is-invalid @enderror" name="start_pax">
+                <input type="text" class="form-control @error('start_pax') is-invalid @enderror" name="start_pax" value="{{ $prc->start_pax}}">
                 @error('start_pax')
                     <div class="invalid-feedback"> {{ $message}} </div>
                     @enderror
                 <br>
                 <label for="">End Pax</label>
-                <input type="text" class="form-control @error('end_pax') is-invalid @enderror" name="end_pax">
+                <input type="text" class="form-control @error('end_pax') is-invalid @enderror" name="end_pax" value="{{ $prc->end_pax}}">
                 @error('end_pax')
                     <div class="invalid-feedback"> {{ $message}} </div>
                     @enderror
@@ -27,6 +29,7 @@
                 <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Save</button>
                 <button class="btn btn-secondary" type="reset"><span class="mdi mdi-refresh"></span> Reset</button>
             </form>
+            @endforeach
             </div>
         </div>
     </div>

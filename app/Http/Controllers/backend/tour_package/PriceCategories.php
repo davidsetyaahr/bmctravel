@@ -34,9 +34,24 @@ class PriceCategories extends Controller
         return redirect('/admin/tour-package/price-categories')->with('status', 'Kategori harga berhasil ditambahkan');
 
     }
-    public function edit($id)
+    public function edit(/*Price_categories $price*/$id)
     {
-        return view('backend.tour_package.price_categories.edit-price-categories');
+        $price = DB::table('price_categories')->where('id_price_category',$id)->get();
+	    return view('backend.tour_package.price_categories.edit-price-categories',['price_categories' => $price]);
+        //return view('backend.tour_package.price_categories.edit-price-categories', compact('price'));
     }
+    public function update(Request $request)
+    {
+        $request->validate([
+            'start_pax' => 'required',
+            'end_pax' => 'required'
+        ]);
+        
+        DB::table('price_categories')->where('id_price_category',$request->id)->update([
+            'start_pax' => $request->start_pax,
+            'end_pax' => $request->end_pax
+        ]);
+        return redirect('/admin/tour-package/price-categories');
+   }
 
 }

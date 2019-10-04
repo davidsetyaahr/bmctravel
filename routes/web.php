@@ -61,3 +61,6 @@ Route::get('/signin', 'frontend\SignIn@index');
 Route::get('/admin/tour-package/edit-price-categories/{id}', 'backend\tour_package\PriceCategories@edit');
 Route::get('/admin/hotel/edit-hotel/{id}', 'backend\hotel\Hotel@edit');
 Route::get('/admin/destinations/edit-categories/{id}', 'backend\destinations\Categories@edit');
+Route::post('/admin/tour-package/price-categories/update','backend\tour_package\PriceCategories@update');
+Route::post('/admin/destinations/categories/update','backend\destinations\Categories@update');
+Route::post('/admin/hotel/update','backend\hotel\Hotel@update');

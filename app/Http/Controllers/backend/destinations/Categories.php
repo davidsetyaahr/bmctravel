@@ -13,7 +13,7 @@ class Categories extends Controller
     function index()
     {
         $categories = Destination_categories::all();
-        return view('backend.destinations.categories.list-categories', ['destinations_categories' => $categories]);
+        return view('backend.destinations.categories.list-categories', ['destination_categories' => $categories]);
     }
     function create()
     {
@@ -35,6 +35,20 @@ class Categories extends Controller
 
     }
     function edit($id){
-        return view('backend.destinations.categories.edit-categories');
+        $categories = DB::table('destination_categories')->where('id_category',$id)->get();
+        return view('backend.destinations.categories.edit-categories',['destination_categories' => $categories]);
     }
+    public function update(Request $request)
+    {
+        $request->validate([
+            'category_name' => 'required',
+            'id_gallery' => 'required'
+        ]);
+        
+        DB::table('destination_categories')->where('id_category',$request->id)->update([
+            'category_name' => $request->category_name,
+            'id_gallery' => $request->id_gallery
+        ]);
+        return redirect('/admin/destinations/categories');
+   }
 }
