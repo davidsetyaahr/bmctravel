@@ -6,6 +6,130 @@
  */
 
  /*custom*/
+ .travel-tips{
+   border : 1px solid #ddd;
+  }
+  .travel-tips .bottom{
+    padding : 10px;
+  }
+  .travel-tips .bottom .title{
+    font-size : 14px;
+    font-weight: 500;
+  }
+  .travel-tips .bottom .link{
+    color : #da2f29;
+    text-align : right;
+    margin-top : 10px;
+    font-weight: 500;
+  }
+  .travel-tips img{
+   height : 170px;
+   width : 100%;
+ }
+ .border{
+   border : 1px solid #ddd;
+ }
+ .color-red{
+   color : #da2f29;
+ }
+ .relative{
+   position: relative;
+ }
+ .hidden{
+   overflow: hidden;
+ }
+ .layer{
+  background : rgb(0,0,0,0.1);
+  height : 100%;
+  width : 100%;
+  z-index: 2;
+  position: absolute;
+  top : 0;
+  left: 0;
+}
+.transition{
+  transition: all.3s ease;
+  -webkit-transition: all.3s ease;
+  -moz-transition: all.3s ease;
+  -o-transition: all.3s ease;
+}
+.package1{
+  overflow: hidden;
+}
+.package1 .sticky-note{
+  z-index: 3;
+  position : absolute;
+  top : 0;
+  left : -5px;
+  transform : skewX(-25deg);
+  -webkit-ttransform : skewX(-25deg);
+  -o-transform : skewX(-25deg);
+  -moz-transform : skewX(-25deg);
+  padding : 3px 15px;
+  padding-left : 20px;
+  background : white;
+}
+.package1 .sticky-note span{
+  display: block;
+  transform: skewX(25deg);
+  -moz-transform: skewX(25deg);
+  -webkit-transform: skewX(25deg);
+  -o-transform: skewX(25deg);
+  color : #2c2f42 !important;
+  font-weight: 500;
+}
+.package1 .text-bottom .title{
+  font-weight: 500;
+  width : 60%;
+  float : left;
+}
+.package1 .text-bottom .price-tour{
+  font-weight: 500;
+  width : 40%;
+  float : right;
+  line-height: 150%;
+}
+.package1 .text-bottom .price-tour span{
+  float : right;
+  font-size : 18px;
+  color : #da2f29;
+}
+.package1 .text-bottom .price-tour small{
+  display : block;
+  font-size : 10px;
+  color : #606060;
+}
+.package1 .view-link{
+  position: absolute;
+  top : 50%;
+  left : 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  color : white;
+  border : 1px solid white;
+  padding : 5px 10px;
+  border-radius: 3px;
+  opacity: 0;
+  z-index: 2;
+}
+.package1:hover .layer{
+  background : rgb(0,0,0,0.150);
+}
+.package1:hover .view-link{
+  opacity: 1;
+}
+.package1 img{
+  height : 255px;
+  width : 100%;
+}
+.package1:hover img{
+  transform : scale(1.2);
+}
+ .ftco-section{
+  padding : 3rem 0 !important;
+}
 .step-by-step .line-step{
    width : 100%;
    padding : 1px;
@@ -24,7 +148,7 @@
   color : rgba(44,47,66,.6);
   font-size : 20px;
 }
-.step-by-step .this-step .text.active{
+.step-by-step .this-step .text.active, .step-by-step .this-step .text:hover{
   background: #da2f29;
   color : white;
 }
@@ -33,6 +157,8 @@
   position: relative;
   padding : 7px 15px;
   border-radius: 25px;
+  transition : all.3s ease;
+  cursor: pointer;
 }
 .step-by-step .this-step .text .up::before{
   position: absolute;
@@ -5361,7 +5487,7 @@ button.bg-danger:focus {
   background-color: #bd2130 !important; }
 
 .bg-light {
-  background-color: #f8f9fa !important; }
+  background-color: #f2f2f2 !important; }
 
 a.bg-light:hover, a.bg-light:focus,
 button.bg-light:hover,
@@ -7664,7 +7790,7 @@ a {
 h1, h2, h3, h4, h5,
 .h1, .h2, .h3, .h4, .h5 {
   line-height: 1.5;
-  color: #000000;
+  color: #3e3e3e;
   font-weight: 400; }
 
 .text-primary {
@@ -7822,7 +7948,7 @@ h1, h2, h3, h4, h5,
       color: #000000; }
 
 .navbar-brand {
-  font-weight: 700;
+  font-weight: 400;
   font-size: 20px; }
 
 .hero-wrap {
@@ -7986,7 +8112,7 @@ h1, h2, h3, h4, h5,
     display: inline-block; }
 
 .bg-light {
-  background: #f8faff !important; }
+  background: #f2f2f2 !important; }
 
 .bg-primary {
   background: #da2f29; }
@@ -8285,15 +8411,8 @@ h1, h2, h3, h4, h5,
     position: relative;
     padding: 10em 0;
     background: #2ebdc4;
-    background: -moz-linear-gradient(-45deg, #2ebdc4 0%, #68e5b2 100%);
-    background: -webkit-gradient(left top, right bottom, color-stop(0%, #2ebdc4), color-stop(100%, #68e5b2));
-    background: -webkit-linear-gradient(-45deg, #2ebdc4 0%, #68e5b2 100%);
-    background: -o-linear-gradient(-45deg, #2ebdc4 0%, #68e5b2 100%);
-    background: -ms-linear-gradient(-45deg, #2ebdc4 0%, #68e5b2 100%);
-    background: -webkit-linear-gradient(315deg, #2ebdc4 0%, #68e5b2 100%);
-    background: -o-linear-gradient(315deg, #2ebdc4 0%, #68e5b2 100%);
-    background: linear-gradient(135deg, #2ebdc4 0%, #68e5b2 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2ebdc4', endColorstr='#68e5b2', GradientType=1 ); }
+    background: linear-gradient(153deg, #f1aba9 0%, #e25552 100%);
+}
   .ftco-section-parallax .heading-section-white h2 {
     font-weight: 400 !important; }
 
@@ -8565,7 +8684,7 @@ textarea.form-control {
 
 .ftco-footer {
   font-size: 16px;
-  background: #222831;
+  background: #2d3747;
   padding: 8em 0 8em 0; }
   .ftco-footer .ftco-footer-logo {
     text-transform: uppercase;
