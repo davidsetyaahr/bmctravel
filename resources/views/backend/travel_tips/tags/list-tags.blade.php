@@ -17,19 +17,15 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Id Tips Tags</th>
-                                    <th>Id Travel Tips</th>
-                                    <th>Id Tag</th>
+                                    <th>Tag Name</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    @foreach ($id_tips_tags as $tt)
+                                    @foreach ($id_tag as $tt)
                                         <td> {{ $loop->iteration }} </td>
-                                        <td>{{ $tt->id_tips_tag }}</td>
-                                        <td>{{ $tt->id_travel_tips }}</td>
-                                        <td>{{ $tt->id_tag }}</td>
+                                        <td>{{ $tt->tag_name }}</td>
                                         <td><a href="edit-tags" class="btn btn-warning">Edit</a></td>
                                 </tr>
                                     @endforeach
