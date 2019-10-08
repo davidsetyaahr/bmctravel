@@ -51,9 +51,9 @@
 			$('.js-fullheight-page').css('height', $(window).height()/2);
 		});
 
-		$('.js-fullheight-travel').css('height', $(window).height()/1.5);
+		$('.js-fullheight-travel').css('height', $(window).height()/2.2);
 		$(window).resize(function(){
-			$('.js-fullheight-travel').css('height', $(window).height()/1.5);
+			$('.js-fullheight-travel').css('height', $(window).height()/2.2);
 		});
 
 	};

@@ -6,6 +6,9 @@
  */
 
  /*custom*/
+ .color-white{
+   color : white;
+ }
  .travel-tips{
    border : 1px solid #ddd;
   }
@@ -9158,7 +9161,6 @@ textarea.form-control {
       border: 2px solid rgba(0, 0, 0, 0.1);
       font-size: 14px;
       width: 100%;
-      height: 70px !important;
       bordeR: 1px solid transparent;
       padding: 10px 30px;
       -webkit-border-radius: 0;
