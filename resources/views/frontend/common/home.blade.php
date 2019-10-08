@@ -51,7 +51,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 text-center heading-section ftco-animate">
-					<h2 class="mb-4 pb-3"><strong>Sekapur Sirih</strong></h2>
+					<h2 class="mb-4 pb-3"><strong>Sekapur</strong> Sirih</h2>
 					<p>Selamat datang di BMC Travel Service. Traveling saat ini telah menjadi kebutuhan pokok disamping kebutuhan akan sandang, pangan, dan papan. Kebutuhan akan merefreshing pikiran karena penat dengan aktifitas pekerjaan dan kehidupan sehari-hari mendorong orang-orang untuk melakukan traveling untuk menyegarkan kembali pikiran. Perkembangan golongan menengah juga menjadi pendorong industri tour dan travel merespon permintaan pasar akan layanagn tour dan travel yang semakin meningkat. Selayaknya usaha di bidang jasa lainnya, BMC Travel Service selaku perusahaan di bidang tour dan travel akan selalu memberikan pelayanan yang maksimal kepada tamu-tamu kami. Peningkatan kualitas dan kuantitas layanan senantiasa kami jaga sebaik mungkin demi kepuasan tamu. Kami dengan setulus hati melayani anda, memberikan kepuasan akan layanan wisata yang terbaik yang dapat kami lakukan. Terimakasih telah memilih BMC Travel Service sebagai mitra perjalanan wisata anda.</p>
 					<p>Salam Hangat</p>
 					<h1 style="font-family: 'Sacramento', cursive;">Fajar N Eristyawan</h1>
@@ -83,7 +83,7 @@
 		</div>
     </section>
     
-    <section class="ftco-section ftco-destination">
+    <section class="ftco-section">
     	<div class="container">
     		<div class="row">
 				<div class="col-md-10 heading-section ftco-animate">
@@ -152,7 +152,7 @@
 	        </div>
 			<div class="row mt-3">
 				<div class="col-md-12">
-					<div class="step-by-step">
+					<div class="step-by-step ftco-animate">
 						<div class="line-step"></div>
 						<div class="this-step" style="width : 19%">
 							<span class="bullet ion-md-radio-button-on"></span>
@@ -190,98 +190,172 @@
 			</div>    		
     	</div>
     	<div class="container">
-    		<div class="row mt-5">
-				<div class="col-sm col-md-12 ftco-animate">
-				<div class="destinationtext owl-carousel ftco-animate">
-						<div class="item">
-							<img src="direngine/images/destinations/kawah-wurung.png" alt="" class="img-fluid">
+    		<div class="row mt-5 ftco-animate">
+				<div class="col-md-3">
+					<div class="package1">
+						<div class="relative hidden">
+							<div class="layer transition"></div>
+							<div class="sticky-note">
+								<span>Beach Vibes</span>
+							</div>
+							<img src="direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid transition">
+							<div class="view-link transition">View Package</div>
 						</div>
-						<div class="item">
-							<img src="direngine/images/destinations/ijen.jpg" alt="" class="img-fluid">
+						<div class="text-bottom mt-2">
+							<div class="title">3D 2N Menjangan Island</div>
+							<div class="price-tour"><span><small>start from</small>1.000.000 </span></div>
 						</div>
-						<div class="item">
-							<img src="direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid">
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="package1">
+						<div class="relative hidden">
+							<div class="layer transition"></div>
+							<div class="sticky-note">
+								<span>Explore Bondowoso</span>
+							</div>
+							<img src="direngine/images/destinations/ijen.jpg" alt="" class="img-fluid transition">
+							<div class="view-link transition">View Package</div>
 						</div>
-						<div class="item">
-							<img src="direngine/images/destinations/bali.jpg" alt="" class="img-fluid">
+						<div class="text-bottom mt-2">
+							<div class="title">3D 2N Bondowoso</div>
+							<div class="price-tour"><span><small>start from</small>1.000.000 </span></div>
 						</div>
-						<div class="item">
-							<img src="direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid">
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="package1">
+						<div class="relative hidden">
+							<div class="layer transition"></div>
+							<div class="sticky-note">
+								<span>Mountain Vibes</span>
+							</div>
+							<img src="direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid transition">
+							<div class="view-link transition">View Package</div>
 						</div>
-						<div class="item">
-							<img src="direngine/images/destinations/bromo.jpg" alt="" class="img-fluid">
+						<div class="text-bottom mt-2">
+							<div class="title">3D 2N Menjangan Island</div>
+							<div class="price-tour"><span><small>start from</small>1.000.000 </span></div>
 						</div>
-    				</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="package1">
+						<div class="relative hidden">
+							<div class="layer transition"></div>
+							<div class="sticky-note">
+								<span>Beach Vibes</span>
+							</div>
+							<img src="direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid transition">
+							<div class="view-link transition">View Package</div>
+						</div>
+						<div class="text-bottom mt-2">
+							<div class="title">3D 2N Menjangan Island</div>
+							<div class="price-tour"><span><small>start from</small>1.000.000 </span></div>
+						</div>
+					</div>
 				</div>
 			</div>
     	</div>
     </section>
 
-    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(direngine/images/bg_1.jpg);">
-    	<div class="container">
-    		<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-            <h2 class="mb-4">Some fun facts</h2>
-            <span class="subheading">Bmc Travel Service</span>
-          </div>
-        </div>
-    		<div class="row justify-content-center">
-    			<div class="col-md-10">
-		    		<div class="row">
-		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18 text-center">
-		              <div class="text">
-		                <strong class="number" data-number="100">0</strong>
-		                <span>Happy Customers</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18 text-center">
-		              <div class="text">
-		                <strong class="number" data-number="40">0</strong>
-		                <span>Destination Places</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18 text-center">
-		              <div class="text">
-		                <strong class="number" data-number="20">0</strong>
-		                <span>Packages</span>
-		              </div>
-		            </div>
-		          </div>
-		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
-		            <div class="block-18 text-center">
-		              <div class="text">
-		                <strong class="number" data-number="30">0</strong>
-		                <span>Articles</span>
-		              </div>
-		            </div>
-		          </div>
-		        </div>
-	        </div>
-        </div>
-    	</div>
-    </section>
+	<section class="ftco-section ftco-animate">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-md-6">
+					<h5 class="color-red">Some fun facts</h5>
+					<div class="row mt-5">
+						<div class="col-md-4">
+							<img src="{{ asset('images/gallery/jeep.png') }}" alt="">
+							<h6 class="mt-3">120</h6>
+							Travel Packages
+						</div>
+						<div class="col-md-4">
+							<img src="{{ asset('images/gallery/tourist.png') }}" alt="">
+							<h6 class="mt-3">100+</h6>
+							Happy Clients
+						</div>
+						<div class="col-md-4">
+							<img src="{{ asset('images/gallery/smartphone.png') }}" alt="">
+							<h6 class="mt-3">30</h6>
+							Destinations
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6" style="border-left : 1px solid #ddd">
+					<h5 class="color-red">Easy, Fun, Secure</h5>
+					<div class="row mt-5">
+						<div class="col-md-4">
+							<img src="{{ asset('images/gallery/jeep.png') }}" alt="">
+							<h6 class="mt-3">120</h6>
+							Travel Packages
+						</div>
+						<div class="col-md-4">
+							<img src="{{ asset('images/gallery/tourist.png') }}" alt="">
+							<h6 class="mt-3">100+</h6>
+							Happy Clients
+						</div>
+						<div class="col-md-4">
+							<img src="{{ asset('images/gallery/smartphone.png') }}" alt="">
+							<h6 class="mt-3">30</h6>
+							Destinations
+						</div>
+					</div>
+				</div>
+			</div>
+			<br>
+			<hr>
+		</div>
+	</section>
 
-
+	<section class="ftco-section ftco-animate">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<h4 class="mb-4 pb-3"><strong>Browse</strong> package by categories</h4>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-md-2">
+					<div class="border text-center p-3">
+						<img src="{{ asset('images/gallery/rocks.png') }}" alt="">
+						<h6 class="mt-3">Mountain</h6>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="border text-center p-3">
+						<img src="{{ asset('images/gallery/sunrise.png') }}" alt="">
+						<h6 class="mt-3">Beach</h6>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="border text-center p-3">
+						<img src="{{ asset('images/gallery/waterfall.png') }}" alt="">
+						<h6 class="mt-3">Waterfall</h6>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="border text-center p-3">
+						<img src="{{ asset('images/gallery/office.png') }}" alt="">
+						<h6 class="mt-3">City</h6>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
     <section class="ftco-section testimony-section bg-light">
       <div class="container">
         <div class="row justify-content-start">
           <div class="col-md-5 heading-section ftco-animate">
-          	<span class="subheading">Bmc Travel Service</span>
-            <h2 class="mb-4 pb-3"><strong>Why</strong> Choose Us?</h2>
+            <h4 class="mb-4 pb-3"><strong>Why</strong> Choose Us?</h4>
             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
             <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life.</p>
             <p><a href="#" class="btn btn-primary btn-outline-primary mt-4 px-4 py-3">Read more</a></p>
           </div>
 					<div class="col-md-1"></div>
           <div class="col-md-6 heading-section ftco-animate">
-          	<span class="subheading">Testimony</span>
-            <h2 class="mb-4 pb-3"><strong>Our</strong> Guests Says</h2>
+            <h4 class="mb-4 pb-3"><strong>Our</strong> Guests Says</h4>
           	<div class="row ftco-animate">
 		          <div class="col-md-12">
 		            <div class="carousel-testimony owl-carousel">
@@ -329,79 +403,57 @@
 		              </div>
 		            </div>
 		          </div>
-		        </div>
+		    </div>
           </div>
         </div>
       </div>
     </section>
     <section class="ftco-section">
       <div class="container">
-        <div class="row justify-content-start mb-5 pb-3">
-          <div class="col-md-7 heading-section ftco-animate">
-            <span class="subheading">Recent Blog</span>
-            <h2><strong>Tips</strong> &amp; Articles</h2>
+        <div class="row justify-content-start mb-3 pb-3">
+          <div class="col-md-10 heading-section ftco-animate">
+            <h4><strong>Tips</strong> &amp; Articles</h4>
           </div>
+		  <div class="col-md-2">
+			<a href="" class="btn border-grey">Explore More <span class="ion-md-arrow-dropright"></span> </a>
+			</div>
         </div>
         <div class="row d-flex">
-          <div class="col-md-3 d-flex ftco-animate">
-            <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('direngine/images/image_1.jpg');">
-              </a>
-              <div class="text p-4 d-block">
-              	<span class="tag">Tips, Travel</span>
-                <h3 class="heading mt-3"><a href="#">8 Best homestay in Philippines that you don't miss out</a></h3>
-                <div class="meta mb-3">
-                  <div><a href="#">August 12, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-              </div>
-            </div>
+          <div class="col-md-4">
+		  	<div class="travel-tips">
+				<div class="relative">
+					<div class="layer transition"></div>
+					<img src="direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid transition">
+				</div>
+				<div class="bottom">
+					<div class="title">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet .....</div>
+					<div class="link">Read More</div>
+				</div>
+			</div>
           </div>
-          <div class="col-md-3 d-flex ftco-animate">
-            <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('direngine/images/image_2.jpg');">
-              </a>
-              <div class="text p-4">
-              	<span class="tag">Culture</span>
-                <h3 class="heading mt-3"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                <div class="meta mb-3">
-                  <div><a href="#">August 12, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-              </div>
-            </div>
+          <div class="col-md-4">
+		  	<div class="travel-tips">
+				<div class="relative">
+					<div class="layer transition"></div>
+					<img src="direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid transition">
+				</div>
+				<div class="bottom">
+					<div class="title">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet .....</div>
+					<div class="link">Read More</div>
+				</div>
+			</div>
           </div>
-          <div class="col-md-3 d-flex ftco-animate">
-            <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('direngine/images/image_3.jpg');">
-              </a>
-              <div class="text p-4">
-              	<span class="tag">Tips, Travel</span>
-                <h3 class="heading mt-3"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                <div class="meta mb-3">
-                  <div><a href="#">August 12, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 d-flex ftco-animate">
-            <div class="blog-entry align-self-stretch">
-              <a href="blog-single.html" class="block-20" style="background-image: url('direngine/images/image_4.jpg');">
-              </a>
-              <div class="text p-4">
-              	<span class="tag">Tips, Travel</span>
-                <h3 class="heading mt-3"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                <div class="meta mb-3">
-                  <div><a href="#">August 12, 2018</a></div>
-                  <div><a href="#">Admin</a></div>
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                </div>
-              </div>
-            </div>
+          <div class="col-md-4">
+		  	<div class="travel-tips">
+				<div class="relative">
+					<div class="layer transition"></div>
+					<img src="direngine/images/destinations/bromo.jpg" alt="" class="img-fluid transition">
+				</div>
+				<div class="bottom">
+					<div class="title">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet .....</div>
+					<div class="link">Read More</div>
+				</div>
+			</div>
           </div>
         </div>
       </div>
