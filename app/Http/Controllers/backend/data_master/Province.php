@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-use App\ProvinceModel;
+use App\Province_model;
 
 class Province extends Controller
 {
@@ -14,11 +14,22 @@ class Province extends Controller
     
     {
         // $prov = DB::table('province')->get();
-        $province = ProvinceModel::all();
-        return view('backend.data_master.province.list-province', ['province' => $prov]);
+        $province = Province_model::all();
+        return view('backend.data_master.province.list-province', ['province' => $province]);
     }
-    public function add()
+    public function create()
     {
         return view('backend.data_master.province.add-province');
+    }
+    function store(Request $request)
+    {
+        //insert
+        
+        
+        DB::table('province')->insert([
+            'province_name' => $request->province_name
+        ]);
+        
+        return redirect('admin.backend.data_master.province.list-province');
     }
 }
