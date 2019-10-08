@@ -30,6 +30,6 @@ class Province extends Controller
             'province_name' => $request->province_name
         ]);
         
-        return redirect('admin.backend.data_master.province.list-province');
+        return redirect('admin/data-master/province');
     }
 }
