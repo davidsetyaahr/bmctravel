@@ -12,8 +12,8 @@ class Tags extends Controller
 {
     function index()
     {
-        $tips_tags = Tags_model::all();
-        return view('backend.travel_tips.tags.list-tags' , ['id_tips_tags' => $tips_tags]);
+        $tag = Tags_model::all();
+        return view('backend.travel_tips.tags.list-tags' , ['id_tag' => $tag]);
     }
 
     function add()
@@ -23,13 +23,15 @@ class Tags extends Controller
 
     function store(Request $request)
     {
-        $tag = new Tag;
-        $tag->id_tips_tag = $request->id_tips_tag;
-        $tag->id_travel_tips = $request->id_travel_tips;
-        $tag->id_tag = $request->id_tag;
-        $tag->save();
-
-        return redirect('backend.travel_tips.tags.list-tags');
+                //validasi
+                $request->validate([
+                    'tag_name' => 'required'
+                ]);
+                // insert
+                DB::table('tags')->insert([
+                'tag_name' => $request->tag_name
+                ]);
+        return redirect('/admin/travel-tips/tags')->with('status', 'Travel tips tags berhasil ditambahkan');
     }
 
     function show()
