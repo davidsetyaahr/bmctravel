@@ -10,8 +10,6 @@ use App\Province_model;
 use App\City_model;
 
 
-use App\City_model;
-
 class City extends Controller
 {
     function index()
