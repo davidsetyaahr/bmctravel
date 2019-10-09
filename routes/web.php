@@ -65,3 +65,4 @@ Route::get('/admin/destinations/edit-categories/{id}', 'backend\destinations\Cat
 Route::post('/admin/tour-package/price-categories/update','backend\tour_package\PriceCategories@update');
 Route::post('/admin/destinations/categories/update','backend\destinations\Categories@update');
 Route::post('/admin/hotel/update','backend\hotel\Hotel@update');
+Route::get('/travel-tips/detail-travel', 'frontend\TravelTips@detail');
