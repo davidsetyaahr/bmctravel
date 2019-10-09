@@ -20,11 +20,15 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach( $province as $province)
                             <tr>
-                                <td>1</td>
-                                <td>A</td>
-                                <td>A</td>
+                            <th scope="row">{{ $loop->iteration }}</th>
+                                <td>{{ $province->province_name }}</td>
+                                <td>
+                                <a href="/province/1" class="badge badge-info">detail</a>
+                                </td>
                             </tr>
+                        @endforeach 
                         </tbody>
                     </table>
                 </div>
