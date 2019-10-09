@@ -10,93 +10,71 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-            <form action="{{ url('admin/destinations/destinations/insert-destination') }}" method="post">
+            @include('backend.gallery.gallery-template.select-gallery', ['type' => 'multiple', 'gallery' => $gallery, 'categories' => $categories])
+            <form action="{{ url('admin/destinations/destinations/add-destination') }}" method="post">
                 {{ csrf_field()}}
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-md-6 m-t-15">
+                            <div class="col-md-12 m-t-15">
                                 <label for="">Destination Name</label>
-                                <input type="text" name="destination_name" class="form-control" placeholder="Destination Name">
-                                @if($errors->has('Destination Name'))
-                                <div class="text-danger small">
-                                    {{ $errors->first('Destination Name') }}
-                                </div>
-                                @endif
+                                <input type="text" name="destination_name" class="form-control  @error('destination_name') is-invalid @enderror" placeholder="Destination Name"
+                                value="{{ old('destination_name')}}">
+                                @error('destination_name')
+                                    <div class="invalid-feedback"> {{ $message}} </div>
+                                @enderror
                             </div>
                             <div class="col-md-6 m-t-15">
                                 <label for="">Category</label>
-                                <select class="select2 form-control custom-select select2-hidden-accessible" name="id_category" id="">
+                                <select class="select2 form-control custom-select select2-hidden-accessible @error('id_category') is-invalid @enderror" name="id_category" id=""
+                                value="{{ old('id_category')}}">
                                     <option value="">---Select---</option>
+                                    @foreach($destination_categories as $c)
+                                    <option value="{{ $c->id_category }}">{{ $c->category_name}}</option>
+                                    @endforeach 
                                 </select>
-                                @if($errors->has('Category'))
-                                <div class="text-danger small">
-                                    {{ $errors->first('Category') }}
+                                 @error('Category')
+                                    <div class="invalid-feedback"> {{ $message}} </div>
+                                @enderror 
                                 </div>
-                                @endif
-                            </div>
                             <div class="col-md-6 m-t-15">
                                 <label for="">City & Province</label>
-                                <select class="select2 form-control custom-select select2-hidden-accessible" name="id_city" id="">
+                                <select class="select2 form-control custom-select select2-hidden-accessible @error('id_city') is-invalid @enderror" name="id_city" id=""
+                                value="{{ old('id_city')}}">
                                     <option value="">---Select---</option>
+                                    @foreach($city as $cty)
+                                    <option value="{{ $cty->id_city }}">{{ $cty->city_name}}</option>
+                                    @endforeach
                                 </select>
-                                @if($errors->has('City'))
-                                <div class="text-danger small">
-                                    {{ $errors->first('City') }}
+                                @error('City')
+                                    <div class="invalid-feedback"> {{ $message}} </div>
+                                @enderror 
                                 </div>
-                                @endif
+                            <div class="col-md-12 m-t-15">
+                                <label for="">Gallery</label>
+                                @include('backend.gallery.gallery-template.gallery-hidden')     
                             </div>
-                            <div class="col-md-6 m-t-15">
-                                <label for="">MAP</label>
-                                <input type="text" name="map" class="form-control">
-                                @if($errors->has('Map'))
-                                <div class="text-danger small">
-                                    {{ $errors->first('Map') }}
-                                </div>
-                                @endif
+                            <div class="col-md-12 m-t-15">
+                                <label for="">Map</label>
+                                <input type="text" name="map" class="form-control @error('map') is-invalid @enderror" value="{{ old('map')}}">
+                                @error('map')
+                                    <div class="invalid-feedback"> {{ $message}} </div>
+                                @enderror
                             </div>
-                            <div class="col-md-6 m-t-15">
-                                <label for="">Photo Uploud</label>
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input"  name="gallery" >
-                                    <label class="custom-file-label" for="validatedCustomFile">
-                                    Choose File...
-                                    </label>
-                                </div>
-                                @if($errors->has('Gallery'))
-                                <div class="text-danger small">
-                                    {{ $errors->first('Gallery') }}
-                                </div>
-                                @endif
-                            </div>
-                            <div class="col-md-12 text-center m-t-30">
+                            <div class="col-md-12 m-t-30">
                                 <label for="">OverView</label>
-                                <div id="editor-overview" style="height: 300px;">
-                                        <p>Hello World!</p>
-                                        <p>Some initial <strong>bold</strong> text</p>
-                                    <p>
-                                        <br>
-                                    </p>
-                                </div>
-                                @if($errors->has('Overview'))
-                                <div class="text-danger small">
-                                    {{ $errors->first('Overview') }}
-                                </div>
-                                @endif
+                                <textarea class="form-control @error('overview') is-invalid @enderror" name="overview" id="" cols="30" rows="10">
+                                {{ old('overview')}}</textarea>
+                                @error('overview')
+                                    <div class="invalid-feedback"> {{ $message}} </div>
+                                @enderror
                             </div>
-                            <div class="col-md-12 text-center m-t-30">
+                            <div class="col-md-12 text-center m-t-15">
                                 <label for="">Information</label>
-                                <div id="editor-information" style="height: 300px;">
-                                    <p>Hello World!</p>
-                                    <p>Some initial <strong>bold</strong> text</p>
-                                    <p>
-                                        <br>
-                                    </p>
-                                </div>
-                                @if($errors->has('Information'))
-                                <div class="text-danger small">
-                                    {{ $errors->first('Information') }}
-                                </div>
-                                @endif
+                                <textarea class="form-control @error('information') is-invalid @enderror" id="ckeditor1" name="information" cols="30" rows="10">
+                                {{ old('information')}}</textarea>
+                                @error('information')
+                                    <div class="invalid-feedback"> {{ $message}} </div>
+                                @enderror
                             </div>
                         </div>
                     </div>

@@ -23,8 +23,8 @@ Route::get('/admin/tour-package/tour-type', 'backend\tour_package\TourType@index
 Route::get('/admin/tour-package/add-tour-type', 'backend\tour_package\TourType@add');
 Route::get('/admin/destinations/destinations','backend\destinations\Destinations@index');
 Route::get('/admin/destinations/destinations/list','backend\destinations\Destinations@index');
-Route::get('/admin/destinations/destinations/add-destination','backend\destinations\Destinations@add');
-Route::post('/admin/destinations/destinations/insert-destination','backend\destinations\Destinations@insert');
+Route::get('/admin/destinations/destinations/add-destination','backend\destinations\Destinations@create');
+Route::post('/admin/destinations/destinations/add-destination','backend\destinations\Destinations@store');
 Route::get('/admin/destinations/categories','backend\destinations\Categories@index');
 Route::get('/admin/destinations/add-categories', 'backend\destinations\Categories@create');
 Route::post('/admin/destinations/add-categories', 'backend\destinations\Categories@store');
@@ -64,3 +64,5 @@ Route::get('/admin/destinations/edit-categories/{id}', 'backend\destinations\Cat
 Route::post('/admin/tour-package/price-categories/update','backend\tour_package\PriceCategories@update');
 Route::post('/admin/destinations/categories/update','backend\destinations\Categories@update');
 Route::post('/admin/hotel/update','backend\hotel\Hotel@update');
+Route::get('/admin/destinations/destinations/edit-categories/{id}', 'backend\destinations\Destinations@edit');
+Route::post('/admin/destinations/destinations/update', 'backend\destinations\Destinations@update');
