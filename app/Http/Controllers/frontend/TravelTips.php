@@ -11,4 +11,9 @@ class TravelTips extends Controller
     {
         return view('frontend.travel-tips.list-travel-tips');
     }
+
+    public function detail()
+    {
+        return view('frontend\travel-tips\detail-travel');
+    }
 }

@@ -10,10 +10,14 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
+            <form action="/admin/data-master/add-province" method="post">
+            @csrf
                 <label for="">Province</label>
-                <input type="text" class="form-control"><br>
+                <input type="text" class="form-control" name="province_name">
+                <br>
                 <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Save</button>
                 <button class="btn btn-secondary" type="reset"><span class="mdi mdi-refresh"></span> Reset</button>
+            </form>
             </div>
         </div>
     </div>
