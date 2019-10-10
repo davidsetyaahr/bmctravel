@@ -17,14 +17,20 @@
                                 <th>Id</th>
                                 <th>Province</th>
                                 <th>City</th>
+                                <th>Option</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach( $city as $city) ?>
                             <tr>
-                                <td>1</td>
-                                <td>A</td>
-                                <td>A</td>
+                            <th scope="row">{{ $loop->iteration }}</th>
+                                <td>{{ $city->province_id }}</td>
+                                <td>{{ $city->city_name }}</td>
+                                <td>
+                                <a href="/city/1" class="badge badge-info">detail</a>
+                                </td>
                             </tr>
+                            @endforeach ?>
                         </tbody>
                     </table>
                 </div>

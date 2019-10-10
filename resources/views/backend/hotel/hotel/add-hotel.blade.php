@@ -22,11 +22,7 @@
                 <br>
                 <label for="">Gallery</label>
                 @include('backend.gallery.gallery-template.gallery-hidden')
-<!--                 <input type="text" class="form-control @error('id_gallery') is-invalid @enderror" name="id_gallery">
-                @error('id_gallery')
-                    <div class="invalid-feedback"> {{ $message}} </div>
-                    @enderror
- -->                <br>
+                <br>
                 <label for="">Map</label>
                 <input type="text" class="form-control @error('map') is-invalid @enderror" name="map"
                 value="{{ old('map')}}">

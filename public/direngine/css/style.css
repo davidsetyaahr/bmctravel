@@ -6,6 +6,9 @@
  */
 
  /*custom*/
+ .color-white{
+   color : white;
+ }
  .travel-tips{
    border : 1px solid #ddd;
   }
@@ -8683,32 +8686,23 @@ textarea.form-control {
   background: #3c312e; }
 
 .ftco-footer {
+  border-top : 1px solid #ddd;
   font-size: 16px;
-  background: #2d3747;
   padding: 8em 0 8em 0; }
   .ftco-footer .ftco-footer-logo {
     text-transform: uppercase;
     letter-spacing: .1em; }
   .ftco-footer .ftco-footer-widget h2 {
     font-weight: normal;
-    color: #fff;
     margin-bottom: 40px;
     font-size: 18px;
     font-weight: 400; }
-  .ftco-footer .ftco-footer-widget ul li a span {
-    color: #fff; }
-  .ftco-footer .ftco-footer-widget .btn-primary {
+    .ftco-footer .ftco-footer-widget .btn-primary {
     background: #fff !important;
     border: 2px solid #fff !important; }
     .ftco-footer .ftco-footer-widget .btn-primary:hover {
       background: #fff;
       border: 2px solid #fff !important; }
-  .ftco-footer p {
-    color: rgba(255, 255, 255, 0.7); }
-  .ftco-footer a {
-    color: rgba(255, 255, 255, 0.7); }
-    .ftco-footer a:hover {
-      color: #fff; }
   .ftco-footer .ftco-heading-2 {
     font-size: 17px;
     font-weight: 400;
@@ -9074,8 +9068,6 @@ textarea.form-control {
     display: table;
     line-height: 1.5;
     margin-bottom: 15px; }
-  .block-23 ul li span {
-    color: rgba(255, 255, 255, 0.7); }
   .block-23 ul li .icon, .block-23 ul li .text {
     display: table-cell;
     vertical-align: top; }
@@ -9083,7 +9075,7 @@ textarea.form-control {
     width: 40px;
     font-size: 18px;
     padding-top: 2px;
-    color: white; }
+   }
 
 .block-6 {
   margin-bottom: 40px; }
@@ -9158,7 +9150,6 @@ textarea.form-control {
       border: 2px solid rgba(0, 0, 0, 0.1);
       font-size: 14px;
       width: 100%;
-      height: 70px !important;
       bordeR: 1px solid transparent;
       padding: 10px 30px;
       -webkit-border-radius: 0;
@@ -9230,7 +9221,6 @@ textarea.form-control {
     margin-bottom: 4px;
     font-weight: 400; }
     .block-27 ul li a, .block-27 ul li span {
-      color: #da2f29;
       text-align: center;
       display: inline-block;
       width: 40px;
