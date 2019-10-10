@@ -29,6 +29,7 @@ Route::get('/admin/destinations/categories','backend\destinations\Categories@ind
 Route::get('/admin/destinations/add-categories', 'backend\destinations\Categories@create');
 Route::post('/admin/destinations/add-categories', 'backend\destinations\Categories@store');
 Route::get('/admin/gallery/gallery','backend\gallery\Gallery@index');
+Route::post('/admin/gallery/add-gallery','backend\gallery\Gallery@store');
 Route::get('/admin/gallery/add-gallery','backend\gallery\Gallery@add');
 Route::get('/admin/gallery/categories','backend\gallery\Categories@index');
 Route::get('/admin/gallery/add-categories-gallery','backend\gallery\Categories@add');
