@@ -9,6 +9,6 @@ class Destinations extends Controller
 {
     public function index()
     {
-        return view('frontend\destinations\list-destinations');
+        return view('frontend.destinations.list-destinations');
     }
 }

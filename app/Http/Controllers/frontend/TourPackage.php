@@ -9,10 +9,10 @@ class TourPackage extends Controller
 {
     public function index()
     {
-        return view('frontend\tour-package\list-tour-package');
+        return view('frontend.tour-package.list-tour-package');
     }
     public function detail()
     {
-        return view('frontend\tour-package\detail-tour-package');
+        return view('frontend.tour-package.detail-tour-package');
     }
 }
