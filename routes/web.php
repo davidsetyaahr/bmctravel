@@ -23,12 +23,13 @@ Route::get('/admin/tour-package/tour-type', 'backend\tour_package\TourType@index
 Route::get('/admin/tour-package/add-tour-type', 'backend\tour_package\TourType@add');
 Route::get('/admin/destinations/destinations','backend\destinations\Destinations@index');
 Route::get('/admin/destinations/destinations/list','backend\destinations\Destinations@index');
-Route::get('/admin/destinations/destinations/add-destination','backend\destinations\Destinations@add');
-Route::post('/admin/destinations/destinations/insert-destination','backend\destinations\Destinations@insert');
+Route::get('/admin/destinations/destinations/add-destination','backend\destinations\Destinations@create');
+Route::post('/admin/destinations/destinations/add-destination','backend\destinations\Destinations@store');
 Route::get('/admin/destinations/categories','backend\destinations\Categories@index');
 Route::get('/admin/destinations/add-categories', 'backend\destinations\Categories@create');
 Route::post('/admin/destinations/add-categories', 'backend\destinations\Categories@store');
 Route::get('/admin/gallery/gallery','backend\gallery\Gallery@index');
+Route::post('/admin/gallery/add-gallery','backend\gallery\Gallery@store');
 Route::get('/admin/gallery/add-gallery','backend\gallery\Gallery@add');
 Route::get('/admin/gallery/categories','backend\gallery\Categories@index');
 Route::get('/admin/gallery/add-categories-gallery','backend\gallery\Categories@add');
@@ -67,3 +68,11 @@ Route::get('/admin/destinations/edit-categories/{id}', 'backend\destinations\Cat
 Route::post('/admin/tour-package/price-categories/update','backend\tour_package\PriceCategories@update');
 Route::post('/admin/destinations/categories/update','backend\destinations\Categories@update');
 Route::post('/admin/hotel/update','backend\hotel\Hotel@update');
+<<<<<<< HEAD
+Route::get('/admin/data-master/edit-province/{id}','backend\data_master\Province@edit');
+Route::/*method dari form*/post(/* url */'/admin/data-master/update-province',/*controller*/'backend\data_master\Province@update');
+=======
+Route::get('/admin/destinations/destinations/edit-categories/{id}', 'backend\destinations\Destinations@edit');
+Route::post('/admin/destinations/destinations/update', 'backend\destinations\Destinations@update');
+Route::get('/travel-tips/detail-travel', 'frontend\TravelTips@detail');
+>>>>>>> 2d9057d62b8cf870cbf916879c037f68d2acc841

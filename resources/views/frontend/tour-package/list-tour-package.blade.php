@@ -41,9 +41,67 @@
     </div>
 
 
-    <section class="ftco-section ftco-degree-bg">
+    <section class="ftco-section ftco-degree-bg p-0 mb-5">
       <div class="container">
-        <div class="row">
+        <div class="row mt-3">
+            <div class="col-md-6">
+                <small><span class="color-red">Home</span> > Tour Package</small>
+            </div>
+            <div class="col-md-6">
+                <small class="float-right"><span class="color-red">Tour Package: </span> rated 4.8/5 (based on 65514 reviews) | Package starting from IDR 1.000.000</small>
+            </div>
+            <div class="col-md-12">
+                <p class="mt-2">Tour Packages are one of the best ways to travel hassle-free. With seamless planning, arrangements, and transfers being taken care of, booking holiday packages is the best way to explore the world’s varied landscapes. We all have our reasons and excuses to travel. Either we’re looking for a solo adventure, seeking a quiet romantic getaway with our partner, or taking the whole family for a memorable holiday vacation. Whatever the reason is, travel packages of Travel Triangle make sure every tourist get an experience to cherish for a long time.</p>    
+            </div>
+            <div class="col-md-12 mt-5">
+    				<div class="destinationtext owl-carousel ftco-animate">
+						<div class="item">
+							<img src="direngine/images/destinations/kawah-wurung.png" alt="" class="img-fluid">
+							<div class="box">
+								<h6>Explore East Java</h6>
+							</div>
+						</div>
+						<div class="item">
+							<img src="direngine/images/destinations/ijen.jpg" alt="" class="img-fluid">
+							<div class="box">
+								<h6>Explore Bondowoso</h6>
+							</div>
+						</div>
+						<div class="item">
+							<img src="direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid">
+							<div class="box">
+								<h6>Mountain Vibes</h6>
+							</div>
+						</div>
+						<div class="item">
+							<img src="direngine/images/destinations/bali.jpg" alt="" class="img-fluid">
+							<div class="box">
+								<h6>Beach Vibes</h6>
+							</div>
+						</div>
+						<div class="item">
+							<img src="direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid">
+							<div class="box">
+								<h6>Menjangan & Tabuhan Island</h6>
+							</div>
+						</div>
+						<div class="item">
+							<img src="direngine/images/destinations/bromo.jpg" alt="" class="img-fluid">
+							<div class="box">
+								<h6>Bromo Midnight</h6>
+							</div>
+						</div>
+    				</div>
+                </div>
+            <div class="col-md-12 mt-5">
+                <h5>Best Destinations For Your Trip</h5>
+                <div class="mt-3">
+                    <a href="#" class="btn btn-primary btn-outline-primary btn-sm">Mount Bromo</a>
+                    <a href="#" class="btn btn-primary btn-outline-primary btn-sm">Kawah Ijen</a>
+                    <a href="#" class="btn btn-primary btn-outline-primary btn-sm">Pantai Tabuhan</a>
+                    <a href="#" class="btn btn-primary btn-outline-primary btn-sm">Pantai Menjangan</a>
+                </div>
+            </div>
         </div>
       </div>
     </section> <!-- .section -->

@@ -1,7 +1,7 @@
 @extends('backend.template.main')
 @section('insert_caption','Insert New Gallery')
 @section('view_caption','View All Gallery')
-@section('insert_link','add-categories-gallery')
+@section('insert_link','add-gallery')
 @section('view_link','gallery')
 @section('view_status','active')
 @section('insert_status','')
