@@ -6,8 +6,185 @@
  */
 
  /*custom*/
- .color-white{
+.compare-package{
+  position: fixed;
+  right: 20px;
+  top : 50%;
+}
+.compare-package span{
+  -o-box-shadow: 0px 3px 8px 1px rgba(0,0,0,0.15);  
+  -webkit-box-shadow: 0px 3px 8px 1px rgba(0,0,0,0.15);  
+  -moz-box-shadow: 0px 3px 8px 1px rgba(0,0,0,0.15);  
+  box-shadow: 0px 3px 8px 1px rgba(0,0,0,0.15);  
+  border-radius: 100%;
+  border : 1.2px solid #f8b34d;
+  padding : 15px 10px;
+}
+.compare-package p{
+  margin-top : 13px;
+  font-size : 12px;
+  color : black;
+}
+.inline-package{
+  position: relative;
+  margin-bottom: 15px;
+}
+.inline-package .top{
+  padding : 8px;
+  overflow: auto;
+  border : 1px solid #ddd;
+}
+.inline-package .top .left{
+ float: left;
+ width : 30%;
+ position: relative;
+}
+.inline-package .top .right{
+  margin-left : 3%;
+ float: left;
+ width : 67%;
+}
+.inline-package .top .right .right-top{
+  overflow: auto;
+}
+.inline-package .top .right .right-top .title{
+  float : left;
+  width : 60%;
+}
+.inline-package .top .right .right-top .compare{
+  float : right;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+.inline-package .top .right .right-bottom{
+  overflow: auto;
+}
+.inline-package .top .right .right-bottom .left{
+  float : left;
+  width : 58%;
+  margin-right : 2%;
+}
+.inline-package .top .right .right-bottom .left .durations{
+  font-size : 13px;
+  color : #da2f29;
+  font-weight: 500;
+}
+.inline-package .top .right .right-bottom .left .price{
+  margin-bottom: 0;
+}
+.inline-package .top .right .right-bottom .left .price small{
+  font-size : 12px;
+  color : #b2b2b2!important;
+  font-weight: normal;
+}
+.inline-package .top .right .right-bottom .left .price .badge{
+  margin-left : 3%;
+  font-size : 12px;
+  font-weight: normal;
+}
+.inline-package .top .right .right-bottom .left .price .perpax{
+  color : #4caf50;
+  font-weight: 500;
+}
+.inline-package .top .right .right-bottom .left .price .perpax span{
+  color : #b2b2b2!important;
+  font-size : 14px;
+}
+.inline-package .top .right .right-bottom .left .price .perpax del{
+  color : black;
+  font-size : 14px;
+}
+.inline-package .top .right .right-bottom .left .include{
+  border-bottom: 0;
+}
+.inline-package .top .right .right-bottom .left .include .title small{
+  color : #b2b2b2!important;
+  font-size : 11px;
+}
+.inline-package .top .right .right-bottom .left .include .title{
+  line-height: 90%;
+  color : black;
+  font-size : 13px;
+  font-weight: 500;
+}
+.inline-package .top .right .right-bottom .right{
+  float : left;
+  width: 40% !important;
+  margin-left : 0 !important;
+}
+.inline-package .top .right .right-bottom .right .activities{
+  margin-top : 10px;
+  overflow: auto;
+}
+.inline-package .top .right .right-bottom .right .activities a{
+  display : inline-block;
+  border : 1px solid #ddd;
+  color: #b2b2b2;
+  font-size : 13px;
+  padding : 5px 8px;
+  margin-top : 5px;
+  margin-left : 5px;
+  float : right;
+  border-radius : 50px;
+}
+.inline-package .top .right .right-bottom .right .desc{
+  margin-top : 6px;
+  display: block;
+  text-align: right;
+  font-size : 12px;
+  color : #b2b2b2;
+}
+.inline-package .bottom{
+  border : 1px solid #ddd;
+  border-top : none;
+  overflow: auto;
+}
+.inline-package .bottom .left{
+  padding : 8px;
+  float : left;
+  width : 60%;
+}
+.inline-package .bottom .left .img{
+  float : left;
+  width : 25%;
+  text-align: center;
+  position: relative;
+}
+.inline-package .bottom .left .img img{
+  width : 20px;
+}
+.inline-package .bottom .left .img p{
+  font-size: 13px;
+  margin-bottom: 0;
+}
+.inline-package .bottom .right{
+  float : left;
+  height : 64px;
+  width : 40%;
+}
+.inline-package .bottom .right a{
+  position: relative;
+  display : block;
+  width: 100%;
+  height: 100%;
+  background : #da2f29;
+  color : white;
+}
+.inline-package .bottom .right a span{
+  position: absolute;
+  font-size: 16px;
+  text-align: center;
+  width: 100%;
+  top : 25%;
+}
+.left-filter .custom-checkbox label{
+  margin-left : 7px;
+}
+.color-white{
    color : white;
+ }
+ .color-grey{
+   color : #3e3e3e !important;
  }
  .travel-tips{
    border : 1px solid #ddd;
@@ -59,11 +236,11 @@
 .package1{
   overflow: hidden;
 }
-.package1 .sticky-note{
+.sticky-note{
   z-index: 3;
   position : absolute;
   top : 0;
-  left : -5px;
+  left : -7px;
   transform : skewX(-25deg);
   -webkit-ttransform : skewX(-25deg);
   -o-transform : skewX(-25deg);
@@ -72,7 +249,7 @@
   padding-left : 20px;
   background : white;
 }
-.package1 .sticky-note span{
+.sticky-note span{
   display: block;
   transform: skewX(25deg);
   -moz-transform: skewX(25deg);
