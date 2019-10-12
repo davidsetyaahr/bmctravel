@@ -25,7 +25,7 @@
                             <th scope="row">{{ $loop->iteration }}</th>
                                 <td>{{ $province->province_name }}</td>
                                 <td>
-                                <a href="/province/1" class="badge badge-info">detail</a>
+                                <a href="/admin/data-master/edit-province/{{ $province->id_province }}" class="badge badge-info">Edit</a>
                                 </td>
                             </tr>
                         @endforeach 

@@ -29,6 +29,7 @@ Route::get('/admin/destinations/categories','backend\destinations\Categories@ind
 Route::get('/admin/destinations/add-categories', 'backend\destinations\Categories@create');
 Route::post('/admin/destinations/add-categories', 'backend\destinations\Categories@store');
 Route::get('/admin/gallery/gallery','backend\gallery\Gallery@index');
+Route::post('/admin/gallery/add-gallery','backend\gallery\Gallery@store');
 Route::get('/admin/gallery/add-gallery','backend\gallery\Gallery@add');
 Route::get('/admin/gallery/categories','backend\gallery\Categories@index');
 Route::get('/admin/gallery/add-categories-gallery','backend\gallery\Categories@add');
@@ -67,6 +68,11 @@ Route::get('/admin/destinations/edit-categories/{id}', 'backend\destinations\Cat
 Route::post('/admin/tour-package/price-categories/update','backend\tour_package\PriceCategories@update');
 Route::post('/admin/destinations/categories/update','backend\destinations\Categories@update');
 Route::post('/admin/hotel/update','backend\hotel\Hotel@update');
+Route::get('/admin/data-master/edit-province/{id}','backend\data_master\Province@edit');
+Route::/*method dari form*/post(/* url */'/admin/data-master/update-province',/*controller*/'backend\data_master\Province@update');
+Route::get('/admin/destinations/destinations/edit-categories/{id}', 'backend\destinations\Destinations@edit');
+Route::post('/admin/destinations/destinations/update', 'backend\destinations\Destinations@update');
+Route::get('/travel-tips/detail-travel', 'frontend\TravelTips@detail');
 Route::get('/admin/destinations/destinations/edit-categories/{id}', 'backend\destinations\Destinations@edit');
 Route::post('/admin/destinations/destinations/update', 'backend\destinations\Destinations@update');
 Route::get('/travel-tips/detail-travel', 'frontend\TravelTips@detail');
