@@ -44,7 +44,9 @@ Route::get('/admin/travel-tips/travel-tips/list','backend\travel_tips\TravelTips
 Route::get('/admin/travel-tips/travel-tips/add-travel-tips','backend\travel_tips\TravelTips@add');
 Route::get('/admin/travel-tips/travel-tips','backend\travel_tips\TravelTips@index');
 Route::post('/admin/travel-tips/add-tags','backend\travel_tips\Tags@store');
+Route::get('/admin/travel-tips/edit-tags/{id}', 'backend\travel_tips\Tags@edit');
 Route::get('/admin/travel-tips/tags','backend\travel_tips\Tags@index');
+Route::post('/admin/travel-tips/tags/update', 'backend\travel_tips\Tags@update');
 Route::get('/admin/travel-tips/add-tags','backend\travel_tips\Tags@add');
 Route::get('/admin/travel-tips/edit-tags','backend\travel_tips\Tags@show');
 Route::get('/admin/users/user','backend\users\User@index');
@@ -63,6 +65,7 @@ Route::get('/destinations', 'frontend\Destinations@index');
 Route::get('/travel-tips', 'frontend\TravelTips@index');
 Route::get('/signin', 'frontend\SignIn@index');
 Route::get('/admin/tour-package/edit-price-categories/{id}', 'backend\tour_package\PriceCategories@edit');
+Route::get('/admin/gallery/edit-gallery/{id}', 'backend\gallery\Gallery@edit');
 Route::get('/admin/hotel/edit-hotel/{id}', 'backend\hotel\Hotel@edit');
 Route::get('/admin/destinations/edit-categories/{id}', 'backend\destinations\Categories@edit');
 Route::post('/admin/tour-package/price-categories/update','backend\tour_package\PriceCategories@update');
