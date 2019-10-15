@@ -1,6 +1,6 @@
 @extends('frontend.common.template')
 @section('container')
-    <div class="hero-wrap js-fullheight-travel" style="background-image: url('https://img.traveltriangle.com/attachments/pictures/847252/original/tour.jpg?tr=w-1366,h-305')">
+    <div class="hero-wrap js-fullheight-travel page-tour-package" style="background-image: url('https://img.traveltriangle.com/attachments/pictures/847252/original/tour.jpg?tr=w-1366,h-305')">
       <div class="overlay js-fullheight-travel"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight-travel align-items-center justify-content-center" data-scrollax-parent="true">
@@ -196,9 +196,9 @@
                            <h6 class="mb-0"> Wonderfull Bromo Ijen Papuma</h6>
                         </div>
                         <div class="compare">
-                          <div class="form-check custom-control custom-checkbox">
+                        <div class="form-check custom-control custom-checkbox">
                             <input type="checkbox" class="form-check-input custom-control-input" id="aa">
-                            <label class="custom-control-label" for="aa">
+                            <label class="custom-control-label add-compare" data-id="1" for="aa">
                               <span>Add to compare</span>
                             </label>
                           </div>
@@ -259,7 +259,7 @@
                       </div>
                     </div>
                     <div class="right">
-                      <a href=""><span>View Details</span></a>
+                      <a href="tour-package/detail-package/1"><span>View Details</span></a>
                     </div>
                   </div>
                 </div>
@@ -279,7 +279,7 @@
                         <div class="compare">
                           <div class="form-check custom-control custom-checkbox">
                             <input type="checkbox" class="form-check-input custom-control-input" id="aa">
-                            <label class="custom-control-label" for="aa">
+                            <label class="custom-control-label add-compare" data-id="2" for="aa">
                               <span>Add to compare</span>
                             </label>
                           </div>

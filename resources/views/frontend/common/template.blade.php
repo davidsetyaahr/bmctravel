@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
 	
-    <link href="https://fonts.googleapis.com/css?family=Blinker&display=swap" rel="stylesheet">	
     <link href="https://fonts.googleapis.com/css?family=Sacramento&display=swap" rel="stylesheet">    
 
     <link rel="stylesheet" href="{{ asset('direngine/css/open-iconic-bootstrap.min.css') }}">
@@ -33,10 +31,9 @@
   <body>
 <div class="top-menu">
 
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark nav-grey" style="padding:0;background:#f2f2f2 !important">
+<nav class="navbar navbar-expand-sm navbar-dark nav-grey">
       <div class="container">
 
-        <!-- Links -->
         <a href="" class="navbar-brand view-map" style="margin-right : 0">View On Map</a>
         <span class="limit">|</span>
         <a href="" class="navbar-brand view-map">DJ TRANS GROUP</a>
@@ -53,7 +50,7 @@
   </ul>
 </div>  
 </nav>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light scrolled awake nav-white" id="ftco-navbar">
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light nav-white" id="ftco-navbar">
     <div class="container">
       <a class="navbar-brand" href="index.html"><img src="{{ asset('direngine/images/BMC-Logo.png') }}" alt="" style="height:50px;"> BMC Travel Service.</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,7 +82,7 @@
       </div>
     </div>
   </nav>
-</div>
+ </div>
   <!-- END nav -->
     @yield('container')
     <footer class="ftco-footer ftco-section">
@@ -170,11 +167,10 @@
   <script src="{{ asset('direngine/js/aos.js') }}"></script>
   <script src="{{ asset('direngine/js/jquery.animateNumber.min.js') }}"></script>
   <script src="{{ asset('direngine/js/bootstrap-datepicker.js') }}"></script>
-  <script src="{{ asset('direngine/js/jquery.timepicker.min.js') }}"></script>
+  <!--script src="{{ asset('direngine/js/jquery.timepicker.min.js') }}"></script-->
   <script src="{{ asset('direngine/js/scrollax.min.js') }}"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="{{ asset('direngine/js/google-map.js') }}"></script>
   <script src="{{ asset('direngine/js/main.js') }}"></script>
-    
+  <script src="{{ asset('direngine/js/frontend.js') }}"></script>
   </body>
 </html>
