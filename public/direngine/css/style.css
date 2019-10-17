@@ -18,7 +18,7 @@
   position: fixed;
   width: 100%;
   background: white;
-  z-index: 10;
+  z-index: 3;
   transition: all.2s ease;
 }
 .menu-detail-package{
@@ -38,9 +38,6 @@
   -moz-transition: all.3s ease;
   -webkit-transition: all.3s ease;
   -o-transition: all.3s ease;
-}
-.menu-detail-package .nav-item:hover, .menu-detail-package .nav-item.active{
-  border-bottom : 2px solid #da2f29;
 }
 .menu-detail-package .nav-link{
   font-size : 15px;
@@ -665,7 +662,7 @@ b{
 hr.bold{
   border-top : 2px solid #D7DCE3;
 }
-.itinerary{
+/* .itinerary{
   padding-top: 30px;
   padding-bottom : 10px;
   overflow: hidden;
@@ -701,8 +698,131 @@ hr.bold{
   font-size : 20px;
   float : right;
 }
+ */
 
-.schedule .time{
+.itinerary{
+  background: white;
+  border-radius : 8px;
+  overflow: hidden;
+}
+.itinerary .banner{
+  position: relative;
+  height : 200px;
+  background-size: cover !important;
+  background-position: center center !important;
+}
+.itinerary:hover .banner .layer{
+  background : rgb(0,0,0,0.4);
+}
+.itinerary .banner .layer{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background : rgb(0,0,0,0.3);
+  left : 0;
+  top : 0;
+}
+.itinerary .banner .layer .text{
+  width: 50%;
+  color : white;
+  margin: auto;
+  position: relative;
+  top : 50%;
+  transform : translateY(-50%);
+  -moz-transform : translateY(-50%);
+  -o-transform : translateY(-50%);
+  -webkit-transform : translateY(-50%);
+  text-align : center;
+}
+.itinerary .banner .layer .text .day{
+  font-size : 26px;
+  font-weight: 500;
+}
+.itinerary .banner .layer .text .title{
+  font-size : 19px;
+}
+.itinerary .body .row-border{
+  border-bottom: 1px solid #ddd;
+} 
+.itinerary .body .row-border:hover{
+  background: #f9f9f9;
+} 
+.itinerary .body .trip{
+  height : 100%;
+  border-right: 1px solid #ddd;
+}
+.itinerary .body .trip .text{
+  padding : 10px;
+  font-size : 20px;
+  line-height: 150%;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+  top : 50%;
+  transform : translateY(-50%);
+}
+.itinerary .body .trip .text p{
+  margin-bottom: 0px;
+}
+.itinerary .body .schedule .time{  
+  background: #f7f7f7;
+  padding : 10px 15px;
+}
+.itinerary .body .schedule .time span{
+  font-size: 13px;  
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.itinerary .body .schedule .time span .dest{
+  font-size : 15px;
+  color : #da2f29;
+}
+.itinerary .body .schedule .time span .icon{
+  background: none;
+  font-size : 20px;
+}
+.itinerary .body .schedule .desc{
+  padding : 15px;
+  font-size : 13px;
+  color : #8d8d8d;
+  letter-spacing: 0.8px;
+}
+.itinerary .others{
+  border-left : 1px solid #ddd;
+  width : 100%;
+  height: 100%;
+}
+.itinerary .others .tour-style{
+  position: relative;
+  padding : 10px;
+  top : 50%;
+  text-align: center;
+  transform: translateY(-50%); 
+  -webkit-transform: translateY(-50%); 
+  -moz-transform: translateY(-50%); 
+  -o-transform: translateY(-50%); 
+}
+.itinerary .others .tour-style img{
+  width : 20%;
+}
+.itinerary .others .tour-style p{
+  color : #d8d8d8;
+  font-size: 17px;
+  margin-top : 5px;
+  margin-bottom: 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.itinerary .others .tour-style .destinations{
+  color : #f9b826;
+  font-size: 13px;
+  margin-top : 5px;
+  margin-bottom: 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* .schedule .time{
   float : left;
   margin-right: 20px;
 }
@@ -720,7 +840,7 @@ hr.bold{
   margin-right : 5px;
   margin-bottom : 10px;
 }
-.border{
+ */.border{
   border : 1px solid #ddd;
 }
 .hotels{
@@ -841,7 +961,7 @@ hr.bold{
   box-sizing: border-box; }
 
 html {
-  font-family: sans-serif;
+  font-family: 'poppinsregular';
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -856,7 +976,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'poppinsregular';
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -4018,13 +4138,29 @@ input[type="button"].btn-block {
     border-top-left-radius: 0;
     border-top-right-radius: 0; }
 
-.nav-pills .nav-link {
-  border-radius: 0.25rem; }
-
-.nav-pills .nav-link.active,
-.nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #da2f29; }
+.nav-pills .nav-item{
+  position: relative;
+  cursor: pointer !important;
+}
+.nav-pills .nav-link::before{
+  content : "";
+  position: absolute;
+  bottom : 0;
+  width : 0%;
+  left : 0;
+  transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  padding : 0px;
+  padding : 1.2px;
+  background: transparent;
+}
+.nav-pills .nav-link.active::before,
+.nav-pills .show > .nav-link, .nav-pills .nav-item:hover .nav-link::before{
+  background: #da2f29;
+  width : 100%;
+}
 
 .nav-fill .nav-item {
   -webkit-box-flex: 1;

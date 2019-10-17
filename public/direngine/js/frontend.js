@@ -32,5 +32,11 @@ $(document).ready(function(){
                 $(menu).css("top","0px")
             }
         })
+
+        $(".nav-pills .nav-item .nav-link").click(function(e){
+            e.preventDefault()
+            var section = $(this).attr("href")
+            $("body,html").animate({"scrollTop" : $(section).offset().top-150},1200)
+        })
     }
 })
