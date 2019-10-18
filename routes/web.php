@@ -78,3 +78,7 @@ Route::post('/admin/destinations/destinations/update', 'backend\destinations\Des
 Route::get('/travel-tips/detail-travel', 'frontend\TravelTips@detail');
 Route::get('/admin/travel-tips/travel-tips/edit-travel-tips/{id}', 'backend\travel_tips\TravelTips@edit');
 Route::post('/admin/travel-tips/travel-tips/update', 'backend\travel_tips\TravelTips@update');
+Route::post('/admin/tour-package/add-durations', 'backend\tour_package\Durations@insert');
+Route::get('/admin/tour-package/edit-durations/{id}', 'backend\tour_package\Durations@edit');
+Route::post('/admin/tour-package/durations/update','backend\tour_package\Durations@update');
+

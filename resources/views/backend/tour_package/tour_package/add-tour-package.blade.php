@@ -6,11 +6,6 @@
 @section('view_status','')
 @section('insert_status','active')
 @section('admin')
-<div class="page-wrapper">
-        <div class="container-fluid">
-            <!-- ============================================================== -->
-            <!-- Start Page Content -->
-            <!-- ============================================================== -->
             <div class="card">
                 <div class="card-body wizard-content">
                     <h4 class="card-title">Basic Form Example</h4>
@@ -56,6 +51,4 @@
                     </form>
                 </div>
             </div>
-        </div>
-    </div>
 @endsection
