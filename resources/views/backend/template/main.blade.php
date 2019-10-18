@@ -15,11 +15,14 @@
     <link href="{{ asset('/matrix-admin-bt4') }}/assets/libs/flot/css/float-chart.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{ asset('/matrix-admin-bt4') }}/dist/css/style.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset('/matrix-admin-bt4') }}/assets/libs/quill/dist/quill.snow.css">
-    <link href="{{ asset('/matrix-admin-bt4') }}/dist/css/custom.css" rel="stylesheet">
+<!--     <link rel="stylesheet" type="text/css" href="{{ asset('/matrix-admin-bt4') }}/assets/libs/quill/dist/quill.snow.css">
+ -->    <link href="{{ asset('/matrix-admin-bt4') }}/dist/css/custom.css" rel="stylesheet">
     <link href="{{ asset('/matrix-admin-bt4') }}/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
     <script src="{{ asset('/ckeditor') }}/ckeditor.js"></script>
-    
+    {{-- step --}}
+    <link href="{{ asset('/matrix-admin-bt4') }}/assets/libs/jquery-steps/jquery.steps.css" rel="stylesheet">
+    <link href="{{ asset('/matrix-admin-bt4') }}/assets/libs/jquery-steps/steps.css" rel="stylesheet">
+    {{-- /step --}}
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -328,8 +331,8 @@
     <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/custom.min.js"></script>
     <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/custom-script.js"></script>
     <!--This page JavaScript -->
-    <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/pages/dashboards/dashboard1.js"></script>
-    <!-- Charts js Files -->
+<!--     <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/pages/dashboards/dashboard1.js"></script>
+ -->    <!-- Charts js Files -->
     <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/flot/excanvas.js"></script>
     <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/flot/jquery.flot.js"></script>
     <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/flot/jquery.flot.pie.js"></script>
@@ -338,24 +341,42 @@
     <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/flot/jquery.flot.crosshair.js"></script>
     <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
     <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/pages/chart/chart-page-init.js"></script>
-    <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/quill/dist/quill.min.js"></script>
-    <script src="{{ asset('/matrix-admin-bt4') }}/assets/extra-libs/multicheck/datatable-checkbox-init.js"></script>
+<!--     <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/quill/dist/quill.min.js"></script>
+ -->    <script src="{{ asset('/matrix-admin-bt4') }}/assets/extra-libs/multicheck/datatable-checkbox-init.js"></script>
     <script src="{{ asset('/matrix-admin-bt4') }}/assets/extra-libs/multicheck/jquery.multicheck.js"></script>
     <script src="{{ asset('/matrix-admin-bt4') }}/assets/extra-libs/DataTables/datatables.min.js"></script>
+    <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/jquery-steps/build/jquery.steps.min.js"></script>
     <script>
-        // Editor Quill
+/*         // Editor Quill
         var quill = new Quill('#editor-overview', {
             theme: 'snow'
         });
         var quill = new Quill('#editor-information', {
             theme: 'snow'
         });
-
+ */
         //DataTable
         $('#zero_config').DataTable();
 
         //CKEditor
         CKEDITOR.replace( 'editor1' );
+
+        form.children("div").steps({
+        headerTag: "h3",
+        bodyTag: "section",
+        transitionEffect: "slideLeft",
+        onStepChanging: function(event, currentIndex, newIndex) {
+            form.validate().settings.ignore = ":disabled,:hidden";
+            return form.valid();
+        },
+        onFinishing: function(event, currentIndex) {
+            form.validate().settings.ignore = ":disabled";
+            return form.valid();
+        },
+        onFinished: function(event, currentIndex) {
+            alert("Submitted!");
+        }
+    });
 
     </script>
 </body>

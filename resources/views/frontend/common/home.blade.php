@@ -1,6 +1,26 @@
 @extends('frontend/common/template')
 @section('container')
-    <div class="hero-wrap js-fullheight" style="background-image: url('direngine/images/bg_1.jpg');">
+<!-- <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
+ -->
+ <!-- <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet"> -->
+ <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Lobster&display=swap" rel="stylesheet">
+ <div id="video-container" class="hero-wrap">
+    <video id="background_video" loop muted></video>
+    <div id="video_cover"></div>
+	<div id="overlay-video">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<div class="title">BMC Travel Service</div>
+					<h4 class="color-white ftco-animation">Where do you want to go?</h4>
+					<a href="" class="btn ftco-animation">Let's Find The Destination <span class="span ion-ios-arrow-down"></span> </a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--     <div class="hero-wrap js-fullheight" style="background-image: url('direngine/images/bg_1.jpg');">
       <div class="overlay" style="background: rgb(0,0,0,0.5);height:100%"></div>
       <div class="container">
         <div class="row slider-text js-fullheight align-items-center justify-content-start justify-content-md-center" data-scrollax-parent="true">
@@ -47,7 +67,8 @@
       </div>
     </div>
 
-    <section class="ftco-section bg-light">
+ -->    
+ <section class="ftco-section">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 text-center heading-section ftco-animate">
@@ -57,32 +78,10 @@
 					<h1 style="font-family: 'Sacramento', cursive;">Fajar N Eristyawan</h1>
 					<b>CEO BMC Travel Service</b>
 				</div>
-				<!--div class="col-md-6">
-					<div class="carousel-destinationtext owl-carousel">
-						<div class="item">
-							<img src="direngine/images/destinations/lombok.jpg" alt="" class="img-fluid">
-							<div class="box">
-								<h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h6>
-							</div>
-						</div>
-						<div class="item">
-							<img src="direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid">
-							<div class="box">
-								<h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h6>
-							</div>
-						</div>
-						<div class="item">
-							<img src="direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid">
-							<div class="box">
-								<h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h6>
-							</div>
-						</div>
-					</div>
-				</div-->
 			</div>
 		</div>
     </section>
-    
+ 
     <section class="ftco-section">
     	<div class="container">
     		<div class="row">
@@ -459,19 +458,19 @@
       </div>
     </section>
 		
-		<section class="ftco-section-parallax">
-      <div class="parallax-img d-flex align-items-center">
+		<section class="ftco-section bg-light">
+      <div class="d-flex align-items-center">
         <div class="container">
           <div class="row d-flex justify-content-center">
-            <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+            <div class="col-md-7 text-center heading-section ftco-animate">
               <h2>Subcribe to our Newsletter</h2>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
               <div class="row d-flex justify-content-center mt-5">
                 <div class="col-md-8">
-                  <form action="#" class="subscribe-form">
+                  <form action="#">
                     <div class="form-group d-flex">
                       <input type="text" class="form-control" placeholder="Enter email address">
-                      <input type="submit" value="Subscribe" class="submit px-3">
+                      <input type="submit" value="Subscribe" class="submit">
                     </div>
                   </form>
                 </div>
@@ -481,5 +480,6 @@
         </div>
       </div>
     </section>
-
+<script src="{{ url('direngine/js/bideo.js-master/bideo.js') }}"></script>
+<script src="{{ url('direngine/js/bideo.js-master/main.js') }}"></script>
 @endsection

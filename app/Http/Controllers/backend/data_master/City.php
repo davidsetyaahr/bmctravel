@@ -38,5 +38,21 @@ class City extends Controller
 
         return redirect('/admin/data-master/city');
     }
+    public function edit($id)
+    {
+        $cit = DB::table('city')->where('id_city',$id)->get();
+        return view('backend.data_master.city.edit-city',['city' => $cit]);
+         //return view('backend.data-master.city.edit-city', compact('cit'));
+    }
+    public function update(Request $request)
+    {
+        $request->validate([
+         /*name dari form */ 'city_name' => 'required',
+        ]);
+        DB::table('city')->where(/*nama field database*/'id_city', /*name dari form*/ $request->id_city)->update([
+           /*nama field database */ 'city_name' => /*name dari form */ $request->city_name,
+        ]);
+        return redirect('/admin/data-master/city');
+   }
 }
 

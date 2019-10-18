@@ -1,44 +1,45 @@
 @extends('backend.template.main')
 @section('insert_caption','Insert New Travel Tips')
 @section('view_caption','View All Travel Tips')
-@section('insert_link','add-travel-tips')
-@section('view_link','list')
+@section('insert_link',url("admin/travel-tips/travel-tips/add-travel-tips"))
+@section('view_link',url("admin/travel-tips/travel-tips/list"))
 @section('view_status','')
-@section('insert_status','active')
 @section('admin')
 <div class="row">
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <form action="" method="post">
+            @foreach($travel_tips as $trvltips)
+            @include('backend.gallery.gallery-template.select-gallery', ['type' => 'multiple', 'gallery' => $gallery, 'categories' => $categories])
+            <form action="/admin/travel-tips/travel-tips/update" method="post">
+            {{ csrf_field()}}
+            <input type="hidden" name="id" value="{{ $trvltips->id_travel_tips }}">
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-12 m-t-15">
                                 <label for="">Title</label>
-                                <input type="text" name="title" class="form-control" placeholder="Title" value="">
+                                <input type="text" name="title" class="form-control" placeholder="Title" value="{{ $trvltips->title}}">
                             </div>
                             <div class="col-md-12 m-t-15">
-                                <label for="">Admin</label>
-                                <input type="text" name="id_admin" class="form-control" placeholder="Admin Name" value="">
+                                <label for="">Gallery</label>
+                                @include('backend.gallery.gallery-template.gallery-hidden')     
                             </div>
-                            <div class="col-md-12 m-t-15">
-                                <label for="">Photo Uploud</label>
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input"  name="gallery" >
-                                    <label class="custom-file-label" for="validatedCustomFile">
-                                    Choose File...
-                                    </label>
                                 </div>
+                                <div class="col-md-12 m-t-15">
+                                <label for="">Content</label>
+                                <textarea class="form-control @error('content') is-invalid @enderror" name="content" cols="30" rows="10">{{ $trvltips->content}}</textarea>
+                            </div>
                             </div>
                             <div class="col-12 m-t-15">
                                 <label for="">Permalink</label>
-                                <input type="text" class="form-control" readonly>
+                                <input type="text" name="permalink" class="form-control" value="{{ $trvltips->permalink}}">
                             </div>
                         </div>
                     </div>
                     <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Save</button>
                     <button class="btn btn-secondary" type="reset"><span class="mdi mdi-refresh"></span> Reset</button>
                 </form>
+                @endforeach
             </div>
         </div>
     </div>

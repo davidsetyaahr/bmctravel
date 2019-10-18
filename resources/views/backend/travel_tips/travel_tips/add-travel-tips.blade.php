@@ -10,29 +10,38 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <form action="" method="post">
+            @include('backend.gallery.gallery-template.select-gallery', ['type' => 'multiple', 'gallery' => $gallery, 'categories' => $categories])
+            <form action="{{ url('admin/travel-tips/travel-tips/add-travel-tips') }}" method="post">
+                {{ csrf_field()}}
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-12 m-t-15">
                                 <label for="">Title</label>
-                                <input type="text" name="title" class="form-control" placeholder="Title">
+                                <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" placeholder="Title"
+                                value="{{ old('title')}}">
+                                @error('title')
+                                    <div class="invalid-feedback"> {{ $message}} </div>
+                                @enderror
                             </div>
                             <div class="col-md-12 m-t-15">
-                                <label for="">Admin</label>
-                                <input type="text" name="id_admin" class="form-control" placeholder="Admin Name">
+                                <label for="">Gallery</label>
+                                @include('backend.gallery.gallery-template.gallery-hidden')     
                             </div>
                             <div class="col-md-12 m-t-15">
-                                <label for="">Photo Uploud</label>
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input"  name="gallery" >
-                                    <label class="custom-file-label" for="validatedCustomFile">
-                                    Choose File...
-                                    </label>
-                                </div>
+                                <label for="">Content</label>
+                                <textarea class="form-control @error('content') is-invalid @enderror" name="content" cols="30" rows="10">
+                                {{ old('content')}}</textarea>
+                                @error('content')
+                                    <div class="invalid-feedback"> {{ $message}} </div>
+                                @enderror
                             </div>
                             <div class="col-12 m-t-15">
                                 <label for="">Permalink</label>
-                                <input type="text" class="form-control" readonly>
+                                <input type="text" name="permalink" class="form-control @error('permalink') is-invalid @enderror"
+                                value="{{ old('permalink')}}">
+                                @error('permalink')
+                                    <div class="invalid-feedback"> {{ $message}} </div>
+                                @enderror
                             </div>
                         </div>
                     </div>
