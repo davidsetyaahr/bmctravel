@@ -73,6 +73,14 @@
    $.Scrollax();
 
 	var carousel = function() {
+		$('.carousel-tour-style').owlCarousel({
+			autoplay: true,
+			loop: true,
+			center : true,
+			items:1,
+			stagePadding: 0,
+			dots : false
+		});
 		$('.destination-slider').owlCarousel({
 			autoplay: true,
 			loop: true,
