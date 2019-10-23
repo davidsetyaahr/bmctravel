@@ -1,4 +1,7 @@
 $(document).ready(function(){
+    $(".to-top").click(function(){
+        $("body,html").animate({"scrollTop":0},1200)
+    })
     $(".add-compare").click(function(){
         var data = $(".compare-package").attr("data-id");
         var thisId = $(this).data('id')
@@ -36,7 +39,7 @@ $(document).ready(function(){
         $(".nav-pills .nav-item .nav-link").click(function(e){
             e.preventDefault()
             var section = $(this).attr("href")
-            $("body,html").animate({"scrollTop" : $(section).offset().top-150},1200)
+            $("body,html").animate({"scrollTop" : $(section).offset().top-140},1200)
         })
     }
 })

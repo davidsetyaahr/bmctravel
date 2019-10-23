@@ -1,77 +1,91 @@
 @extends('frontend/common/template')
 @section('container')
-<!-- <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
- -->
- <!-- <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet"> -->
- <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Lobster&display=swap" rel="stylesheet">
- <div id="video-container" class="hero-wrap">
-    <video id="background_video" loop muted></video>
-    <div id="video_cover"></div>
-	<div id="overlay-video">
+<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+ <script>
+ var TxtRotate = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtRotate.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+
+  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+  var that = this;
+  var delta = 300 - Math.random() * 100;
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+
+  setTimeout(function() {
+    that.tick();
+  }, delta);
+};
+
+window.onload = function() {
+  var elements = document.getElementsByClassName('txt-rotate');
+  for (var i=0; i<elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-rotate');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+  // INJECT CSS
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid white }";
+  document.body.appendChild(css);
+};
+ </script>
+	<video autoplay muted loop id="myVideo">
+	<source src="direngine/js/bideo.js-master/Wonderful Indonesia - Adventure.mp4" type="video/mp4">
+	Your browser does not support HTML5 video.
+	</video>
+	<div class="overlay-video">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 text-center">
-					<div class="title">BMC Travel Service</div>
-					<h4 class="color-white ftco-animation">Where do you want to go?</h4>
+					<div class="title">
+					<h1>Welcome to
+						<br>
+						<span
+						class="txt-rotate"
+						data-period="1000"
+						data-rotate='[ "BMC Travel Service", "One Stop Travel Solution"]'></span>
+					</h1>
+					</div>
+					<h5 class="color-white ftco-animation">Where do you want to go?</h5>
 					<a href="" class="btn ftco-animation">Let's Find The Destination <span class="span ion-ios-arrow-down"></span> </a>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-
-<!--     <div class="hero-wrap js-fullheight" style="background-image: url('direngine/images/bg_1.jpg');">
-      <div class="overlay" style="background: rgb(0,0,0,0.5);height:100%"></div>
-      <div class="container">
-        <div class="row slider-text js-fullheight align-items-center justify-content-start justify-content-md-center" data-scrollax-parent="true">
-          <div class="col-md-9 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-            <h1 class="mb-4 text-center"  data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><strong>ONE STOP <br></strong> Travel Service</h1>
-            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Find great places to stay, eat, shop, or visit from local experts</p>
-            <div class="block-17 my-4">
-              <form action="" method="post" class="d-block d-flex">
-                <div class="fields d-block d-flex">
-                  <div class="textfield-search one-third">
-                  	<input type="text" class="form-control" placeholder="Destinations, Ex : Mountain, Waterfall, etc ">
-                  </div>
-                  <div class="select-wrap one-third">
-                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                    <select name="" id="" class="form-control" placeholder="Keyword search">
-						<option>Where</option>
-						<optgroup label="East Java">
-							<option>Bondowoso</option>
-							<option>Probolinggo</option>
-							<option>Jember</option>
-						</optgroup>
-						<optgroup label="Bali">
-							<option>Bali</option>
-						</optgroup>
-						<optgroup label="West Nusa Tenggara">
-							<option>Lombok</option>
-						</optgroup>
-                    </select>
-                  </div>
-                </div>
-                <input type="submit" class="search-submit btn btn-primary" value="Search">  
-              </form>
-            </div>
-            <p>Or browse the highlights</p>
-            <p class="browse d-md-flex">
-            	<span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-guarantee"></i>Mountain</a></span>
-            	<span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-like"></i>Waterfall</a></span> 
-            	<span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-like"></i>Adventure</a></span> 
-            	<span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-meeting-point"></i>City</a></span> 
-            	<span class="d-flex justify-content-md-center align-items-md-	center"><a href="#"><i class="flaticon-shopping-bag"></i>Beach</a></span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
- -->    
  <section class="ftco-section">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12 text-center heading-section ftco-animate">
+				<div class="col-md-12 text-center heading-section ftco-animate" style="margin-top:100vh">
 					<h2 class="mb-4 pb-3"><strong>Sekapur</strong> Sirih</h2>
 					<p>Selamat datang di BMC Travel Service. Traveling saat ini telah menjadi kebutuhan pokok disamping kebutuhan akan sandang, pangan, dan papan. Kebutuhan akan merefreshing pikiran karena penat dengan aktifitas pekerjaan dan kehidupan sehari-hari mendorong orang-orang untuk melakukan traveling untuk menyegarkan kembali pikiran. Perkembangan golongan menengah juga menjadi pendorong industri tour dan travel merespon permintaan pasar akan layanagn tour dan travel yang semakin meningkat. Selayaknya usaha di bidang jasa lainnya, BMC Travel Service selaku perusahaan di bidang tour dan travel akan selalu memberikan pelayanan yang maksimal kepada tamu-tamu kami. Peningkatan kualitas dan kuantitas layanan senantiasa kami jaga sebaik mungkin demi kepuasan tamu. Kami dengan setulus hati melayani anda, memberikan kepuasan akan layanan wisata yang terbaik yang dapat kami lakukan. Terimakasih telah memilih BMC Travel Service sebagai mitra perjalanan wisata anda.</p>
 					<p>Salam Hangat</p>
