@@ -44,11 +44,27 @@ class Gallery extends Controller
                     'id_category' => $request->id_category,
                     // menyimpan data file yang diupload ke variabel $file
                 ]);
-                    return redirect('/admin/gallery/gallery')->with('status', 'Travel tips tags berhasil ditambahkan');
+                    return redirect('/admin/gallery/gallery');
                 }
 
-    function show()
+    function edit($id)
     {
-        //
+        $galeri["galeri"] = DB::table('gallery')->where('id_gallery',$id)->get();
+        $galeri["id_kategori"] = DB::table('gallery_categories')->where('id_category',$id)->get();
+	    return view('backend.gallery.gallery.edit-gallery',['id_category' => $galeri]);
+    }
+
+    function update(Request $request)
+    {
+        $request->validate([
+            'img' => 'required',
+            'id_category' => 'required'
+        ]);
+
+        DB::table('gallery')->where('id_gallery',$request->id)->update([
+            'img' => $request->img,
+            'id_category' => $request->id_category
+        ]);
+        return redirect('/admin/gallery/gallery');
     }
 }
