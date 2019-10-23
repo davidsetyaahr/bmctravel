@@ -1,7 +1,7 @@
 @extends('backend.template.main')
 @section('insert_caption','Insert New Gallery')
 @section('view_caption','View All Gallery')
-@section('insert_link','add-categories-gallery')
+@section('insert_link','add-gallery')
 @section('view_link','gallery')
 @section('view_status','active')
 @section('insert_status','')
@@ -17,7 +17,8 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Gallery</th>
-                                    <th>ID Category</th>
+                                    <th>Category</th>
+                                    <th>Option</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -27,6 +28,17 @@
                                             <td>{{ $loop->iteration}}</td>
                                             <td>{{ $gc->img}}</td>
                                             <td>{{ $gc->id_category}}</td>
+                                            <td>
+                                                <div class="dropdown show">
+                                                    <a class="btn btn-sm btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        Options
+                                                    </a>
+
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                        <a class="dropdown-item" href="edit-gallery/{{ $gc->id_gallery }}">Edit</a>
+                                                    </div>
+                                                </div>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tr>

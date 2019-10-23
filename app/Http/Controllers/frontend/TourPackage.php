@@ -11,7 +11,7 @@ class TourPackage extends Controller
     {
         return view('frontend.tour-package.list-tour-package');
     }
-    public function detail()
+    public function detail($id)
     {
         return view('frontend.tour-package.detail-tour-package');
     }

@@ -27,7 +27,7 @@
                                 <td>{{ $city->province_id }}</td>
                                 <td>{{ $city->city_name }}</td>
                                 <td>
-                                <a href="/city/1" class="badge badge-info">detail</a>
+                                <a href="/city/1" class="badge badge-info">Edit</a>
                                 </td>
                             </tr>
                             @endforeach ?>
