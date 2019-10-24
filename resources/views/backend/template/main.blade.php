@@ -18,6 +18,7 @@
 <!--     <link rel="stylesheet" type="text/css" href="{{ asset('/matrix-admin-bt4') }}/assets/libs/quill/dist/quill.snow.css">
  -->    <link href="{{ asset('/matrix-admin-bt4') }}/dist/css/custom.css" rel="stylesheet">
     <link href="{{ asset('/matrix-admin-bt4') }}/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="{{ url('select2-develop/dist/css/select2.min.css') }}" rel="stylesheet">
     <script src="{{ asset('/ckeditor') }}/ckeditor.js"></script>
     {{-- step --}}
     <link href="{{ asset('/matrix-admin-bt4') }}/assets/libs/jquery-steps/jquery.steps.css" rel="stylesheet">
@@ -327,6 +328,8 @@
     <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/waves.js"></script>
     <!--Menu sidebar -->
     <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/sidebarmenu.js"></script>
+    <script src="{{ url('select2-develop/dist/js/select2.min.js') }}"></script>
+
     <!--Custom JavaScript -->
     <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/custom.min.js"></script>
     <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/custom-script.js"></script>
