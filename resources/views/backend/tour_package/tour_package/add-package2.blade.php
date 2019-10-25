@@ -110,7 +110,7 @@
         </div>
     </div>
     <div class="float-right">
-        <button class="btn btn-secondary" type="reset"><span class="mdi mdi-menu-left"></span> Prev</button>
+        <button class="btn btn-default" type="reset"><span class="mdi mdi-menu-left"></span> Prev</button>
         <button class="btn btn-primary" type="submit">Next <span class="mdi mdi-menu-right"></span></button>
     </div>
 

@@ -14,6 +14,31 @@
     font-weight: normal;
     font-style: normal;
   }
+.btn{
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+}
+.btn-primary{
+    background : #00aaff;
+    border-color : #00aaff;
+}
+.btn-primary:hover{
+    background : #00a0f0;
+    border-color : #00a0f0;
+}
+.btn-default{
+    background: white;
+    color : #333;
+    border-color : #ccc;
+}
+.btn-default:hover{
+    background: #f7f7f7;
+}
+.sidebar-nav ul .sidebar-item .sidebar-link,.sidebar-nav ul .sidebar-item .sidebar-link i{
+    color : #AEB7C2;
+}
+.sidebar-nav ul .sidebar-item .sidebar-link i{
+    margin-right: 10px;
+}
 .trip{
     letter-spacing: 1px;
 }
@@ -37,6 +62,9 @@
 .ls-1{
     letter-spacing: 1px;
 }
+.custom-control.block{
+    display : block !important;
+}
 .custom-control{
     display : inline-block !important;
     margin-right : 10px;
@@ -44,7 +72,12 @@
 .custom-control-label{
     line-height: 2;
 }
+.card{
+    box-shadow: 0 2px 6px rgba(0,0,0,.08);
+    border-radius: 3px;        
+}
 .card.custom{
+    box-shadow: none;
     border : 1px solid #ddd !important;
 }
 .card.custom .card-header{
@@ -174,8 +207,9 @@ thead{
     width : 100%;
 }
 body{
-    background: #f3f5f8 !important;
+    background: #f5f5fa !important;
     font-family: 'poppinsregular';
+    color: #676a6d  !important;
 }
 #navbarSupportContent li a{
     color : red !important;
@@ -192,18 +226,16 @@ body{
     border-bottom: 2px solid #2D5D7C;
 }
 .top-bottom li a i{
-    color : #2d5d7c;
+    color: #676a6d;
 }
 .top-bottom li a{
-    color : #2d3747;
-    font-weight: bold;
+    color: #676a6d;
 }
 .top-bottom li.active{
-    border-bottom: 2px solid #2d5d7c;
+    border-bottom: 2px solid #333d4a;
 }
 .page-top-title{
-    font-size: 20px !important;
-    font-weight: bold !important;
+    font-size: 17px !important;
 }
 .page-wrapper{
     background: #f3f5f8 !important;

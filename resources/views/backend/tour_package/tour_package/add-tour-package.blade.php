@@ -15,6 +15,10 @@
             @else
                 @if($_GET['page']==2)
                     @include('backend.tour_package.tour_package.add-package2')
+                @elseif($_GET['page']==3)
+                    @include('backend.tour_package.tour_package.add-package3')
+                @elseif($_GET['page']==4)
+                    @include('backend.tour_package.tour_package.add-package4')
                 @endif
             @endif
             </div>
