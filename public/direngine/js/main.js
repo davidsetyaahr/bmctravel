@@ -251,7 +251,12 @@
 					sd = $('.js-scroll-wrap');
 			if(st>0){
 				$(".nav-white").css({"top" : "0"})
-				$(".nav-white").addClass("nav-shadow")
+				if($(".fixedtrue").length==1){
+					$(".nav-white").removeClass("nav-shadow")
+				}
+				else{
+					$(".nav-white").addClass("nav-shadow")
+				}
 			}
 			else{
 				$(".nav-white").css({"top" : navGreyHeight})
@@ -276,6 +281,10 @@
 				if(sd.length > 0) {
 					sd.addClass('sleep');
 				}
+				$(".to-top").css("opacity","1")
+			}
+			else{
+				$(".to-top").css("opacity","0")
 			}
 			if ( st < 350 ) {
 				if ( navbar.hasClass('awake') ) {

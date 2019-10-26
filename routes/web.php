@@ -15,6 +15,9 @@ Route::get('/admin/tour-package/tour-package', 'backend\tour_package\TourPackage
 Route::get('//admin/tour-package/add-tour-package', 'backend\tour_package\TourPackage@add');
 Route::get('/admin/tour-package/categories', 'backend\tour_package\Categories@index');
 Route::get('/admin/tour-package/add-categories', 'backend\tour_package\Categories@add');
+Route::post('/admin/tour-package/add-categories', 'backend\tour_package\Categories@store');
+Route::get('/admin/tour-package/edit-categories/{id}', 'backend\tour_package\Categories@edit');
+Route::post('/admin/tour-package/categories/update', 'backend\tour_package\Categories@update');
 Route::get('/admin/tour-package/durations', 'backend\tour_package\Durations@index');
 Route::get('/admin/tour-package/add-durations', 'backend\tour_package\Durations@add');
 Route::get('/admin/tour-package/price-categories', 'backend\tour_package\PriceCategories@index');
@@ -22,6 +25,10 @@ Route::get('/admin/tour-package/add-price-categories', 'backend\tour_package\Pri
 Route::post('/admin/tour-package/add-price-categories', 'backend\tour_package\PriceCategories@store');
 Route::get('/admin/tour-package/tour-type', 'backend\tour_package\TourType@index');
 Route::get('/admin/tour-package/add-tour-type', 'backend\tour_package\TourType@add');
+Route::get('/admin/tour-package/edit-tour-type/{id}', 'backend\tour_package\TourType@edit');
+Route::post('/admin/tour-package/add-tour-type', 'backend\tour_package\TourType@store');
+Route::post('/admin/tour-package/tour-type/update', 'backend\tour_package\TourType@update');
+
 Route::get('/admin/destinations/destinations','backend\destinations\Destinations@index');
 Route::get('/admin/destinations/destinations/list','backend\destinations\Destinations@index');
 Route::get('/admin/destinations/destinations/add-destination','backend\destinations\Destinations@create');
