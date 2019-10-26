@@ -62,6 +62,7 @@ Route::get('/about', 'frontend\About@index');
 Route::get('/tour-package', 'frontend\TourPackage@index');
 Route::get('/tour-package/detail-package/{id}', 'frontend\TourPackage@detail');
 Route::get('/destinations', 'frontend\Destinations@index');
+Route::get('/destinations/detail-destinations/{id}', 'frontend\Destinations@detail');
 Route::get('/travel-tips', 'frontend\TravelTips@index');
 Route::get('/signin', 'frontend\SignIn@index');
 Route::get('/admin/tour-package/edit-price-categories/{id}', 'backend\tour_package\PriceCategories@edit');

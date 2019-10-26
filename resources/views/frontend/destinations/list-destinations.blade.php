@@ -1,13 +1,16 @@
 @extends('frontend/common/template')
 @section('container')
-
-<div class="hero-wrap js-fullheight-travel" style="background-image: url('direngine/images/bg_4.jpg');">
+<style>
+	.override{
+		height: 500px !important;
+	}
+</style>
+<div style="background-image: url('direngine/images/bg_4.jpg');" class="hero-wrap js-fullheight-travel override">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight-travel align-items-center justify-content-center" data-scrollax-parent="true">
           <div class="col-md-9 text-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>Destinations</span></p>
-            <h1 style="font-size: 45px; color:white; text-shadow: -2px 2px black;" class="mb-3 bread " data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Destinations</h1>
+            <br><br><br><br><br><br><h1 style="font-size: 45px; color:white; text-shadow: -2px 2px black;" class="mb-3 bread " data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Destinations</h1>
             <div class="block-17 my-4">
                 <form action="" method="post" class="d-block d-flex">
                   <div class="fields d-block d-flex">
@@ -34,72 +37,28 @@
     </div>
 
     <section class="ftco-section bg-light">
-    <div class="container">
-    		<div class="row mt-5 ftco-animate">
-				<div class="col-md-3">
-					<div class="package1">
-						<div class="relative hidden">
-							<div class="layer transition"></div>
-							<div class="sticky-note">
-								<span>Watu Ulo</span>
+			<div class="container">
+					<div class="row mt-5 ftco-animate">
+						
+						@foreach($destinations as $item)
+						<div class="col-md-3">
+							<div class="package1">
+								<div class="relative hidden">
+									<div class="layer transition"></div>
+									<div class="sticky-note">
+										<span>{{$item->category_name}}</span>
+									</div>
+									<img src="{{ url('/images/gallery/'.$item->gallery) }}" alt="" class="img-fluid transition">
+								<div class="view-link transition"><a href="{{ url('/destinations/detail-destinations/'.$item->id_destination) }}" style="color: white;">View Destination</a></div>
+								</div>
+								<div class="text-bottom mt-2">
+									<div class="title">{{$item->destination_name}}</div>
+									<div class="price-tour text-right"><span><small>{{$item->province_name.' - '. $item->city_name}}</small></span></div>
+								</div>
 							</div>
-							<img src="direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid transition">
-							<div class="view-link transition">View Destination</div>
 						</div>
-						<div class="text-bottom mt-2">
-							<div class="title">City</div>
-							<div class="title">Provice</div>
-						</div>
+						@endforeach
 					</div>
 				</div>
-				<div class="col-md-3">
-					<div class="package1">
-						<div class="relative hidden">
-							<div class="layer transition"></div>
-							<div class="sticky-note">
-								<span>Kawah Ijen</span>
-							</div>
-							<img src="direngine/images/destinations/ijen.jpg" alt="" class="img-fluid transition">
-							<div class="view-link transition">View Destination</div>
-						</div>
-						<div class="text-bottom mt-2">
-                        <div class="title">City</div>
-						<div class="title">Provice</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="package1">
-						<div class="relative hidden">
-							<div class="layer transition"></div>
-							<div class="sticky-note">
-								<span>Gunung Merbabu</span>
-							</div>
-							<img src="direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid transition">
-							<div class="view-link transition">View Destination</div>
-						</div>
-						<div class="text-bottom mt-2">
-                        <div class="title">City</div>
-						<div class="title">Provice</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="package1">
-						<div class="relative hidden">
-							<div class="layer transition"></div>
-							<div class="sticky-note">
-								<span>Pantai Bentar</span>
-							</div>
-							<img src="direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid transition">
-							<div class="view-link transition">View Destination</div>
-						</div>
-						<div class="text-bottom mt-2">
-                        <div class="title">City</div>
-						<div class="title">Provice</div>
-						</div>
-					</div>
-				</div>
-			</div>
-          </section>
+      </section>
 @endsection
