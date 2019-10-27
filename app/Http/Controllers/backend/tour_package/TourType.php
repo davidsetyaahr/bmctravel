@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 use  Illuminate\Support\Facades\DB;
 
 use App\Tour_type;
-use App\Gallery;
-use App\Gallery_categories;
+use App\Gallery_model;
+use App\Gallery_categories_model;
 
 
 class TourType extends Controller
@@ -21,8 +21,8 @@ class TourType extends Controller
 
     public function add()
     {
-        $gallery = Gallery::all();
-        $gallery_categories = Gallery_categories::all();
+        $gallery = Gallery_model::all();
+        $gallery_categories = Gallery_categories_model::all();
         return view('backend.tour_package.tour_type.add-tour-type' , ['gallery' => $gallery, 'categories' => $gallery_categories]);
     }
 
@@ -44,8 +44,8 @@ class TourType extends Controller
 
     public function edit ($id)
     {
-        $gallery = Gallery::all();
-        $gallery_categories = Gallery_categories::all();
+        $gallery = Gallery_model::all();
+        $gallery_categories = Gallery_categories_model::all();
         $type = DB::table('tour_type')->where('id_type',$id)->get();
         return view('backend.tour_package.tour_type.edit-tour-type', ['gallery' => $gallery, 'categories' => $gallery_categories, 'tour_type' => $type]);
     }
