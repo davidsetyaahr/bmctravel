@@ -112,39 +112,51 @@ window.onload = function() {
     			<div class="col-md-12">
     				<div class="destinationtext owl-carousel ftco-animate">
 						<div class="item">
-							<img src="direngine/images/destinations/kawah-wurung.png" alt="" class="img-fluid">
-							<div class="box">
-								<h6>Explore East Java</h6>
+							<div class="relative">
+								<img src="direngine/images/destinations/kawah-wurung.png" alt="" class="img-fluid">
+								<div class="box">
+									<h6>Explore East Java</h6>
+								</div>
 							</div>
 						</div>
 						<div class="item">
+						<div class="relative">
 							<img src="direngine/images/destinations/ijen.jpg" alt="" class="img-fluid">
 							<div class="box">
 								<h6>Explore Bondowoso</h6>
 							</div>
+							</div>
 						</div>
 						<div class="item">
+						<div class="relative">
 							<img src="direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid">
 							<div class="box">
 								<h6>Mountain Vibes</h6>
 							</div>
+							</div>
 						</div>
 						<div class="item">
+						<div class="relative">
 							<img src="direngine/images/destinations/bali.jpg" alt="" class="img-fluid">
 							<div class="box">
 								<h6>Beach Vibes</h6>
 							</div>
+							</div>
 						</div>
 						<div class="item">
+						<div class="relative">
 							<img src="direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid">
 							<div class="box">
 								<h6>Menjangan & Tabuhan Island</h6>
 							</div>
+							</div>
 						</div>
 						<div class="item">
+						<div class="relative">
 							<img src="direngine/images/destinations/bromo.jpg" alt="" class="img-fluid">
 							<div class="box">
 								<h6>Bromo Midnight</h6>
+							</div>
 							</div>
 						</div>
     				</div>
@@ -165,47 +177,19 @@ window.onload = function() {
 	        </div>
 			<div class="row mt-3">
 				<div class="col-md-12">
-					<div class="step-by-step ftco-animate">
-						<div class="line-step"></div>
-						<div class="this-step" style="width : 19%">
-							<span class="bullet ion-md-radio-button-on"></span>
-							<div class="text active">
-								<span class="ion-md-arrow-dropup up"></span>
-								1 to 3 days
-							</div>
-						</div>
-						<div class="this-step" style="width : 19%">
-							<span class="bullet ion-md-radio-button-off"></span>
-							<div class="text">
-								4 to 6 days
-							</div>
-						</div>
-						<div class="this-step" style="width : 19%">
-							<span class="bullet ion-md-radio-button-off"></span>
-							<div class="text">
-								7 to 9 days
-							</div>
-						</div>
-						<div class="this-step" style="width : 19%">
-							<span class="bullet ion-md-radio-button-off"></span>
-							<div class="text">
-								10 to 12 days
-							</div>
-						</div>
-						<div class="this-step" style="width : 19%">
-							<span class="bullet ion-md-radio-button-off"></span>
-							<div class="text">
-								Less than 12 days
-							</div>
-						</div>
-					</div>
+					<ul class="progressbar">
+						<li>1 to 3 days</li>
+						<li>4 to 6 days</li>
+						<li>7 to 9 days</li>
+						<li>10 to 12 days</li>
+					  </ul>
 				</div>
 			</div>    		
     	</div>
     	<div class="container">
     		<div class="row mt-5 ftco-animate">
 				<div class="col-md-3">
-					<div class="package1">
+					<div class="package1 mb-4">
 						<div class="relative hidden">
 							<div class="layer transition"></div>
 							<div class="sticky-note">
@@ -221,7 +205,7 @@ window.onload = function() {
 					</div>
 				</div>
 				<div class="col-md-3">
-					<div class="package1">
+					<div class="package1 mb-4">
 						<div class="relative hidden">
 							<div class="layer transition"></div>
 							<div class="sticky-note">
@@ -237,7 +221,7 @@ window.onload = function() {
 					</div>
 				</div>
 				<div class="col-md-3">
-					<div class="package1">
+					<div class="package1 mb-4">
 						<div class="relative hidden">
 							<div class="layer transition"></div>
 							<div class="sticky-note">
@@ -253,7 +237,7 @@ window.onload = function() {
 					</div>
 				</div>
 				<div class="col-md-3">
-					<div class="package1">
+					<div class="package1 mb-4">
 						<div class="relative hidden">
 							<div class="layer transition"></div>
 							<div class="sticky-note">
@@ -275,20 +259,20 @@ window.onload = function() {
 	<section class="ftco-section ftco-animate">
 		<div class="container">
 			<div class="row text-center">
-				<div class="col-md-6">
+				<div class="col-md-6 mb-5">
 					<h5 class="color-red">Some fun facts</h5>
 					<div class="row mt-5">
-						<div class="col-md-4">
+						<div class="col-4">
 							<img src="{{ asset('images/gallery/jeep.png') }}" alt="">
 							<h6 class="mt-3">120</h6>
 							Travel Packages
 						</div>
-						<div class="col-md-4">
+						<div class="col-4">
 							<img src="{{ asset('images/gallery/tourist.png') }}" alt="">
 							<h6 class="mt-3">100+</h6>
 							Happy Clients
 						</div>
-						<div class="col-md-4">
+						<div class="col-4">
 							<img src="{{ asset('images/gallery/smartphone.png') }}" alt="">
 							<h6 class="mt-3">30</h6>
 							Destinations
@@ -298,17 +282,17 @@ window.onload = function() {
 				<div class="col-md-6" style="border-left : 1px solid #ddd">
 					<h5 class="color-red">Easy, Fun, Secure</h5>
 					<div class="row mt-5">
-						<div class="col-md-4">
+						<div class="col-4">
 							<img src="{{ asset('images/gallery/jeep.png') }}" alt="">
 							<h6 class="mt-3">120</h6>
 							Travel Packages
 						</div>
-						<div class="col-md-4">
+						<div class="col-4">
 							<img src="{{ asset('images/gallery/tourist.png') }}" alt="">
 							<h6 class="mt-3">100+</h6>
 							Happy Clients
 						</div>
-						<div class="col-md-4">
+						<div class="col-4">
 							<img src="{{ asset('images/gallery/smartphone.png') }}" alt="">
 							<h6 class="mt-3">30</h6>
 							Destinations
@@ -323,31 +307,31 @@ window.onload = function() {
 
 	<section class="ftco-section ftco-animate">
 		<div class="container">
-			<div class="row">
+			<div class="row justify-content-center">
 				<div class="col-md-12 text-center">
 					<h4 class="mb-4 pb-3"><strong>Browse</strong> package by categories</h4>
 				</div>
 			</div>
 			<div class="row justify-content-center">
-				<div class="col-md-2">
+				<div class="col-md-3 col-6 mb-4">
 					<div class="border text-center p-3">
 						<img src="{{ asset('images/gallery/rocks.png') }}" alt="">
 						<h6 class="mt-3">Mountain</h6>
 					</div>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-3 col-6 mb-4">
 					<div class="border text-center p-3">
 						<img src="{{ asset('images/gallery/sunrise.png') }}" alt="">
 						<h6 class="mt-3">Beach</h6>
 					</div>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-3 col-6 mb-4">
 					<div class="border text-center p-3">
 						<img src="{{ asset('images/gallery/waterfall.png') }}" alt="">
 						<h6 class="mt-3">Waterfall</h6>
 					</div>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-3 col-6 mb-4">
 					<div class="border text-center p-3">
 						<img src="{{ asset('images/gallery/office.png') }}" alt="">
 						<h6 class="mt-3">City</h6>
@@ -432,7 +416,7 @@ window.onload = function() {
 			</div>
         </div>
         <div class="row d-flex">
-          <div class="col-md-4">
+          <div class="col-md-4 mb-3">
 		  	<div class="travel-tips">
 				<div class="relative">
 					<div class="layer transition"></div>
@@ -444,7 +428,7 @@ window.onload = function() {
 				</div>
 			</div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 mb-3">
 		  	<div class="travel-tips">
 				<div class="relative">
 					<div class="layer transition"></div>
@@ -456,7 +440,7 @@ window.onload = function() {
 				</div>
 			</div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 mb-3">
 		  	<div class="travel-tips">
 				<div class="relative">
 					<div class="layer transition"></div>

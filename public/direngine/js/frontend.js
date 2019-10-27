@@ -28,7 +28,7 @@ $(document).ready(function(){
             var pos = $(window).scrollTop()
             if(pos>=posMenu.top){
                 $(menu).addClass("fixedtrue")
-                $(menu).css("top","76px")
+                $(menu).css("top","71px")
             }
             else{
                 $(menu).removeClass("fixedtrue")

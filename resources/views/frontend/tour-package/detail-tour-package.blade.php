@@ -561,12 +561,32 @@
         <div class="row justify-content-center">
           <div class="col-md-10">
               <div class="border radius p-5 text-center">
+                <div class="row">
+                  <div class="col-md-6" style="border-right : 1px solid #ddd;">
                   <div class="text-confirm mb-4">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit?
+                      Let's share this package to everyone
+                    </div>
+                    <div class="share">
+                      <div class="item">
+                        <a href=""> <img src="{{ url('images/common/facebook.png') }}" alt=""> Facebook</a>
+                      </div>
+                      <div class="item">
+                        <a href=""> <img src="{{ url('images/common/whatsapp.png') }}" alt=""> Whatsapp</a>
+                      </div>
+                      <div class="item">
+                        <a href=""> <img src="{{ url('images/common/gmail.png') }}" alt="">  Email</a>
+                      </div>
+                    </div>
                   </div>
-                    <a href="" class="btn btn-outline-primary f14">Another package</a>
-                    &nbsp;
-                    <a href="" class="btn btn-primary f14">Book this package</a>
+                  <div class="col-md-6">
+                    <div class="text-confirm mb-4">
+                      Do you want to book this awesome package?
+                    </div>
+                      <a href="" class="btn btn-outline-primary f14">Another package</a>
+                      &nbsp;
+                      <a href="" class="btn btn-primary f14">Book this package</a>
+                  </div>
+                </div>
               </div>
           </div>
         </div>
