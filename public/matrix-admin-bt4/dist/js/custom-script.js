@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    $("select").select2()
     $(".close-gallery, .open-gallery").click(function(e){
         e.preventDefault()
         $(".gallery").toggleClass("hide-gallery")

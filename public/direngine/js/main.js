@@ -104,22 +104,22 @@
 		});
 		$('.destinationtext').owlCarousel({
 			autoplay: true,
+			animateOut : 'fadeOut',
 			loop: true,
 			items:1,
-			margin: 30,
+			margin: 0,
 			stagePadding: 0,
 			nav: true,
-			dots: true,
 			navText: ['<span class="ion-ios-arrow-back">', '<span class="ion-ios-arrow-forward">'],
 			responsive:{
 				0:{
-					items: 1
+					items: 2
 				},
 				600:{
 					items: 2
 				},
 				1000:{
-					items: 4
+					items: 3
 				}
 			}
 		});
@@ -249,13 +249,21 @@
 					st = $w.scrollTop(),
 					navbar = $('.ftco_navbar'),
 					sd = $('.js-scroll-wrap');
-			if(st>0){
-				$(".nav-white").css({"top" : "0"})
-				$(".nav-white").addClass("nav-shadow")
-			}
-			else{
+			if(st==0){
 				$(".nav-white").css({"top" : navGreyHeight})
 				$(".nav-white").removeClass("nav-shadow")
+			}
+			else if(st>0){
+				if(st>navGreyHeight){
+					$(".nav-white").css({"top" : "0"})
+				}
+
+				if($(".fixedtrue").length==1){
+					$(".nav-white").removeClass("nav-shadow")
+				}
+				else{
+					$(".nav-white").addClass("nav-shadow")
+				}
 			}
 
 			if (st > 150) {
@@ -276,6 +284,10 @@
 				if(sd.length > 0) {
 					sd.addClass('sleep');
 				}
+				$(".to-top").css("opacity","1")
+			}
+			else{
+				$(".to-top").css("opacity","0")
 			}
 			if ( st < 350 ) {
 				if ( navbar.hasClass('awake') ) {

@@ -47,19 +47,19 @@
             <a class="nav-link" href="#itinerary"><span class="ion-ios-calendar"></span> Itinerary</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><span class="ion-ios-bed"></span> Hotels</a>
+            <a class="nav-link" href="#hotels"><span class="ion-ios-bed"></span> Hotels</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><span class="ion-ios-information-circle"></span> Information</a>
+            <a class="nav-link" href="#information"><span class="ion-ios-information-circle"></span> Information</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><span class="ion-ios-quote"></span> Review</a>
+            <a class="nav-link" href="#review"><span class="ion-ios-quote"></span> Review</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><span class="ion-ios-globe"></span> Another Package</a>
+            <a class="nav-link" href="#another-package"><span class="ion-ios-globe"></span> Another Package</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><span class="ion-ios-cart"></span> Booking</a>
+            <a class="nav-link" href="#booking"><span class="ion-ios-cart"></span> Booking</a>
           </li>
         </ul>
       </div>
@@ -98,6 +98,11 @@
 
 <section class="ftco-section bg-light" id="itinerary">
     <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+            <h4 class="bold mb-4">Itinerary</h4>
+        </div>
+      </div>
       <div class="row justify-content-center mb-5">
         <div class="col-md-10">
           <div class="itinerary">
@@ -330,6 +335,261 @@
           </div>
         </div>
       </div>
+      <div class="row justify-content-center mb-5" id="hotels">
+        <div class="col-md-10">
+            <h4 class="bold mb-4 mt-3">Hotels</h4>
+          <div class="hotel">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="hotel-name">
+                  Palm Hotel
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="images">
+                  <div class="img-top">
+                    <img src="{{ url('images/gallery/ijen.jpg') }}" alt="" class="img-fluid">
+                  </div>
+                  <div class="img-bottom">
+                    <div class="img">
+                      <img src="{{ url('images/gallery/ijen.jpg') }}" alt="" class="img-fluid">
+                    </div>
+                    <div class="img" style="margin-left : 1%;">
+                      <img src="{{ url('images/gallery/ijen.jpg') }}" alt="" class="img-fluid">
+                    </div>
+                    <div class="img" style="margin-left : 1%;">
+                      <img src="{{ url('images/gallery/ijen.jpg') }}" alt="" class="img-fluid">
+                    </div>
+                  </div>
+                  <div class="desc">
+                      <div class="website">
+                        <a href="">View Website</a>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-8">
+                  <div class="hotel-information">
+                    <h6 class="bold">Day 1 - 4 &nbsp; <span class="color-green"><small> Duluxe Room</small></span> <span class="float-right color-orange"><small>Bondowoso - East Java</small></span></h6>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque veritatis praesentium sapiente fuga. Nemo, eos temporibus beatae quas facilis praesentium. Voluptas nostrum esse recusandae vero ipsa? Et ullam aut facere!</p>
+                    <hr>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15807.160596047332!2d113.819085!3d-7.9169763!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4b83cce47b0d7499!2sHotel%20Palm!5e0!3m2!1sen!2sid!4v1571388321718!5m2!1sen!2sid" width="100%" height="150" frameborder="0" style="border:0;" allowfullscreen=""></iframe>                    
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center" id="information">
+          <div class="col-md-10">
+            <h4 class="bold mb-4 mt-3">Information</h4>
+            <div class="box-white">
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#include">Package Include</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#exclude">Package Exclude</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#others">What should i pack?</a>
+                </li>
+              </ul>
+              
+              <!-- Tab panes -->
+              <div class="tab-content mt-3">
+                <div class="tab-pane container active" id="include">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ratione dicta quisquam corrupti illo corporis quis, libero atque ducimus excepturi expedita tempore tenetur possimus non ut esse debitis in saepe.</div>
+                <div class="tab-pane container fade" id="exclude">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ratione dicta quisquam corrupti illo corporis quis, libero atque ducimus excepturi expedita tempore tenetur possimus non ut esse debitis in saepe.</div>
+                <div class="tab-pane container fade" id="others">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ratione dicta quisquam corrupti illo corporis quis, libero atque ducimus excepturi expedita tempore tenetur possimus non ut esse debitis in saepe.</div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+</section>
+<section class="ftco-section" id="review">
+  <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <h4 class="bold">Reviews</h4>
+          <h6>Based on <span class="bold">65</span> reviews</h6>
+          <div class="review-info mt-4">
+            <div class="rated">
+              <div class="rounded-score">
+                  <div class="score">8.7</div>
+              </div>
+              <div class="value">Impressive</div>
+            </div>
+            <div class="percentage">
+              <div class="title">Fantastic</div>
+              <div class="progress"><div class="progress-rate" style="width : 50%"></div></div>
+              <div class="count">4,986</div>
+            </div>
+            <div class="percentage">
+              <div class="title">Very Good</div>
+              <div class="progress"><div class="progress-rate" style="width : 25%"></div></div>
+              <div class="count">4,986</div>
+            </div>
+            <div class="percentage">
+              <div class="title">Satisfying</div>
+              <div class="progress"><div class="progress-rate" style="width : 15%"></div></div>
+              <div class="count">4,986</div>
+            </div>
+            <div class="percentage">
+              <div class="title">Average</div>
+              <div class="progress"><div class="progress-rate" style="width : 10%"></div></div>
+              <div class="count">4,986</div>
+            </div>
+            <div class="percentage">
+              <div class="title">Poor</div>
+              <div class="progress"><div class="progress-rate" style="width : 2%"></div></div>
+              <div class="count">4,986</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+         <div class="col-md-10 reviews-row">
+           <div class="review-content">
+             <div class="top">
+               <div class="avatar">
+                 <span>DS</span>
+               </div>
+               <div class="desc">
+                 <div class="name">
+                    David Setya
+                 </div>
+                 <div class="datetime">
+                      22 OCT 2019
+                 </div>
+                </div>
+                <div class="score">
+                  Rated <span class="score-blue"> 9.0 </span>/ 10
+                </div>
+             </div>
+             <div class="bottom">
+               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, deleniti? Non minima quos error quam beatae quas laboriosam reprehenderit quia magnam architecto. Consectetur rerum, debitis esse at dolores impedit porro.
+             </div>
+            </div>
+           <div class="review-content">
+             <div class="top">
+               <div class="avatar">
+                 <span>DS</span>
+               </div>
+               <div class="desc">
+                 <div class="name">
+                    David Setya
+                 </div>
+                 <div class="datetime">
+                      22 OCT 2019
+                 </div>
+                </div>
+                <div class="score">
+                  Rated <span class="score-blue"> 9.0 </span>/ 10
+                </div>
+             </div>
+             <div class="bottom">
+               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, deleniti? Non minima quos error quam beatae quas laboriosam reprehenderit quia magnam architecto. Consectetur rerum, debitis esse at dolores impedit porro.
+             </div>
+            </div>
+        </div>
+      </div>
+  </div>
+</section>
+<section class="ftco-section" id="another-package">
+  <div class="container">
+  <div class="row justify-content-center">
+          <div class="col-md-10">
+          <h4 class="bold mt-4 mb-4">Another Same Package</h4>
+              <div class="row mt-4">
+                  <div class="col-md-4">
+                    <div class="package1">
+                      <div class="relative hidden">
+                        <div class="layer transition"></div>
+                        <div class="sticky-note">
+                          <span>Beach Vibes</span>
+                        </div>
+                        <img src="{{url('direngine/images/destinations/tabuhan.jpg')}}" alt="" class="img-fluid transition">
+                        <div class="view-link transition">View Package</div>
+                      </div>
+                      <div class="text-bottom mt-2">
+                        <div class="title">3D 2N Menjangan Island</div>
+                        <div class="price-tour"><span><small>start from</small>1.000.000 </span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="package1">
+                      <div class="relative hidden">
+                        <div class="layer transition"></div>
+                        <div class="sticky-note">
+                          <span>Beach Vibes</span>
+                        </div>
+                        <img src="{{url('direngine/images/destinations/menjangan.jpg')}}" alt="" class="img-fluid transition">
+                        <div class="view-link transition">View Package</div>
+                      </div>
+                      <div class="text-bottom mt-2">
+                        <div class="title">3D 2N Menjangan Island</div>
+                        <div class="price-tour"><span><small>start from</small>1.000.000 </span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="package1">
+                      <div class="relative hidden">
+                        <div class="layer transition"></div>
+                        <div class="sticky-note">
+                          <span>Beach Vibes</span>
+                        </div>
+                        <img src="{{url('direngine/images/destinations/bromo.jpg')}}" alt="" class="img-fluid transition">
+                        <div class="view-link transition">View Package</div>
+                      </div>
+                      <div class="text-bottom mt-2">
+                        <div class="title">3D 2N Menjangan Island</div>
+                        <div class="price-tour"><span><small>start from</small>1.000.000 </span></div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<section class="ftco-section" id="booking">
+    <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-10">
+              <div class="border radius p-5 text-center">
+                <div class="row">
+                  <div class="col-md-6" style="border-right : 1px solid #ddd;">
+                  <div class="text-confirm mb-4">
+                      Let's share this package to everyone
+                    </div>
+                    <div class="share">
+                      <div class="item">
+                        <a href=""> <img src="{{ url('images/common/facebook.png') }}" alt=""> Facebook</a>
+                      </div>
+                      <div class="item">
+                        <a href=""> <img src="{{ url('images/common/whatsapp.png') }}" alt=""> Whatsapp</a>
+                      </div>
+                      <div class="item">
+                        <a href=""> <img src="{{ url('images/common/gmail.png') }}" alt="">  Email</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="text-confirm mb-4">
+                      Do you want to book this awesome package?
+                    </div>
+                      <a href="" class="btn btn-outline-primary f14">Another package</a>
+                      &nbsp;
+                      <a href="" class="btn btn-primary f14">Book this package</a>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
     </div>
 </section>
 <!--div id="googleMap" style="width:100%;height:380px;"></div-->
