@@ -1,5 +1,5 @@
 @extends('backend.template.main');
-@section('admin');                    
+@section('admin')                    
                 <div class="row">
                     <!-- Column -->
                     <div class="col-md-6 col-lg-2 col-xlg-3">
