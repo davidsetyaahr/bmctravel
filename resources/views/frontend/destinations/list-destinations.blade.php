@@ -1,125 +1,64 @@
 @extends('frontend/common/template')
 @section('container')
-
-<div class="hero-wrap js-fullheight-travel" style="background-image: url('direngine/images/bg_4.jpg');">
+<style>
+	.override{
+		height: 500px !important;
+	}
+</style>
+<div style="background-image: url('direngine/images/bg_4.jpg');" class="hero-wrap js-fullheight-travel override">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight-travel align-items-center justify-content-center" data-scrollax-parent="true">
           <div class="col-md-9 text-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-            <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>Destinations</span></p>
-            <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Destinations</h1>
+            <br><br><br><br><br><br><h1 style="font-size: 45px; color:white; text-shadow: -2px 2px black;" class="mb-3 bread " data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Destinations</h1>
             <div class="block-17 my-4">
                 <form action="" method="post" class="d-block d-flex">
                   <div class="fields d-block d-flex">
-                    <div class="textfield-search one-third">
                         <input type="text" class="form-control" placeholder="Search Here...">
                     </div>
+                    <div class="textfield-search one-third">
                   </div>
-                  <input type="submit" class="search-submit btn btn-primary" value="Search">  
+                  <input type="submit" class="search-submit btn btn-primary" value="Search">
                 </form>
               </div>
           </div>
+                <div class="m-t-30">
+                <p >Filter By</p>
+                    <p class="m-t-auto browse d-md-flex">
+                        <span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-guarantee"></i>Mountain</a></span>
+                        <span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-like"></i>Waterfall</a></span> 
+                        <span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-like"></i>Adventure</a></span> 
+                        <span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-meeting-point"></i>City</a></span> 
+                        <span class="d-flex justify-content-md-center align-items-md-	center"><a href="#"><i class="flaticon-shopping-bag"></i>Beach</a></span>
+                    </p>
+                </div>
         </div>
       </div>
     </div>
 
     <section class="ftco-section bg-light">
-            <div class="container">
-              <div class="row d-flex">
-                <div class="col-md-3 d-flex ftco-animate">
-                    <div class="destination">
-                        <a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(direngine/images/destinations/ijen.jpg);">
-                            <div class="icon d-flex justify-content-center align-items-center">
-                                <span class="icon-search2"></span>
-                            </div>
-                        </a>
-                        <div class="text p-3">
-                            <h3><a href="#">Kawah Ijen</a></h3>
-                            <span class="listing">Bondowoso - East Java</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 d-flex ftco-animate">
-                    <div class="destination">
-                        <a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(direngine/images/destinations/kawah-wurung.png);">
-                            <div class="icon d-flex justify-content-center align-items-center">
-                                <span class="icon-search2"></span>
-                            </div>
-                        </a>
-                        <div class="text p-3">
-                            <h3><a href="#">Kawah Wurung </a></h3>
-                            <span class="listing">Bondowoso - East Java</span>
-                        </div>
-                    </div>
-        </div>
-                <div class="col-md-3 d-flex ftco-animate">
-                    <div class="destination">
-                        <a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(direngine/images/destinations/merbabu.jpg);">
-                            <div class="icon d-flex justify-content-center align-items-center">
-                                <span class="icon-search2"></span>
-                            </div>
-                        </a>
-                        <div class="text p-3">
-                            <h3><a href="#">Mount Merbabu</a></h3>
-                            <span class="listing">Central Java</span>
-                        </div>
-                    </div>
-        </div>
-                <div class="col-md-3 d-flex ftco-animate">
-                    <div class="destination">
-                        <a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(direngine/images/destinations/papuma.jpg);">
-                            <div class="icon d-flex justify-content-center align-items-center">
-                                <span class="icon-search2"></span>
-                            </div>
-                        </a>
-                        <div class="text p-3">
-                            <h3><a href="#">Papuma Beach</a></h3>
-                            <span class="listing">Jember - East Java</span>
-                        </div>
-                    </div>
-        </div>
-                <div class="col-md-3 d-flex ftco-animate">
-                    <div class="destination">
-                        <a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(direngine/images/destinations/tabuhan.jpg);">
-                            <div class="icon d-flex justify-content-center align-items-center">
-                                <span class="icon-search2"></span>
-                            </div>
-                        </a>
-                        <div class="text p-3">
-                            <h3><a href="#">Tabuhan Island</a></h3>
-                            <span class="listing">Banyuwangi - East Java</span>
-                        </div>
-                    </div>
-        </div>
-                <div class="col-md-3 d-flex ftco-animate">
-                    <div class="destination">
-                        <a href="#" class="img d-flex justify-content-center align-items-center" style="background-image: url(direngine/images/destinations/bromo.jpg);">
-                            <div class="icon d-flex justify-content-center align-items-center">
-                                <span class="icon-search2"></span>
-                            </div>
-                        </a>
-                        <div class="text p-3">
-                            <h3><a href="#">Mount Bromo</a></h3>
-                            <span class="listing">East Java</span>
-                        </div>
-                    </div>
-        </div>
-              </div>
-              <div class="row mt-5">
-                <div class="col text-center">
-                  <div class="block-27">
-                    <ul>
-                      <li><a href="#">&lt;</a></li>
-                      <li class="active"><span>1</span></li>
-                      <li><a href="#">2</a></li>
-                      <li><a href="#">3</a></li>
-                      <li><a href="#">4</a></li>
-                      <li><a href="#">5</a></li>
-                      <li><a href="#">&gt;</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+			<div class="container">
+					<div class="row mt-5 ftco-animate">
+						
+						@foreach($destinations as $item)
+						<div class="col-md-3">
+							<div class="package1">
+								<div class="relative hidden">
+									<div class="layer transition"></div>
+									<div class="sticky-note">
+										<span>{{$item->category_name}}</span>
+									</div>
+									<img src="{{ url('/images/gallery/'.$item->gallery) }}" alt="" class="img-fluid transition">
+								<div class="view-link transition"><a href="{{ url('/destinations/detail-destinations/'.$item->id_destination) }}" style="color: white;">View Destination</a></div>
+								</div>
+								<div class="text-bottom mt-2">
+									<div class="title">{{$item->destination_name}}</div>
+									<div class="price-tour text-right"><span><small>{{$item->province_name.' - '. $item->city_name}}</small></span></div>
+								</div>
+							</div>
+						</div>
+						@endforeach
+					</div>
+				</div>
+      </section>
 @endsection

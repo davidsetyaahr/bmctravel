@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Gallery_categories extends Model
+class Tour_type extends Model
 {
-    //
+    protected $table = 'tour_type';
 }

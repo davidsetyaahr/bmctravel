@@ -34,8 +34,21 @@ class Tags extends Controller
         return redirect('/admin/travel-tips/tags')->with('status', 'Travel tips tags berhasil ditambahkan');
     }
 
-    function show()
+    function edit($id)
     {
-        return view('backend.travel_tips.tags.edit-tags');
+        $tag = DB::table('tags')->where('id_tag',$id)->get();
+        return view('backend.travel_tips.tags.edit-tags' , ['id_tag' => $tag]);
+    }
+
+    function update(Request $request)
+    {
+        $request->validate([
+            'tag_name' => 'required'
+        ]);
+
+        DB::table('tags')->where('id_tag',$request->id)->update([
+            'tag_name' => $request->tag_name
+        ]);
+        return redirect('/admin/travel-tips/tags');
     }
 }

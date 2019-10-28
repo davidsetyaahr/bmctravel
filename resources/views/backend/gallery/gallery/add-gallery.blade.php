@@ -13,13 +13,13 @@
                 <form action="/admin/gallery/add-gallery" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     {{-- @csrf --}}
-                        <label for="" class="">Gallery Picture</label>
-                        <input type="file" name="img" class="form-control">
                         {{-- <label for="">Gallery Name</label>
                         <input type="text" class="form-control"  @error('img') is-invalid @enderror" name="img">
                         @error('img')
                         <div class="invalid-feedback"> {{ $message }} </div>
                         @enderror --}}
+                        <label for="" class="">Gallery Picture</label>
+                        <input type="file" name="img" class="form-control">
                         <br>
                         <label for="">Category Gallery</label>
                         <select class="form-control" name="id_category" id="">

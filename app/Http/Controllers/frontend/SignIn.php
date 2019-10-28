@@ -9,6 +9,6 @@ class SignIn extends Controller
 {
     public function index()
     {
-        return view('frontend\auth\signin');
+        return view('frontend.auth.signin');
     }
 }

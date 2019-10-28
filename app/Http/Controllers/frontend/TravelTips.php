@@ -9,7 +9,7 @@ class TravelTips extends Controller
 {
     public function index()
     {
-        return view('frontend\travel-tips\list-travel-tips');
+        return view('frontend.travel-tips.list-travel-tips');
     }
 
     public function detail()

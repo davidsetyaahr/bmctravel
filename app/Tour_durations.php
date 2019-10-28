@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Gallery extends Model
+class Tour_durations extends Model
 {
-    protected $table = "gallery";
+    //
 }

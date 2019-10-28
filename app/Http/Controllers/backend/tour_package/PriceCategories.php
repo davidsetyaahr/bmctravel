@@ -46,7 +46,7 @@ class PriceCategories extends Controller
             'start_pax' => 'required',
             'end_pax' => 'required'
         ]);
-        
+
         DB::table('price_categories')->where('id_price_category',$request->id)->update([
             'start_pax' => $request->start_pax,
             'end_pax' => $request->end_pax

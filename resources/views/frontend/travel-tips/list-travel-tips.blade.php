@@ -14,7 +14,7 @@
                         <input type="text" class="form-control" placeholder="Search Here...">
                     </div>
                   </div>
-                  <input type="submit" class="search-submit btn btn-primary" value="Search">  
+                  <input type="submit" class="search-submit btn btn-primary" value="Search">
                 </form>
               </div>
           </div>
@@ -57,7 +57,7 @@
 				</div>
 				<div class="bottom">
 					<div class="title">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet .....</div>
-					<div class="link">Read More</div>
+					<div class="link"><a href="{{url('/travel-tips/detail-travel') }}">Read More</a></div>
 				</div>
 			</div>
           </div>

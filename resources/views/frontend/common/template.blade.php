@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-	
+<!--     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+ -->	
     <link href="https://fonts.googleapis.com/css?family=Sacramento&display=swap" rel="stylesheet">    
 
     <link rel="stylesheet" href="{{ asset('direngine/css/open-iconic-bootstrap.min.css') }}">
@@ -29,55 +29,63 @@
     <link rel="stylesheet" href="{{ asset('direngine/css/style.css') }}">
   </head>
   <body>
+<div class="to-top">Back To Top</div>
 <div class="top-menu">
 
 <nav class="navbar navbar-expand-sm navbar-dark nav-grey">
       <div class="container">
+        <div class="left">
+          <a href="" class="navbar-brand view-map" style="margin-right : 0">View On Map</a>
+          <span class="limit">|</span>
+          <a href="" class="navbar-brand view-map">DJ TRANS GROUP</a>
+        </div>
+        <div class="right">
+        <a href="" class="navbar-brand view-map"><span class="ion-logo-facebook"></span> Instagram</a>
+          <a href="" class="navbar-brand view-map"><span class="ion-logo-whatsapp"></span> Whatsapp</a>
+          <a href="" class="navbar-brand view-map"><span class="ion-logo-youtube"></span> YouTube</a>
 
-        <a href="" class="navbar-brand view-map" style="margin-right : 0">View On Map</a>
-        <span class="limit">|</span>
-        <a href="" class="navbar-brand view-map">DJ TRANS GROUP</a>
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#"><span class="ion-logo-facebook"></span> Instagram</a>
-      </li>
-      <li class="nav-item">
-      <a class="nav-link" href="#"><span class="ion-logo-whatsapp"></span> Whatsapp</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#"><span class="ion-logo-youtube"></span> YouTube</a>
-    </li>
-  </ul>
+<!--           <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#"><span class="ion-logo-facebook"></span> Instagram</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#"><span class="ion-logo-whatsapp"></span> Whatsapp</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><span class="ion-logo-youtube"></span> YouTube</a>
+          </li>
+        </ul>
+ -->        </div>
 </div>  
 </nav>
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light nav-white" id="ftco-navbar">
     <div class="container">
-      <a class="navbar-brand" href="index.html"><img src="{{ asset('direngine/images/BMC-Logo.png') }}" alt="" style="height:50px;"> BMC Travel Service.</a>
+      <a class="navbar-brand" href="index.html"><img src="{{ asset('direngine/images/BMC-Logo.png') }}" alt="" style="height:40px;"> <span> BMC Travel Service.</span></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="oi oi-menu"></span> Menu
+        <span class="oi oi-menu"></span>
       </button>
       
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="about" class="nav-link">About</a></li>
-          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Services</a>
+          <li class="nav-item active"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="{{ url('about') }}" class="nav-link">About</a></li>
+          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" data-toggle="dropdown">Services</a>
           <div class="dropdown-menu animate slideIn">
-				<a class="dropdown-item" href="tour-package"><span class="ion-ios-planet"></span> Travel Package</a>
+				<a class="dropdown-item" href="{{ url('tour-package') }}"><span class="ion-ios-planet"></span> Travel Package</a>
 				<a class="dropdown-item" href="#"><span class="ion-ios-bed"></span> Accommodation</a>
 				<a class="dropdown-item" href="#"><span class="ion-ios-car"></span> Rent Car</a>
 				<a class="dropdown-item" href="#"><span class="ion-ios-airplane"></span> Airport/City Transfer</a>
 				<a class="dropdown-item" href="#"><span class="ion-ios-paw"></span> Outbond</a>
       </div>			
 			</li>
-          <li class="nav-item"><a href="destinations" class="nav-link">Destinations</a></li>
-          <li class="nav-item"><a href="travel-tips" class="nav-link">Travel Tips</a></li>
+          <li class="nav-item"><a href="{{ url('destinations') }}" class="nav-link">Destinations</a></li>
+          <li class="nav-item"><a href="{{ url('travel-tips') }}" class="nav-link">Travel Tips</a></li>
           <li class="nav-item"><a href="#" class="nav-link">
             <img src="{{ asset('direngine/images/icons/united-kingdom.png') }}">
             &nbsp;
 			  <img src="{{ asset('direngine/images/icons/indonesia.png') }}">
       </a></li>
-          <li class="nav-item cta"><a href="signin" class="nav-link"><span>Sign In</span></a></li>
+          <li class="nav-item cta"><a href="{{ url('signin') }}" class="nav-link"><span>Sign In</span></a></li>
         </ul>
       </div>
     </div>
