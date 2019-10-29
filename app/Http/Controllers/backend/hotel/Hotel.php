@@ -14,7 +14,7 @@ class Hotel extends Controller
 {
     function index()
     {
-        $hotel = Hotels::all();
+        $hotel = Hotels::orderBy('id_hotel', 'DESC')->get();
         return view('backend.hotel.hotel.list-hotel', ['hotels' => $hotel]);
     }
     function create(){
@@ -55,6 +55,6 @@ class Hotel extends Controller
             'map' => $request->map,
             'overview' => $request->overview
         ]);
-        return redirect('/admin/hotel/hotel');
+        return redirect('/admin/hotel/hotel')->with('status', 'Kategori hotel berhasil diupdate');
    }
 }

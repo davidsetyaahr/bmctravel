@@ -21,7 +21,6 @@
                             <th>#</th>
                             <th>Title</th>
                             <th>Admin</th>
-                            <th>Gallery</th>
                             <th>Content</th>
                             <th>Permalink</th>
                             <th>Insert Date</th>
@@ -34,7 +33,6 @@
                                 <th>{{ $loop->iteration}}</th>
                                 <td>{{$trvltips->title}}</td>
                                 <td>{{$trvltips->id_admin}}</td>
-                                <td>{{$trvltips->id_gallery}}</td>
                                 <td>{{$trvltips->content}}</td>
                                 <td>{{$trvltips->permalink}}</td>
                                 <td>{{$trvltips->insert_date}}</td>
