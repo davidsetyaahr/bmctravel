@@ -103,7 +103,7 @@
                             <ul class="navbar-nav float-left mr-auto">
                                     <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
                                     <li class="nav-item">
-                                        <a href="" class="nav-link page-top-title"> Dashboard</a>
+                                        <a href="" class="nav-link page-top-title">@yield('pagetitle')</a>
                                     </li>
                                 </ul>
                                 <!-- ============================================================== -->
@@ -201,7 +201,13 @@
                                     <li class="nav-item">
                                         <a href="" class="nav-link">
                                             <small>
-                                                Home <i class="mdi mdi-menu-right"></i> View All Packages</a>
+                                                <?php $str = str_replace("-"," ",Request::segment(2)) ?>{{ ucwords($str) }} <i class="mdi mdi-menu-right"></i> @yield('pagetitle') <i class="mdi mdi-menu-right"></i> 
+                                                @if($__env->yieldContent('view_status')=="active")
+                                                    @yield('view_caption')
+                                                @else
+                                                    @yield('insert_caption')
+                                                @endif
+                                                </a>
                                             </small>
                                     </li>
                                 </ul>

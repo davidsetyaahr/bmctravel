@@ -5,6 +5,7 @@
 @section('view_link','categories')
 @section('view_status','active')
 @section('insert_status','')
+@section('pagetitle','Categories')
 
 @section('admin')
 <div class="row">
