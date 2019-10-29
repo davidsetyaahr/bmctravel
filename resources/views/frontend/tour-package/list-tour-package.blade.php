@@ -1,11 +1,11 @@
 @extends('frontend.common.template')
 @section('container')
-    <div class="hero-wrap js-fullheight-travel page-tour-package" style="background-image: url('https://img.traveltriangle.com/attachments/pictures/847252/original/tour.jpg?tr=w-1366,h-305')">
-      <div class="overlay js-fullheight-travel"></div>
+    <div class="js-fullheight-travel" style="background-image: url('https://img.traveltriangle.com/attachments/pictures/847252/original/tour.jpg?tr=w-1366,h-305')">
+      <div class="overlay"></div>
       <div class="container">
-        <div class="row no-gutters slider-text js-fullheight-travel align-items-center justify-content-center" data-scrollax-parent="true">
-          <div class="col-md-8 mt-5 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-            <h3 class="color-white" data-scrollax="properties: { translateY: '30%'}">All Travel Package</h3>
+        <div class="row justify-content-center">
+          <div class="col-md-8 mt-5 ftco-animate text-center">
+            <h3 class="color-white">All Travel Package</h3>
             <div class="block-17 my-4">
                     <form action="" method="post" class="d-block d-flex">
                       <div class="fields d-block d-flex">
@@ -61,40 +61,52 @@
             <div class="col-md-12 mt-5">
     				<div class="destinationtext owl-carousel ftco-animate">
 						<div class="item">
-							<img src="direngine/images/destinations/kawah-wurung.png" alt="" class="img-fluid">
-							<div class="box">
-								<h6>Explore East Java</h6>
-							</div>
+              <div class="relative">
+                <img src="direngine/images/destinations/kawah-wurung.png" alt="" class="img-fluid">
+                <div class="box">
+                  <h6>Explore East Java</h6>
+                </div>
+              </div>
 						</div>
 						<div class="item">
-							<img src="direngine/images/destinations/ijen.jpg" alt="" class="img-fluid">
-							<div class="box">
-								<h6>Explore Bondowoso</h6>
-							</div>
+              <div class="relative">
+                <img src="direngine/images/destinations/ijen.jpg" alt="" class="img-fluid">
+                <div class="box">
+                  <h6>Explore Bondowoso</h6>
+                </div>
+              </div>
 						</div>
 						<div class="item">
-							<img src="direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid">
-							<div class="box">
-								<h6>Mountain Vibes</h6>
-							</div>
+              <div class="relative">
+                <img src="direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid">
+                <div class="box">
+                  <h6>Mountain Vibes</h6>
+                </div>
+              </div>
 						</div>
 						<div class="item">
-							<img src="direngine/images/destinations/bali.jpg" alt="" class="img-fluid">
-							<div class="box">
-								<h6>Beach Vibes</h6>
-							</div>
+              <div class="relative">
+                <img src="direngine/images/destinations/bali.jpg" alt="" class="img-fluid">
+                <div class="box">
+                  <h6>Beach Vibes</h6>
+                </div>
+              </div>
 						</div>
 						<div class="item">
-							<img src="direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid">
-							<div class="box">
-								<h6>Menjangan & Tabuhan Island</h6>
-							</div>
+              <div class="relative">
+                <img src="direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid">
+                <div class="box">
+                  <h6>Menjangan & Tabuhan Island</h6>
+                </div>
+              </div>
 						</div>
 						<div class="item">
-							<img src="direngine/images/destinations/bromo.jpg" alt="" class="img-fluid">
-							<div class="box">
-								<h6>Bromo Midnight</h6>
-							</div>
+              <div class="relative">
+                <img src="direngine/images/destinations/bromo.jpg" alt="" class="img-fluid">
+                <div class="box">
+                  <h6>Bromo Midnight</h6>
+                </div>
+              </div>
 						</div>
     				</div>
                 </div>

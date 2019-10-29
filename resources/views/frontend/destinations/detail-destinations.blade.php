@@ -2,7 +2,7 @@
 @section('container')
 
 <style>
-    .override{
+/*     .override{
         height: 500px !important;
     }
     .bg-ctgr{
@@ -11,9 +11,14 @@
     .overlay{
         height: 500px !important;
     }
-</style>
+ */</style>
     @foreach ($destinations as $item)
-    <div style="background-image: url('/images/gallery/{{$item->gallery }}');" class="hero-wrap js-fullheight-travel override">
+    <?php
+        $ex = explode(",",$item->gallery);
+        $img = App\Gallery::where("id_gallery",$ex[0])->take(1)->get();
+    ?>
+
+    <div style="background-image: url('/images/gallery/{{$img[0]->img }}');" class="hero-wrap js-fullheight-travel override">
         <div class="overlay js-fullheight">
                 <div class="container">
                         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">

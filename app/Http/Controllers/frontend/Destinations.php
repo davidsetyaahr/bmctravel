@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 use \App\Destination;
+use \App\Gallery;
 use \App\City_model;
 
 class Destinations extends Controller
