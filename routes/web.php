@@ -9,8 +9,10 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
-Route::get('/admin', 'backend\Admin@index');
+*/  
+Route::get('/admin', 'backend\Admin@login');
+Route::post('/admin', 'backend\Admin@loginPost');
+Route::get('/admin/dashboard', 'backend\Admin@dashboard');
 Route::get('/admin/tour-package/tour-package', 'backend\tour_package\TourPackage@index');
 Route::get('//admin/tour-package/add-tour-package', 'backend\tour_package\TourPackage@add');
 Route::get('/admin/tour-package/categories', 'backend\tour_package\Categories@index');

@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 use  Illuminate\Support\Facades\DB;
 
 use App\Tour_categories;
-use App\Gallery;
-use App\Gallery_categories;
+use App\Gallery_model;
+use App\Gallery_categories_model;
 
 
 class Categories extends Controller
@@ -23,8 +23,8 @@ class Categories extends Controller
 
     public function add()
     {
-        $gallery = Gallery::all();
-        $gallery_categories = Gallery_categories::all();
+        $gallery = Gallery_model::all();
+        $gallery_categories = Gallery_categories_model::all();
         return view('backend.tour_package.categories.add-categories' , ['gallery' => $gallery, 'categories' => $gallery_categories]);
     }
 
@@ -46,8 +46,8 @@ class Categories extends Controller
 
     public function edit ($id)
     {
-        $gallery = Gallery::all();
-        $gallery_categories = Gallery_categories::all();
+        $gallery = Gallery_model::all();
+        $gallery_categories = Gallery_categories_model::all();
         $category = DB::table('tour_categories')->where('id_category',$id)->get();
         return view('backend.tour_package.categories.edit-categories', ['gallery' => $gallery, 'categories' => $gallery_categories, 'tour_categories' => $category]);
     }
