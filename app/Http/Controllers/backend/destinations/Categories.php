@@ -7,17 +7,21 @@ use Illuminate\Http\Request;
 use  Illuminate\Support\Facades\DB;
 
 use App\Destination_categories;
+use App\Gallery_model;
+use \App\Gallery_categories_model;
 
 class Categories extends Controller
 {
     function index()
     {
-        $categories = Destination_categories::all();
+        $categories = Destination_categories::orderBy('id_category', 'DESC')->get();
         return view('backend.destinations.categories.list-categories', ['destination_categories' => $categories]);
     }
     function create()
     {
-        return view('backend.destinations.categories.add-categories');
+        $gallery = Gallery_model::all();
+        $gallery_categories = Gallery_categories_model::all();
+        return view('backend.destinations.categories.add-categories',['gallery' => $gallery, 'categories' => $gallery_categories]);
     }
     function store(Request $request)
     {
@@ -35,8 +39,10 @@ class Categories extends Controller
 
     }
     function edit($id){
+        $gallery = Gallery_model::all();
+        $gallery_categories = Gallery_categories_model::all();
         $categories = DB::table('destination_categories')->where('id_category',$id)->get();
-        return view('backend.destinations.categories.edit-categories',['destination_categories' => $categories]);
+        return view('backend.destinations.categories.edit-categories',['gallery' => $gallery, 'categories' => $gallery_categories, 'destination_categories' => $categories]);
     }
     public function update(Request $request)
     {
@@ -49,6 +55,6 @@ class Categories extends Controller
             'category_name' => $request->category_name,
             'id_gallery' => $request->id_gallery
         ]);
-        return redirect('/admin/destinations/categories');
+        return redirect('/admin/destinations/categories')->with('status', 'Kategori berhasil di Update');
    }
 }

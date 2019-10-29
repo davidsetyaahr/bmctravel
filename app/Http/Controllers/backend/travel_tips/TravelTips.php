@@ -15,7 +15,7 @@ class TravelTips extends Controller
 {
     function index()
     {
-        $trvltips = Traveltip::all();
+        $trvltips = Traveltip::orderBy('id_travel_tips', 'DESC')->get();
         return view('backend.travel_tips.travel_tips.list', ['travel_tips' => $trvltips]);
     }
     function create()
