@@ -75,7 +75,6 @@ class TravelTips extends Controller
             'id_gallery' => $request->id_gallery,
             'content' => $request->content,
             'permalink' => $request->permalink,
-            'insert_date' => Carbon::now(),
             'update_date' => Carbon::now()
         ]);
         return redirect('/admin/travel-tips/travel-tips/list')->with('status', 'Travel Tips berhasil diupdate');
