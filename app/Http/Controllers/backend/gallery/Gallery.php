@@ -12,8 +12,11 @@ class Gallery extends Controller
 {
     function index()
     {
-        $galeri = Gallery_model::all();
-        return view('backend.gallery.gallery.list-gallery' ,  ['id_gallery' => $galeri]);
+        // $galeri = Gallery_model::all();
+        $galeri = DB::table('gallery')
+        ->join('gallery_categories','gallery_categories.id_category','gallery.id_category')
+        ->select('gallery.id_gallery','gallery.img','gallery.id_category','gallery_categories.id_category','gallery_categories.category_name')->get();
+        return view('backend.gallery.gallery.list-gallery' ,  ['gallery' => $galeri]);
     }
 
     function add()
@@ -44,7 +47,7 @@ class Gallery extends Controller
                     'id_category' => $request->id_category,
                     // menyimpan data file yang diupload ke variabel $file
                 ]);
-                    return redirect('/admin/gallery/gallery');
+                    return redirect('/admin/gallery/gallery')->with('status', 'Galeri berhasil ditambahkan');
                 }
 
     function edit($id)

@@ -31,6 +31,24 @@ class Categories extends Controller
                 DB::table('gallery_categories')->insert([
                 'category_name' => $request->category_name
                 ]);
-        return redirect('/admin/gallery/categories')->with('status', 'Travel tips tags berhasil ditambahkan');
+        return redirect('/admin/gallery/categories')->with('status', 'Kategori galeri berhasil ditambahkan');
+    }
+
+    function edit($id)
+    {
+        $galeri = DB::table('gallery_categories')->where('id_category',$id)->get();
+        return view('backend.gallery.categories.edit-categories-gallery' , ['id_category' => $galeri]);
+    }
+
+    function update(Request $request)
+    {
+        $request->validate([
+            'category_name' => 'required'
+        ]);
+
+        DB::table('gallery_categories')->where('id_category',$request->id)->update([
+            'category_name' => $request->category_name
+        ]);
+        return redirect('admin/gallery/categories')->with('status', 'Kategori galeri berhasil diperbarui');
     }
 }
