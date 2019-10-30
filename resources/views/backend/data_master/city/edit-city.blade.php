@@ -10,9 +10,10 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-            <form action="/admin/data-master/add-city" method="post">
+            <form action="/admin/data-master/update" method="post">
             @csrf
-                <select id="" class="form-control" name="city_name">
+            <input type="hidden" name="id_city" value="{{$city[0]->id_city}}">
+                <select id="" class="form-control" name="province_id">
                     <option value="">--Select Province--</option>
                     @foreach ($prov as $keyProv) ?>
                         <option value="{{ $keyProv->id_province }}" {{ $city[0]->province_id == $keyProv->id_province ? 'selected' : '' }} >{{ $keyProv->province_name}} </option>
