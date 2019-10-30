@@ -26,8 +26,60 @@
   }  
   .destinationtext .item img{
     height : 180px !important;
-  }  
+  }
+  .js-fullheight-travel{
+    height: 50% !important;
+  }
+  .page-destination img{
+    height : 180px !important;
+  }
+  .page-destination .text-bottom .price-tour{
+    float : none !important;
+    text-align: left !important;
+    width : 100% !important;
+  }
+  .page-destination .text-bottom .price-tour span{
+    float : none !important;
+  }
+  .page-destination .text-bottom .price-tour small{
+    display: inline  !important;
+  }
 }  
+.line-before{
+  position: relative;
+  display: inline;
+  padding-bottom : 10px;
+}
+.line-before:before{
+  content : "";
+  width : 60%;
+  left : 20%;
+  position: absolute;
+  border-top :2px solid #da2f29;
+  bottom: 0;
+}
+.js-fullheight-travel{
+  height: 40%;
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.js-fullheight-travel .overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0,0, 0.3);  
+}
+.js-fullheight-travel .container{
+  left : 50%;
+  position: absolute;
+  bottom : 20px;
+  transform : translateX(-50%);
+}
 .share .item{
   display : inline-block;
   margin : 5px 15px;
@@ -69,8 +121,9 @@
   position: fixed;
   bottom : 0;
   right: 0;
-  background: rgb(27, 160, 226, 0.6);
+  background: rgb(218, 47, 41, 0.6);
   cursor: pointer;
+  color : white;
   opacity: 0;
   transition : all .5s ease;
   font-weight: bold;
@@ -1237,7 +1290,8 @@ hr.bold{
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-html {
+html,body{
+  height: 100%;
   font-family: 'poppinsregular';
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;

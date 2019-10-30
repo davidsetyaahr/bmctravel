@@ -21,6 +21,10 @@ class TravelTips extends Controller
         return view('backend.travel_tips.travel_tips.list',['travel_tips' => $trvltips]);
         // $trvltips = Traveltip::all();
         // return view('backend.travel_tips.travel_tips.list', ['travel_tips' => $trvltips]);
+
+        // fungsinya buat apa yang dibawah
+        // $trvltips = Traveltip::orderBy('id_travel_tips', 'DESC')->get();
+        // return view('backend.travel_tips.travel_tips.list', ['travel_tips' => $trvltips]);
     }
     function create()
     {

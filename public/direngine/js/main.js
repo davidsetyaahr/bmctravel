@@ -51,11 +51,11 @@
 			$('.js-fullheight-page').css('height', $(window).height()/7);
 		});
 
-		$('.js-fullheight-travel').css('height', $(window).height()/2);
+/* 		$('.js-fullheight-travel').css('height', $(window).height()/2);
 		$(window).resize(function(){
 			$('.js-fullheight-travel').css('height', $(window).height()/2);
 		});
-
+ */
 	};
 	fullHeight();
 

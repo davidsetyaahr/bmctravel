@@ -1,26 +1,39 @@
 @extends('frontend/common/template')
 @section('container')
-<style>
-	.override{
-		height: 500px !important;
-	}
-</style>
-<div style="background-image: url('direngine/images/bg_4.jpg');" class="hero-wrap js-fullheight-travel override">
+<div style="background-image: url('direngine/images/bg_4.jpg');"  class="js-fullheight-travel">
       <div class="overlay"></div>
       <div class="container">
-        <div class="row no-gutters slider-text js-fullheight-travel align-items-center justify-content-center" data-scrollax-parent="true">
-          <div class="col-md-9 text-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-            <br><br><br><br><br><br><h1 style="font-size: 45px; color:white; text-shadow: -2px 2px black;" class="mb-3 bread " data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Destinations</h1>
-            <div class="block-17 my-4">
-                <form action="" method="post" class="d-block d-flex">
-                  <div class="fields d-block d-flex">
-                        <input type="text" class="form-control" placeholder="Search Here...">
-                    </div>
-                    <div class="textfield-search one-third">
-                  </div>
-                  <input type="submit" class="search-submit btn btn-primary" value="Search">
-                </form>
-              </div>
+        <div class="row justify-content-center">
+
+          <div class="col-md-8 text-center mt-5 ftco-animate">
+
+          <h3 class="color-white">Destinations</h3>
+          <div class="block-17 my-4">
+          <form action="" method="post" class="d-block d-flex">
+                      <div class="fields d-block d-flex">
+                        <div class="textfield-search one-third">
+                            <input type="text" class="form-control" placeholder="Destinations, Ex : Mountain, Waterfall, etc ">
+                        </div>
+                        <div class="select-wrap one-third">
+                          <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                          <select name="" id="" class="form-control" placeholder="Keyword search">
+                              <option>Where</option>
+                              <optgroup label="East Java">
+                                  <option>Bondowoso</option>
+                                  <option>Probolinggo</option>
+                                  <option>Jember</option>
+                              </optgroup>
+                              <optgroup label="Bali">
+                                  <option>Bali</option>
+                              </optgroup>
+                              <optgroup label="West Nusa Tenggara">
+                                  <option>Lombok</option>
+                              </optgroup>
+                          </select>
+                        </div>
+                      </div>
+                      <input type="submit" class="search-submit btn btn-primary" value="Search">
+                    </form>
           </div>
                 <div class="m-t-30">
                 <p >Filter By</p>
@@ -33,30 +46,43 @@
                     </p>
                 </div>
         </div>
+        </div>
       </div>
-    </div>
+      </div>
 
-    <section class="ftco-section bg-light">
+    <section class="ftco-section">
 			<div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-10 text-center">
+            <h3 class="line-before"><strong> OVERVIEW</strong></h3>
+            <p class="mt-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel magnam esse, sunt minima quae reprehenderit deleniti obcaecati dolorem enim aliquid optio dolor suscipit cupiditate? Vitae similique odit ratione facilis fuga!</p>
+          </div>
+        </div>
 					<div class="row mt-5 ftco-animate">
 
 						@foreach($destinations as $item)
-						<div class="col-md-3">
-							<div class="package1">
-								<div class="relative hidden">
-									<div class="layer transition"></div>
-									<div class="sticky-note">
-										<span>{{$item->category_name}}</span>
-									</div>
-									<img src="{{ url('/images/gallery/'.$item->gallery) }}" alt="" class="img-fluid transition">
-								<div class="view-link transition"><a href="{{ url('/destinations/detail-destinations/'.$item->id_destination) }}" style="color: white;">View Destination</a></div>
-								</div>
-								<div class="text-bottom mt-2">
-									<div class="title">{{$item->destination_name}}</div>
-									<div class="price-tour text-right"><span><small>{{$item->province_name.' - '. $item->city_name}}</small></span></div>
-								</div>
-							</div>
-						</div>
+            <?php
+              $ex = explode(",",$item->gallery);
+              $img = App\Gallery::where("id_gallery",$ex[0])->take(1)->get();
+            ?>
+						<div class="col-md-3 col-6">
+            <a href="{{ url('/destinations/detail-destinations/'.$item->id_destination) }}">
+              <div class="package1 mb-4 page-destination">
+                <div class="relative hidden">
+                  <div class="layer transition"></div>
+                  <div class="sticky-note">
+                    <span>{{$item->category_name}}</span>
+                  </div>
+                  <img src="{{ url('/images/gallery/'.$img[0]->img) }}" alt="" class="img-fluid transition">
+                  <div class="view-link transition">View Detail</div>
+                </div>
+                <div class="text-bottom mt-2">
+                  <div class="title">{{$item->destination_name}}</div>
+                  <div class="price-tour"><span><small class="text-right">{{$item->province_name.' - '. $item->city_name}}</small></span></div>
+                </div>
+              </div>
+            </a>
+            	</div>
 						@endforeach
 					</div>
 				</div>

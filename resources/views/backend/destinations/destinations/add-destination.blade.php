@@ -25,7 +25,7 @@
                             </div>
                             <div class="col-md-6 m-t-15">
                                 <label for="">Category</label>
-                                <select class="select2 form-control custom-select select2-hidden-accessible @error('id_category') is-invalid @enderror" name="id_category" id=""
+                                <select class="select form-control @error('id_category') is-invalid @enderror" name="id_category" id=""
                                 value="{{ old('id_category')}}">
                                     <option value="">---Select---</option>
                                     @foreach($destination_categories as $c)
@@ -38,7 +38,7 @@
                                 </div>
                             <div class="col-md-6 m-t-15">
                                 <label for="">City & Province</label>
-                                <select class="select2 form-control custom-select select2-hidden-accessible @error('id_city') is-invalid @enderror" name="id_city" id=""
+                                <select class="form-control custom-select @error('id_city') is-invalid @enderror" name="id_city" id=""
                                 value="{{ old('id_city')}}">
                                     <option value="">---Select---</option>
                                     @foreach($city as $cty)
