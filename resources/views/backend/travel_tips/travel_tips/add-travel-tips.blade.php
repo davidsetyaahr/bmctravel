@@ -6,11 +6,13 @@
 @section('view_status','')
 @section('insert_status','active')
 @section('admin')
+@section('pagetitle','Add Travel Tips')
+
 <div class="row">
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-            @include('backend.gallery.gallery-template.select-gallery', ['type' => 'multiple', 'gallery' => $gallery, 'categories' => $categories])
+            @include('backend.gallery.gallery-template.select-gallery', ['type' => 'single', 'gallery' => $gallery, 'categories' => $categories])
             <form action="{{ url('admin/travel-tips/travel-tips/add-travel-tips') }}" method="post">
                 {{ csrf_field()}}
                     <div class="form-group">
@@ -29,7 +31,7 @@
                             </div>
                             <div class="col-md-12 m-t-15">
                                 <label for="">Content</label>
-                                <textarea class="form-control @error('content') is-invalid @enderror" name="content" cols="30" rows="10">
+                                <textarea class="form-control @error('content') is-invalid @enderror" name="content" id="konten" cols="30" rows="10">
                                 {{ old('content')}}</textarea>
                                 @error('content')
                                     <div class="invalid-feedback"> {{ $message}} </div>

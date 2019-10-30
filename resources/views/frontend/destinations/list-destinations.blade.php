@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
 
           <div class="col-md-8 text-center mt-5 ftco-animate">
-        
+
           <h3 class="color-white">Destinations</h3>
           <div class="block-17 my-4">
           <form action="" method="post" class="d-block d-flex">
@@ -32,9 +32,19 @@
                           </select>
                         </div>
                       </div>
-                      <input type="submit" class="search-submit btn btn-primary" value="Search">  
+                      <input type="submit" class="search-submit btn btn-primary" value="Search">
                     </form>
           </div>
+                <div class="m-t-30">
+                <p >Filter By</p>
+                    <p class="m-t-auto browse d-md-flex">
+                        <span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-guarantee"></i>Mountain</a></span>
+                        <span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-like"></i>Waterfall</a></span>
+                        <span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-like"></i>Adventure</a></span>
+                        <span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-meeting-point"></i>City</a></span>
+                        <span class="d-flex justify-content-md-center align-items-md-	center"><a href="#"><i class="flaticon-shopping-bag"></i>Beach</a></span>
+                    </p>
+                </div>
         </div>
         </div>
       </div>
@@ -46,9 +56,10 @@
           <div class="col-md-10 text-center">
             <h3 class="line-before"><strong> OVERVIEW</strong></h3>
             <p class="mt-4">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel magnam esse, sunt minima quae reprehenderit deleniti obcaecati dolorem enim aliquid optio dolor suscipit cupiditate? Vitae similique odit ratione facilis fuga!</p>
-          </div>        
+          </div>
         </div>
 					<div class="row mt-5 ftco-animate">
+
 						@foreach($destinations as $item)
             <?php
               $ex = explode(",",$item->gallery);

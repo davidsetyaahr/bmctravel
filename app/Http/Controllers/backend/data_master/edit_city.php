@@ -13,8 +13,8 @@
             <form action="/admin/data-master/add-city" method="post">
             @csrf
                 <select id="" class="form-control" name="city_name">
-                    @foreach ($id_province as $prov) ?>
-                    <option value="{{ $prov->province_id }}">{{ $prov->city_name }} </option>
+                    @foreach ($province_id as $prov)
+                    <option value="{{ $prov->province_id}}">{{$prov->city_name}} </option>
                     @endforeach
                 </select>
                 <br>

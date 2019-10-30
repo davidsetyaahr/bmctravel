@@ -6,6 +6,8 @@
 @section('view_status','active')
 @section('insert_status','')
 @section('admin')
+@section('pagetitle','List Travel Tips')
+
 <div class="row">
     <div class="col-md-12">
         <div class="card">
@@ -32,7 +34,7 @@
                             <tr>
                                 <th>{{ $loop->iteration}}</th>
                                 <td>{{$trvltips->title}}</td>
-                                <td>{{$trvltips->id_admin}}</td>
+                                <td>{{$trvltips->firstname}}</td>
                                 <td>{{$trvltips->content}}</td>
                                 <td>{{$trvltips->permalink}}</td>
                                 <td>{{$trvltips->insert_date}}</td>

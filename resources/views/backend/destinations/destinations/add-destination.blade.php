@@ -6,6 +6,8 @@
 @section('view_status','')
 @section('insert_status','active')
 @section('admin')
+@section('pagetitle','Add New Destination')
+
 <div class="row">
     <div class="col-md-12">
         <div class="card">
@@ -70,7 +72,7 @@
                             </div>
                             <div class="col-md-12 text-center m-t-15">
                                 <label for="">Information</label>
-                                <textarea class="form-control @error('information') is-invalid @enderror" id="ckeditor1" name="information" cols="30" rows="10">
+                                <textarea class="form-control @error('information') is-invalid @enderror" id="konten" name="information" cols="30" rows="10">
                                 {{ old('information')}}</textarea>
                                 @error('information')
                                     <div class="invalid-feedback"> {{ $message}} </div>

@@ -13,13 +13,14 @@
             <form action="/admin/data-master/add-city" method="post">
             @csrf
                 <select id="" class="form-control" name="city_name">
-                    @foreach ($id_province as $prov) ?>
-                    <option value="{{ $prov->province_id }}">{{ $prov->city_name }} </option>
+                    <option value="">--Select Province--</option>
+                    @foreach ($prov as $keyProv) ?>
+                        <option value="{{ $keyProv->id_province }}" {{ $city[0]->province_id == $keyProv->id_province ? 'selected' : '' }} >{{ $keyProv->province_name}} </option>
                     @endforeach
                 </select>
                 <br>
                 <label for="">City</label>
-                <input type="text" class="form-control" name="city_name">
+                <input type="text" class="form-control" name="city_name" value="{{$city[0]->city_name}}">
                 <br>
                 <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Save</button>
                 <button class="btn btn-secondary" type="reset"><span class="mdi mdi-refresh"></span> Reset</button>
