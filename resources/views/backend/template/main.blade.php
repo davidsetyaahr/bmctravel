@@ -368,7 +368,11 @@
         $('#zero_config').DataTable();
 
         //CKEditor
-        CKEDITOR.replace( 'editor1' );
+        var konten = document.getElementById("konten");
+            CKEDITOR.replace(konten,{
+            language:'en-gb'
+        });
+        CKEDITOR.config.allowedContent = true;
 
         form.children("div").steps({
         headerTag: "h3",

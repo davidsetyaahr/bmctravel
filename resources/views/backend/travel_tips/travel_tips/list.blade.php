@@ -6,6 +6,8 @@
 @section('view_status','active')
 @section('insert_status','')
 @section('admin')
+@section('pagetitle','List Travel Tips')
+
 <div class="row">
     <div class="col-md-12">
         <div class="card">
