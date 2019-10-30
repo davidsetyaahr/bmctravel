@@ -1,88 +1,101 @@
 @extends('frontend/common/template')
 @section('container')
-    <div class="hero-wrap js-fullheight" style="background-image: url('direngine/images/bg_1.jpg');">
-      <div class="overlay" style="background: rgb(0,0,0,0.5);height:100%"></div>
-      <div class="container">
-        <div class="row slider-text js-fullheight align-items-center justify-content-start justify-content-md-center" data-scrollax-parent="true">
-          <div class="col-md-9 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-            <h1 class="mb-4 text-center"  data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><strong>ONE STOP <br></strong> Travel Service</h1>
-            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Find great places to stay, eat, shop, or visit from local experts</p>
-            <div class="block-17 my-4">
-              <form action="" method="post" class="d-block d-flex">
-                <div class="fields d-block d-flex">
-                  <div class="textfield-search one-third">
-                  	<input type="text" class="form-control" placeholder="Destinations, Ex : Mountain, Waterfall, etc ">
-                  </div>
-                  <div class="select-wrap one-third">
-                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                    <select name="" id="" class="form-control" placeholder="Keyword search">
-						<option>Where</option>
-						<optgroup label="East Java">
-							<option>Bondowoso</option>
-							<option>Probolinggo</option>
-							<option>Jember</option>
-						</optgroup>
-						<optgroup label="Bali">
-							<option>Bali</option>
-						</optgroup>
-						<optgroup label="West Nusa Tenggara">
-							<option>Lombok</option>
-						</optgroup>
-                    </select>
-                  </div>
-                </div>
-                <input type="submit" class="search-submit btn btn-primary" value="Search">  
-              </form>
-            </div>
-            <p>Or browse the highlights</p>
-            <p class="browse d-md-flex">
-            	<span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-guarantee"></i>Mountain</a></span>
-            	<span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-like"></i>Waterfall</a></span> 
-            	<span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-like"></i>Adventure</a></span> 
-            	<span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-meeting-point"></i>City</a></span> 
-            	<span class="d-flex justify-content-md-center align-items-md-	center"><a href="#"><i class="flaticon-shopping-bag"></i>Beach</a></span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+ <script>
+ var TxtRotate = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
 
-    <section class="ftco-section bg-light">
+TxtRotate.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+
+  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+  var that = this;
+  var delta = 300 - Math.random() * 100;
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+
+  setTimeout(function() {
+    that.tick();
+  }, delta);
+};
+
+window.onload = function() {
+  var elements = document.getElementsByClassName('txt-rotate');
+  for (var i=0; i<elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-rotate');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+  // INJECT CSS
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid white }";
+  document.body.appendChild(css);
+};
+ </script>
+	<video autoplay muted loop id="myVideo">
+	<source src="direngine/js/bideo.js-master/Wonderful Indonesia - Adventure.mp4" type="video/mp4">
+	Your browser does not support HTML5 video.
+	</video>
+	<div class="overlay-video">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12 text-center heading-section ftco-animate">
+				<div class="col-md-12 text-center">
+					<div class="title">
+					<h1>Welcome to
+						<br>
+						<span
+						class="txt-rotate"
+						data-period="1000"
+						data-rotate='[ "BMC Travel Service", "One Stop Travel Solution"]'></span>
+					</h1>
+					</div>
+					<h5 class="color-white ftco-animation">Where do you want to go?</h5>
+					<a href="" class="btn ftco-animation">Let's Find The Destination <span class="span ion-ios-arrow-down"></span> </a>
+				</div>
+			</div>
+		</div>
+	</div>
+ <section class="ftco-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center heading-section ftco-animate" style="margin-top:100vh">
 					<h2 class="mb-4 pb-3"><strong>Sekapur</strong> Sirih</h2>
 					<p>Selamat datang di BMC Travel Service. Traveling saat ini telah menjadi kebutuhan pokok disamping kebutuhan akan sandang, pangan, dan papan. Kebutuhan akan merefreshing pikiran karena penat dengan aktifitas pekerjaan dan kehidupan sehari-hari mendorong orang-orang untuk melakukan traveling untuk menyegarkan kembali pikiran. Perkembangan golongan menengah juga menjadi pendorong industri tour dan travel merespon permintaan pasar akan layanagn tour dan travel yang semakin meningkat. Selayaknya usaha di bidang jasa lainnya, BMC Travel Service selaku perusahaan di bidang tour dan travel akan selalu memberikan pelayanan yang maksimal kepada tamu-tamu kami. Peningkatan kualitas dan kuantitas layanan senantiasa kami jaga sebaik mungkin demi kepuasan tamu. Kami dengan setulus hati melayani anda, memberikan kepuasan akan layanan wisata yang terbaik yang dapat kami lakukan. Terimakasih telah memilih BMC Travel Service sebagai mitra perjalanan wisata anda.</p>
 					<p>Salam Hangat</p>
 					<h1 style="font-family: 'Sacramento', cursive;">Fajar N Eristyawan</h1>
 					<b>CEO BMC Travel Service</b>
 				</div>
-				<!--div class="col-md-6">
-					<div class="carousel-destinationtext owl-carousel">
-						<div class="item">
-							<img src="direngine/images/destinations/lombok.jpg" alt="" class="img-fluid">
-							<div class="box">
-								<h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h6>
-							</div>
-						</div>
-						<div class="item">
-							<img src="direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid">
-							<div class="box">
-								<h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h6>
-							</div>
-						</div>
-						<div class="item">
-							<img src="direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid">
-							<div class="box">
-								<h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h6>
-							</div>
-						</div>
-					</div>
-				</div-->
 			</div>
 		</div>
     </section>
-    
+ 
     <section class="ftco-section">
     	<div class="container">
     		<div class="row">
@@ -99,39 +112,51 @@
     			<div class="col-md-12">
     				<div class="destinationtext owl-carousel ftco-animate">
 						<div class="item">
-							<img src="direngine/images/destinations/kawah-wurung.png" alt="" class="img-fluid">
-							<div class="box">
-								<h6>Explore East Java</h6>
+							<div class="relative">
+								<img src="direngine/images/destinations/kawah-wurung.png" alt="" class="img-fluid">
+								<div class="box">
+									<h6>Explore East Java</h6>
+								</div>
 							</div>
 						</div>
 						<div class="item">
+						<div class="relative">
 							<img src="direngine/images/destinations/ijen.jpg" alt="" class="img-fluid">
 							<div class="box">
 								<h6>Explore Bondowoso</h6>
 							</div>
+							</div>
 						</div>
 						<div class="item">
+						<div class="relative">
 							<img src="direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid">
 							<div class="box">
 								<h6>Mountain Vibes</h6>
 							</div>
+							</div>
 						</div>
 						<div class="item">
+						<div class="relative">
 							<img src="direngine/images/destinations/bali.jpg" alt="" class="img-fluid">
 							<div class="box">
 								<h6>Beach Vibes</h6>
 							</div>
+							</div>
 						</div>
 						<div class="item">
+						<div class="relative">
 							<img src="direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid">
 							<div class="box">
 								<h6>Menjangan & Tabuhan Island</h6>
 							</div>
+							</div>
 						</div>
 						<div class="item">
+						<div class="relative">
 							<img src="direngine/images/destinations/bromo.jpg" alt="" class="img-fluid">
 							<div class="box">
 								<h6>Bromo Midnight</h6>
+							</div>
 							</div>
 						</div>
     				</div>
@@ -152,47 +177,19 @@
 	        </div>
 			<div class="row mt-3">
 				<div class="col-md-12">
-					<div class="step-by-step ftco-animate">
-						<div class="line-step"></div>
-						<div class="this-step" style="width : 19%">
-							<span class="bullet ion-md-radio-button-on"></span>
-							<div class="text active">
-								<span class="ion-md-arrow-dropup up"></span>
-								1 to 3 days
-							</div>
-						</div>
-						<div class="this-step" style="width : 19%">
-							<span class="bullet ion-md-radio-button-off"></span>
-							<div class="text">
-								4 to 6 days
-							</div>
-						</div>
-						<div class="this-step" style="width : 19%">
-							<span class="bullet ion-md-radio-button-off"></span>
-							<div class="text">
-								7 to 9 days
-							</div>
-						</div>
-						<div class="this-step" style="width : 19%">
-							<span class="bullet ion-md-radio-button-off"></span>
-							<div class="text">
-								10 to 12 days
-							</div>
-						</div>
-						<div class="this-step" style="width : 19%">
-							<span class="bullet ion-md-radio-button-off"></span>
-							<div class="text">
-								Less than 12 days
-							</div>
-						</div>
-					</div>
+					<ul class="progressbar">
+						<li>1 to 3 days</li>
+						<li>4 to 6 days</li>
+						<li>7 to 9 days</li>
+						<li>10 to 12 days</li>
+					  </ul>
 				</div>
 			</div>    		
     	</div>
     	<div class="container">
     		<div class="row mt-5 ftco-animate">
 				<div class="col-md-3">
-					<div class="package1">
+					<div class="package1 mb-4">
 						<div class="relative hidden">
 							<div class="layer transition"></div>
 							<div class="sticky-note">
@@ -208,7 +205,7 @@
 					</div>
 				</div>
 				<div class="col-md-3">
-					<div class="package1">
+					<div class="package1 mb-4">
 						<div class="relative hidden">
 							<div class="layer transition"></div>
 							<div class="sticky-note">
@@ -224,7 +221,7 @@
 					</div>
 				</div>
 				<div class="col-md-3">
-					<div class="package1">
+					<div class="package1 mb-4">
 						<div class="relative hidden">
 							<div class="layer transition"></div>
 							<div class="sticky-note">
@@ -240,7 +237,7 @@
 					</div>
 				</div>
 				<div class="col-md-3">
-					<div class="package1">
+					<div class="package1 mb-4">
 						<div class="relative hidden">
 							<div class="layer transition"></div>
 							<div class="sticky-note">
@@ -262,20 +259,20 @@
 	<section class="ftco-section ftco-animate">
 		<div class="container">
 			<div class="row text-center">
-				<div class="col-md-6">
+				<div class="col-md-6 mb-5">
 					<h5 class="color-red">Some fun facts</h5>
 					<div class="row mt-5">
-						<div class="col-md-4">
+						<div class="col-4">
 							<img src="{{ asset('images/gallery/jeep.png') }}" alt="">
 							<h6 class="mt-3">120</h6>
 							Travel Packages
 						</div>
-						<div class="col-md-4">
+						<div class="col-4">
 							<img src="{{ asset('images/gallery/tourist.png') }}" alt="">
 							<h6 class="mt-3">100+</h6>
 							Happy Clients
 						</div>
-						<div class="col-md-4">
+						<div class="col-4">
 							<img src="{{ asset('images/gallery/smartphone.png') }}" alt="">
 							<h6 class="mt-3">30</h6>
 							Destinations
@@ -285,17 +282,17 @@
 				<div class="col-md-6" style="border-left : 1px solid #ddd">
 					<h5 class="color-red">Easy, Fun, Secure</h5>
 					<div class="row mt-5">
-						<div class="col-md-4">
+						<div class="col-4">
 							<img src="{{ asset('images/gallery/jeep.png') }}" alt="">
 							<h6 class="mt-3">120</h6>
 							Travel Packages
 						</div>
-						<div class="col-md-4">
+						<div class="col-4">
 							<img src="{{ asset('images/gallery/tourist.png') }}" alt="">
 							<h6 class="mt-3">100+</h6>
 							Happy Clients
 						</div>
-						<div class="col-md-4">
+						<div class="col-4">
 							<img src="{{ asset('images/gallery/smartphone.png') }}" alt="">
 							<h6 class="mt-3">30</h6>
 							Destinations
@@ -310,31 +307,31 @@
 
 	<section class="ftco-section ftco-animate">
 		<div class="container">
-			<div class="row">
+			<div class="row justify-content-center">
 				<div class="col-md-12 text-center">
 					<h4 class="mb-4 pb-3"><strong>Browse</strong> package by categories</h4>
 				</div>
 			</div>
 			<div class="row justify-content-center">
-				<div class="col-md-2">
+				<div class="col-md-3 col-6 mb-4">
 					<div class="border text-center p-3">
 						<img src="{{ asset('images/gallery/rocks.png') }}" alt="">
 						<h6 class="mt-3">Mountain</h6>
 					</div>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-3 col-6 mb-4">
 					<div class="border text-center p-3">
 						<img src="{{ asset('images/gallery/sunrise.png') }}" alt="">
 						<h6 class="mt-3">Beach</h6>
 					</div>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-3 col-6 mb-4">
 					<div class="border text-center p-3">
 						<img src="{{ asset('images/gallery/waterfall.png') }}" alt="">
 						<h6 class="mt-3">Waterfall</h6>
 					</div>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-3 col-6 mb-4">
 					<div class="border text-center p-3">
 						<img src="{{ asset('images/gallery/office.png') }}" alt="">
 						<h6 class="mt-3">City</h6>
@@ -419,7 +416,7 @@
 			</div>
         </div>
         <div class="row d-flex">
-          <div class="col-md-4">
+          <div class="col-md-4 mb-3">
 		  	<div class="travel-tips">
 				<div class="relative">
 					<div class="layer transition"></div>
@@ -431,7 +428,7 @@
 				</div>
 			</div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 mb-3">
 		  	<div class="travel-tips">
 				<div class="relative">
 					<div class="layer transition"></div>
@@ -443,7 +440,7 @@
 				</div>
 			</div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-4 mb-3">
 		  	<div class="travel-tips">
 				<div class="relative">
 					<div class="layer transition"></div>
@@ -459,19 +456,19 @@
       </div>
     </section>
 		
-		<section class="ftco-section-parallax">
-      <div class="parallax-img d-flex align-items-center">
+		<section class="ftco-section bg-light">
+      <div class="d-flex align-items-center">
         <div class="container">
           <div class="row d-flex justify-content-center">
-            <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+            <div class="col-md-7 text-center heading-section ftco-animate">
               <h2>Subcribe to our Newsletter</h2>
               <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
               <div class="row d-flex justify-content-center mt-5">
                 <div class="col-md-8">
-                  <form action="#" class="subscribe-form">
+                  <form action="#">
                     <div class="form-group d-flex">
                       <input type="text" class="form-control" placeholder="Enter email address">
-                      <input type="submit" value="Subscribe" class="submit px-3">
+                      <input type="submit" value="Subscribe" class="submit">
                     </div>
                   </form>
                 </div>
@@ -481,5 +478,6 @@
         </div>
       </div>
     </section>
-
+<script src="{{ url('direngine/js/bideo.js-master/bideo.js') }}"></script>
+<script src="{{ url('direngine/js/bideo.js-master/main.js') }}"></script>
 @endsection

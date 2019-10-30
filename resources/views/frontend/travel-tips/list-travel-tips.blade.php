@@ -14,7 +14,7 @@
                         <input type="text" class="form-control" placeholder="Search Here...">
                     </div>
                   </div>
-                  <input type="submit" class="search-submit btn btn-primary" value="Search">  
+                  <input type="submit" class="search-submit btn btn-primary" value="Search">
                 </form>
               </div>
           </div>
@@ -25,45 +25,47 @@
     <section class="ftco-section bg-light">
        <div class="container">
         <div class="row d-flex">
-          <div class="col-md-4">
-		  	    <div class="travel-tips">
-				      <div class="relative">
-					      <div class="layer transition"></div>
-					        <img src="direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid transition">
-				</div>
-				<div class="bottom">
-					<div class="title">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet .....</div>
-          <div class="link"><a href="{{url('/travel-tips/detail-travel') }}">Read More</a></div>
-				</div>
-			</div>
-          </div>
-          <div class="col-md-4">
-		  	<div class="travel-tips">
-				<div class="relative">
-					<div class="layer transition"></div>
-					<img src="direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid transition">
-				</div>
-				<div class="bottom">
-					<div class="title">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet .....</div>
-					<div class="link">Read More</div>
-				</div>
-			</div>
-          </div>
-          <div class="col-md-4">
-		  	<div class="travel-tips">
-				<div class="relative">
-					<div class="layer transition"></div>
-					<img src="direngine/images/destinations/bromo.jpg" alt="" class="img-fluid transition">
-				</div>
-				<div class="bottom">
-					<div class="title">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet .....</div>
-					<div class="link">Read More</div>
-				</div>
-			</div>
-          </div>
-        </div>
-      </div>
+            @foreach ($travel_tips as $trvltips)
+            <div class="col-md-4">
+                        <div class="travel-tips">
+                            <div class="relative">
+                                <div class="layer transition"></div>
+                                    <img src="{{ url('/images/gallery/'.$trvltips->img) }}" alt="" class="img-fluid transition">
+                        </div>
+                        <div class="bottom">
+                            <div class="title">{{$trvltips->title}}</div>
+                <div class="link"><a href="{{url('/travel-tips/detail-travel/'.$trvltips->id_travel_tips) }}">Read More</a></div>
+                        </div>
+                    </div>
+                </div>
+                {{-- <div class="col-md-4">
+                    <div class="travel-tips">
+                        <div class="relative">
+                            <div class="layer transition"></div>
+                            <img src="direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid transition">
+                        </div>
+                        <div class="bottom">
+                            <div class="title">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet .....</div>
+                            <div class="link">Read More</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="travel-tips">
+                        <div class="relative">
+                            <div class="layer transition"></div>
+                            <img src="direngine/images/destinations/bromo.jpg" alt="" class="img-fluid transition">
+                        </div>
+                        <div class="bottom">
+                            <div class="title">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet .....</div>
+                            <div class="link"><a href="{{url('/travel-tips/detail-travel') }}">Read More</a></div>
+                        </div>
+                    </div> --}}
+                    @endforeach
+                </div>
             </div>
-          </section>
+         </div>
+        </div>
+    </section>
 
 @endsection

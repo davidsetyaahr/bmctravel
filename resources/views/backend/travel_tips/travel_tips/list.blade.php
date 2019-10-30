@@ -6,31 +6,52 @@
 @section('view_status','active')
 @section('insert_status','')
 @section('admin')
+@section('pagetitle','List Travel Tips')
+
 <div class="row">
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
+            @if(session('status'))
+                    <div class="alert alert-success">
+                        {{session('status')}}
+                    </div>
+                @endif
                 <div class="table-responsive">
                     <table id="zero_config" class="table table-striped table-bordered">
                         <thead>
+                            <th>#</th>
                             <th>Title</th>
                             <th>Admin</th>
-                            <th>Gallery</th>
                             <th>Content</th>
                             <th>Permalink</th>
                             <th>Insert Date</th>
                             <th>Update Date</th>
+                            <th>Actions</th>
                         </thead>
                         <tbody>
+                        @foreach( $travel_tips as $trvltips )
                             <tr>
-                                <td>asadasddsad</td>
-                                <td>sasadsaddasd</td>
-                                <td>sadasdasdssa</td>
-                                <td>sadsadsa</td>
-                                <td>sadsadsad</td>
-                                <td>dafsadasd</td>
-                                <td>ssadasdsad</td>
+                                <th>{{ $loop->iteration}}</th>
+                                <td>{{$trvltips->title}}</td>
+                                <td>{{$trvltips->firstname}}</td>
+                                <td>{{$trvltips->content}}</td>
+                                <td>{{$trvltips->permalink}}</td>
+                                <td>{{$trvltips->insert_date}}</td>
+                                <td>{{$trvltips->update_date}}</td>
+                                <td>
+                                    <div class="dropdown show">
+                                        <a class="btn btn-sm btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Options
+                                        </a>
+
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <a class="dropdown-item" href="edit-travel-tips/{{ $trvltips->id_travel_tips }}">Edit</a>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

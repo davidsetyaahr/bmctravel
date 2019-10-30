@@ -10,6 +10,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
+            @include('backend.gallery.gallery-template.select-gallery', ['type' => 'multiple', 'gallery' => $gallery, 'categories' => $categories])
             @foreach($destination_categories as $dc)
             <form action="/admin/destinations/categories/update" method="post">
             @csrf
@@ -20,11 +21,10 @@
                     <div class="invalid-feedback"> {{ $message}} </div>
                     @enderror
                 <br>
-                <label for="">Image</label>
-                <input type="text" class="form-control @error('id_gallery') is-invalid @enderror" name="id_gallery" value="{{ $dc->id_gallery}}">
-                @error('id_gallery')
-                    <div class="invalid-feedback"> {{ $message}} </div>
-                    @enderror
+                <div class="col-md-12 m-t-15">
+                    <label for="">Gallery</label>
+                        @include('backend.gallery.gallery-template.gallery-hidden')     
+                </div>
                 <br>
                 <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Save</button>
                 <button class="btn btn-secondary" type="reset"><span class="mdi mdi-refresh"></span> Reset</button>

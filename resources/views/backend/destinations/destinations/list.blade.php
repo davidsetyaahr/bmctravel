@@ -6,6 +6,8 @@
 @section('view_status','active')
 @section('insert_status','')
 @section('admin')
+@section('pagetitle','list Destination')
+
 <div class="row">
     <div class="col-md-12">
         <div class="card">
@@ -15,14 +17,14 @@
                         {{session('status')}}
                     </div>
                 @endif
-                
+
                 <div class="table-responsive">
                     <table id="zero_config" class="table table-striped table-bordered">
                         <thead>
                             <th>#</th>
                             <th>Destination Name</th>
                             <th>Category</th>
-                            <th>city</th>  
+                            <th>city</th>
                             <th>Gallery</th>
                             <th>Overview</th>
                             <th>Map</th>
@@ -40,7 +42,7 @@
                                 <td>{{ $d->overview }}</td>
                                 <td>{{ $d->map }}</td>
                                 <td>{{ $d->information }}</td>
-                                
+
                                 <td>
                                     <div class="dropdown show">
                                         <a class="btn btn-sm btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

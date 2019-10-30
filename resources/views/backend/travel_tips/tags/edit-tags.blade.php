@@ -1,22 +1,31 @@
 @extends('backend.template.main')
-@section('insert_caption','Insert New Tips Tag')
+@section('insert_caption',' Edit Tips Tag')
 @section('view_caption','View All Tips Tag')
-@section('insert_link','add-tags')
-@section('show_link','edit-tags')
-@section('view_link','tags')
+{{-- @section('insert_link',url("admin/travel-tips/add-tags")) --}}
+@section('view_link',url("admin/travel-tips/tags"))
+{{-- @section('show_link','edit-tags') --}}
 @section('view_status','')
 @section('insert_status','')
-
+@section('pagetitle','Tags')
 @section('admin')
 <div class="row">
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <label for="">Edit</label>
-                <input type="text" class="form-control">
-                <br>
-                <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Save</button>
-                <button class="btn btn-secondary" type="reset"><span class="mdi mdi-refresh"></span> Reset</button>
+                @foreach ($id_tag as $tt)
+                <form action="/admin/travel-tips/tags/update" method="post">
+                    @csrf
+                    <input type="hidden" name="id" value="{{ $tt->id_tag }}">
+                        <label for="">Edit Tags</label>
+                        <input type="text" class="form-control @error('tag_name') is-invalid @enderror" name="tag_name" value="{{ $tt->tag_name}}">
+                        @error('tag_name')
+                            <div class="invalid-feedback"> {{ $message}} </div>
+                            @enderror
+                    <br>
+                    <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Save</button>
+                    <button class="btn btn-secondary" type="reset"><span class="mdi mdi-refresh"></span> Reset</button>
+                </form>
+                @endforeach
             </div>
         </div>
     </div>

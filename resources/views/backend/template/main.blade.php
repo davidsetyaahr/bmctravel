@@ -15,11 +15,15 @@
     <link href="{{ asset('/matrix-admin-bt4') }}/assets/libs/flot/css/float-chart.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{ asset('/matrix-admin-bt4') }}/dist/css/style.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ asset('/matrix-admin-bt4') }}/assets/libs/quill/dist/quill.snow.css">
-    <link href="{{ asset('/matrix-admin-bt4') }}/dist/css/custom.css" rel="stylesheet">
+<!--     <link rel="stylesheet" type="text/css" href="{{ asset('/matrix-admin-bt4') }}/assets/libs/quill/dist/quill.snow.css">
+ -->    <link href="{{ asset('/matrix-admin-bt4') }}/dist/css/custom.css" rel="stylesheet">
     <link href="{{ asset('/matrix-admin-bt4') }}/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="{{ url('select2-develop/dist/css/select2.min.css') }}" rel="stylesheet">
     <script src="{{ asset('/ckeditor') }}/ckeditor.js"></script>
-    
+    {{-- step --}}
+    <link href="{{ asset('/matrix-admin-bt4') }}/assets/libs/jquery-steps/jquery.steps.css" rel="stylesheet">
+    <link href="{{ asset('/matrix-admin-bt4') }}/assets/libs/jquery-steps/steps.css" rel="stylesheet">
+    {{-- /step --}}
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -99,7 +103,7 @@
                             <ul class="navbar-nav float-left mr-auto">
                                     <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
                                     <li class="nav-item">
-                                        <a href="" class="nav-link page-top-title"> Dashboard</a>
+                                        <a href="" class="nav-link page-top-title">@yield('pagetitle')</a>
                                     </li>
                                 </ul>
                                 <!-- ============================================================== -->
@@ -197,7 +201,13 @@
                                     <li class="nav-item">
                                         <a href="" class="nav-link">
                                             <small>
-                                                Home <i class="mdi mdi-menu-right"></i> View All Packages</a>
+                                                <?php $str = str_replace("-"," ",Request::segment(2)) ?>{{ ucwords($str) }} <i class="mdi mdi-menu-right"></i> @yield('pagetitle') <i class="mdi mdi-menu-right"></i> 
+                                                @if($__env->yieldContent('view_status')=="active")
+                                                    @yield('view_caption')
+                                                @else
+                                                    @yield('insert_caption')
+                                                @endif
+                                                </a>
                                             </small>
                                     </li>
                                 </ul>
@@ -218,7 +228,7 @@
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
-                    <ul id="sidebarnav" class="p-t-30 mt-4">
+                    <ul id="sidebarnav" class="p-t-10 mt-4">
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-package"></i><span class="hide-menu">Tour Package </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item"><a href="{{ url('admin/tour-package/tour-package') }}" class="sidebar-link"><i class="mdi mdi-package"></i><span class="hide-menu"> Tour Package </span></a></li>
@@ -324,12 +334,14 @@
     <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/waves.js"></script>
     <!--Menu sidebar -->
     <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/sidebarmenu.js"></script>
+    <script src="{{ url('select2-develop/dist/js/select2.min.js') }}"></script>
+
     <!--Custom JavaScript -->
     <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/custom.min.js"></script>
     <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/custom-script.js"></script>
     <!--This page JavaScript -->
-    <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/pages/dashboards/dashboard1.js"></script>
-    <!-- Charts js Files -->
+<!--     <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/pages/dashboards/dashboard1.js"></script>
+ -->    <!-- Charts js Files -->
     <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/flot/excanvas.js"></script>
     <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/flot/jquery.flot.js"></script>
     <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/flot/jquery.flot.pie.js"></script>
@@ -338,24 +350,46 @@
     <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/flot/jquery.flot.crosshair.js"></script>
     <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
     <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/pages/chart/chart-page-init.js"></script>
-    <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/quill/dist/quill.min.js"></script>
-    <script src="{{ asset('/matrix-admin-bt4') }}/assets/extra-libs/multicheck/datatable-checkbox-init.js"></script>
+<!--     <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/quill/dist/quill.min.js"></script>
+ -->    <script src="{{ asset('/matrix-admin-bt4') }}/assets/extra-libs/multicheck/datatable-checkbox-init.js"></script>
     <script src="{{ asset('/matrix-admin-bt4') }}/assets/extra-libs/multicheck/jquery.multicheck.js"></script>
     <script src="{{ asset('/matrix-admin-bt4') }}/assets/extra-libs/DataTables/datatables.min.js"></script>
+    <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/jquery-steps/build/jquery.steps.min.js"></script>
     <script>
-        // Editor Quill
+/*         // Editor Quill
         var quill = new Quill('#editor-overview', {
             theme: 'snow'
         });
         var quill = new Quill('#editor-information', {
             theme: 'snow'
         });
-
+ */
         //DataTable
         $('#zero_config').DataTable();
 
         //CKEditor
-        CKEDITOR.replace( 'editor1' );
+        var konten = document.getElementById("konten");
+            CKEDITOR.replace(konten,{
+            language:'en-gb'
+        });
+        CKEDITOR.config.allowedContent = true;
+
+        form.children("div").steps({
+        headerTag: "h3",
+        bodyTag: "section",
+        transitionEffect: "slideLeft",
+        onStepChanging: function(event, currentIndex, newIndex) {
+            form.validate().settings.ignore = ":disabled,:hidden";
+            return form.valid();
+        },
+        onFinishing: function(event, currentIndex) {
+            form.validate().settings.ignore = ":disabled";
+            return form.valid();
+        },
+        onFinished: function(event, currentIndex) {
+            alert("Submitted!");
+        }
+    });
 
     </script>
 </body>

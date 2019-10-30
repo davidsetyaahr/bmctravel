@@ -1,9 +1,91 @@
-@font-face {
+/* @font-face {
     font-family: 'poppinsextralight';
-    src: url('../../assets/webfont/poppins-extralight-webfont.woff2') format('woff2'),
-         url('../../assets/webfont/poppins-extralight-webfont.woff') format('woff');
+    src: url('../../../webfont/poppins-extralight-webfont.woff2') format('woff2'),
+         url('../../../webfont/poppins-extralight-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+ */
+ 
+ @font-face {
+    font-family: 'poppinsregular';
+    src: url('../../../webfont/poppins-reguler/poppins-regular-webfont.woff2') format('woff2'),
+         url('../../../webfont/poppins-reguler/poppins-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+.btn{
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+}
+.btn-primary{
+    background : #00aaff;
+    border-color : #00aaff;
+}
+.btn-primary:hover{
+    background : #00a0f0;
+    border-color : #00a0f0;
+}
+.btn-default{
+    background: white;
+    color : #333;
+    border-color : #ccc;
+}
+.btn-default:hover{
+    background: #f7f7f7;
+}
+.sidebar-nav ul .sidebar-item .sidebar-link,.sidebar-nav ul .sidebar-item .sidebar-link i{
+    color : #AEB7C2;
+}
+.sidebar-nav ul .sidebar-item .sidebar-link i{
+    margin-right: 10px;
+}
+.trip{
+    letter-spacing: 1px;
+}
+.trip span{
+    font-weight: bold;
+    font-size : 16px;
+    line-height: 2;
+}
+  .select2-container--default .select2-selection--single .select2-selection__rendered{
+    color: #6e707e !important;    
+    padding : .375rem .75rem;
+    line-height: 1.5;
+}
+.select2-container--default .select2-selection--single{
+    border : 1px solid #d1d3e2;
+}
+.select2-container .select2-selection--single{
+    height: calc(1.5em + .75rem + 2px);
+}
+   
+.ls-1{
+    letter-spacing: 1px;
+}
+.custom-control.block{
+    display : block !important;
+}
+.custom-control{
+    display : inline-block !important;
+    margin-right : 10px;
+}
+.custom-control-label{
+    line-height: 2;
+}
+.card{
+    box-shadow: 0 2px 6px rgba(0,0,0,.08);
+    border-radius: 3px;        
+}
+.card.custom{
+    box-shadow: none;
+    border : 1px solid #ddd !important;
+}
+.card.custom .card-header{
+    background : #2d3747;
+    color: white;
+}
+.form-control{
+    border-color: #ddd  !important;
 }
 thead{
     background: #dee2e6;
@@ -125,8 +207,9 @@ thead{
     width : 100%;
 }
 body{
-    background: #f3f5f8 !important;
-    font-family: 'poppinsextralight';
+    background: #f5f5fa !important;
+    font-family: 'poppinsregular';
+    color: #676a6d  !important;
 }
 #navbarSupportContent li a{
     color : red !important;
@@ -137,23 +220,22 @@ body{
 .logo-text{
     font-weight: bold;
     font-size: 16px;
+    color : #1a202c;
 }
 .active-menu{
     border-bottom: 2px solid #2D5D7C;
 }
 .top-bottom li a i{
-    color : #2d5d7c;
+    color: #676a6d;
 }
 .top-bottom li a{
-    color : #2d3747;
-    font-weight: bold;
+    color: #676a6d;
 }
 .top-bottom li.active{
-    border-bottom: 2px solid #2d5d7c;
+    border-bottom: 2px solid #333d4a;
 }
 .page-top-title{
-    font-size: 20px !important;
-    font-weight: bold !important;
+    font-size: 17px !important;
 }
 .page-wrapper{
     background: #f3f5f8 !important;
