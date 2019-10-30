@@ -41,7 +41,7 @@ class Categories extends Controller
             'category_name' => $request->category_name,
             'id_gallery' => $request->id_gallery
         ]);
-        return redirect('/admin/tour-package/categories')->with('status', 'Kategori hotel berhasil ditambahkan');
+        return redirect('/admin/tour-package/categories')->with('status', 'Kategori tour berhasil ditambahkan');
     }
 
     public function edit ($id)

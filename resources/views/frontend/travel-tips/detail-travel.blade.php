@@ -1,6 +1,20 @@
 @extends('frontend/common/template')
 @section('container')
-    <div class="hero-wrap js-fullheight" style="background-image: url('images/bg_4.jpg');">
+<style>
+        .override{
+            height: 500px !important;
+        }
+        .bg-ctgr{
+            background-color: violet;
+        }
+        .overlay{
+            height: 500px !important;
+        }
+</style>
+
+    @foreach ($travel_tips as $t)
+    {{-- <div class="hero-wrap js-fullheight" style="background-image: url('images/');"> --}}
+    <div style="background-image: url('/images/gallery/{{$t->img }}');" class="hero-wrap js-fullheight-travel override">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
@@ -11,8 +25,6 @@
         </div>
       </div>
     </div>
-
-
     <section class="ftco-section ftco-degree-bg">
       <div class="container">
         <div class="row">
@@ -40,7 +52,7 @@
                 <a href="#" class="tag-cloud-link">Travel</a>
               </div>
             </div>
-            
+
             <div class="about-author d-flex p-5 bg-light">
               <div class="bio align-self-md-center mr-5">
                 <img src="images/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4">
@@ -135,7 +147,7 @@
                 </li>
               </ul>
               <!-- END comment-list -->
-              
+
               <div class="comment-form-wrap pt-5">
                 <h3 class="mb-5">Leave a comment</h3>
                 <form action="#" class="p-5 bg-light">
@@ -246,6 +258,6 @@
         </div>
       </div>
     </section> <!-- .section -->
-
+    @endforeach
 
 @endsection

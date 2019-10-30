@@ -31,6 +31,6 @@ class Categories extends Controller
                 DB::table('gallery_categories')->insert([
                 'category_name' => $request->category_name
                 ]);
-        return redirect('/admin/gallery/categories')->with('status', 'Travel tips tags berhasil ditambahkan');
+        return redirect('/admin/gallery/categories')->with('status', 'Kategori galeri berhasil ditambahkan');
     }
 }

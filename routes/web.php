@@ -85,7 +85,7 @@ Route::get('/admin/data-master/edit-province/{id}','backend\data_master\Province
 Route::/*method dari form*/post(/* url */'/admin/data-master/update-province',/*controller*/'backend\data_master\Province@update');
 Route::get('/admin/destinations/destinations/edit-categories/{id}', 'backend\destinations\Destinations@edit');
 Route::post('/admin/destinations/destinations/update', 'backend\destinations\Destinations@update');
-Route::get('/travel-tips/detail-travel', 'frontend\TravelTips@detail');
+Route::get('/travel-tips/detail-travel/{id}', 'frontend\TravelTips@detail');
 Route::get('/admin/destinations/destinations/edit-categories/{id}', 'backend\destinations\Destinations@edit');
 Route::post('/admin/destinations/destinations/update', 'backend\destinations\Destinations@update');
 Route::get('/travel-tips/detail-travel', 'frontend\TravelTips@detail');

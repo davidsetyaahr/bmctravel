@@ -11,6 +11,11 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
+                    @if(session('status'))
+                        <div class="alert alert-success">
+                            {{session('status')}}
+                        </div>
+                    @endif
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover table-striped">
                             <thead>
@@ -26,7 +31,7 @@
                                     @foreach ($id_gallery as $gc)
                                         <tr>
                                             <td>{{ $loop->iteration}}</td>
-                                            <td>{{ $gc->img}}</td>
+                                            <td><img src="{{ url('/images/gallery/'.$gc->img) }}" alt="" class="img-fluid transition"></td>
                                             <td>{{ $gc->id_category}}</td>
                                             <td>
                                                 <div class="dropdown show">

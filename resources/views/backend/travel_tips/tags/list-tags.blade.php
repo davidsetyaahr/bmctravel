@@ -6,25 +6,31 @@
 @section('view_link','tag')
 @section('view_status','active')
 @section('insert_status','')
+@section('pagetittle','Tags')
 
 @section('admin')
 <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
+                    @if(session('status'))
+                        <div class="alert alert-success">
+                            {{session('status')}}
+                        </div>
+                    @endif
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover table-striped">
+                        <table id="zero_config" class="table table-striped table-bordered">
                             <thead>
-                                <tr>
+
                                     <th>#</th>
                                     <th>Tag Name</th>
                                     <th>Action</th>
-                                </tr>
+
                             </thead>
                             <tbody>
+                                @foreach ($id_tag as $tt)
                                 <tr>
-                                    @foreach ($id_tag as $tt)
-                                        <td> {{ $loop->iteration }} </td>
+                                        <th> {{ $loop->iteration }} </th>
                                         <td>{{ $tt->tag_name }}</td>
                                         <td>
                                             <div class="dropdown show">

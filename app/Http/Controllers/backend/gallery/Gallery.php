@@ -44,7 +44,7 @@ class Gallery extends Controller
                     'id_category' => $request->id_category,
                     // menyimpan data file yang diupload ke variabel $file
                 ]);
-                    return redirect('/admin/gallery/gallery');
+                    return redirect('/admin/gallery/gallery')->with('status', 'Galeri berhasil ditambahkan');
                 }
 
     function edit($id)

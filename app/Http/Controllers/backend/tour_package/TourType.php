@@ -39,7 +39,7 @@ class TourType extends Controller
             'type_name' => $request->type_name,
             'id_gallery' => $request->id_gallery
         ]);
-        return redirect('/admin/tour-package/tour-type')->with('status', 'Kategori hotel berhasil ditambahkan');
+        return redirect('/admin/tour-package/tour-type')->with('status', 'Tipe tour berhasil ditambahkan');
     }
 
     public function edit ($id)
