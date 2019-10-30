@@ -31,7 +31,7 @@ class Tags extends Controller
                 DB::table('tags')->insert([
                 'tag_name' => $request->tag_name
                 ]);
-        return redirect('/admin/travel-tips/tags')->with('status', 'Travel tips tags berhasil ditambahkan');
+        return redirect('/admin/travel-tips/tags')->with('status', 'Tags berhasil ditambahkan');
     }
 
     function edit($id)
@@ -49,6 +49,6 @@ class Tags extends Controller
         DB::table('tags')->where('id_tag',$request->id)->update([
             'tag_name' => $request->tag_name
         ]);
-        return redirect('/admin/travel-tips/tags');
+        return redirect('/admin/travel-tips/tags')->with('status', 'Tags berhasil diperbarui');
     }
 }

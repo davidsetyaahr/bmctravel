@@ -21,7 +21,7 @@ class Destinations extends Controller
         ->get();
         return view('frontend.destinations.list-destinations', ['destinations' => $destination]);
     }
-    
+
     public function detail($id)
     {
         $destination = DB::table('destinations')->where('id_destination',$id)
