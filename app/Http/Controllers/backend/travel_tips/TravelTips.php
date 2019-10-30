@@ -15,8 +15,14 @@ class TravelTips extends Controller
 {
     function index()
     {
-        $trvltips = Traveltip::orderBy('id_travel_tips', 'DESC')->get();
+        $trvltips = DB::table('travel_tips')
+        ->join('admin','admin.id_admin','travel_tips.id_admin')
+        ->select('travel_tips.id_travel_tips','travel_tips.title','admin.firstname','travel_tips.content','travel_tips.permalink','travel_tips.insert_date','travel_tips.update_date')
+        ->orderBy('id_travel_tips', 'desc')
+        ->get();
         return view('backend.travel_tips.travel_tips.list', ['travel_tips' => $trvltips]);
+        // $trvltips = Traveltip::orderBy('id_travel_tips', 'DESC')->get();
+        // return view('backend.travel_tips.travel_tips.list', ['travel_tips' => $trvltips]);
     }
     function create()
     {

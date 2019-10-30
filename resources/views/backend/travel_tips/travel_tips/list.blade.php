@@ -32,7 +32,7 @@
                             <tr>
                                 <th>{{ $loop->iteration}}</th>
                                 <td>{{$trvltips->title}}</td>
-                                <td>{{$trvltips->id_admin}}</td>
+                                <td>{{$trvltips->firstname}}</td>
                                 <td>{{$trvltips->content}}</td>
                                 <td>{{$trvltips->permalink}}</td>
                                 <td>{{$trvltips->insert_date}}</td>
