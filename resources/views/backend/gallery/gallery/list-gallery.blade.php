@@ -5,6 +5,7 @@
 @section('view_link','gallery')
 @section('view_status','active')
 @section('insert_status','')
+@section('pagetitle','Gallery')
 
 @section('admin')
 <div class="row">
@@ -17,22 +18,19 @@
                         </div>
                     @endif
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover table-striped">
+                        <table id="zero_config" class="table table-striped table-bordered">
                             <thead>
-                                <tr>
                                     <th>#</th>
                                     <th>Gallery</th>
                                     <th>Category</th>
                                     <th>Option</th>
-                                </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    @foreach ($id_gallery as $gc)
+                                    @foreach ($gallery as $gc)
                                         <tr>
-                                            <td>{{ $loop->iteration}}</td>
+                                            <th>{{ $loop->iteration}}</th>
                                             <td><img src="{{ url('/images/gallery/'.$gc->img) }}" alt="" class="img-fluid transition"></td>
-                                            <td>{{ $gc->id_category}}</td>
+                                            <td>{{ $gc->category_name}}</td>
                                             <td>
                                                 <div class="dropdown show">
                                                     <a class="btn btn-sm btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -46,7 +44,6 @@
                                             </td>
                                         </tr>
                                     @endforeach
-                                </tr>
                             </tbody>
                         </table>
                     </div>

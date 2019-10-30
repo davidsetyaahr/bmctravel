@@ -1,11 +1,12 @@
 @extends('backend.template.main')
-@section('insert_caption','Insert New Tips Tag')
+@section('insert_caption',' Edit Tips Tag')
 @section('view_caption','View All Tips Tag')
-@section('insert_link',url("admin/travel-tips/add-tags"))
+{{-- @section('insert_link',url("admin/travel-tips/add-tags")) --}}
 @section('view_link',url("admin/travel-tips/tags"))
 {{-- @section('show_link','edit-tags') --}}
 @section('view_status','')
 @section('insert_status','')
+@section('pagetitle','Tags')
 @section('admin')
 <div class="row">
     <div class="col-md-12">

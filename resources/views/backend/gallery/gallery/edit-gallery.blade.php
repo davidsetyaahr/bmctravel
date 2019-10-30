@@ -5,12 +5,13 @@
 @section('view_link',url("admin/gallery/list-gallery"))
 @section('view_status','')
 @section('insert_status','')
+@section('pagetitle','Gallery')
 @section('admin')
 <div class="row">
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-            @foreach($id_category as $gc)
+            @foreach($id_gallery as $gc)
             <form action="/admin/gallery/gallery/update" method="post">
             @csrf
             <input type="hidden" name="id" value="{{ $gc->id_gallery }}">

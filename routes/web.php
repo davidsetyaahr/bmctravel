@@ -9,7 +9,7 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/  
+*/
 Route::get('/admin', 'backend\Admin@login');
 Route::post('/admin', 'backend\Admin@loginPost');
 Route::get('/admin/dashboard', 'backend\Admin@dashboard');
@@ -44,6 +44,9 @@ Route::get('/admin/gallery/add-gallery','backend\gallery\Gallery@add');
 Route::get('/admin/gallery/categories','backend\gallery\Categories@index');
 Route::get('/admin/gallery/add-categories-gallery','backend\gallery\Categories@add');
 Route::post('/admin/gallery/add-categories-gallery','backend\gallery\Categories@store');
+Route::post('/admin/gallery/categories/update','backend\gallery\Categories@update');
+Route::get('/admin/gallery/edit-categories-gallery/{id}','backend\gallery\Categories@edit');
+
 Route::get('/admin/hotel/hotel','backend\hotel\Hotel@index');
 Route::get('/admin/travel-tips/travel-tips/list','backend\travel_tips\TravelTips@index');
 Route::get('/admin/travel-tips/travel-tips/add-travel-tips','backend\travel_tips\TravelTips@create');

@@ -6,7 +6,7 @@
 @section('view_link','tag')
 @section('view_status','active')
 @section('insert_status','')
-@section('pagetittle','Tags')
+@section('pagetitle','Tags')
 
 @section('admin')
 <div class="row">
