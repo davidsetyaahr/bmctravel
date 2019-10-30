@@ -19,14 +19,21 @@ class TravelTips extends Controller
 
 
         ->join('admin','admin.id_admin','travel_tips.id_admin')
+        ->join('gallery','gallery.id_gallery','travel_tips.id_gallery')
+<<<<<<< HEAD
+        ->select('travel_tips.id_travel_tips','travel_tips.title','travel_tips.id_admin','travel_tips.id_gallery','gallery.id_gallery','travel_tips.content','travel_tips.permalink','travel_tips.insert_date','travel_tips.update_date')
+=======
         ->select('travel_tips.id_travel_tips','travel_tips.title','admin.firstname','travel_tips.content','travel_tips.permalink','travel_tips.insert_date','travel_tips.update_date')
+>>>>>>> 7bf800877e3dc1912f6c942d2251cff9259b5260
         ->orderBy('id_travel_tips', 'desc')
         ->get();
         return view('backend.travel_tips.travel_tips.list', ['travel_tips' => $trvltips]);
 
-        ->join('gallery','gallery.id_gallery','travel_tips.id_gallery')
-        ->select('travel_tips.id_travel_tips','travel_tips.title','travel_tips.id_admin','travel_tips.id_gallery','gallery.id_gallery','travel_tips.content','travel_tips.permalink','travel_tips.insert_date','travel_tips.update_date')->get();
-        return view('backend.travel_tips.travel_tips.list',['travel_tips' => $trvltips]);
+        
+<<<<<<< HEAD
+        
+=======
+>>>>>>> 7bf800877e3dc1912f6c942d2251cff9259b5260
         // $trvltips = Traveltip::all();
         // return view('backend.travel_tips.travel_tips.list', ['travel_tips' => $trvltips]);
 
@@ -76,7 +83,6 @@ class TravelTips extends Controller
             'id_gallery' => $request->id_gallery,
             'content' => $request->content,
             'permalink' => $request->permalink,
-            'insert_date' => Carbon::now(),
             'update_date' => Carbon::now()
         ]);
         return redirect('/admin/travel-tips/travel-tips/list')->with('status', 'Travel Tips berhasil diupdate');

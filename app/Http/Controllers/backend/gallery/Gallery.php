@@ -29,13 +29,16 @@ class Gallery extends Controller
     {
                 //validasi
                 $request->validate([
-                    'img' => 'required|file|image|mimes:jpeg,png,jpg|max:2048'
+                    'img' => 'required|file|image|mimes:jpeg,png,jpg|max:3072'
                 ]);
                 //mengambil informasi
                 $img = $request->file('img');
 
                 // nama file
                 $namefile = $img->getClientOriginalName();
+
+                // file size
+                $size = $img->getSize();
 
                 // upload file
                 $tujuan_upload = 'images/gallery';
