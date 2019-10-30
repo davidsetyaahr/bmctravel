@@ -11,7 +11,7 @@
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered table-hover table-striped">
+                    <table id="zero_config" class="table table-bordered table-hover table-striped">
                         <thead>
                             <tr>
                                 <th>Id</th>
@@ -21,16 +21,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach( $city as $city) ?>
+                            @foreach( $city as $city) 
                             <tr>
                             <th scope="row">{{ $loop->iteration }}</th>
                                 <td>{{ $city->province_id }}</td>
                                 <td>{{ $city->city_name }}</td>
                                 <td>
-                                <a href="/city/1" class="badge badge-info">Edit</a>
+                                <a href="{{url('admin/data-master/edit-city')}}/{{ $city->id_city }}" class="badge badge-info">Edit</a>
                                 </td>
                             </tr>
-                            @endforeach ?>
+                            @endforeach 
                         </tbody>
                     </table>
                 </div>

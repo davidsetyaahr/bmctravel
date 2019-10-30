@@ -40,9 +40,11 @@ class City extends Controller
     }
     public function edit($id)
     {
+        $prov = Province_model::all();
+        // return view('backend.data_master.city.edit-city' , ['pr' => $prov]);
         $cit = DB::table('city')->where('id_city',$id)->get();
-        return view('backend.data_master.city.edit-city',['city' => $cit]);
-         //return view('backend.data-master.city.edit-city', compact('cit'));
+        return view('backend.data_master.city.edit-city',['city' => $cit], ['prov' => $prov]);
+         //return view('backend.data-master.city.-city', compact('cit'));
     }
     public function update(Request $request)
     {
