@@ -17,6 +17,7 @@ class TravelTips extends Controller
     {
         $trvltips = DB::table('travel_tips')
 
+
         ->join('admin','admin.id_admin','travel_tips.id_admin')
         ->select('travel_tips.id_travel_tips','travel_tips.title','admin.firstname','travel_tips.content','travel_tips.permalink','travel_tips.insert_date','travel_tips.update_date')
         ->orderBy('id_travel_tips', 'desc')
