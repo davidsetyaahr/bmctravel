@@ -20,7 +20,6 @@
                         <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>ID City</th>
                                 <th>Province</th>
                                 <th>City</th>
                                 <th>Option</th>
@@ -30,7 +29,6 @@
                             @foreach( $city as $city) 
                             <tr>
                             <th scope="row">{{ $loop->iteration }}</th>
-                                <td>{{ $city->id_city }}</td>
                                 <td>{{ $city->province_name }}</td>
                                 <td>{{ $city->city_name }}</td>
                                 <td>
