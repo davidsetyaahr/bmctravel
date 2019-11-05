@@ -25,12 +25,16 @@ class City extends Controller
     }
     function add()
     {
+        
         $prov = Province_model::all(['id_province','province_name']);
         return view('backend.data_master.city.add-city' , ['province' => $prov]);
     }
     function store(Request $request)
     {
-        //insert
+        $request->validate([
+            'city_name' => 'required',
+            'province' => 'required'
+           ]);
 
 
         DB::table('city')->insert([

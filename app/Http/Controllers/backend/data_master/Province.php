@@ -25,7 +25,9 @@ class Province extends Controller
     }
     function store(Request $request)
     {
-        //insert
+        $request->validate([
+            'province_name' => 'required'
+        ]);
         
         
         DB::table('province')->insert([

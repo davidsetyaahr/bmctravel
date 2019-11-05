@@ -22,7 +22,7 @@
                             </div>
                             <div class="col-md-6 m-t-15">
                                 <label for="">Category</label>
-                                <select class="select2 form-control custom-select select2-hidden-accessible" name="id_category" id="">
+                                <select class="form-control" name="id_category" id="">
                                     <option value="">---Select---</option>
                                     @foreach($destination_categories as $c)
                                     <option value="{{ $c->id_category }}">{{ $c->category_name}}</option>
@@ -32,7 +32,7 @@
                             </div>
                             <div class="col-md-6 m-t-15">
                                 <label for="">City & Province</label>
-                                <select class="select2 form-control custom-select select2-hidden-accessible" name="id_city" id="">
+                                <select class="form-control" name="id_city" id="">
                                     <option value="">---Select---</option>
                                     @foreach($city as $cty)
                                     <option value="{{ $cty->id_city }}">{{ $cty->city_name}}</option>
