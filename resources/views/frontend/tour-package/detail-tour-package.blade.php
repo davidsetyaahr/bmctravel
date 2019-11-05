@@ -34,6 +34,27 @@
       </div>
     </div>
   </div>
+  <ul class="menu-detail-bottom nav-shadow nav-pills">
+    <li class="nav-item">
+      <a href="#overview" class="nav-link"><span class="ion-ios-images"></span> Overview</a>
+    </li>
+    <li class="nav-item">
+      <a href="#maping" class="nav-link"><span class="ion-ios-locate"></span> Maping</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#booking"><span class="ion-ios-cart"></span> Booking</a>
+    </li>
+    <li class="nav-item custom-dropup">
+      <a href="#" class="nav-link dropup"><span class="ion-ios-more"></span> Others</a>
+      <div class="dropup-content">
+        <a href="#itinerary"><span class="ion-ios-calendar"></span> Itinerary</a>
+        <a href="#hotels"><span class="ion-ios-bed"></span> Hotels</a>
+        <a href="#information"><span class="ion-ios-information-circle"></span> Information</a>
+        <a href="#review"><span class="ion-ios-quote"></span> Review</a>
+        <a href="#another-package"><span class="ion-ios-globe"></span> Another Package</a>
+      </div>
+    </li>
+  </ul>
   <nav class="navbar navbar-expand-sm menu-detail-package nav-pills" id="myScrollspy">
     <div class="container">
       <ul class="navbar-nav ml-auto">
@@ -73,13 +94,13 @@
       </div>
     </div>
     <div class="row mt-5 justify-content-center">
-      <div class="col-md-3">
+      <div class="col-md-3 mb-3">
         <img src="{{url('direngine/images/destinations/tabuhan.jpg')}}" class="img-fluid img-overview" alt="">
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3 mb-3">
         <img src="{{url('direngine/images/destinations/merbabu.jpg')}}" class="img-fluid img-overview" alt="">
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3 mb-3">
         <img src="{{url('direngine/images/destinations/menjangan.jpg')}}" class="img-fluid img-overview" alt="">
       </div>
     </div>
@@ -100,7 +121,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-10">
-            <h4 class="bold mb-4">Itinerary</h4>
+            <h4 class="bold mb-4 mt-3">Itinerary</h4>
         </div>
       </div>
       <div class="row justify-content-center mb-5">
@@ -342,23 +363,23 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="hotel-name">
-                  Palm Hotel
+                  Baratha Hotel
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="images">
                   <div class="img-top">
-                    <img src="{{ url('images/gallery/ijen.jpg') }}" alt="" class="img-fluid">
+                    <img src="{{ url('images/gallery/hotel1-min.jpg') }}" alt="" class="img-fluid">
                   </div>
                   <div class="img-bottom">
                     <div class="img">
-                      <img src="{{ url('images/gallery/ijen.jpg') }}" alt="" class="img-fluid">
+                      <img src="{{ url('images/gallery/hotel2-min.jpg') }}" alt="" class="img-fluid">
                     </div>
                     <div class="img" style="margin-left : 1%;">
-                      <img src="{{ url('images/gallery/ijen.jpg') }}" alt="" class="img-fluid">
+                      <img src="{{ url('images/gallery/hotel3-min.jpg') }}" alt="" class="img-fluid">
                     </div>
                     <div class="img" style="margin-left : 1%;">
-                      <img src="{{ url('images/gallery/ijen.jpg') }}" alt="" class="img-fluid">
+                      <img src="{{ url('images/gallery/hotel4-min.jpg') }}" alt="" class="img-fluid">
                     </div>
                   </div>
                   <div class="desc">
@@ -373,7 +394,7 @@
                     <h6 class="bold">Day 1 - 4 &nbsp; <span class="color-green"><small> Duluxe Room</small></span> <span class="float-right color-orange"><small>Bondowoso - East Java</small></span></h6>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque veritatis praesentium sapiente fuga. Nemo, eos temporibus beatae quas facilis praesentium. Voluptas nostrum esse recusandae vero ipsa? Et ullam aut facere!</p>
                     <hr>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15807.160596047332!2d113.819085!3d-7.9169763!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4b83cce47b0d7499!2sHotel%20Palm!5e0!3m2!1sen!2sid!4v1571388321718!5m2!1sen!2sid" width="100%" height="150" frameborder="0" style="border:0;" allowfullscreen=""></iframe>                    
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.86354306294!2d113.80818541405226!3d-7.909320594302319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6dd2769f1e9a5%3A0xdf0667af9e288f3e!2sBaratha%20Hotel%20%26%20Coffee!5e0!3m2!1sen!2sid!4v1572879802648!5m2!1sen!2sid" width="100%" height="150" frameborder="0" style="border:0;" allowfullscreen=""></iframe>                    
                   </div>
               </div>
             </div>
@@ -503,7 +524,7 @@
           <div class="col-md-10">
           <h4 class="bold mt-4 mb-4">Another Same Package</h4>
               <div class="row mt-4">
-                  <div class="col-md-4">
+                  <div class="col-md-4 mb-3">
                     <div class="package1">
                       <div class="relative hidden">
                         <div class="layer transition"></div>
@@ -519,7 +540,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-4 mb-3">
                     <div class="package1">
                       <div class="relative hidden">
                         <div class="layer transition"></div>
@@ -535,7 +556,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-4 mb-3">
                     <div class="package1">
                       <div class="relative hidden">
                         <div class="layer transition"></div>
@@ -562,7 +583,7 @@
           <div class="col-md-10">
               <div class="border radius p-5 text-center">
                 <div class="row">
-                  <div class="col-md-6" style="border-right : 1px solid #ddd;">
+                  <div class="col-md-6 b-right">
                   <div class="text-confirm mb-4">
                       Let's share this package to everyone
                     </div>
@@ -582,7 +603,7 @@
                     <div class="text-confirm mb-4">
                       Do you want to book this awesome package?
                     </div>
-                      <a href="" class="btn btn-outline-primary f14">Another package</a>
+                      <a href="" class="btn btn-outline-primary f14 mb-3">Another package</a>
                       &nbsp;
                       <a href="" class="btn btn-primary f14">Book this package</a>
                   </div>

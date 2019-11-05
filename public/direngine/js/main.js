@@ -261,9 +261,6 @@
 				if($(".fixedtrue").length==1){
 					$(".nav-white").removeClass("nav-shadow")
 				}
-				else{
-					$(".nav-white").addClass("nav-shadow")
-				}
 			}
 
 			if (st > 150) {
@@ -285,6 +282,8 @@
 					sd.addClass('sleep');
 				}
 				$(".to-top").css("opacity","1")
+					$(".nav-white").addClass("nav-shadow")
+
 			}
 			else{
 				$(".to-top").css("opacity","0")

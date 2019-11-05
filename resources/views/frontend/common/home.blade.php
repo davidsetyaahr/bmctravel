@@ -1,7 +1,7 @@
 @extends('frontend/common/template')
 @section('container')
-<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
- <script>
+<link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
+<script>
  var TxtRotate = function(el, toRotate, period) {
   this.toRotate = toRotate;
   this.el = el;
@@ -103,7 +103,7 @@ window.onload = function() {
 					<h4 class="mb-4"><strong>Featured</strong> Destination</h4>
 				</div>
 				<div class="col-md-2">
-					<a href="" class="btn border-grey">Explore More <span class="ion-md-arrow-dropright"></span> </a>
+					<a href="http://127.0.0.1:8000/destinations" class="btn border-grey">Explore More <span class="ion-md-arrow-dropright"></span> </a>
 				</div>
 			</div>
 		</div>
@@ -172,10 +172,10 @@ window.onload = function() {
 					<h4 class="mb-4"><strong>Top</strong> Tour Packages</h4>
 				</div>
 				<div class="col-md-2">
-					<a href="" class="btn border-grey">Explore More  <span class="ion-md-arrow-dropright"></span></a>
+					<a href="http://127.0.0.1:8000/tour-package" class="btn border-grey">Explore More  <span class="ion-md-arrow-dropright"></span></a>
 				</div>
 	        </div>
-			<div class="row mt-3">
+<!-- 			<div class="row mt-3">
 				<div class="col-md-12">
 					<ul class="progressbar">
 						<li>1 to 3 days</li>
@@ -185,7 +185,7 @@ window.onload = function() {
 					  </ul>
 				</div>
 			</div>    		
-    	</div>
+ -->    	</div>
     	<div class="container">
     		<div class="row mt-5 ftco-animate">
 				<div class="col-md-3">
@@ -283,19 +283,18 @@ window.onload = function() {
 					<h5 class="color-red">Easy, Fun, Secure</h5>
 					<div class="row mt-5">
 						<div class="col-4">
-							<img src="{{ asset('images/gallery/jeep.png') }}" alt="">
-							<h6 class="mt-3">120</h6>
-							Travel Packages
+							<img src="{{ asset('images/common/tourist.png') }}" alt="">
+							<h6 class="mt-3">Friendly Staff</h6>
 						</div>
 						<div class="col-4">
-							<img src="{{ asset('images/gallery/tourist.png') }}" alt="">
-							<h6 class="mt-3">100+</h6>
-							Happy Clients
+							<img src="{{ asset('images/common/flag.png') }}" alt="">
+							<h6 class="mt-3">
+								The High Level Of Service
+							</h6>
 						</div>
 						<div class="col-4">
-							<img src="{{ asset('images/gallery/smartphone.png') }}" alt="">
-							<h6 class="mt-3">30</h6>
-							Destinations
+							<img src="{{ asset('images/common/journal.png') }}" alt="">
+							<h6 class="mt-3">Legitimacy</h6>
 						</div>
 					</div>
 				</div>
@@ -468,7 +467,7 @@ window.onload = function() {
                   <form action="#">
                     <div class="form-group d-flex">
                       <input type="text" class="form-control" placeholder="Enter email address">
-                      <input type="submit" value="Subscribe" class="submit">
+                      <input type="submit" value="Subscribe" class="submit btn-danger" style="border:0px">
                     </div>
                   </form>
                 </div>
@@ -478,6 +477,4 @@ window.onload = function() {
         </div>
       </div>
     </section>
-<script src="{{ url('direngine/js/bideo.js-master/bideo.js') }}"></script>
-<script src="{{ url('direngine/js/bideo.js-master/main.js') }}"></script>
 @endsection

@@ -9,10 +9,20 @@ class TourPackage extends Controller
 {
     public function index()
     {
-        return view('frontend.tour-package.list-tour-package');
+        $attr = array(
+            "title" => "BMC Travel Service - Travel Package",
+            "desc" => "Our awesome travel package"
+        );
+
+        return view('frontend.tour-package.list-tour-package', $attr);
     }
     public function detail($id)
     {
-        return view('frontend.tour-package.detail-tour-package');
+        $attr = array(
+            "title" => "BMC Travel Service - Travel Package",
+            "desc" => "Our awesome travel package"
+        );
+
+        return view('frontend.tour-package.detail-tour-package', $attr);
     }
 }

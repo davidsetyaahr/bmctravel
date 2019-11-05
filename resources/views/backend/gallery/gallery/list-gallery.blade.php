@@ -5,8 +5,9 @@
 @section('view_link','gallery')
 @section('view_status','active')
 @section('insert_status','')
-
 @section('admin')
+@section('pagetitle', 'List Gallery')
+
 <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -31,7 +32,7 @@
                                     @foreach ($id_gallery as $gc)
                                         <tr>
                                             <td>{{ $loop->iteration}}</td>
-                                            <td><img src="{{ url('/images/gallery/'.$gc->img) }}" alt="" class="img-fluid transition"></td>
+                                            <td><img style="height: 200px; width: 200px;" src="{{ url('/images/gallery/'.$gc->img) }}" alt="" class="img-fluid transition"></td>
                                             <td>{{ $gc->id_category}}</td>
                                             <td>
                                                 <div class="dropdown show">

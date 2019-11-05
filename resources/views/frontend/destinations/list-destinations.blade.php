@@ -35,7 +35,7 @@
                       <input type="submit" class="search-submit btn btn-primary" value="Search">
                     </form>
           </div>
-                <div class="m-t-30">
+<!--                 <div class="m-t-30">
                 <p >Filter By</p>
                     <p class="m-t-auto browse d-md-flex">
                         <span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-guarantee"></i>Mountain</a></span>
@@ -45,7 +45,7 @@
                         <span class="d-flex justify-content-md-center align-items-md-	center"><a href="#"><i class="flaticon-shopping-bag"></i>Beach</a></span>
                     </p>
                 </div>
-        </div>
+ -->        </div>
         </div>
       </div>
       </div>
@@ -63,7 +63,7 @@
 						@foreach($destinations as $item)
             <?php
               $ex = explode(",",$item->gallery);
-              $img = App\Gallery::where("id_gallery",$ex[0])->take(1)->get();
+              $img = App\Gallery_model::where("id_gallery",$ex[0])->take(1)->get();
             ?>
 						<div class="col-md-3 col-6">
             <a href="{{ url('/destinations/detail-destinations/'.$item->id_destination) }}">

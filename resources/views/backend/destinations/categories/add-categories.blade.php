@@ -6,6 +6,8 @@
 @section('view_status','')
 @section('insert_status','active')
 @section('admin')
+@section('pagetitle','Add New Category')
+
 <div class="row">
     <div class="col-md-12">
         <div class="card">

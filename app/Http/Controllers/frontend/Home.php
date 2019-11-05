@@ -9,6 +9,10 @@ class Home extends Controller
 {
     public function index()
     {
-        return view('frontend.common.home');
+        $attr = array(
+            "title" => "BMC Travel Service - Home",
+            "desc" => "Welcome to BMC Travel Service. One Stop Travel Solution"
+        );
+        return view('frontend.common.home', $attr);
     }
 }

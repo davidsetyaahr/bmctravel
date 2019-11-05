@@ -9,6 +9,11 @@ class About extends Controller
 {
     public function index()
     {
-        return view('frontend.pages.about');
+        $attr = array(
+            "title" => "BMC Travel Service - About",
+            "desc" => "About BMC Travel Service"
+        );
+
+        return view('frontend.pages.about', $attr);
     }
 }
