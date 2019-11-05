@@ -40,11 +40,6 @@ class TravelTips extends Controller
     }
     function store(Request $request)
     {
-        $request->validate([
-            'title' => 'required',
-            'content' => 'required',
-            'permalink' => 'required'
-        ]);
 
         Traveltip::create([
             'title' => $request->title,

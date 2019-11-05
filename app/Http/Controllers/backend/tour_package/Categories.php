@@ -16,7 +16,7 @@ class Categories extends Controller
 {
     public function index()
     {
-        $category = Tour_categories::all();
+        $category = Tour_categories::orderBy('id_category', 'DESC')->get();
         return view('backend.tour_package.categories.list-categories' , ['tour_categories' => $category]);
     }
 
@@ -58,6 +58,6 @@ class Categories extends Controller
             'category_name' => $request->category_name,
             'id_gallery' => $request->id_gallery
         ]);
-        return redirect('/admin/tour-package/categories');
+        return redirect('/admin/tour-package/categories')->with('status', 'Kategori tour berhasil diupdate');
     }
 }

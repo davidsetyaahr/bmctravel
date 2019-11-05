@@ -21,7 +21,11 @@
                 </select>
                 <br>
                 <label for="">City</label>
-                <input type="text" class="form-control" name="city_name">
+                <input type="text" class="form-control @error('city_name') is-invalid @enderror" name="city_name" 
+                value="{{ old('city_name')}}">
+                @error('city_name')
+                    <div class="invalid-feedback"> {{ $message}} </div>
+                    @enderror
                 <br>
                 <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Save</button>
                 <button class="btn btn-secondary" type="reset"><span class="mdi mdi-refresh"></span> Reset</button>
