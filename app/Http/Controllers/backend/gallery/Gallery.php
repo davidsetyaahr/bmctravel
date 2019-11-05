@@ -12,8 +12,11 @@ class Gallery extends Controller
 {
     function index()
     {
-        $galeri = Gallery_model::all();
-        return view('backend.gallery.gallery.list-gallery' ,  ['id_gallery' => $galeri]);
+        // $galeri = Gallery_model::all();
+        $galeri = DB::table('gallery')
+        ->join('gallery_categories','gallery_categories.id_category','gallery.id_category')
+        ->select('gallery.id_gallery','gallery.img','gallery.id_category','gallery_categories.id_category','gallery_categories.category_name')->get();
+        return view('backend.gallery.gallery.list-gallery' ,  ['gallery' => $galeri]);
     }
 
     function add()
@@ -26,13 +29,16 @@ class Gallery extends Controller
     {
                 //validasi
                 $request->validate([
-                    'img' => 'required|file|image|mimes:jpeg,png,jpg|max:2048'
+                    'img' => 'required|file|image|mimes:jpeg,png,jpg|max:3072'
                 ]);
                 //mengambil informasi
                 $img = $request->file('img');
 
                 // nama file
                 $namefile = $img->getClientOriginalName();
+
+                // file size
+                $size = $img->getSize();
 
                 // upload file
                 $tujuan_upload = 'images/gallery';

@@ -7,8 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 
-use \App\Users;
-//use \App\User;
+use \App\Admins;
 
 class Admin extends Controller
 {
@@ -24,8 +23,8 @@ class Admin extends Controller
          $email = $request->email;
          $password = md5($request->password);
 
-        $cek = Users::where("email",$email)->where("password",$password)->get();
-        if(empty($cek[0]->id_user)){
+        $cek = Admins::where("email",$email)->where("password",$password)->get();
+        if(empty($cek[0]->id_admin)){
             return redirect('admin')->with('alert','Password atau Email, Salah !');
         }
         else{

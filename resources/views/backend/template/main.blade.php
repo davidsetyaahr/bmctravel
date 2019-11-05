@@ -389,8 +389,7 @@
         onFinished: function(event, currentIndex) {
             alert("Submitted!");
         }
-    });
-
+        });
     </script>
 </body>
 

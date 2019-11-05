@@ -9,7 +9,7 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/  
+*/
 Route::get('/admin', 'backend\Admin@login');
 Route::post('/admin', 'backend\Admin@loginPost');
 Route::get('/admin/dashboard', 'backend\Admin@dashboard');
@@ -44,6 +44,9 @@ Route::get('/admin/gallery/add-gallery','backend\gallery\Gallery@add');
 Route::get('/admin/gallery/categories','backend\gallery\Categories@index');
 Route::get('/admin/gallery/add-categories-gallery','backend\gallery\Categories@add');
 Route::post('/admin/gallery/add-categories-gallery','backend\gallery\Categories@store');
+Route::post('/admin/gallery/categories/update','backend\gallery\Categories@update');
+Route::get('/admin/gallery/edit-categories-gallery/{id}','backend\gallery\Categories@edit');
+
 Route::get('/admin/hotel/hotel','backend\hotel\Hotel@index');
 Route::get('/admin/travel-tips/travel-tips/list','backend\travel_tips\TravelTips@index');
 Route::get('/admin/travel-tips/travel-tips/add-travel-tips','backend\travel_tips\TravelTips@create');
@@ -89,9 +92,10 @@ Route::get('/travel-tips/detail-travel/{id}', 'frontend\TravelTips@detail');
 Route::get('/admin/destinations/destinations/edit-categories/{id}', 'backend\destinations\Destinations@edit');
 Route::post('/admin/destinations/destinations/update', 'backend\destinations\Destinations@update');
 Route::get('/travel-tips/detail-travel', 'frontend\TravelTips@detail');
+Route::get('/admin/data-master/edit-city/{id}', 'backend\data_master\City@edit');
+Route::post('/admin/data-master/update', 'backend\data_master\City@update');
 Route::get('/admin/travel-tips/travel-tips/edit-travel-tips/{id}', 'backend\travel_tips\TravelTips@edit');
 Route::post('/admin/travel-tips/travel-tips/update', 'backend\travel_tips\TravelTips@update');
 Route::post('/admin/tour-package/add-durations', 'backend\tour_package\Durations@insert');
 Route::get('/admin/tour-package/edit-durations/{id}', 'backend\tour_package\Durations@edit');
 Route::post('/admin/tour-package/durations/update','backend\tour_package\Durations@update');
-

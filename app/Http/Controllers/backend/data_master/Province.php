@@ -13,8 +13,10 @@ class Province extends Controller
     function index()
     
     {
-        // $prov = DB::table('province')->get();
-        $province = Province_model::all();
+        $province = DB::table('province')
+        ->orderBy('id_province', 'desc')
+        ->get();
+        // $province = Province_model::all();
         return view('backend.data_master.province.list-province', ['province' => $province]);
     }
     public function create()
@@ -30,7 +32,7 @@ class Province extends Controller
             'province_name' => $request->province_name
         ]);
         
-        return redirect('admin/data-master/province');
+        return redirect('admin/data-master/province')->with('status', 'Provinsi berhasil ditambahkan');
     }
     public function edit($id)
     {
@@ -46,6 +48,6 @@ class Province extends Controller
         DB::table('province')->where(/*nama field database*/'id_province', /*name dari form*/ $request->id_province)->update([
            /*nama field database */ 'province_name' => /*name dari form */ $request->province_name,
         ]);
-        return redirect('/admin/data-master/province');
+        return redirect('/admin/data-master/province')->with('status', 'Provinsi berhasil diperbarui');
    }
 }

@@ -18,22 +18,25 @@
                         </div>
                     @endif
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover table-striped">
+                        <table id="zero_config" class="table table-striped table-bordered">
                             <thead>
-                                <tr>
                                     <th>#</th>
                                     <th>Gallery</th>
                                     <th>Category</th>
                                     <th>Option</th>
-                                </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    @foreach ($id_gallery as $gc)
+                                    @foreach ($gallery as $gc)
                                         <tr>
+<<<<<<< HEAD
                                             <td>{{ $loop->iteration}}</td>
                                             <td><img style="height: 200px; width: 200px;" src="{{ url('/images/gallery/'.$gc->img) }}" alt="" class="img-fluid transition"></td>
                                             <td>{{ $gc->id_category}}</td>
+=======
+                                            <th>{{ $loop->iteration}}</th>
+                                            <td><img src="{{ url('/images/gallery/'.$gc->img) }}" alt="" class="img-fluid transition"></td>
+                                            <td>{{ $gc->category_name}}</td>
+>>>>>>> a7088474591bd62a1264341ca02c0d61fd8f6e43
                                             <td>
                                                 <div class="dropdown show">
                                                     <a class="btn btn-sm btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -47,7 +50,6 @@
                                             </td>
                                         </tr>
                                     @endforeach
-                                </tr>
                             </tbody>
                         </table>
                     </div>
