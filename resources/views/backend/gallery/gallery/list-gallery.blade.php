@@ -5,9 +5,9 @@
 @section('view_link','gallery')
 @section('view_status','active')
 @section('insert_status','')
-@section('pagetitle','Gallery')
-
 @section('admin')
+@section('pagetitle', 'List Gallery')
+
 <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -28,9 +28,15 @@
                             <tbody>
                                     @foreach ($gallery as $gc)
                                         <tr>
+<<<<<<< HEAD
+                                            <td>{{ $loop->iteration}}</td>
+                                            <td><img style="height: 200px; width: 200px;" src="{{ url('/images/gallery/'.$gc->img) }}" alt="" class="img-fluid transition"></td>
+                                            <td>{{ $gc->id_category}}</td>
+=======
                                             <th>{{ $loop->iteration}}</th>
                                             <td><img src="{{ url('/images/gallery/'.$gc->img) }}" alt="" class="img-fluid transition"></td>
                                             <td>{{ $gc->category_name}}</td>
+>>>>>>> a7088474591bd62a1264341ca02c0d61fd8f6e43
                                             <td>
                                                 <div class="dropdown show">
                                                     <a class="btn btn-sm btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

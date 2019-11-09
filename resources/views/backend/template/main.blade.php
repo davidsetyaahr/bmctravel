@@ -253,6 +253,7 @@
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-hotel"></i><span class="hide-menu">Hotel </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item"><a href="{{ url('admin/hotel/hotel') }}" class="sidebar-link"><i class="mdi mdi-hotel"></i><span class="hide-menu"> Hotel </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('admin/hotel/room-hotel') }}" class="sidebar-link"><i class="mdi mdi-city"></i><span class="hide-menu"> Room Hotel </span></a></li>
                             </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-help"></i><span class="hide-menu">Travel Tips </span></a>
@@ -389,8 +390,7 @@
         onFinished: function(event, currentIndex) {
             alert("Submitted!");
         }
-    });
-
+        });
     </script>
 </body>
 

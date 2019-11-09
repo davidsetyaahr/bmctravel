@@ -38,7 +38,7 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="col-md-4">
+                 <div class="col-md-4">
                     <div class="travel-tips">
                         <div class="relative">
                             <div class="layer transition"></div>
@@ -60,7 +60,7 @@
                             <div class="title">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet .....</div>
                             <div class="link"><a href="{{url('/travel-tips/detail-travel') }}">Read More</a></div>
                         </div>
-                    </div> --}}
+                    </div>
                     @endforeach
                 </div>
             </div>

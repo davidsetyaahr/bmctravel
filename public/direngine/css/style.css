@@ -30,6 +30,9 @@
   .js-fullheight-travel{
     height: 50% !important;
   }
+  .js-fullheight-travel.full{
+    height: 100% !important;
+  }
   .page-destination img{
     height : 180px !important;
   }
@@ -44,7 +47,140 @@
   .page-destination .text-bottom .price-tour small{
     display: inline  !important;
   }
+  .inline-package .top .left{
+    width : 100% !important;
+    margin-bottom: 20px;
+  }  
+  .inline-package .top .right{
+    width : 100% !important;
+  }  
+  .inline-package .top .right .right-top .title{
+    width: 100%  !important;
+  }  
+  .inline-package .top .right .right-bottom .right{
+    width: 100%  !important;
+  }
+  .inline-package .top .right .right-bottom .right .activities a{
+    float : none  !important;
+  }  
+  .inline-package .top .right .right-top .compare{
+    float : left !important;
+    margin-left: 0px !important;
+  }  
+  .inline-package .top .right .right-bottom .left{
+    margin-top : 20px;
+  }
+  .inline-package .top .right .right-bottom .right .desc{
+    text-align: left !important;
+  }
+  .inline-package .bottom .left{
+    width : 100% !important;
+  }
+  .inline-package .bottom .right{
+    width : 100% !important;
+  }
+  .menu-detail-package{
+    display : none !important; 
+  }
+  .menu-detail-bottom{
+    display: block !important;
+  }
+  .review-info .rated{
+    width : 40% !important;
+    float : none !important;
+    margin : auto;
+  }
+  .review-info .percentage{
+    width: 100% !important;
+    margin-left: 0px  !important;
+  }
+  .review-info .percentage .title{
+    width: 100% !important;
+  }
+  .review-info .percentage .progress{
+    width: 83% !important;
+  }
+  .review-info .percentage .count{
+    width: 17% !important;
+    margin-left: 0px  !important;
+    text-align: right;
+    line-height: 80%;
+  }
+  .hotel-information h6 .color-orange{
+    float : none !important;
+    display: block;
+    margin-top : 10px;
+  }
+  #booking .b-right{
+    border-right: 0px !important;
+    border-bottom: 1px solid #ddd !important;
+    padding-bottom : 10px;
+    margin-bottom : 10px;
+  }
+  #booking a{
+    display : inline !important
+  }
 }  
+.custom-dropup .dropup-content{
+  position: absolute;
+  display: none;
+  top : 0;
+  background:#fff;
+  right : 0;
+  width: 180%;
+  text-align : left;
+  transform : translateY(-100%);
+  -webkit-transform : translateY(-100%);
+  -moz-transform : translateY(-100%);
+  -o-transform : translateY(-100%);
+  box-shadow: 0 -5px 5px -5px rgba(27,27,27,.1);  
+  -webkit-box-shadow: 0 -5px 5px -5px rgba(27,27,27,.1);  
+}
+.custom-dropup .dropup-content.active{
+  display: block  !important;
+}
+.custom-dropup .dropup-content a{
+  padding : 15px;
+  display: inline-block;
+}
+.custom-dropup .dropup-content a span{
+  display: inline;
+  margin-right: 5px;
+}
+.b-right{
+  border-right : 1px solid #ddd;
+}
+.menu-detail-bottom{
+  display : none;
+  width: 100%;
+  text-align: center;
+  background: #fff;
+  position: fixed;
+  bottom : 0px;
+  z-index: 10;
+  margin-bottom: 0px;
+  padding : 0px;
+}
+.menu-detail-bottom li{
+  width : 25%;
+  list-style: none;
+  text-align: center;
+  float : left;
+  padding : 10px 0px;
+}
+.menu-detail-bottom li a span{
+  display : block;
+  font-size : 20px;
+  color : #da2f29;
+  line-height: 90%;
+}
+.menu-detail-bottom li a{
+  padding : 0px;
+  display : inline-block;
+  font-size : 12px;
+  color : #4d4d4d;
+  font-weight: bold;
+}
 .line-before{
   position: relative;
   display: inline;
@@ -59,11 +195,16 @@
   bottom: 0;
 }
 .js-fullheight-travel{
-  height: 40%;
+  height: 45%;
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  background-attachment: fixed;
+}
+.js-fullheight-travel.full{
+  height: 100%;
+  color : white;
 }
 .js-fullheight-travel .overlay{
   position: absolute;
@@ -72,13 +213,22 @@
   right: 0;
   width: 100%;
   height: 100%;
-  background: rgb(0, 0,0, 0.3);  
+  background: rgb(0, 0,0, 0.35);  
+}
+.js-fullheight-travel.full .container{
+  bottom : 0px;
+  top : 40%;
+  left : 20%
+  transform: translate(50%,-50%);
 }
 .js-fullheight-travel .container{
   left : 50%;
   position: absolute;
   bottom : 20px;
   transform : translateX(-50%);
+  -webkit-transform : translateX(-50%);
+  -moz-transform : translateX(-50%);
+  -o-transform : translateX(-50%);
 }
 .share .item{
   display : inline-block;
@@ -385,11 +535,11 @@
   margin : auto;
   color : white;
   white-space:nowrap;
-  font-family: 'Pacifico', cursive;
+  font-family: 'Staatliches', cursive;
 } 
 .overlay-video .container .title h1{
   color : white;
-  font-size : 30px;
+  font-size : 50px;
 }
 .overlay-video .container a{ 
   background: white;
@@ -405,6 +555,7 @@
   position: fixed;
   right: 20px;
   top : 50%;
+  z-index: 10;
 }
 .compare-package span{
   -o-box-shadow: 0px 3px 8px 1px rgba(0,0,0,0.15);  
@@ -516,7 +667,7 @@
 }
 .inline-package .top .right .right-bottom .right{
   float : left;
-  width: 40% !important;
+  width: 40%;
   margin-left : 0 !important;
 }
 .inline-package .top .right .right-bottom .right .activities{
@@ -530,7 +681,7 @@
   font-size : 13px;
   padding : 5px 8px;
   margin-top : 5px;
-  margin-left : 5px;
+  margin-right : 5px;
   float : right;
   border-radius : 50px;
 }
@@ -991,6 +1142,9 @@ hr.bold{
 .bold{
   font-weight: bold;
 }
+.ls-1{
+  letter-spacing: 1px;
+}
 /* .itinerary{
   padding-top: 30px;
   padding-bottom : 10px;
@@ -1073,6 +1227,7 @@ hr.bold{
 .itinerary .body .row-border{
   border-bottom: 1px solid #ddd;
   overflow: auto;
+  margin : 0px;
 } 
 .itinerary .body .row-border:hover{
   background: #f9f9f9;
@@ -1289,9 +1444,13 @@ hr.bold{
 *::after {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
-
+*{
+  box-sizing: border-box;
+}
 html,body{
   height: 100%;
+  width : 100%;
+  position: absolute;
   font-family: 'poppinsregular';
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
@@ -8584,7 +8743,8 @@ h1, h2, h3, h4, h5,
 }
   @media (max-width: 991.98px) {
     .ftco-navbar-light {
-      top: 0; } 
+      top: 0; 
+    } 
     }
   .ftco-navbar-light .navbar-brand {
     color: #fff; }

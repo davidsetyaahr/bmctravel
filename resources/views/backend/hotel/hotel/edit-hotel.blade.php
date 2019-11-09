@@ -22,7 +22,11 @@
                 @enderror
                 <br>
                 <label for="">Gallery</label>
-                @include('backend.gallery.gallery-template.gallery-hidden')
+                <input type="hidden" id="id_gallery" name="id_gallery">
+                <div class="selected-gallery">
+                    <div class="row row-gallery">
+                    </div>
+                </div>
                 <br>
                 <label for="">Map</label>
                 <input type="text" class="form-control @error('map') is-invalid @enderror" name="map" value="{{ $htl->map}}">

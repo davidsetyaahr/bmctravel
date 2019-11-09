@@ -12,7 +12,8 @@ class Durations extends Controller
 {
     function index()
     {
-        $dura = Tour_durations::all();
+        
+        $dura = Tour_durations::orderBy('id_duration', 'DESC')->get();
         return view('backend.tour_package.durations.list-durations', ['tour_durations' => $dura]);
     }
     function add(){

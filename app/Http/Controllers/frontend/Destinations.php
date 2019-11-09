@@ -7,20 +7,26 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 use \App\Destination;
-use \App\Gallery;
+use \App\Gallery_model;
 use \App\City_model;
 
 class Destinations extends Controller
 {
     public function index()
     {
+        
         $destination = DB::table('destinations')
         ->join('destination_categories','destination_categories.id_category','destinations.id_category')
         ->join('city','destinations.id_city','city.id_city')
         ->join('province','city.province_id','province.id_province')
         ->select('destinations.id_destination','destinations.destination_name','city.city_name','destinations.gallery','province.province_name', 'destination_categories.category_name')
         ->get();
-        return view('frontend.destinations.list-destinations', ['destinations' => $destination]);
+        $attr = array(
+            "title" => "BMC Travel Service - Destinations",
+            "desc" => "Beautiful Destinations from Indonesia",
+            'destinations' => $destination
+        );
+        return view('frontend.destinations.list-destinations', $attr);
     }
 
     public function detail($id)
@@ -29,8 +35,15 @@ class Destinations extends Controller
         ->join('destination_categories','destination_categories.id_category','destinations.id_category')
         ->join('city','destinations.id_city','city.id_city')
         ->join('province','city.province_id','province.id_province')
-        ->select('destinations.id_destination','destinations.destination_name','destinations.overview','destinations.information','city.city_name','destinations.gallery','province.province_name', 'destination_categories.category_name')
+        ->select('destinations.id_destination','destinations.map','destinations.information','destinations.destination_name','destinations.overview','destinations.information','city.city_name','destinations.gallery','province.province_name', 'destination_categories.category_name')
         ->get();
-        return view('frontend.destinations.detail-destinations', ['destinations' => $destination]);
+
+        $attr = array(
+            "title" => "BMC Travel Service - ".$destination[0]->destination_name,
+            "desc" => $destination[0]->overview,
+            'destinations' => $destination
+        );
+
+        return view('frontend.destinations.detail-destinations', $attr);
     }
 }

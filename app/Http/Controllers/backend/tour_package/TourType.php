@@ -15,7 +15,7 @@ class TourType extends Controller
 {
     public function index()
     {
-        $type = Tour_type::all();
+        $type = Tour_type::orderBy('id_type', 'DESC')->get();
         return view('backend.tour_package.tour_type.list-tour-type' , ['tour_type' => $type]);
     }
 
@@ -56,6 +56,6 @@ class TourType extends Controller
             'type_name' => $request->type_name,
             'id_gallery' => $request->id_gallery
         ]);
-        return redirect('/admin/tour-package/tour-type');
+        return redirect('/admin/tour-package/tour-type')->with('status', 'Tipe tour berhasil diupdate');
     }
 }

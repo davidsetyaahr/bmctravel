@@ -5,8 +5,8 @@
 @section('view_link','categories')
 @section('view_status','active')
 @section('insert_status','')
-
 @section('admin')
+@section('pagetitle','List Category')
 <div class="row">
     <div class="col-md-12">
         <div class="card">

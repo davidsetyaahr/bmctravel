@@ -12,7 +12,7 @@ class Categories extends Controller
 {
     function index()
     {
-        $galeri = Gallery_categories_model::all();
+        $galeri = Gallery_categories_model::orderBy('id_category', 'DESC')->get();
         return view('backend.gallery.categories.list-categories-gallery' ,  ['id_category' => $galeri]);
     }
 

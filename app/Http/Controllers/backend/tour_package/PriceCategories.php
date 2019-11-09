@@ -13,6 +13,7 @@ class PriceCategories extends Controller
     function index()
     {
         $price = Price_categories::all();
+        $price = Price_categories::orderBy('id_price_category', 'DESC')->get();
         return view('backend.tour_package.price_categories.list-price', ['price_categories' => $price]);
     }
     function create()
@@ -25,6 +26,10 @@ class PriceCategories extends Controller
         $request->validate([
             'start_pax' => 'digits_between:1,2',
             'end_pax' => 'digits_between:1,2'
+
+            //$rules = ['start_pax' => 'numeric|min:2|max:5', 'start_pax' => 'numeric|min:2'];
+            // 'start_pax' => 'required',
+            // 'end_pax' => 'required'
         ]);
         // insert
         DB::table('price_categories')->insert([
@@ -51,7 +56,7 @@ class PriceCategories extends Controller
             'start_pax' => $request->start_pax,
             'end_pax' => $request->end_pax
         ]);
-        return redirect('/admin/tour-package/price-categories');
+        return redirect('/admin/tour-package/price-categories')->with('status', 'Kategori harga berhasil diupdate');
    }
 
 }

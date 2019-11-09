@@ -92,9 +92,15 @@ Route::get('/travel-tips/detail-travel/{id}', 'frontend\TravelTips@detail');
 Route::get('/admin/destinations/destinations/edit-categories/{id}', 'backend\destinations\Destinations@edit');
 Route::post('/admin/destinations/destinations/update', 'backend\destinations\Destinations@update');
 Route::get('/travel-tips/detail-travel', 'frontend\TravelTips@detail');
+Route::get('/admin/data-master/edit-city/{id}', 'backend\data_master\City@edit');
+Route::post('/admin/data-master/update', 'backend\data_master\City@update');
 Route::get('/admin/travel-tips/travel-tips/edit-travel-tips/{id}', 'backend\travel_tips\TravelTips@edit');
 Route::post('/admin/travel-tips/travel-tips/update', 'backend\travel_tips\TravelTips@update');
 Route::post('/admin/tour-package/add-durations', 'backend\tour_package\Durations@insert');
 Route::get('/admin/tour-package/edit-durations/{id}', 'backend\tour_package\Durations@edit');
 Route::post('/admin/tour-package/durations/update','backend\tour_package\Durations@update');
-
+Route::get('/admin/hotel/room-hotel','backend\room_hotel\Room@index');
+Route::get('/admin/room-hotel/add-room-hotel','backend\room_hotel\Room@create');
+Route::post('/admin/room-hotel/add-room-hotel','backend\room_hotel\Room@store');
+Route::get('/admin/room-hotel/edit-room-hotel/{id}', 'backend\room_hotel\Room@edit');
+Route::post('/admin/room-hotel/update', 'backend\room_hotel\Room@update');
