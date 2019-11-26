@@ -100,3 +100,8 @@ Route::post('/admin/tour-package/add-durations', 'backend\tour_package\Durations
 Route::get('/admin/tour-package/edit-durations/{id}', 'backend\tour_package\Durations@edit');
 Route::post('/admin/tour-package/durations/update','backend\tour_package\Durations@update');
 Route::get('/signup', 'frontend\Signin@signup');
+Route::get('/admin/hotel/room-hotel','backend\room_hotel\Room@index');
+Route::get('/admin/room-hotel/add-room-hotel','backend\room_hotel\Room@create');
+Route::post('/admin/room-hotel/add-room-hotel','backend\room_hotel\Room@store');
+Route::get('/admin/room-hotel/edit-room-hotel/{id}', 'backend\room_hotel\Room@edit');
+Route::post('/admin/room-hotel/update', 'backend\room_hotel\Room@update');

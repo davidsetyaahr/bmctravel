@@ -21,16 +21,17 @@ class Durations extends Controller
     }
     function insert(Request $request){
         $request->validate([
-            'day' => 'required',
-            'night' => 'required'
+            'day' => 'digits_between:1,2',
+            'night' => 'digits_between:1,2'
         ]);
+        //  $rules = ['day' => 'numeric|min:1|max:2', 'night' => 'numeric|min:1|max:2'];
         // insert
         DB::table('tour_durations')->insert([
             'day' => $request->day,
             'night' => $request->night
             ]);
             return redirect('admin/tour-package/durations')->with('status', 'Duration berhasil ditambah');
-    
+
         }
     public function edit($id)
     {
@@ -39,6 +40,11 @@ class Durations extends Controller
     }
     public function update(Request $request)
     {
+        $request->validate([
+            'day' => 'digits_between:1',
+            'night' => 'digits_between:1,2'
+        ]);
+
         DB::table('tour_durations')->where('id_duration',$request->id)->update([
             'day' => $request->day,
             "night" => $request->night

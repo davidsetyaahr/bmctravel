@@ -24,10 +24,12 @@ class PriceCategories extends Controller
     {
         //validasi
         $request->validate([
+            'start_pax' => 'digits_between:1,2',
+            'end_pax' => 'digits_between:1,2'
 
             //$rules = ['start_pax' => 'numeric|min:2|max:5', 'start_pax' => 'numeric|min:2'];
-            'start_pax' => 'required',
-            'end_pax' => 'required'
+            // 'start_pax' => 'required',
+            // 'end_pax' => 'required'
         ]);
         // insert
         DB::table('price_categories')->insert([
@@ -46,8 +48,8 @@ class PriceCategories extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'start_pax' => 'required',
-            'end_pax' => 'required'
+            'start_pax' => 'digits_between:1,2',
+            'end_pax' => 'digits_between:1,2'
         ]);
 
         DB::table('price_categories')->where('id_price_category',$request->id)->update([

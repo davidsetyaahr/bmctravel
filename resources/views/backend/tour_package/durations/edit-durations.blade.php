@@ -12,12 +12,18 @@
                 @foreach($tour_durations as $dura)
                     <form action="/admin/tour-package/durations/update" method="post">
                         @csrf
-                    <input type="hidden" name="id" value="{{ $dura->id_duration }}">      
+                    <input type="hidden" name="id" value="{{ $dura->id_duration }}">
                 <label for="">Day</label>
-                    <input type="text" class="form-control" name="day" value="{{ $dura->day }}"><br>
+                    <input type="text"  class="form-control @error('day') is-invalid @enderror" name="day" value="{{ $dura->day }}"><br>
+                    @error('day')
+                    <div class="invalid-feedback"> {{ $message }} </div>
+                    @enderror
                 <label for="">Night</label>
-                    <input type="text" class="form-control" name="night" value="{{ $dura->night }}">
-                
+                    <input type="text"  class="form-control @error('day') is-invalid @enderror" name="night" value="{{ $dura->night }}">
+                    @error('night')
+                    <div class="invalid-feedback"> {{ $message }} </div>
+                    @enderror
+
                 <br>
                 <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Save</button>
                 <button class="btn btn-secondary" type="reset"><span class="mdi mdi-refresh"></span> Reset</button>
