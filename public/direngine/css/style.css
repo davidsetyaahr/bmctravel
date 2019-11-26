@@ -120,7 +120,190 @@
   #booking a{
     display : inline !important
   }
+  .sign-in .left{
+    width : 100% !important
+  }
+  .sign-in .right{
+    display: none;
+  }
+  .sign-in .left{
+    overflow: none !important;
+  }
 }  
+.copyright-login{
+  text-align: center;
+  letter-spacing: 1px;
+  margin : 10px 0px;
+  font-weight: bold;
+  color : #8b9dab;
+}
+.sign-in{
+  margin-bottom: 20px;
+  width : 100%;
+  height : 625px;
+  border-radius: 8px;
+  position: relative;
+  overflow: auto;
+}
+.sign-in .left{
+  float : left;
+  width : 50%;
+  padding : 40px;
+  height : 100%;
+  background: white;
+}
+.sign-in .left .logo{
+  text-align: center;
+  font-size : 25px;
+  font-weight: bold;
+}
+.sign-in .left .info{
+  text-align: center;
+  color : #95a6b3;  
+}
+.sign-in .left .sosmed{
+  margin-top : 20px;
+  text-align: center;
+}
+.sign-in .left .sosmed a{
+  color : inherit !important;
+  background : transparent;
+  border :1px solid #ddd;
+  padding : 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block;
+}
+.sign-in .left .sosmed a img{
+  margin-right : 3px;
+  height: 1.1rem;
+  position: relative;
+  transform: translateY(-15%);
+  -moz-transform: translateY(-15%);
+  -webkit-transform: translateY(-15%);
+  -o-transform: translateY(-15%);
+}
+.sign-in .left .sosmed a span{
+  font-size : 13px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+.sign-in .left .sosmed .facebook{
+  margin-left: 10px;
+  background : #475993;
+  color : white !important;
+}
+.sign-in .left .or{
+  position : relative;
+  border-top : 1px solid #e6eaed;
+  margin-top: 30px;
+}
+.sign-in .left .or span{
+  position: absolute;
+  top : 0;
+  left : 50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  background : white;
+  padding : 5px 10px;
+  color : #95a6b3;  
+}
+.sign-in .left .form{
+  margin-top : 20px;
+}
+.sign-in .left .form label{
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom : 0px;
+}
+.sign-in .left .form p{
+  color : #95a6b3;  
+  font-size : 12px;
+  margin-bottom : .5rem !important;
+}
+.btn-red{
+  color : white !important;
+  width : 100%;
+  border-radius: 5px  !important;
+}
+.sign-in .left .form input.form-control{
+  color : inherit !important;
+}
+.sign-in .left .form input{
+  border: 1px solid #d4d9dd;
+  border-radius : 5px;
+  height : 46.8px !important;
+  font-size: 15px;
+}
+.sign-in .left .form a{
+  font-weight : 500;
+  font-size : 12px;
+  margin : 6px 0px;
+  display: inline-block;
+}
+.link-red{
+  color  : #dc3545;
+  position: relative;
+}
+.link-red.showline:before{
+  width: 100%;
+}
+.link-red:before{
+  content : "";
+  width : 0%;
+  padding-top : 1px;
+  position: absolute;
+  bottom : 0;
+  left : 0; 
+  border-top  :1.2px dotted #dc3545;
+  transition: all.3s ease;
+}
+.link-red:hover.link-red:before{
+  width: 100%;
+}
+.sign-in .right{
+  float : left;
+  height : 100%;
+  width : 50%;
+  background : url('../../images/common/banner-login.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.sign-in .quote{
+  position: absolute;
+  bottom : 7%;
+  left : 0;
+  width: 90%;
+  margin : auto;
+  z-index: 4;
+}
+.sign-in .layer{
+  background : rgb(0,0,0,0.4) !important;
+}
+.sign-in .quote .icon-quote{
+  float : left;
+  width : 20%;
+  text-align: center;
+  font-size : 50px;
+  color : white;
+}
+.sign-in .quote .text-quote{
+  float : left;
+  width : 80%;
+  color : white;
+  font-size : 13px;
+  letter-spacing: .4px;
+}
+.sign-in .quote .text-quote .bmc{
+  color : #ffcc01;
+  margin-top : 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
 .custom-dropup .dropup-content{
   position: absolute;
   display: none;

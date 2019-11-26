@@ -21,7 +21,7 @@
                     BMC Travel Service
                   </div>
                   <div class="info">
-                    Sign in to your account
+                    Sign up for new account
                   </div>
                   <div class="sosmed">
                     <a href="" class="google">
@@ -37,16 +37,33 @@
                     <span>or</span>
                   </div>
                   <div class="form">
-                    <label for="">Email</label>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
-                    <input type="text" class="form-control">
-                    <br>
-                    <label for="">Password</label>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
-                    <input type="text" class="form-control">
-                    <a href="" class="link-red">Forgot password?</a>
-                    <input type="submit" class="btn btn-danger btn-red" value="Sign in">
-                    <p class="mt-1 text-center">Dont have account? <a href="{{ url('signup') }}" class="link-red"> Sign up here</a></p>
+                      <div class="row">
+                          <div class="col-md-6">
+                            <label for="">First Name</label>
+                            <p>Lorem ipsum dolor sit </p>
+                            <input type="text" class="form-control">
+                          </div>
+                          <div class="col-md-6">
+                            <label for="">Last Name</label>
+                            <p>Lorem ipsum dolor sit</p>
+                            <input type="text" class="form-control">
+                          </div>
+                          <div class="col-md-6">
+                              <br>
+                              <label for="">Email</label>
+                              <p>Lorem ipsum dolor sit</p>
+                              <input type="email" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                            <br>
+                            <label for="">Password</label>
+                            <p>Lorem ipsum dolor sit</p>
+                            <input type="password" class="form-control">
+                          </div>
+                      </div>
+                      <br>
+                    <input type="submit" class="btn btn-danger btn-red" value="Sign up">
+                    <p class="mt-1 text-center">Already have account? <a href="{{ url('signin') }}" class="link-red"> Sign in here</a></p>
                   </div>
                 </div>
                 <div class="right">
@@ -56,8 +73,8 @@
                       <span class="ion-md-quote"></span>
                     </div>
                     <div class="text-quote">
-                    The use of traveling is to regulate imagination with reality, and instead of thinking of how things may be, see them as they are
-                    <div class="bmc">Samuel Johnson</div>
+                    The more I traveled the more I realized that fear makes strangers of people who should be friends.
+                    <div class="bmc">Shirley MacLaine</div>
                     </div>
                   </div>
                 </div>

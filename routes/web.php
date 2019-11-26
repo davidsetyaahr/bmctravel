@@ -99,3 +99,4 @@ Route::post('/admin/travel-tips/travel-tips/update', 'backend\travel_tips\Travel
 Route::post('/admin/tour-package/add-durations', 'backend\tour_package\Durations@insert');
 Route::get('/admin/tour-package/edit-durations/{id}', 'backend\tour_package\Durations@edit');
 Route::post('/admin/tour-package/durations/update','backend\tour_package\Durations@update');
+Route::get('/signup', 'frontend\Signin@signup');

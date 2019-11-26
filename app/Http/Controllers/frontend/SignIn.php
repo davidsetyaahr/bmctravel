@@ -11,4 +11,10 @@ class SignIn extends Controller
     {
         return view('frontend.auth.signin');
     }
+
+    public function signup()
+    {
+        return view('frontend.auth.signup');
+    }
+    
 }

@@ -84,7 +84,7 @@
             &nbsp;
 			  <img src="{{ asset('direngine/images/icons/indonesia.png') }}">
       </a></li>
-<!--           <li class="nav-item cta"><a href="{{ url('signin') }}" class="nav-link"><span>Sign In</span></a></li> -->
+          <li class="nav-item cta"><a href="{{ url('signin') }}" class="nav-link"><span>Sign In</span></a></li>
         </ul>
       </div>
     </div>
