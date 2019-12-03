@@ -69,8 +69,20 @@ $(document).ready(function(){
             type : "post",
             data : formData,
             url : url,
-            success : function(data){
-                
+            beforeSend : function(){
+                $(".loading").addClass("show")
+            },
+            success : function(response){
+                $(".loading").removeClass("show")
+                $.each(response, function(index,value){
+                    if(value==""){
+                        $("#"+index).removeClass("inputError")
+                    }
+                    else{
+                        $("#"+index).addClass("inputError")
+                    }
+                    $(".error[data-id='"+index+"']").html(value)
+                })
             }
         })
 
