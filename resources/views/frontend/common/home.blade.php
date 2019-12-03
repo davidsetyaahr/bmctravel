@@ -60,7 +60,7 @@ window.onload = function() {
 };
  </script>
 	<video autoplay muted loop id="myVideo">
-	<source src="direngine/js/bideo.js-master/Wonderful Indonesia - Adventure.mp4" type="video/mp4">
+	<source src="public/direngine/js/bideo.js-master/Wonderful Indonesia - Adventure.mp4" type="video/mp4">
 	Your browser does not support HTML5 video.
 	</video>
 	<div class="overlay-video">
@@ -113,7 +113,7 @@ window.onload = function() {
     				<div class="destinationtext owl-carousel ftco-animate">
 						<div class="item">
 							<div class="relative">
-								<img src="direngine/images/destinations/kawah-wurung.png" alt="" class="img-fluid">
+								<img src="public/direngine/images/destinations/kawah-wurung.png" alt="" class="img-fluid">
 								<div class="box">
 									<h6>Explore East Java</h6>
 								</div>
@@ -121,7 +121,7 @@ window.onload = function() {
 						</div>
 						<div class="item">
 						<div class="relative">
-							<img src="direngine/images/destinations/ijen.jpg" alt="" class="img-fluid">
+							<img src="public/direngine/images/destinations/ijen.jpg" alt="" class="img-fluid">
 							<div class="box">
 								<h6>Explore Bondowoso</h6>
 							</div>
@@ -129,7 +129,7 @@ window.onload = function() {
 						</div>
 						<div class="item">
 						<div class="relative">
-							<img src="direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid">
+							<img src="public/direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid">
 							<div class="box">
 								<h6>Mountain Vibes</h6>
 							</div>
@@ -137,7 +137,7 @@ window.onload = function() {
 						</div>
 						<div class="item">
 						<div class="relative">
-							<img src="direngine/images/destinations/bali.jpg" alt="" class="img-fluid">
+							<img src="public/direngine/images/destinations/bali.jpg" alt="" class="img-fluid">
 							<div class="box">
 								<h6>Beach Vibes</h6>
 							</div>
@@ -145,7 +145,7 @@ window.onload = function() {
 						</div>
 						<div class="item">
 						<div class="relative">
-							<img src="direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid">
+							<img src="public/direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid">
 							<div class="box">
 								<h6>Menjangan & Tabuhan Island</h6>
 							</div>
@@ -153,7 +153,7 @@ window.onload = function() {
 						</div>
 						<div class="item">
 						<div class="relative">
-							<img src="direngine/images/destinations/bromo.jpg" alt="" class="img-fluid">
+							<img src="public/direngine/images/destinations/bromo.jpg" alt="" class="img-fluid">
 							<div class="box">
 								<h6>Bromo Midnight</h6>
 							</div>

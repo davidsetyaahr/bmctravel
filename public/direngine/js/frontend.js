@@ -57,8 +57,22 @@ $(document).ready(function(){
             }
         })
     }
-            $(".custom-dropup").click(function(){
-                $(".custom-dropup .dropup-content").toggleClass("active")
-            })
+    $(".custom-dropup").click(function(){
+        $(".custom-dropup .dropup-content").toggleClass("active")
+    })
+    $(".formNoLoad").submit(function(e){
+        e.preventDefault()
+        let url = $(this).attr("action")
+        let formData = $(this).serializeArray()
 
+        $.ajax({
+            type : "post",
+            data : formData,
+            url : url,
+            success : function(data){
+                
+            }
+        })
+
+    })
 })

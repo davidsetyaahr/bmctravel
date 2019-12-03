@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('direngine/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('direngine/css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/direngine/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/direngine/css/ionicons.min.css') }}">
 
   </head>
   <body class="bg-light">
@@ -25,11 +25,11 @@
                   </div>
                   <div class="sosmed">
                     <a href="" class="google">
-                        <img src="{{ url('images/common/google.png') }}" alt="">
+                        <img src="{{ url('public/images/common/google.png') }}" alt="">
                         <span>Google</span>
                     </a>
                     <a href="" class="facebook">
-                      <img src="{{ url('images/common/facebook-logo.png') }}" alt="">
+                      <img src="{{ url('public/images/common/facebook-logo.png') }}" alt="">
                         <span>Facebook</span>
                     </a>
                   </div>
@@ -68,7 +68,7 @@
     </div>
 </section>
 
-  <script src="{{ asset('direngine/js/jquery.min.js') }}"></script>
+  <script src="{{ asset('public/direngine/js/jquery.min.js') }}"></script>
     
   </body>
 </html>

@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('direngine/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('direngine/css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/direngine/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/direngine/css/ionicons.min.css') }}">
 
   </head>
   <body class="bg-light">
@@ -25,11 +25,11 @@
                   </div>
                   <div class="sosmed">
                     <a href="" class="google">
-                        <img src="{{ url('images/common/google.png') }}" alt="">
+                        <img src="{{ url('public/images/common/google.png') }}" alt="">
                         <span>Google</span>
                     </a>
                     <a href="" class="facebook">
-                      <img src="{{ url('images/common/facebook-logo.png') }}" alt="">
+                      <img src="{{ url('public/images/common/facebook-logo.png') }}" alt="">
                         <span>Facebook</span>
                     </a>
                   </div>
@@ -37,32 +37,35 @@
                     <span>or</span>
                   </div>
                   <div class="form">
+                    <form action="signup/auth" method="post" class="formNoLoad">
+                    @csrf
                       <div class="row">
                           <div class="col-md-6">
                             <label for="">First Name</label>
                             <p>Lorem ipsum dolor sit </p>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="firstname">
                           </div>
                           <div class="col-md-6">
                             <label for="">Last Name</label>
                             <p>Lorem ipsum dolor sit</p>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" name="lastname">
                           </div>
                           <div class="col-md-6">
                               <br>
                               <label for="">Email</label>
                               <p>Lorem ipsum dolor sit</p>
-                              <input type="email" class="form-control">
+                              <input type="email" class="form-control" name="email">
                             </div>
                             <div class="col-md-6">
                             <br>
                             <label for="">Password</label>
                             <p>Lorem ipsum dolor sit</p>
-                            <input type="password" class="form-control">
+                            <input type="password" class="form-control" name="password">
                           </div>
                       </div>
                       <br>
                     <input type="submit" class="btn btn-danger btn-red" value="Sign up">
+                    </form>
                     <p class="mt-1 text-center">Already have account? <a href="{{ url('signin') }}" class="link-red"> Sign in here</a></p>
                   </div>
                 </div>
@@ -85,7 +88,8 @@
     </div>
 </section>
 
-  <script src="{{ asset('direngine/js/jquery.min.js') }}"></script>
+  <script src="{{ asset('public/direngine/js/jquery.min.js') }}"></script>
+  <script src="{{ asset('public/direngine/js/frontend.js') }}"></script>
     
   </body>
 </html>
