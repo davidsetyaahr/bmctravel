@@ -106,3 +106,5 @@ Route::post('/admin/room-hotel/add-room-hotel','backend\room_hotel\Room@store');
 Route::get('/admin/room-hotel/edit-room-hotel/{id}', 'backend\room_hotel\Room@edit');
 Route::post('/admin/room-hotel/update', 'backend\room_hotel\Room@update');
 Route::post('/signup/auth', 'frontend\Signin@register');
+Route::get('/admin/transaction/booking/list-booking','backend\transaction\booking\book@index');
+Route::get('/admin/transaction/payment/list-payment','backend\transaction\payment\payment@index');
