@@ -29,7 +29,7 @@ class Gallery extends Controller
     {
                 //validasi
                 $request->validate([
-                    'img' => 'required|file|image|mimes:jpeg,png,jpg|max:3072'
+                    'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
                 ]);
                 //mengambil informasi
                 $img = $request->file('img');
@@ -41,12 +41,14 @@ class Gallery extends Controller
                 $size = $img->getSize();
 
                 // upload file
+                $time = time();
+                $newName = substr($time, strlen($time) - 5, 5) . "." . $img->getClientOriginalExtension();
                 $tujuan_upload = 'images/gallery';
-                $img->move($tujuan_upload,$img->getClientOriginalName());
+                $img->move($tujuan_upload, $newName);
 
                 // insert
                 DB::table('gallery')->insert([
-                    'img' => $namefile,
+                    'img' => $newName,
                     'id_category' => $request->id_category,
                     // menyimpan data file yang diupload ke variabel $file
                 ]);
