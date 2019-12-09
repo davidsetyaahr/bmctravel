@@ -16,14 +16,14 @@
                             </button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#"><span class="mdi mdi-delete"></span> Remove Trip</a>
-                                <a class="dropdown-item add-new-trip" href="#"><span class="mdi mdi-plus"></span> Add New Trip</a>
+                                <a class="dropdown-item add-new-trip" href="package?="><span class="mdi mdi-plus"></span> Add New Trip</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-2">
                     <label for="">Time Start</label>
-                    <input type="time" class="form-control">
+                    <input type="time" name="" class="form-control">
                 </div>
                 <div class="col-md-2">
                     <label for="">Time End</label>
