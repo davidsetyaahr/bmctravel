@@ -10,21 +10,21 @@
  -->	
     <link href="https://fonts.googleapis.com/css?family=Sacramento&display=swap" rel="stylesheet">   
 
-    <link rel="stylesheet" href="{{ asset('direngine/css/open-iconic-bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('direngine/css/animate.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/direngine/css/open-iconic-bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/direngine/css/animate.css') }}">
     
-    <link rel="stylesheet" href="{{ asset('direngine/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('direngine/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/direngine/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/direngine/css/owl.theme.default.min.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('direngine/css/aos.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/direngine/css/aos.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('direngine/css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/direngine/css/ionicons.min.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('direngine/css/bootstrap-datepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/direngine/css/bootstrap-datepicker.css') }}">
 <!--     <link rel="stylesheet" href="{{ asset('direngine/css/jquery.timepicker.css') }}">
- -->    <link rel="stylesheet" href="{{ asset('direngine/css/flaticon.css') }}">
-    <link rel="stylesheet" href="{{ asset('direngine/css/icomoon.css') }}">
-    <link rel="stylesheet" href="{{ asset('direngine/css/style.css') }}">
+ -->    <link rel="stylesheet" href="{{ asset('public/direngine/css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/direngine/css/icomoon.css') }}">
+    <link rel="stylesheet" href="{{ asset('public/direngine/css/style.css') }}">
   </head>
   <body>
 <div class="to-top">Back To Top</div>
@@ -80,9 +80,9 @@
           <li class="nav-item"><a href="{{ url('destinations') }}" class="nav-link">Destinations</a></li>
           <li class="nav-item"><a href="#" class="nav-link">Travel Tips</a></li>
           <li class="nav-item"><a href="#" class="nav-link">
-            <img src="{{ asset('direngine/images/icons/united-kingdom.png') }}">
+            <img src="{{ asset('public/direngine/images/icons/united-kingdom.png') }}">
             &nbsp;
-			  <img src="{{ asset('direngine/images/icons/indonesia.png') }}">
+			  <img src="{{ asset('public/direngine/images/icons/indonesia.png') }}">
       </a></li>
           <li class="nav-item cta"><a href="{{ url('signin') }}" class="nav-link"><span>Sign In</span></a></li>
         </ul>
@@ -162,22 +162,22 @@
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
-  <script src="{{ asset('direngine/js/jquery.min.js') }}"></script>
-  <script src="{{ asset('direngine/js/jquery-migrate-3.0.1.min.js') }}"></script>
-  <script src="{{ asset('direngine/js/popper.min.js') }}"></script>
-  <script src="{{ asset('direngine/js/bootstrap.min.js') }}"></script>
-  <script src="{{ asset('direngine/js/jquery.easing.1.3.js') }}"></script>
-  <script src="{{ asset('direngine/js/jquery.waypoints.min.js') }}"></script>
-  <script src="{{ asset('direngine/js/jquery.stellar.min.js') }}"></script>
-  <script src="{{ asset('direngine/js/owl.carousel.min.js') }}"></script>
-  <script src="{{ asset('direngine/js/jquery.magnific-popup.min.js') }}"></script>
-  <script src="{{ asset('direngine/js/aos.js') }}"></script>
-  <script src="{{ asset('direngine/js/jquery.animateNumber.min.js') }}"></script>
-  <script src="{{ asset('direngine/js/bootstrap-datepicker.js') }}"></script>
+  <script src="{{ asset('public/direngine/js/jquery.min.js') }}"></script>
+  <script src="{{ asset('public/direngine/js/jquery-migrate-3.0.1.min.js') }}"></script>
+  <script src="{{ asset('public/direngine/js/popper.min.js') }}"></script>
+  <script src="{{ asset('public/direngine/js/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('public/direngine/js/jquery.easing.1.3.js') }}"></script>
+  <script src="{{ asset('public/direngine/js/jquery.waypoints.min.js') }}"></script>
+  <script src="{{ asset('public/direngine/js/jquery.stellar.min.js') }}"></script>
+  <script src="{{ asset('public/direngine/js/owl.carousel.min.js') }}"></script>
+  <script src="{{ asset('public/direngine/js/jquery.magnific-popup.min.js') }}"></script>
+  <script src="{{ asset('public/direngine/js/aos.js') }}"></script>
+  <script src="{{ asset('public/direngine/js/jquery.animateNumber.min.js') }}"></script>
+  <script src="{{ asset('public/direngine/js/bootstrap-datepicker.js') }}"></script>
   <!--script src="{{ asset('direngine/js/jquery.timepicker.min.js') }}"></script-->
-  <script src="{{ asset('direngine/js/scrollax.min.js') }}"></script>
-  <script src="{{ asset('direngine/js/google-map.js') }}"></script>
-  <script src="{{ asset('direngine/js/main.js') }}"></script>
-  <script src="{{ asset('direngine/js/frontend.js') }}"></script>
+  <script src="{{ asset('public/direngine/js/scrollax.min.js') }}"></script>
+  <script src="{{ asset('public/direngine/js/google-map.js') }}"></script>
+  <script src="{{ asset('public/direngine/js/main.js') }}"></script>
+  <script src="{{ asset('public/direngine/js/frontend.js') }}"></script>
   </body>
 </html>
