@@ -20,7 +20,10 @@
                         <div class="invalid-feedback"> {{ $message }} </div>
                         @enderror --}}
                         <label for="" class="">Gallery Picture</label>
-                        <input type="file" name="img" class="form-control">
+                        <input type="file" name="img" class="form-control @error('img') is-invalid @enderror">
+                        @error('img')
+                        <div class="invalid-feedback"> {{ $message }} </div>
+                        @enderror
                         <br>
                         <label for="">Category Gallery</label>
                         <select class="form-control" name="id_category" id="">
