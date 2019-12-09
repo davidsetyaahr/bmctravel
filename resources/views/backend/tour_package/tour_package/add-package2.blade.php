@@ -9,7 +9,7 @@
         <div class="card-body" id="form">
             <div class="row mb-5">
                 <div class="col-md-12 mb-3">
-                    <div class="alert alert-success trip"><span>Trip 1</span> 
+                    <div class="alert alert-success trip"><span>Trip 1</span>
                         <div class="dropdown float-right">
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                                 Option
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                 </div>
-            </div>    
+            </div>
         </div>
     </div>
     <div class="float-right">
@@ -74,7 +74,7 @@
             $('#form').append(`
             <div class="row mb-5">
                 <div class="col-md-12 mb-3">
-                    <div class="alert alert-success trip"><span>Trip `+num+`</span> 
+                    <div class="alert alert-success trip"><span>Trip `+num+`</span>
                         <div class="dropdown float-right">
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                                 Option

@@ -1,10 +1,12 @@
             @include('backend.gallery.gallery-template.select-gallery', ['type' => 'single'])
-                <form action="">
+                <form action="/admin/tour-package/stepbystep" method="post">
+                @csrf
+                    <input type="hidden" name="step" value="1">
                     <label for="">Package Name</label>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="tour_name">
                     <br>
                     <label for="">Category</label>
-                    <select name="" id="" class="form-control">
+                    <select name="id_category" id="" class="form-control">
                         <option value="">---Option---</option>
                         @foreach($tour_categories as $tc)
                             <option value="{{ $tc->id_category }}">{{ $tc->category_name }}</option>
@@ -12,7 +14,7 @@
                     </select>
                     <br>
                     <label for="">Type</label>
-                    <select name="" id="" class="form-control">
+                    <select name="id_type" id="" class="form-control">
                         <option value="">---Option---</option>
                         @foreach($type as $type)
                             <option value="{{ $type->id_type }}">{{ $type->type_name }}</option>
@@ -20,7 +22,7 @@
                     </select>
                     <br>
                     <label for="">Durations</label>
-                    <select name="" id="" class="form-control">
+                    <select name="id_duration" id="" class="form-control">
                         <option value="">---Option---</option>
                         @foreach($durations as $d)
                             <option value="{{ $d->id_duration }}">{{ $d->day }} Days {{ $d->night }} Nights</option>
@@ -28,7 +30,7 @@
                     </select>
                     <br>
                     <label for="">Overview</label>
-                    <textarea name="" class="form-control"></textarea>
+                    <textarea name="overview" class="form-control"></textarea>
                     <br>
                     <label for="">Banner/Gallery</label>
                     @include('backend.gallery.gallery-template.gallery-hidden')

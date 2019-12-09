@@ -34,4 +34,37 @@ class TourPackage extends Controller
         );
         return view('backend.tour_package.tour_package.add-tour-package', $param);
     }
+
+    function stepbystep(Request $request)
+    {
+        if ($request->step == '1')
+        {
+            $_SESSION['add_package']['step1']=array(
+                'id_tour' => $request->id_tour,
+                'tour_name' => $request->tour_name,
+                'id_category' => $request->id_category,
+                'id_type' => $request->id_type,
+                'id_duration' => $request->id_duration,
+                'overview' => $request->overview,
+                'id_gallery' => $request->id_gallery
+            );
+            // return view('backend.tour_package.tour_package.add-package1', $request);
+            print_r($_SESSION['add_package']);
+        }
+
+        // else if ($request->step =='2')
+        // {
+        //     $_SESSION['add_package']['step2']=array(
+        //         'id_tour' => $request->id_tour,
+        //         'tour_name' => $request->tour_name,
+        //         'id_category' => $request->id_category,
+        //         'id_type' => $request->id_type,
+        //         'id_duration' => $request->id_duration,
+        //         'overview' => $request->overview,
+        //         'id_gallery' => $request->id_gallery
+        //     );
+        //     print_r($_SESSION['add_package1']);
+        //     return view('backend.tour_package.tour_package.add-package2', $request);
+        }
+    }
 }

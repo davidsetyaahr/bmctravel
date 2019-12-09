@@ -261,6 +261,11 @@
                                 <li class="sidebar-item"><a href="{{ url('admin/travel-tips/travel-tips/list') }}" class="sidebar-link"><i class="mdi mdi-help"></i><span class="hide-menu"> Travel Tips </span></a></li>
                                 <li class="sidebar-item"><a href="{{ url('admin/travel-tips/tags') }}" class="sidebar-link"><i class="mdi mdi-sign-caution"></i><span class="hide-menu"> Tags </span></a></li>
                             </ul>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-coin"></i><span class="hide-menu">Transaction </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="{{ url('admin/transaction/booking/list-booking') }}" class="sidebar-link"><i class="mdi mdi-calendar-multiple-check"></i><span class="hide-menu"> Booking </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('admin/transaction/payment/list-payment') }}" class="sidebar-link"><i class="mdi mdi-credit-card-multiple"></i><span class="hide-menu"> Payment </span></a></li>
+                            </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account"></i><span class="hide-menu">Users </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
