@@ -29,7 +29,7 @@ class Gallery extends Controller
     {
                 //validasi
                 $request->validate([
-                    'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+                    'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:3072'
                 ]);
                 //mengambil informasi
                 $img = $request->file('img');
