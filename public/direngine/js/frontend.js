@@ -74,15 +74,20 @@ $(document).ready(function(){
             },
             success : function(response){
                 $(".loading").removeClass("show")
-                $.each(response, function(index,value){
-                    if(value==""){
-                        $("#"+index).removeClass("inputError")
-                    }
-                    else{
-                        $("#"+index).addClass("inputError")
-                    }
-                    $(".error[data-id='"+index+"']").html(value)
-                })
+                if(response['success']=="error"){
+                    $.each(response, function(index,value){
+                        if(value==""){
+                            $("#"+index).removeClass("inputError")
+                        }
+                        else{
+                            $("#"+index).addClass("inputError")
+                        }
+                        $(".error[data-id='"+index+"']").html(value)
+                    })
+                }
+                else{
+                    window.location=response['redirect']
+                }
             }
         })
 

@@ -4,16 +4,40 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use \App\Users;
+use Illuminate\Support\Facades\DB;
+
+use App\Users;
 use Validator;
+
 
 class SignIn extends Controller
 {
     public function index()
     {
+        $data = array(
+            'name' => 'David Gaul',
+            'message' => 'lorem ipsum'
+        );
+
+
         return view('frontend.auth.signin');
     }
+    public function authLogin(Request $request)
+    {
+        $cek = Users::where("email", $request->email)->get();
+        $json['success'] = "error";
+        $json['error'] = "Sign in failed";
+        if(isset($cek[0]->email)){
+            if(password_verify($request->password, $cek[0]->password)){
+                $json = array(
+                    "success" => "Sign in success.",
+                    "redirect" =>  url('/')
+                );
+            }
+        }
 
+        return response()->json($json);
+    }
     public function signup()
     {
         return view('frontend.auth.signup');
@@ -30,37 +54,35 @@ class SignIn extends Controller
         $validator = Validator::make($request->all(), $rule);
 
         $i = 0;
-        $error = [];
+        $json = [];
+        $json['success'] = "error";
         foreach ($rule as $key => $value) {
-            $error[$key] = $validator->errors()->has($key) ? $validator->errors()->all()[$i] : "";
+            $json[$key] = $validator->errors()->has($key) ? $validator->errors()->all()[$i] : "";
             if($validator->errors()->has($key)){
                 $i++;
             }
         }
         if($validator->passes()) {
             $cek = Users::where("email", $request->email)->get();
-            $error['email'] = isset($cek[0]->email) ? "Email is already registered" : "";
+            $json['email'] = isset($cek[0]->email) ? "Email is already registered" : "";
 
-            if($error['email']==""){
-                return response()->json(['success'=>'Added new records.']);
+            if($json['email']==""){
+                DB::table('users')->insert(
+                    [
+                        'email' =>  $request->email,
+                        'password' => password_hash($request->password, PASSWORD_DEFAULT),
+                        'firstname' =>  $request->firstname,
+                        'lastname' =>  $request->lastname,
+                        'phone' =>  '',
+                    ]
+                );
+                $json = array(
+                    "success" => "Sign up success.",
+                    "redirect" =>  "?msg=success"
+                );
             }
         }
         
-    	return response()->json($error);
-
-        
-/*         if(isset($cek[0]->email)){
-            $error = array(
-                "email" => "Email is already registered",
-            );
-        }
-        else{
-            $error = array(
-                "email" => "",
-            );
-        }
-        header("content-type:json/application");
-        echo json_encode($error);
-        */
+    	return response()->json($json);
     }
 }

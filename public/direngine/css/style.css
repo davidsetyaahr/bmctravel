@@ -130,6 +130,9 @@
     overflow: none !important;
   }
 }  
+.alert-success{
+  font-weight: bold;
+}
 .loading{
   width : 100%;
   height : 100%;

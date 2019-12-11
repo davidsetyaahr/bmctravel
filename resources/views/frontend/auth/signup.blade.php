@@ -46,6 +46,11 @@
                     <form action="signup/auth" method="post" class="formNoLoad">
                     @csrf
                       <div class="row">
+                        <?php 
+                          if(isset($_GET['msg'])){
+                            echo "<div class='col-md-12'><div class='alert alert-success'>Sign Up Success</div></div><br>";
+                          }
+                        ?>
                           <div class="col-md-6">
                             <label for="">First Name</label>
                             <p>Lorem ipsum dolor sit </p>

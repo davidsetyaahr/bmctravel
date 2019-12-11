@@ -11,6 +11,13 @@
 
   </head>
   <body class="bg-light">
+  <div class="loading">
+  <div class="img">
+    <img src="{{url('public/images/common/loading.gif')}}" alt="">
+    <p>Loading...</p>
+  </div>
+</div>
+
 <section class="ftco-section" style="padding : 2rem 0px !important">
     <div class="container">
         <div class="row justify-content-center">
@@ -37,15 +44,19 @@
                     <span>or</span>
                   </div>
                   <div class="form">
-                    <label for="">Email</label>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
-                    <input type="text" class="form-control">
-                    <br>
-                    <label for="">Password</label>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
-                    <input type="text" class="form-control">
-                    <a href="" class="link-red">Forgot password?</a>
-                    <input type="submit" class="btn btn-danger btn-red" value="Sign in">
+                    <form action="signin/auth" method="post" class="formNoLoad">
+                      @csrf
+                      <label for="">Email</label>
+                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+                      <p class="error" data-id="error"></p>
+                      <input type="email" name="email" id="error" class="form-control">
+                      <br>
+                      <label for="">Password</label>
+                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+                      <input type="password" name="password" class="form-control">
+                      <a href="" class="link-red">Forgot password?</a>
+                      <input type="submit" class="btn btn-danger btn-red" value="Sign in">
+                    </form>
                     <p class="mt-1 text-center">Dont have account? <a href="{{ url('signup') }}" class="link-red"> Sign up here</a></p>
                   </div>
                 </div>
@@ -69,6 +80,7 @@
 </section>
 
   <script src="{{ asset('public/direngine/js/jquery.min.js') }}"></script>
+  <script src="{{ asset('public/direngine/js/frontend.js') }}"></script>
     
   </body>
 </html>

@@ -20,6 +20,7 @@ class CreateUsers extends Migration
             $table->string('firstname', 20);
             $table->string('lastname', 20);
             $table->string('phone', 13);
+            $table->string('avatar', 15);
         });
     }
 
