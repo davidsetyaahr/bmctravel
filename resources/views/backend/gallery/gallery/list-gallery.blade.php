@@ -30,7 +30,7 @@
                                         <tr>
                                             <td>{{ $loop->iteration}}</td>
                                             <td><img style="height: 200px; width: 200px;" src="{{ url('/images/gallery/'.$gc->img) }}" alt="" class="img-fluid transition"></td>
-                                            <td>{{ $gc->id_category}}</td>
+                                            <td>{{ $gc->category_name}}</td>
                                             <td>
                                                 <div class="dropdown show">
                                                     <a class="btn btn-sm btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

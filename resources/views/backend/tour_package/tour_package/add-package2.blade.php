@@ -9,21 +9,21 @@
         <div class="card-body" id="form">
             <div class="row mb-5">
                 <div class="col-md-12 mb-3">
-                    <div class="alert alert-success trip"><span>Trip 1</span> 
+                    <div class="alert alert-success trip"><span>Trip 1</span>
                         <div class="dropdown float-right">
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                                 Option
                             </button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#"><span class="mdi mdi-delete"></span> Remove Trip</a>
-                                <a class="dropdown-item add-new-trip" href="#"><span class="mdi mdi-plus"></span> Add New Trip</a>
+                                <a class="dropdown-item add-new-trip" href="package?="><span class="mdi mdi-plus"></span> Add New Trip</a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-2">
                     <label for="">Time Start</label>
-                    <input type="time" class="form-control">
+                    <input type="time" name="" class="form-control">
                 </div>
                 <div class="col-md-2">
                     <label for="">Time End</label>
@@ -56,7 +56,7 @@
                         </div>
                     </div>
                 </div>
-            </div>    
+            </div>
         </div>
     </div>
     <div class="float-right">
@@ -74,7 +74,7 @@
             $('#form').append(`
             <div class="row mb-5">
                 <div class="col-md-12 mb-3">
-                    <div class="alert alert-success trip"><span>Trip `+num+`</span> 
+                    <div class="alert alert-success trip"><span>Trip `+num+`</span>
                         <div class="dropdown float-right">
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                                 Option
