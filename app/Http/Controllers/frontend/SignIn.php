@@ -29,6 +29,12 @@ class SignIn extends Controller
         $json['error'] = "Sign in failed";
         if(isset($cek[0]->email)){
             if(password_verify($request->password, $cek[0]->password)){
+                $data['user'] = array(
+                    'id_user' => $cek[0]->id_user,
+                    'firstname' => $cek[0]->firstname,
+                    'avatar' => $cek[0]->avatar
+                );
+                $request->session()->put($data);
                 $json = array(
                     "success" => "Sign in success.",
                     "redirect" =>  url('/')
@@ -74,6 +80,7 @@ class SignIn extends Controller
                         'firstname' =>  $request->firstname,
                         'lastname' =>  $request->lastname,
                         'phone' =>  '',
+                        'avatar' => 'default.png'
                     ]
                 );
                 $json = array(

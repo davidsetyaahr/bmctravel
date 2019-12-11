@@ -41,7 +41,7 @@
     <section class="ftco-section ftco-degree-bg p-0 mb-5">
       <div class="compare-package">
         <span>
-          <img src="images/common/balance.png" alt="">
+          <img src="public/images/common/balance.png" alt="">
         </span>
         <p>
           Compare
@@ -62,7 +62,7 @@
     				<div class="destinationtext owl-carousel ftco-animate">
 						<div class="item">
               <div class="relative">
-                <img src="direngine/images/destinations/kawah-wurung.png" alt="" class="img-fluid">
+                <img src="public/direngine/images/destinations/kawah-wurung.png" alt="" class="img-fluid">
                 <div class="box">
                   <h6>Explore East Java</h6>
                 </div>
@@ -70,7 +70,7 @@
 						</div>
 						<div class="item">
               <div class="relative">
-                <img src="direngine/images/destinations/ijen.jpg" alt="" class="img-fluid">
+                <img src="public/direngine/images/destinations/ijen.jpg" alt="" class="img-fluid">
                 <div class="box">
                   <h6>Explore Bondowoso</h6>
                 </div>
@@ -78,7 +78,7 @@
 						</div>
 						<div class="item">
               <div class="relative">
-                <img src="direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid">
+                <img src="public/direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid">
                 <div class="box">
                   <h6>Mountain Vibes</h6>
                 </div>
@@ -86,7 +86,7 @@
 						</div>
 						<div class="item">
               <div class="relative">
-                <img src="direngine/images/destinations/bali.jpg" alt="" class="img-fluid">
+                <img src="public/direngine/images/destinations/bali.jpg" alt="" class="img-fluid">
                 <div class="box">
                   <h6>Beach Vibes</h6>
                 </div>
@@ -94,7 +94,7 @@
 						</div>
 						<div class="item">
               <div class="relative">
-                <img src="direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid">
+                <img src="public/direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid">
                 <div class="box">
                   <h6>Menjangan & Tabuhan Island</h6>
                 </div>
@@ -102,7 +102,7 @@
 						</div>
 						<div class="item">
               <div class="relative">
-                <img src="direngine/images/destinations/bromo.jpg" alt="" class="img-fluid">
+                <img src="public/direngine/images/destinations/bromo.jpg" alt="" class="img-fluid">
                 <div class="box">
                   <h6>Bromo Midnight</h6>
                 </div>
@@ -197,7 +197,7 @@
                 <div class="inline-package">
                   <div class="top">
                   <div class="left">
-                      <img src="direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid">
+                      <img src="public/direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid">
                       <div class="sticky-note">
         								<span>Reguler Package</span>
 				        			</div>
@@ -254,19 +254,19 @@
                   <div class="bottom">
                     <div class="left">
                       <div class="img">
-                        <img src="images/gallery/rocks.png" alt="">
+                        <img src="public/images/gallery/rocks.png" alt="">
                         <p>Mountain</p>
                       </div>
                       <div class="img">
-                        <img src="images/gallery/sunrise.png" alt="">
+                        <img src="public/images/gallery/sunrise.png" alt="">
                         <p>Beach</p>
                       </div>
                       <div class="img">
-                        <img src="images/gallery/waterfall.png" alt="">
+                        <img src="public/images/gallery/waterfall.png" alt="">
                         <p>Waterfall</p>
                       </div>
                       <div class="img">
-                        <img src="images/gallery/office.png" alt="">
+                        <img src="public/images/gallery/office.png" alt="">
                         <p>City</p>
                       </div>
                     </div>

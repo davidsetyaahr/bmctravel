@@ -58,7 +58,7 @@
 </nav>
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light nav-white" id="ftco-navbar">
     <div class="container">
-      <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('direngine/images/BMC-Logo.png') }}" alt="" style="height:40px;"> <span> BMC Travel Service.</span></a>
+      <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('public/direngine/images/BMC-Logo.png') }}" alt="" style="height:40px;"> <span> BMC Travel Service.</span></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="oi oi-menu"></span>
       </button>
@@ -68,23 +68,47 @@
           <li class="nav-item active"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
           <li class="nav-item"><a href="{{ url('about') }}" class="nav-link">About</a></li>
           <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" data-toggle="dropdown">Services</a>
-          <div class="dropdown-menu animate slideIn">
-				<a class="dropdown-item" href="{{ url('tour-package') }}"><span class="ion-ios-planet"></span> Travel Package For Foreigner</a>
-				<a class="dropdown-item" href="{{ url('tour-package') }}"><span class="ion-ios-planet"></span> Travel Package For Domestic</a>
-				<a class="dropdown-item" href="#"><span class="ion-ios-bed"></span> Accommodation</a>
-				<a class="dropdown-item" href="#"><span class="ion-ios-car"></span> Transportations</a>
-				<a class="dropdown-item" href="#"><span class="ion-ios-airplane"></span> Airport/City Transfer</a>
-				<a class="dropdown-item" href="#"><span class="ion-ios-paw"></span> Outbond</a>
-      </div>			
-			</li>
+            <div class="dropdown-menu animate slideIn">
+              <a class="dropdown-item" href="{{ url('tour-package') }}"><span class="ion-ios-planet"></span> Travel Package For Foreigner</a>
+              <a class="dropdown-item" href="{{ url('tour-package') }}"><span class="ion-ios-planet"></span> Travel Package For Domestic</a>
+              <a class="dropdown-item" href="#"><span class="ion-ios-bed"></span> Accommodation</a>
+              <a class="dropdown-item" href="#"><span class="ion-ios-car"></span> Transportations</a>
+              <a class="dropdown-item" href="#"><span class="ion-ios-airplane"></span> Airport/City Transfer</a>
+              <a class="dropdown-item" href="#"><span class="ion-ios-paw"></span> Outbond</a>
+            </div>			
+		    	</li>
           <li class="nav-item"><a href="{{ url('destinations') }}" class="nav-link">Destinations</a></li>
           <li class="nav-item"><a href="#" class="nav-link">Travel Tips</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">
-            <img src="{{ asset('public/direngine/images/icons/united-kingdom.png') }}">
-            &nbsp;
-			  <img src="{{ asset('public/direngine/images/icons/indonesia.png') }}">
-      </a></li>
+          <?php 
+            $userSession = session()->all();
+            if(isset($userSession['user'])){
+          ?>
+            <li class="nav-item dropdown">
+              <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">
+              {{ $userSession['user']['firstname'] }}
+              </a>
+              <div class="dropdown-menu animate slideIn">
+                <a href="" class="dropdown-item">
+                  My account
+                </a>
+                <a href="" class="dropdown-item">
+                  Sign out
+                </a>
+              </div>
+            </li>
+          <?php
+            }
+            else{
+          ?>
           <li class="nav-item cta"><a href="{{ url('signin') }}" class="nav-link"><span>Sign In</span></a></li>
+        <?php } ?>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <img src="{{ asset('public/direngine/images/icons/united-kingdom.png') }}">
+              &nbsp;
+              <img src="{{ asset('public/direngine/images/icons/indonesia.png') }}">
+            </a>
+          </li>
         </ul>
       </div>
     </div>

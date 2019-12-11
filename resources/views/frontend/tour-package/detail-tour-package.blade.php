@@ -1,7 +1,7 @@
 @extends('frontend.common.template')
 @section('container')
 
-<div class="hero-wrap js-fullheight" style="background-image: url({{ url('direngine/images/bg_2.jpg') }});">
+<div class="hero-wrap js-fullheight" style="background-image: url({{ url('public/direngine/images/bg_2.jpg') }});">
 <div class="overlay js-fullheight"></div>
     <div class="container">
       <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
@@ -12,19 +12,19 @@
             <div class="bottom">
               <div class="left" style="width :100%">
                 <div class="img">
-                  <img src="{{ url('images/gallery/rocks.png') }}" alt="">
+                  <img src="{{ url('public/images/gallery/rocks.png') }}" alt="">
                   <p>Mountain</p>
                 </div>
                 <div class="img">
-                  <img src="{{ url('images/gallery/sunrise.png') }}" alt="">
+                  <img src="{{ url('public/images/gallery/sunrise.png') }}" alt="">
                   <p>Beach</p>
                 </div>
                 <div class="img">
-                  <img src="{{ url('images/gallery/waterfall.png') }}" alt="">
+                  <img src="{{ url('public/images/gallery/waterfall.png') }}" alt="">
                   <p>Waterfall</p>
                 </div>
                 <div class="img">
-                  <img src="{{ url('images/gallery/office.png') }}" alt="">
+                  <img src="{{ url('public/images/gallery/office.png') }}" alt="">
                   <p>City</p>
                 </div>
               </div>
@@ -95,13 +95,13 @@
     </div>
     <div class="row mt-5 justify-content-center">
       <div class="col-md-3 mb-3">
-        <img src="{{url('direngine/images/destinations/tabuhan.jpg')}}" class="img-fluid img-overview" alt="">
+        <img src="{{url('public/direngine/images/destinations/tabuhan.jpg')}}" class="img-fluid img-overview" alt="">
       </div>
       <div class="col-md-3 mb-3">
-        <img src="{{url('direngine/images/destinations/merbabu.jpg')}}" class="img-fluid img-overview" alt="">
+        <img src="{{url('public/direngine/images/destinations/merbabu.jpg')}}" class="img-fluid img-overview" alt="">
       </div>
       <div class="col-md-3 mb-3">
-        <img src="{{url('direngine/images/destinations/menjangan.jpg')}}" class="img-fluid img-overview" alt="">
+        <img src="{{url('public/direngine/images/destinations/menjangan.jpg')}}" class="img-fluid img-overview" alt="">
       </div>
     </div>
     <div class="row mt-5 justify-content-center">
@@ -127,7 +127,7 @@
       <div class="row justify-content-center mb-5">
         <div class="col-md-10">
           <div class="itinerary">
-            <div class="banner" style="background : url({{ url('images/gallery/banner1.png') }})">
+            <div class="banner" style="background : url({{ url('public/images/gallery/banner1.png') }})">
               <div class="layer">
                 <div class="text">
                   <div class="day">
@@ -164,13 +164,13 @@
                     <div class="carousel-tour-style owl-carousel">
     		              <div class="item">
                         <center>
-                          <img src="{{ url('images/gallery/boot.png') }}" alt="">
+                          <img src="{{ url('public/images/gallery/boot.png') }}" alt="">
                         </center>
                         <p>Hiking</p>
                       </div>
                       <div class="item">
                         <center>
-                          <img src="{{ url('images/gallery/honey-moon.png') }}" alt="">
+                          <img src="{{ url('public/images/gallery/honey-moon.png') }}" alt="">
                         </center>
                           <p>Honey Moon</p>
                     </div>
@@ -203,7 +203,7 @@
                 <div class="col-md-3 p-0">
                   <div class="others">
                     <div class="tour-style">
-                      <img src="{{ url('images/gallery/boot.png') }}" alt="">
+                      <img src="{{ url('public/images/gallery/boot.png') }}" alt="">
                       <p>Hiking</p>
                       <div class="destinations">
                           <span>#Bromo</span> <span>#Mountain</span>
@@ -233,7 +233,7 @@
                 <div class="col-md-3 p-0">
                   <div class="others">
                     <div class="tour-style">
-                      <img src="{{ url('images/gallery/honey-moon.png') }}" alt="">
+                      <img src="{{ url('public/images/gallery/honey-moon.png') }}" alt="">
                       <p>Honey Moon</p>
                       <div class="destinations">
                           <span>#Bromo</span> <span>#Mountain</span>
@@ -249,7 +249,7 @@
       <div class="row justify-content-center mb-5">
         <div class="col-md-10">
           <div class="itinerary">
-            <div class="banner" style="background : url({{ url('images/gallery/banner1.png') }})">
+            <div class="banner" style="background : url({{ url('public/images/gallery/banner1.png') }})">
               <div class="layer">
                 <div class="text">
                   <div class="day">
@@ -283,7 +283,7 @@
                 <div class="col-md-3 p-0">
                   <div class="others">
                     <div class="tour-style">
-                      <img src="{{ url('images/gallery/boot.png') }}" alt="">
+                      <img src="{{ url('public/images/gallery/boot.png') }}" alt="">
                       <p>Hiking</p>
                       <div class="destinations">
                           <span>#Bromo</span> <span>#Mountain</span>
@@ -313,7 +313,7 @@
                 <div class="col-md-3 p-0">
                   <div class="others">
                     <div class="tour-style">
-                      <img src="{{ url('images/gallery/boot.png') }}" alt="">
+                      <img src="{{ url('public/images/gallery/boot.png') }}" alt="">
                       <p>Hiking</p>
                       <div class="destinations">
                           <span>#Bromo</span> <span>#Mountain</span>
@@ -343,7 +343,7 @@
                 <div class="col-md-3 p-0">
                   <div class="others">
                     <div class="tour-style">
-                      <img src="{{ url('images/gallery/honey-moon.png') }}" alt="">
+                      <img src="{{ url('public/images/gallery/honey-moon.png') }}" alt="">
                       <p>Honey Moon</p>
                       <div class="destinations">
                           <span>#Bromo</span> <span>#Mountain</span>
@@ -369,17 +369,17 @@
               <div class="col-md-4">
                 <div class="images">
                   <div class="img-top">
-                    <img src="{{ url('images/gallery/hotel1-min.jpg') }}" alt="" class="img-fluid">
+                    <img src="{{ url('public/images/gallery/hotel1-min.jpg') }}" alt="" class="img-fluid">
                   </div>
                   <div class="img-bottom">
                     <div class="img">
-                      <img src="{{ url('images/gallery/hotel2-min.jpg') }}" alt="" class="img-fluid">
+                      <img src="{{ url('public/images/gallery/hotel2-min.jpg') }}" alt="" class="img-fluid">
                     </div>
                     <div class="img" style="margin-left : 1%;">
-                      <img src="{{ url('images/gallery/hotel3-min.jpg') }}" alt="" class="img-fluid">
+                      <img src="{{ url('public/images/gallery/hotel3-min.jpg') }}" alt="" class="img-fluid">
                     </div>
                     <div class="img" style="margin-left : 1%;">
-                      <img src="{{ url('images/gallery/hotel4-min.jpg') }}" alt="" class="img-fluid">
+                      <img src="{{ url('public/images/gallery/hotel4-min.jpg') }}" alt="" class="img-fluid">
                     </div>
                   </div>
                   <div class="desc">
@@ -531,7 +531,7 @@
                         <div class="sticky-note">
                           <span>Beach Vibes</span>
                         </div>
-                        <img src="{{url('direngine/images/destinations/tabuhan.jpg')}}" alt="" class="img-fluid transition">
+                        <img src="{{url('public/direngine/images/destinations/tabuhan.jpg')}}" alt="" class="img-fluid transition">
                         <div class="view-link transition">View Package</div>
                       </div>
                       <div class="text-bottom mt-2">
@@ -547,7 +547,7 @@
                         <div class="sticky-note">
                           <span>Beach Vibes</span>
                         </div>
-                        <img src="{{url('direngine/images/destinations/menjangan.jpg')}}" alt="" class="img-fluid transition">
+                        <img src="{{url('public/direngine/images/destinations/menjangan.jpg')}}" alt="" class="img-fluid transition">
                         <div class="view-link transition">View Package</div>
                       </div>
                       <div class="text-bottom mt-2">
@@ -563,7 +563,7 @@
                         <div class="sticky-note">
                           <span>Beach Vibes</span>
                         </div>
-                        <img src="{{url('direngine/images/destinations/bromo.jpg')}}" alt="" class="img-fluid transition">
+                        <img src="{{url('public/direngine/images/destinations/bromo.jpg')}}" alt="" class="img-fluid transition">
                         <div class="view-link transition">View Package</div>
                       </div>
                       <div class="text-bottom mt-2">
@@ -589,13 +589,13 @@
                     </div>
                     <div class="share">
                       <div class="item">
-                        <a href=""> <img src="{{ url('images/common/facebook.png') }}" alt=""> Facebook</a>
+                        <a href=""> <img src="{{ url('public/images/common/facebook.png') }}" alt=""> Facebook</a>
                       </div>
                       <div class="item">
-                        <a href=""> <img src="{{ url('images/common/whatsapp.png') }}" alt=""> Whatsapp</a>
+                        <a href=""> <img src="{{ url('public/images/common/whatsapp.png') }}" alt=""> Whatsapp</a>
                       </div>
                       <div class="item">
-                        <a href=""> <img src="{{ url('images/common/gmail.png') }}" alt="">  Email</a>
+                        <a href=""> <img src="{{ url('public/images/common/gmail.png') }}" alt="">  Email</a>
                       </div>
                     </div>
                   </div>
@@ -605,7 +605,7 @@
                     </div>
                       <a href="" class="btn btn-outline-primary f14 mb-3">Another package</a>
                       &nbsp;
-                      <a href="" class="btn btn-primary f14">Book this package</a>
+                      <a href="{{url('tour-package/booking/1?page=1')}}" class="btn btn-primary f14 mb-3">Book this package</a>
                   </div>
                 </div>
               </div>

@@ -25,4 +25,13 @@ class TourPackage extends Controller
 
         return view('frontend.tour-package.detail-tour-package', $attr);
     }
+    public function booking($id)
+    {
+            $attr = array(
+                "title" => "BMC Travel Service - Travel Package",
+                "desc" => "Our awesome travel package"
+            );
+    
+            return view('frontend.booking.step1', $attr);
+    }
 }

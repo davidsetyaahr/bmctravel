@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class Home extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $attr = array(
             "title" => "BMC Travel Service - Home",
