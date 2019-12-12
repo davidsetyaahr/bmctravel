@@ -12,17 +12,17 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/matrix-admin-bt4') }}/assets/images/favicon.png">
     <title>Matrix Template - The Ultimate Multipurpose admin template</title>
     <!-- Custom CSS -->
-    <link href="{{ asset('/matrix-admin-bt4') }}/assets/libs/flot/css/float-chart.css" rel="stylesheet">
+    <link href="{{ asset('public/matrix-admin-bt4') }}/assets/libs/flot/css/float-chart.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="{{ asset('/matrix-admin-bt4') }}/dist/css/style.min.css" rel="stylesheet">
+    <link href="{{ asset('public/matrix-admin-bt4') }}/dist/css/style.min.css" rel="stylesheet">
 <!--     <link rel="stylesheet" type="text/css" href="{{ asset('/matrix-admin-bt4') }}/assets/libs/quill/dist/quill.snow.css">
- -->    <link href="{{ asset('/matrix-admin-bt4') }}/dist/css/custom.css" rel="stylesheet">
-    <link href="{{ asset('/matrix-admin-bt4') }}/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
-    <link href="{{ url('select2-develop/dist/css/select2.min.css') }}" rel="stylesheet">
-    <script src="{{ asset('/ckeditor') }}/ckeditor.js"></script>
+ -->    <link href="{{ asset('public/matrix-admin-bt4') }}/dist/css/custom.css" rel="stylesheet">
+    <link href="{{ asset('public/matrix-admin-bt4') }}/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="{{ url('public/select2-develop/dist/css/select2.min.css') }}" rel="stylesheet">
+    <script src="{{ asset('public/ckeditor') }}/ckeditor.js"></script>
     {{-- step --}}
-    <link href="{{ asset('/matrix-admin-bt4') }}/assets/libs/jquery-steps/jquery.steps.css" rel="stylesheet">
-    <link href="{{ asset('/matrix-admin-bt4') }}/assets/libs/jquery-steps/steps.css" rel="stylesheet">
+    <link href="{{ asset('public/matrix-admin-bt4') }}/assets/libs/jquery-steps/jquery.steps.css" rel="stylesheet">
+    <link href="{{ asset('public/matrix-admin-bt4') }}/assets/libs/jquery-steps/steps.css" rel="stylesheet">
     {{-- /step --}}
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -63,7 +63,7 @@
                         <b class="logo-icon p-l-10">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="{{ asset('/matrix-admin-bt4') }}/assets/images/BMC-Logo.png" alt="homepage" class="bmc-logo" />
+                            <img src="{{ asset('public/matrix-admin-bt4') }}/assets/images/BMC-Logo.png" alt="homepage" class="bmc-logo" />
                            
                         </b>
                         <!--End Logo icon -->
@@ -170,7 +170,7 @@
                                     <!-- User profile and search -->
                                     <!-- ============================================================== -->
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('/matrix-admin-bt4') }}/assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31"></a>
+                                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('public/matrix-admin-bt4') }}/assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31"></a>
                                         <div class="dropdown-menu dropdown-menu-right user-dd animated">
                                             <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
                                             <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
@@ -330,37 +330,37 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="{{ asset('public/matrix-admin-bt4') }}/assets/libs/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-    <script src="{{ asset('/matrix-admin-bt4') }}/assets/extra-libs/sparkline/sparkline.js"></script>
+    <script src="{{ asset('public/matrix-admin-bt4') }}/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="{{ asset('public/matrix-admin-bt4') }}/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="{{ asset('public/matrix-admin-bt4') }}/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="{{ asset('public/matrix-admin-bt4') }}/assets/extra-libs/sparkline/sparkline.js"></script>
     <!--Wave Effects -->
-    <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/waves.js"></script>
+    <script src="{{ asset('public/matrix-admin-bt4') }}/dist/js/waves.js"></script>
     <!--Menu sidebar -->
-    <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/sidebarmenu.js"></script>
-    <script src="{{ url('select2-develop/dist/js/select2.min.js') }}"></script>
+    <script src="{{ asset('public/matrix-admin-bt4') }}/dist/js/sidebarmenu.js"></script>
+    <script src="{{ url('public/select2-develop/dist/js/select2.min.js') }}"></script>
 
     <!--Custom JavaScript -->
-    <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/custom.min.js"></script>
-    <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/custom-script.js"></script>
+    <script src="{{ asset('public/matrix-admin-bt4') }}/dist/js/custom.min.js"></script>
+    <script src="{{ asset('public/matrix-admin-bt4') }}/dist/js/custom-script.js"></script>
     <!--This page JavaScript -->
 <!--     <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/pages/dashboards/dashboard1.js"></script>
  -->    <!-- Charts js Files -->
-    <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/flot/excanvas.js"></script>
-    <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/flot/jquery.flot.js"></script>
-    <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/flot/jquery.flot.pie.js"></script>
-    <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/flot/jquery.flot.time.js"></script>
-    <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/flot/jquery.flot.stack.js"></script>
-    <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/flot/jquery.flot.crosshair.js"></script>
-    <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
-    <script src="{{ asset('/matrix-admin-bt4') }}/dist/js/pages/chart/chart-page-init.js"></script>
+    <script src="{{ asset('public/matrix-admin-bt4') }}/assets/libs/flot/excanvas.js"></script>
+    <script src="{{ asset('public/matrix-admin-bt4') }}/assets/libs/flot/jquery.flot.js"></script>
+    <script src="{{ asset('public/matrix-admin-bt4') }}/assets/libs/flot/jquery.flot.pie.js"></script>
+    <script src="{{ asset('public/matrix-admin-bt4') }}/assets/libs/flot/jquery.flot.time.js"></script>
+    <script src="{{ asset('public/matrix-admin-bt4') }}/assets/libs/flot/jquery.flot.stack.js"></script>
+    <script src="{{ asset('public/matrix-admin-bt4') }}/assets/libs/flot/jquery.flot.crosshair.js"></script>
+    <script src="{{ asset('public/matrix-admin-bt4') }}/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+    <script src="{{ asset('public/matrix-admin-bt4') }}/dist/js/pages/chart/chart-page-init.js"></script>
 <!--     <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/quill/dist/quill.min.js"></script>
- -->    <script src="{{ asset('/matrix-admin-bt4') }}/assets/extra-libs/multicheck/datatable-checkbox-init.js"></script>
-    <script src="{{ asset('/matrix-admin-bt4') }}/assets/extra-libs/multicheck/jquery.multicheck.js"></script>
-    <script src="{{ asset('/matrix-admin-bt4') }}/assets/extra-libs/DataTables/datatables.min.js"></script>
-    <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/jquery-steps/build/jquery.steps.min.js"></script>
+ -->    <script src="{{ asset('public/matrix-admin-bt4') }}/assets/extra-libs/multicheck/datatable-checkbox-init.js"></script>
+    <script src="{{ asset('public/matrix-admin-bt4') }}/assets/extra-libs/multicheck/jquery.multicheck.js"></script>
+    <script src="{{ asset('public/matrix-admin-bt4') }}/assets/extra-libs/DataTables/datatables.min.js"></script>
+    <script src="{{ asset('public/matrix-admin-bt4') }}/assets/libs/jquery-steps/build/jquery.steps.min.js"></script>
     <script>
 /*         // Editor Quill
         var quill = new Quill('#editor-overview', {
