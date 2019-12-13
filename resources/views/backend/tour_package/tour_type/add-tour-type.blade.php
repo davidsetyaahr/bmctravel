@@ -11,7 +11,7 @@
         <div class="card">
             <div class="card-body">
                 @include('backend.gallery.gallery-template.select-gallery', ['type' => 'single', 'gallery' => $gallery, 'categories' => $categories])
-                <form action="/admin/tour-package/add-tour-type" method="post">
+            <form action="{{url("admin/tour-package/add-tour-type")}}" method="post">
                 @csrf
                     <label for="">Tour Type Name</label>
                     <input type="text" class="form-control @error('type_name') is-invalid @enderror" name="type_name">

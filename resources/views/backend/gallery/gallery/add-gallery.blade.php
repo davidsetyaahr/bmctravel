@@ -11,7 +11,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <form action="/admin/gallery/add-gallery" method="post" enctype="multipart/form-data">
+            <form action="{{url("admin/gallery/add-gallery")}}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     {{-- @csrf --}}
                         {{-- <label for="">Gallery Name</label>
