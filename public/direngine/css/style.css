@@ -130,6 +130,66 @@
     overflow: none !important;
   }
 }  
+.booking{
+  width : 100%;
+  overflow: auto;
+  margin-bottom: 10%;
+}
+.booking .top{
+  padding : 10px 0px;
+  text-align: center;
+}
+.booking .top p{
+  color:#3e474f;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 0px;
+}
+.booking .top img{
+  width: 50px;
+  background: white;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+.booking .body{
+  background : white;
+}
+.booking .body .multi-steps{
+  background: #f6f6f6;  
+  padding : 20px 0px;
+}
+.booking .body .body-data{
+  padding : 20px 30px;
+}
+.booking .bottom{
+  background :#3e474f;
+  position: relative;
+  overflow: auto;
+}
+.booking .bottom .info{
+  color : #e6eaed;
+  position: absolute;
+  margin-left : 20px;
+  top : 25%;
+  font-size : 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.booking .bottom .next{
+  width: 20%;
+  float : right;
+  text-align: center;
+  color: white;
+  font-size : 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding : 10px 7px;
+  background : #72c8f9;
+}
+
 .multi-steps > li.is-active:before, .multi-steps > li.is-active ~ li:before {
   content: counter(stepNum);
   font-family: inherit;
@@ -149,6 +209,8 @@
   display: table-cell;
   position: relative;
   color: tomato;
+  font-weight: bold;
+  letter-spacing: .8px;
 }
 .multi-steps > li:before {
   content: '\f00c';
@@ -164,20 +226,22 @@
   line-height: 32px;
   text-align: center;
   font-weight: bold;
-  border-width: 2px;
+  border-width: 3px;
   border-style: solid;
   border-color: tomato;
   border-radius: 50%;
+  position: relative;
+  z-index: 2;
 }
 .multi-steps > li:after {
   content: '';
-  height: 2px;
+  height: 3px;
   width: 100%;
   background-color: tomato;
   position: absolute;
   top: 16px;
   left: 50%;
-  z-index: -1;
+  z-index: 1;
 }
 .multi-steps > li:last-child:after {
   display: none;
