@@ -50,7 +50,7 @@ class SignIn extends Controller
     }
     public function register(Request $request)
     {
-        
+
         $rule = array(
             'firstname' => 'required|regex:/^[a-zA-Z]+$/u',
             'lastname' => 'required|regex:/^[a-zA-Z]+$/u',
@@ -89,7 +89,7 @@ class SignIn extends Controller
                 );
             }
         }
-        
+
     	return response()->json($json);
     }
 }

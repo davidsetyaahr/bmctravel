@@ -19,13 +19,13 @@ class City extends Controller
         ->select('city.city_name', 'province.province_name', 'city.id_city')
         ->orderBy('city.id_city', 'desc')
         ->get();
-        
+
         return view('backend.data_master.city.index', ['city' => $cit]);
         //return view('backend.data_master.city.index');
     }
     function add()
     {
-        
+
         $prov = Province_model::all(['id_province','province_name']);
         return view('backend.data_master.city.add-city' , ['province' => $prov]);
     }
@@ -33,7 +33,7 @@ class City extends Controller
     {
         $request->validate([
             'city_name' => 'required',
-            'province' => 'required'
+            'province_id' => 'required'
            ]);
 
 

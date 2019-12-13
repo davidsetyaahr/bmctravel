@@ -1,5 +1,5 @@
             @include('backend.gallery.gallery-template.select-gallery', ['type' => 'single'])
-                <form action="/admin/tour-package/stepbystep" method="post">
+        <form action="{{url("admin/tour-package/stepbystep")}}" method="post">
                 @csrf
                     <input type="hidden" name="step" value="1">
                     <label for="">Package Name</label>

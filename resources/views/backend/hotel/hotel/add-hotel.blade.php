@@ -11,7 +11,7 @@
         <div class="card">
             <div class="card-body">
                 @include('backend.gallery.gallery-template.select-gallery', ['type' => 'single', 'gallery' => $gallery, 'categories' => $categories])
-                <form action="/admin/hotel/add-hotel" method="post">
+            <form action="{{url("admin/hotel/add-hotel")}}" method="post">
                 @csrf
                 <label for="">Hotel Name</label>
                 <input type="text" class="form-control @error('hotel_name') is-invalid @enderror" name="hotel_name"
