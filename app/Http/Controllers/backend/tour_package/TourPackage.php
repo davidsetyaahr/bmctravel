@@ -65,6 +65,6 @@ class TourPackage extends Controller
         //     );
         //     print_r($_SESSION['add_package1']);
         //     return view('backend.tour_package.tour_package.add-package2', $request);
-        }
+        //}
     }
 }
