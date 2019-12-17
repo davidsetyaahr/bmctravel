@@ -13,7 +13,7 @@
         <div class="card">
             <div class="card-body">
             @include('backend.gallery.gallery-template.select-gallery', ['type' => 'multiple', 'gallery' => $gallery, 'categories' => $categories])
-            <form action="/admin/destinations/add-categories" method="post">
+            <form action="{{url("admin/destinations/add-categories")}}" method="post">
             @csrf
                 <label for="">Categories Name</label>
                 <input type="text" class="form-control @error('category_name') is-invalid @enderror" name="category_name"
@@ -24,7 +24,7 @@
                 <br>
                 <div class="col-md-12 m-t-15">
                     <label for="">Gallery</label>
-                        @include('backend.gallery.gallery-template.gallery-hidden')     
+                        @include('backend.gallery.gallery-template.gallery-hidden')
                 </div>
                 <br>
                 <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Save</button>

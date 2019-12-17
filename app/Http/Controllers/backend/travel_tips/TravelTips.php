@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use  Illuminate\Support\Facades\DB;
 
 use \App\Traveltip;
+use \App\Admins;
 use \App\Gallery_model;
 use \App\Gallery_categories_model;
 use Carbon\Carbon;
@@ -17,13 +18,14 @@ class TravelTips extends Controller
     {
         $trvltips = DB::table('travel_tips')
 
-
+        // ->join('travel_tips','travel_tips.id_travel_tips')
         ->join('admin','admin.id_admin','travel_tips.id_admin')
         ->join('gallery','gallery.id_gallery','travel_tips.id_gallery')
         ->select('travel_tips.id_travel_tips','travel_tips.title','admin.firstname','travel_tips.content','travel_tips.permalink','travel_tips.insert_date','travel_tips.update_date')
         ->orderBy('id_travel_tips', 'desc')
         ->get();
-        return view('backend.travel_tips.travel_tips.list', ['travel_tips' => $trvltips]);
+        print_r($trvltips);
+        // return view('backend.travel_tips.travel_tips.list', ['travel_tips' => $trvltips]);
 
         // $trvltips = Traveltip::all();
         // return view('backend.travel_tips.travel_tips.list', ['travel_tips' => $trvltips]);

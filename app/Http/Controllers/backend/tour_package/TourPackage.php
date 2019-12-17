@@ -39,7 +39,7 @@ class TourPackage extends Controller
     {
         if ($request->step == '1')
         {
-            $_SESSION['add_package']['step1']=array(
+            $array = array(
                 'id_tour' => $request->id_tour,
                 'tour_name' => $request->tour_name,
                 'id_category' => $request->id_category,
@@ -48,8 +48,8 @@ class TourPackage extends Controller
                 'overview' => $request->overview,
                 'id_gallery' => $request->id_gallery
             );
-            // return view('backend.tour_package.tour_package.add-package1', $request);
-            print_r($_SESSION['add_package']);
+            $request->session()->put($array);
+            return redirect('/admin/tour-package/add-tour-package?page=2');
         }
 
         // else if ($request->step =='2')

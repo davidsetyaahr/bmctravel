@@ -11,7 +11,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <form action="/admin/travel-tips/add-tags" method="post">
+            <form action="{{url("admin/travel-tips/add-tags")}}" method="post">
                 @csrf
                     <br>
                     <label for="" >Tag Name</label>

@@ -21,7 +21,7 @@ class CreateAdminTable extends Migration
             $table->string('lastname', 20);
             $table->string('phone', 13);
         });
-
+/* 
         DB::table('admin')->insert(
             array(
                 'email' => 'admin@gmail.com',
@@ -32,7 +32,7 @@ class CreateAdminTable extends Migration
                 'verified' => true
             )
         );
-    }
+ */    }
 
     /**
      * Reverse the migrations.

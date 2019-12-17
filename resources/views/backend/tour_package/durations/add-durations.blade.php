@@ -10,7 +10,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                    <form action="/admin/tour-package/add-durations" method="post">
+            <form action="{{url("admin/tour-package/add-durations")}}" method="post">
                         @csrf
                 <label for="">Day</label>
                     <input type="text" class="form-control @error('day') is-invalid @enderror" name="day" value="{{ old('day')}}">

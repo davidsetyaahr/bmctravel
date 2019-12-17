@@ -11,7 +11,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <form action="/admin/gallery/add-categories-gallery" method="post">
+            <form action="{{url("admin/gallery/add-categories-gallery")}}" method="post">
                 @csrf
                     <label for="">Category Name</label>
                     <input type="text" class="form-control @error('category_name') is-invalid @enderror" name="category_name">

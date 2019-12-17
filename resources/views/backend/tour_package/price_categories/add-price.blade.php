@@ -10,10 +10,10 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-            <form action="/admin/tour-package/add-price-categories" method="post">
+            <form action="{{url("admin/tour-package/add-price-categories")}}" method="post">
             @csrf
                 <label for="">Start Pax</label>
-                <input type="text" class="form-control @error('start_pax') is-invalid @enderror" name="start_pax" 
+                <input type="text" class="form-control @error('start_pax') is-invalid @enderror" name="start_pax"
                     value="{{ old('start_pax')}}">
                 @error('start_pax')
                     <div class="invalid-feedback"> {{ $message}} </div>

@@ -10,7 +10,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-            <form action="/admin/data-master/add-city" method="post">
+            <form action="/bmctravel/admin/data-master/add-city" method="post">
             @csrf
             <label for="">Province</label>
                 <select id="" class="form-control" name="province_id">
@@ -21,7 +21,7 @@
                 </select>
                 <br>
                 <label for="">City</label>
-                <input type="text" class="form-control @error('city_name') is-invalid @enderror" name="city_name" 
+                <input type="text" class="form-control @error('city_name') is-invalid @enderror" name="city_name"
                 value="{{ old('city_name')}}">
                 @error('city_name')
                     <div class="invalid-feedback"> {{ $message}} </div>

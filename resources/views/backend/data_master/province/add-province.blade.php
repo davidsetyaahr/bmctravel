@@ -10,7 +10,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-            <form action="/admin/data-master/add-province" method="post">
+            <form action="/bmctravel/admin/data-master/add-province" method="post">
             @csrf
                 <label for="">Province</label>
                 <input type="text" class="form-control @error('province_name') is-invalid @enderror" name="province_name"

@@ -11,7 +11,7 @@
         <div class="card">
             <div class="card-body">
                 @include('backend.gallery.gallery-template.select-gallery', ['type' => 'multiple', 'gallery' => $gallery, 'categories' => $categories])
-                <form action="/admin/room-hotel/add-room-hotel" method="post">
+            <form action="{{url("admin/room-hotel/add-room-hotel")}}" method="post">
                 @csrf
                     <label for="">Hotel Name</label>
                         <select class="select form-control @error('id_hotel') is-invalid @enderror" name="id_hotel" id=""
@@ -19,7 +19,7 @@
                             <option value="">---Select---</option>
                                 @foreach($hotels as $htl)
                             <option value="{{ $htl->id_hotel }}">{{ $htl->hotel_name}}</option>
-                                @endforeach 
+                                @endforeach
                         </select>
                         @error('id_hotel')
                     <div class="invalid-feedback"> {{ $message}} </div>
