@@ -1,5 +1,5 @@
-<script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/jquery/dist/jquery.min.js"></script>
-<form action="">
+<script src="{{ asset('/public/matrix-admin-bt4') }}/assets/libs/jquery/dist/jquery.min.js"></script>
+<form action="" >
     <div class="card custom">
         <h5 class="card-header ls-1">Day  01</h5>
         <div class="p-20 bg-light">
@@ -17,7 +17,7 @@
                             </button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#"><span class="mdi mdi-delete"></span> Remove Trip</a>
-                                <a class="dropdown-item add-new-trip" href="package?="><span class="mdi mdi-plus"></span> Add New Trip</a>
+                                <a class="dropdown-item add-new-trip" id="1" href="#"><span class="mdi mdi-plus"></span> Add New Trip</a>
                             </div>
                         </div>
                     </div>
@@ -70,6 +70,10 @@
         num=1;
         $('.add-new-trip').click(function(e) {
             e.preventDefault()
+            form()
+        })
+
+        function form(){
             if(num>0){
             num+=1;
             $('#form').append(`
@@ -82,7 +86,7 @@
                             </button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="#"><span class="mdi mdi-delete"></span> Remove Trip</a>
-                                <a class="dropdown-item add-new-trip" href="#"><span class="mdi mdi-plus"></span> Add New Trip</a>
+                                <a class="dropdown-item add-new-trip" id="`+num+`"href="#"><span class="mdi mdi-plus"></span> Add New Trip</a>
                             </div>
                         </div>
                     </div>
@@ -125,6 +129,6 @@
             </div>
             `)
             }
-        })
+        }
     });
 </script>
