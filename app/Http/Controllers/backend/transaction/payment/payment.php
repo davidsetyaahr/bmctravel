@@ -12,8 +12,6 @@ class Payment extends Controller
     function index()
     {
         $pymnt = DB::table('payment')
-
-
         ->join('bookings','bookings.id_booking','payment.id_booking')
         ->select('payment.id_payment','bookings.identity_card','payment.nominal','bookings.price','payment.payment_date','payment.attachment')
         ->orderBy('id_payment', 'desc')

@@ -112,4 +112,5 @@ Route::get('/admin/transaction/payment/list-payment','backend\transaction\paymen
 Route::post('/signin/auth', 'frontend\Signin@authLogin');
 Route::get('/tour-package/booking/{id}', 'frontend\TourPackage@booking');
 Route::get('/tour-package/attach', 'frontend\TourPackage@attach');
+Route::get('/admin/calculation/{id}', 'backend\Calculation@index');
 Route::get('/my-account', 'frontend\MyAccount@index');

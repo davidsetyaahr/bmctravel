@@ -49,9 +49,9 @@
                                                 $nominal = $p->nominal;
                                                 $price = $p->price;
                                                 if ($nominal == $price) {
-                                                    echo '<a class="dropdown-item" href="edit-categories/{{ $p->id_payment }}">Calculating</a>';
+                                                    echo '<a class="dropdown-item" href="'.url("admin/calculation/".$p->id_payment).'">Calculating</a>';
                                                 } 
-                                                else if($nominal == ""){
+                                                else{
                                                     echo '<a class="dropdown-item" href="edit-categories/{{ $p->id_payment }}">Edit</a>';
                                                 }
                                             ?>                                   
