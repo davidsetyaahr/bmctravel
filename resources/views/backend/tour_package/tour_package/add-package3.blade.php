@@ -18,6 +18,9 @@
                 <label for="">Hotel</label>
                 <select name="" id="" class="form-control">
                     <option value="">---Option---</option>
+                    @foreach ($hotel as $item)
+                        <option value="{{$item->id_hotel}}">{{$item->hotel_name}}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="col-md-2">

@@ -1,4 +1,6 @@
-<form action="">
+<form action="{{url("admin/tour-package/stepbystep")}}" method="post" >
+@csrf
+<input type="hidden" name="step" value="4">
     <ul class="nav nav-tabs">
         <li class="nav-item">
             <a class="nav-link active" data-toggle="tab" href="#include">Package Include</a>
@@ -7,136 +9,50 @@
             <a class="nav-link" data-toggle="tab" href="#exclude">Package Exclude</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#others">Others Informations</a>
+            <a class="nav-link" data-toggle="tab" href="#others">What Should I Pack?</a>
         </li>
     </ul>
     <div class="tab-content mt-3">
         <div class="tab-pane active bg-light p-10" id="include">
+        @foreach($include as $in)
             <div class="bg-white p-10 mb-2">
                 <div class="form-check custom-control custom-checkbox block">
-                    <input type="checkbox" class="form-check-input custom-control-input" id="a">
-                    <label class="custom-control-label" for="a">
-                        <span class="ls-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit</span>
+                    <input type="checkbox" name="include[]" class="form-check-input custom-control-input" id="in{{$in->id_informations}}" value="{{$in->id_informations}}">
+                    <label class="custom-control-label" for="in{{$in->id_informations}}">
+                        <span class="ls-1">{{$in->text}}</span>
                     </label>
                 </div>
             </div>
-            <div class="bg-white p-10 mb-2">
-                <div class="form-check custom-control custom-checkbox block">
-                    <input type="checkbox" class="form-check-input custom-control-input" id="a">
-                    <label class="custom-control-label" for="a">
-                        <span class="ls-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit</span>
-                    </label>
-                </div>
-            </div>
-            <div class="bg-white p-10 mb-2">
-                <div class="form-check custom-control custom-checkbox block">
-                    <input type="checkbox" class="form-check-input custom-control-input" id="a">
-                    <label class="custom-control-label" for="a">
-                        <span class="ls-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit</span>
-                    </label>
-                </div>
-            </div>
-            <div class="bg-white p-10 mb-2">
-                <div class="form-check custom-control custom-checkbox block">
-                    <input type="checkbox" class="form-check-input custom-control-input" id="a">
-                    <label class="custom-control-label" for="a">
-                        <span class="ls-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit</span>
-                    </label>
-                </div>
-            </div>
-            <div class="bg-white p-10 mb-2">
-                <div class="form-check custom-control custom-checkbox block">
-                    <input type="checkbox" class="form-check-input custom-control-input" id="a">
-                    <label class="custom-control-label" for="a">
-                        <span class="ls-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit</span>
-                    </label>
-                </div>
-            </div>
-            <div class="bg-white p-10 mb-2">
-                <div class="form-check custom-control custom-checkbox block">
-                    <input type="checkbox" class="form-check-input custom-control-input" id="a">
-                    <label class="custom-control-label" for="a">
-                        <span class="ls-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit</span>
-                    </label>
-                </div>
-            </div>
-            <div class="bg-white p-10 mb-2">
-                <div class="form-check custom-control custom-checkbox block">
-                    <input type="checkbox" class="form-check-input custom-control-input" id="a">
-                    <label class="custom-control-label" for="a">
-                        <span class="ls-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit</span>
-                    </label>
-                </div>
-            </div>
-            <div class="bg-white p-10 mb-2">
-                <div class="form-check custom-control custom-checkbox block">
-                    <input type="checkbox" class="form-check-input custom-control-input" id="a">
-                    <label class="custom-control-label" for="a">
-                        <span class="ls-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit</span>
-                    </label>
-                </div>
-            </div>
+            @endforeach
+       
         </div>
-        <div class="tab-pane bg-light p-10 fade" id="exclude">
+        <div class="tab-pane active bg-light p-10" id="exclude">
+        @foreach($exclude as $ex)
             <div class="bg-white p-10 mb-2">
                 <div class="form-check custom-control custom-checkbox block">
-                    <input type="checkbox" class="form-check-input custom-control-input" id="a">
-                    <label class="custom-control-label" for="a">
-                        <span class="ls-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit</span>
+                    <input type="checkbox" name="exclude[]" class="form-check-input custom-control-input" id="{{$ex->id_informations}}" value="{{$ex->id_informations}}">
+                    <label class="custom-control-label" for="{{$ex->id_informations}}">
+                        <span class="ls-1">{{$ex->text}}</span>
                     </label>
                 </div>
             </div>
-            <div class="bg-white p-10 mb-2">
-                <div class="form-check custom-control custom-checkbox block">
-                    <input type="checkbox" class="form-check-input custom-control-input" id="a">
-                    <label class="custom-control-label" for="a">
-                        <span class="ls-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit</span>
-                    </label>
-                </div>
-            </div>
-            <div class="bg-white p-10 mb-2">
-                <div class="form-check custom-control custom-checkbox block">
-                    <input type="checkbox" class="form-check-input custom-control-input" id="a">
-                    <label class="custom-control-label" for="a">
-                        <span class="ls-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit</span>
-                    </label>
-                </div>
-            </div>
-            <div class="bg-white p-10 mb-2">
-                <div class="form-check custom-control custom-checkbox block">
-                    <input type="checkbox" class="form-check-input custom-control-input" id="a">
-                    <label class="custom-control-label" for="a">
-                        <span class="ls-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit</span>
-                    </label>
-                </div>
-            </div>
-            <div class="bg-white p-10 mb-2">
-                <div class="form-check custom-control custom-checkbox block">
-                    <input type="checkbox" class="form-check-input custom-control-input" id="a">
-                    <label class="custom-control-label" for="a">
-                        <span class="ls-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit</span>
-                    </label>
-                </div>
-            </div>
-            <div class="bg-white p-10 mb-2">
-                <div class="form-check custom-control custom-checkbox block">
-                    <input type="checkbox" class="form-check-input custom-control-input" id="a">
-                    <label class="custom-control-label" for="a">
-                        <span class="ls-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit</span>
-                    </label>
-                </div>
-            </div>
-            <div class="bg-white p-10 mb-2">
-                <div class="form-check custom-control custom-checkbox block">
-                    <input type="checkbox" class="form-check-input custom-control-input" id="a">
-                    <label class="custom-control-label" for="a">
-                        <span class="ls-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit</span>
-                    </label>
-                </div>
-            </div>
+            @endforeach
         </div>
-        <div class="tab-pane fade" id="others">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ratione dicta quisquam corrupti illo corporis quis, libero atque ducimus excepturi expedita tempore tenetur possimus non ut esse debitis in saepe.
+        <div class="tab-pane active bg-light p-10" id="others">
+        @foreach($pack as $pck)
+            <div class="bg-white p-10 mb-2">
+                <div class="form-check custom-control custom-checkbox block">
+                    <input type="checkbox" name="pack[]" class="form-check-input custom-control-input" id="{{$pck->id_informations}}" value="{{$pck->id_informations}}">
+                    <label class="custom-control-label" for="{{$pck->id_informations}}">
+                        <span class="ls-1">{{$pck->text}}</span>
+                    </label>
+                </div>
+            </div>
+            @endforeach
         </div>
     </div>
+    <div class="float-right">
+    <button class="btn btn-default" type="reset"><span class="mdi mdi-menu-left"></span> Prev</button>
+    <button class="btn btn-primary" type="submit">Next <span class="mdi mdi-menu-right"></span></button>
+  </div>
 </form>
