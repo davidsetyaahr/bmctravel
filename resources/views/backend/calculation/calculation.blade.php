@@ -93,6 +93,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <br>
+                        <a href="" class="btn btn-primary">Save Calculation</a>
                         <a href="" class="btn btn-danger">Download PDF</a>
                     </div>
                 </div>
