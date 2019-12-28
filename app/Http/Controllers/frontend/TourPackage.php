@@ -32,6 +32,9 @@ class TourPackage extends Controller
                 "desc" => "Our awesome travel package"
             );
     
-            return view('frontend.booking.step1', $attr);
+            return view('frontend.booking.stepbystep', $attr);
+    }
+    public function attach()
+    {
     }
 }

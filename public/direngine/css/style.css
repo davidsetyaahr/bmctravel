@@ -130,6 +130,41 @@
     overflow: none !important;
   }
 }  
+.dropzone span{
+  color : #c7cfd6
+}
+.attach form{
+  position: relative;
+  top : 25%;
+
+}
+.attach{
+  text-align: center;
+  height : 300px;
+  border : 3px dotted #72c8f9;
+}
+.input-pax{
+  border  : 2px solid #d4d9dd;
+  background: #d4d9dd;
+  padding : 2px 0px;
+}
+.input-pax button{
+  border-radius: 0px !important;
+  background: #d4d9dd;
+  border-color : transparent !important;
+  color: #3e474f !important;
+  font-size : 20px;
+}
+.input-pax .form-control{
+  color: #3e474f !important;
+  text-align: center;
+  background : #f9fafa !important;
+}
+.table-booking tbody{
+  font-size : 15px;
+  font-weight: normal;
+  color: #808088;
+}
 .booking{
   width : 100%;
   overflow: auto;
@@ -138,6 +173,14 @@
 .booking .top{
   padding : 10px 0px;
   text-align: center;
+}
+.booking .top a{
+  color : tomato;
+  font-weight : 600;
+  font-size : 13px;
+  letter-spacing: 1px;
+  border-bottom : 2px dotted tomato;
+  padding-bottom : 5px;
 }
 .booking .top p{
   color:#3e474f;
@@ -155,11 +198,15 @@
   -o-border-radius: 100%;
 }
 .booking .body{
+  margin-top : 20px;
   background : white;
 }
 .booking .body .multi-steps{
   background: #f6f6f6;  
   padding : 20px 0px;
+}
+.booking .body .body-data.no-padding{
+  padding : 0px !important;
 }
 .booking .body .body-data{
   padding : 20px 30px;
@@ -250,10 +297,11 @@
   background-color: #fff;
   border-color: tomato;
 }
-.multi-steps > li.is-active ~ li {
-  color: #808080;
+.multi-steps > li.is-active ~ li,.multi-steps > li > a {
+  color : tomato;
 }
 .multi-steps > li.is-active ~ li:before {
+  color: #808080;
   background-color: #ededed;
   border-color: #ededed;
 }

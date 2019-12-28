@@ -11,6 +11,9 @@ use \App\Tour_Durations;
 use \App\Tour_type;
 use \App\Hotels;
 use \App\Room_hotels;
+use \App\Informations;
+use Illuminate\Support\Facades\DB;
+
 
 class TourPackage extends Controller
 {
@@ -25,6 +28,9 @@ class TourPackage extends Controller
         $category = Tour_categories::orderBy("id_category","desc")->get();
         $categoryAll = Tour_categories::orderBy("id_category","desc")->get();
         $durations = Tour_durations::orderBy("id_duration","desc")->get();
+        $include = DB::table('informations')->where('type','0')->get();
+        $exclude = DB::table('informations')->where('type','1')->get();
+        $pack = DB::table('informations')->where('type','2')->get();
         $type = Tour_type::all();
         
         $param = array(
@@ -32,7 +38,11 @@ class TourPackage extends Controller
             "categories" => $gallery_categories,
             "tour_categories" => $category,
             "durations" => $durations,
-            "type" => $type
+            "type" => $type,
+            "include" =>$include,
+            "exclude" =>$exclude,
+            "pack" =>$pack
+            
         );
         return view('backend.tour_package.tour_package.add-tour-package', $param);
     }
@@ -41,7 +51,7 @@ class TourPackage extends Controller
     {
         if ($request->step == '1')
         {
-            $array = array(
+            $array['stepbystep']['step1'] = array(
                 'id_tour' => $request->id_tour,
                 'tour_name' => $request->tour_name,
                 'id_category' => $request->id_category,
@@ -53,30 +63,26 @@ class TourPackage extends Controller
             $request->session()->put($array);
             return redirect('/admin/tour-package/add-tour-package?page=2');
         }
-        
-        // else if ($request->step =='2')
-        // {
-        //     $_SESSION['add_package']['step2']=array(
-        //         'id_tour' => $request->id_tour,
-        //         'tour_name' => $request->tour_name,
-        //         'id_category' => $request->id_category,
-        //         'id_type' => $request->id_type,
-        //         'id_duration' => $request->id_duration,
-        //         'overview' => $request->overview,
-        //         'id_gallery' => $request->id_gallery
-        //     );
-        //     print_r($_SESSION['add_package1']);
-        //     return view('backend.tour_package.tour_package.add-package2', $request);
-        // }
-        else if ($request->step == '3')
+        else if ($request->step == '2')
         {
-            $hotel = Hotels::all();
-            $array = array(
-                "hotel" => $hotel
-            );
-            $request->session()->put();
-            return redirect('/admin/tour-package/add-tour-package?page=3', [ "hotel" => $hotel]);
-        }
+            $array['stepbystep']['step2']=$_POST;
+            $request->session()->put($array);
+            return redirect('/admin/tour-package/add-tour-package?page=3');
+            }
+        else if ($request->step == '4')
+        {
+            $array['stepbystep']['step4']=$_POST;
+            $request->session()->put($array);
+
+            return redirect('/admin/tour-package/add-tour-package?page=5');
+            }
+        else if ($request->step == '5')
+        {
+            $array['stepbystep']['step5']=$_POST;
+            $request->session()->put($array);
+            }
+            
+            
     }
     
     function page()
