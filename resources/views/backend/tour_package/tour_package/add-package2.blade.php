@@ -1,5 +1,6 @@
 <script src="{{ asset('/public/matrix-admin-bt4') }}/assets/libs/jquery/dist/jquery.min.js"></script>
-<form action="" >
+<form action="{{url("admin/tour-package/stepbystep")}}" method="post" >
+    @csrf
     <div class="card custom">
         <h5 class="card-header ls-1">Day  01</h5>
         <div class="p-20 bg-light">

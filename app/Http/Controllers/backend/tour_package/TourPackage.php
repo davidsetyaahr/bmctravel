@@ -10,6 +10,7 @@ use \App\Tour_categories;
 use \App\Tour_Durations;
 use \App\Tour_type;
 use \App\Hotels;
+use \App\Room_hotels;
 
 class TourPackage extends Controller
 {
@@ -67,14 +68,42 @@ class TourPackage extends Controller
         //     print_r($_SESSION['add_package1']);
         //     return view('backend.tour_package.tour_package.add-package2', $request);
         // }
-        if ($request->step == '2')
+        else if ($request->step == '3')
         {
             $hotel = Hotels::all();
             $array = array(
                 "hotel" => $hotel
             );
-            $request->session()->put($array);
+            $request->session()->put();
             return redirect('/admin/tour-package/add-tour-package?page=3', [ "hotel" => $hotel]);
         }
+    }
+    
+    function page()
+    {
+        $hotel = Hotels::all();
+        $array = array(
+            "hotel" => $hotel
+        );
+        return view('backend.tour_package.tour_package.add-package3', $array);
+    }
+
+    function kodehotel()
+    {
+        $kode = Input::get('kode');
+        echo $kode;
+        // $roomhotel = DB::table("room_hotels")
+        //              ->select("*")
+        //              ->where("id_hotel", "=", $kode)
+        //              ->get();
+        //             //  ->toJson();
+        // $array = array();
+        // foreach ($roomhotel as $val) {
+        //     $array = array(
+        //         "id_room_hotel" => $val->id_room_hotel,
+        //         "room_name" => $val->room_name,
+        //     );
+        // }
+        // return response()->json($array);
     }
 }
