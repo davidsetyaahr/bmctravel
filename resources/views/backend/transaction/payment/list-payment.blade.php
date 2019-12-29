@@ -24,6 +24,7 @@
                             <th>#</th>
                             <th>Identity</th>
                             <th>Nominal</th>
+                            <th>Price</th>
                             <th>Payment date</th>
                             <th>attachment</th>
                             <th>Action</th>
@@ -34,6 +35,7 @@
                                 <th>{{ $loop->iteration}}</th>
                                 <td>{{ $p->identity_card }}</td>
                                 <td>{{ $p->nominal }}</td>
+                                <td>{{ $p->price }}</td>
                                 <td>{{ $p->payment_date }}</td>
                                 <td>{{ $p->attachment }}</td>
                                 <td>
@@ -43,7 +45,16 @@
                                         </a>
 
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                            <a class="dropdown-item" href="edit-categories/{{ $p->id_payment }}">Edit</a>
+                                            <?php   
+                                                $nominal = $p->nominal;
+                                                $price = $p->price;
+                                                if ($nominal == $price) {
+                                                    echo '<a class="dropdown-item" href="'.url("admin/calculation/".$p->id_payment).'">Calculating</a>';
+                                                } 
+                                                else{
+                                                    echo '<a class="dropdown-item" href="edit-categories/{{ $p->id_payment }}">Edit</a>';
+                                                }
+                                            ?>                                   
                                         </div>
                                     </div>
                                 </td>

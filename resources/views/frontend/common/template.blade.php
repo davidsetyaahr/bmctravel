@@ -88,7 +88,7 @@
               {{ $userSession['user']['firstname'] }}
               </a>
               <div class="dropdown-menu animate slideIn">
-                <a href="" class="dropdown-item">
+                <a href="{{ url('my-account') }}" class="dropdown-item">
                   My account
                 </a>
                 <a href="" class="dropdown-item">

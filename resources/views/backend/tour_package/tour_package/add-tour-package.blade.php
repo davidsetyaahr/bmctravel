@@ -19,6 +19,8 @@
                     @include('backend.tour_package.tour_package.add-package3')
                 @elseif($_GET['page']==4)
                     @include('backend.tour_package.tour_package.add-package4')
+                @elseif($_GET['page']==5)
+                    @include('backend.tour_package.tour_package.add-package5')
                 @endif
             @endif
             </div>

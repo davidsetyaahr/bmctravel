@@ -195,7 +195,7 @@ window.onload = function() {
 							<div class="sticky-note">
 								<span>Beach Vibes</span>
 							</div>
-							<img src="direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid transition">
+							<img src="public/direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid transition">
 							<div class="view-link transition">View Package</div>
 						</div>
 						<div class="text-bottom mt-2">
@@ -211,7 +211,7 @@ window.onload = function() {
 							<div class="sticky-note">
 								<span>Explore Bondowoso</span>
 							</div>
-							<img src="direngine/images/destinations/ijen.jpg" alt="" class="img-fluid transition">
+							<img src="public/direngine/images/destinations/ijen.jpg" alt="" class="img-fluid transition">
 							<div class="view-link transition">View Package</div>
 						</div>
 						<div class="text-bottom mt-2">
@@ -227,7 +227,7 @@ window.onload = function() {
 							<div class="sticky-note">
 								<span>Mountain Vibes</span>
 							</div>
-							<img src="direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid transition">
+							<img src="public/direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid transition">
 							<div class="view-link transition">View Package</div>
 						</div>
 						<div class="text-bottom mt-2">
@@ -243,7 +243,7 @@ window.onload = function() {
 							<div class="sticky-note">
 								<span>Beach Vibes</span>
 							</div>
-							<img src="direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid transition">
+							<img src="public/direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid transition">
 							<div class="view-link transition">View Package</div>
 						</div>
 						<div class="text-bottom mt-2">
@@ -263,17 +263,17 @@ window.onload = function() {
 					<h5 class="color-red">Some fun facts</h5>
 					<div class="row mt-5">
 						<div class="col-4">
-							<img src="{{ asset('images/gallery/jeep.png') }}" alt="">
+							<img src="{{ asset('public/images/gallery/jeep.png') }}" alt="">
 							<h6 class="mt-3">120</h6>
 							Travel Packages
 						</div>
 						<div class="col-4">
-							<img src="{{ asset('images/gallery/tourist.png') }}" alt="">
+							<img src="{{ asset('public/images/gallery/tourist.png') }}" alt="">
 							<h6 class="mt-3">100+</h6>
 							Happy Clients
 						</div>
 						<div class="col-4">
-							<img src="{{ asset('images/gallery/smartphone.png') }}" alt="">
+							<img src="{{ asset('public/images/gallery/smartphone.png') }}" alt="">
 							<h6 class="mt-3">30</h6>
 							Destinations
 						</div>
@@ -283,17 +283,17 @@ window.onload = function() {
 					<h5 class="color-red">Easy, Fun, Secure</h5>
 					<div class="row mt-5">
 						<div class="col-4">
-							<img src="{{ asset('images/common/tourist.png') }}" alt="">
+							<img src="{{ asset('public/images/common/tourist.png') }}" alt="">
 							<h6 class="mt-3">Friendly Staff</h6>
 						</div>
 						<div class="col-4">
-							<img src="{{ asset('images/common/flag.png') }}" alt="">
+							<img src="{{ asset('public/images/common/flag.png') }}" alt="">
 							<h6 class="mt-3">
 								The High Level Of Service
 							</h6>
 						</div>
 						<div class="col-4">
-							<img src="{{ asset('images/common/journal.png') }}" alt="">
+							<img src="{{ asset('public/images/common/journal.png') }}" alt="">
 							<h6 class="mt-3">Legitimacy</h6>
 						</div>
 					</div>
@@ -314,25 +314,25 @@ window.onload = function() {
 			<div class="row justify-content-center">
 				<div class="col-md-3 col-6 mb-4">
 					<div class="border text-center p-3">
-						<img src="{{ asset('images/gallery/rocks.png') }}" alt="">
+						<img src="{{ asset('public/images/gallery/rocks.png') }}" alt="">
 						<h6 class="mt-3">Mountain</h6>
 					</div>
 				</div>
 				<div class="col-md-3 col-6 mb-4">
 					<div class="border text-center p-3">
-						<img src="{{ asset('images/gallery/sunrise.png') }}" alt="">
+						<img src="{{ asset('public/images/gallery/sunrise.png') }}" alt="">
 						<h6 class="mt-3">Beach</h6>
 					</div>
 				</div>
 				<div class="col-md-3 col-6 mb-4">
 					<div class="border text-center p-3">
-						<img src="{{ asset('images/gallery/waterfall.png') }}" alt="">
+						<img src="{{ asset('public/images/gallery/waterfall.png') }}" alt="">
 						<h6 class="mt-3">Waterfall</h6>
 					</div>
 				</div>
 				<div class="col-md-3 col-6 mb-4">
 					<div class="border text-center p-3">
-						<img src="{{ asset('images/gallery/office.png') }}" alt="">
+						<img src="{{ asset('public/images/gallery/office.png') }}" alt="">
 						<h6 class="mt-3">City</h6>
 					</div>
 				</div>
@@ -357,7 +357,7 @@ window.onload = function() {
 		            <div class="carousel-testimony owl-carousel">
 		              <div class="item">
 		                <div class="testimony-wrap d-flex">
-		                  <div class="user-img mb-5" style="background-image: url(direngine/images/person_1.jpg)">
+		                  <div class="user-img mb-5" style="background-image: url(public/direngine/images/person_1.jpg)">
 		                    <span class="quote d-flex align-items-center justify-content-center">
 		                      <i class="icon-quote-left"></i>
 		                    </span>
@@ -371,7 +371,7 @@ window.onload = function() {
 		              </div>
 		              <div class="item">
 		                <div class="testimony-wrap d-flex">
-		                  <div class="user-img mb-5" style="background-image: url(direngine/images/person_2.jpg)">
+		                  <div class="user-img mb-5" style="background-image: url(public/direngine/images/person_2.jpg)">
 		                    <span class="quote d-flex align-items-center justify-content-center">
 		                      <i class="icon-quote-left"></i>
 		                    </span>
@@ -385,7 +385,7 @@ window.onload = function() {
 		              </div>
 		              <div class="item">
 		                <div class="testimony-wrap d-flex">
-		                  <div class="user-img mb-5" style="background-image: url(direngine/images/person_3.jpg)">
+		                  <div class="user-img mb-5" style="background-image: url(public/direngine/images/person_3.jpg)">
 		                    <span class="quote d-flex align-items-center justify-content-center">
 		                      <i class="icon-quote-left"></i>
 		                    </span>
@@ -419,7 +419,7 @@ window.onload = function() {
 		  	<div class="travel-tips">
 				<div class="relative">
 					<div class="layer transition"></div>
-					<img src="direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid transition">
+					<img src="public/direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid transition">
 				</div>
 				<div class="bottom">
 					<div class="title">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet .....</div>
@@ -431,7 +431,7 @@ window.onload = function() {
 		  	<div class="travel-tips">
 				<div class="relative">
 					<div class="layer transition"></div>
-					<img src="direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid transition">
+					<img src="public/direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid transition">
 				</div>
 				<div class="bottom">
 					<div class="title">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet .....</div>
@@ -443,7 +443,7 @@ window.onload = function() {
 		  	<div class="travel-tips">
 				<div class="relative">
 					<div class="layer transition"></div>
-					<img src="direngine/images/destinations/bromo.jpg" alt="" class="img-fluid transition">
+					<img src="public/direngine/images/destinations/bromo.jpg" alt="" class="img-fluid transition">
 				</div>
 				<div class="bottom">
 					<div class="title">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet .....</div>

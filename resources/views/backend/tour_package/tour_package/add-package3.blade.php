@@ -1,38 +1,55 @@
-<script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/jquery/dist/jquery.min.js"></script>
 <form action="{{url("admin/tour-package/stepbystep")}}" method="post">
-    <div id="form">
-        <div class="row mb-2">
-            <div class="col-md-2">
-                <label for="">Day Start</label>
-                <select name="" id="form" class="form-control">
-                    <option value="">---Option---</option>
-                </select>
-            </div>
-            <div class="col-md-2">
-                <label for="">Day End</label>
-                <select name="" id="" class="form-control">
-                    <option value="">---Option---</option>
-                </select>
-            </div>
-            <div class="col-md-6">
-                <label for="">Hotel</label>
-                <select name="" id="" class="form-control">
-                    <option value="">---Option---</option>
-                </select>
-            </div>
-            <div class="col-md-2">
-                <label for="">Option</label>
-                <div class="dropdown">
-                    <button type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown">
-                        Option
-                    </button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#"><span class="mdi mdi-delete"></span> Remove Trip</a>
-                        <a class="dropdown-item add-new-trip1" id='1' href="package?="><span class="mdi mdi-plus"></span> Add New Trip</a>
+    @csrf
+    <div class="room">
+        <div class="row mb-2" id="room">
+                    <div class="col-md-2">
+                        <label fxor="">Day Start</label>
+                        <select name="" id="form" class="form-control noSelect">
+                            <?php
+                                for($i=1;$i<=10;$i++){
+                                    echo "<option>$i</option>";
+                                }
+                            ?>
+                        </select>
                     </div>
-                </div>
+                    <div class="col-md-2">
+                        <label for="">Day End</label>
+                        <select name="" id="" class="form-control noSelect">
+                            <?php
+                                for($x=1;$x<=10;$x++){
+                                    echo "<option>$x</option>";
+                                }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="">Hotel</label>
+                    <select name="" class="form-control changeCombo noSelect" data-url="{{ url('admin/tour-package/getKodeHotel') }}" data-target="#roomHotel">
+                            <option value="">---Option---</option>
+                            @foreach ($hotel as $item)
+                                <option value="{{$item->id_hotel}}">{{$item->hotel_name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="">Room Hotel</label>
+                        <select name="" id="roomHotel" class="form-control noSelect">
+                            <option value="">---Option---</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="">Option</label>
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown">
+                                Option
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#"><span class="mdi mdi-delete"></span> Remove</a>
+                                <a class="dropdown-item add-new" href="package?="><span class="mdi mdi-plus"></span> Add New </a>
+                            </div>
+                        </div>
             </div>
-            <div class="col-md-12">
+            </div>
             <hr class="mt-4">
             </div>
         </div>
@@ -46,61 +63,3 @@
         </div>
     </div>
 </form>
-<script>
-
-
-        function click(){
-            $(document).ready(function (){
-                $('.add-new-trip1').click(function(e) {
-                e.preventDefault()
-
-                var num = $(this).attr("id")
-
-                addTrip(num)
-              })
-            })
-         }
-         click()
-
-    function addTrip(num){
-            num++;
-            $('#form').append(`
-            <div class="row mb-2">
-                <div class="col-md-2">
-                    <label for="">Day Start</label>
-                    <select name="" id="" class="form-control">
-                        <option value="">---Option---</option>
-                    </select>
-                </div>
-                <div class="col-md-2">
-                    <label for="">Day End</label>
-                    <select name="" id="" class="form-control">
-                        <option value="">---Option---</option>
-                    </select>
-                </div>
-                <div class="col-md-6">
-                    <label for="">Hotel</label>
-                    <select name="" id="" class="form-control">
-                        <option value="">---Option---</option>
-                    </select>
-                </div>
-                <div class="col-md-2">
-                    <label for="">Option</label>
-                    <div class="dropdown">
-                        <button type="button" class="btn btn-default btn-block dropdown-toggle" data-toggle="dropdown">
-                            Option
-                        </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#"><span class="mdi mdi-delete"></span> Remove Trip</a>
-                            <a class="dropdown-item add-new-trip1" id="`+num+`" href="#"><span class="mdi mdi-plus"></span> Add New Trip</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                <hr class="mt-4">
-                </div>
-              `)
-              click()
-
-    }
-</script>
