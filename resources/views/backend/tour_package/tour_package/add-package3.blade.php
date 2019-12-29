@@ -1,5 +1,5 @@
 <script src="{{ asset('/matrix-admin-bt4') }}/assets/libs/jquery/dist/jquery.min.js"></script>
-<form action="">
+<form action="{{url("admin/tour-package/stepbystep")}}" method="post">
     <div id="form">
         <div class="row mb-2">
             <div class="col-md-2">
@@ -36,7 +36,7 @@
             <hr class="mt-4">
             </div>
         </div>
-    </div> 
+    </div>
     <div class="row">
         <div class="col-md-12">
             <div class="float-right">
@@ -46,8 +46,8 @@
         </div>
     </div>
 </form>
-<script>     
-        
+<script>
+
 
         function click(){
             $(document).ready(function (){

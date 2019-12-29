@@ -51,6 +51,20 @@ class TourPackage extends Controller
             $request->session()->put($array);
             return redirect('/admin/tour-package/add-tour-package?page=2');
         }
+        else if ($request->step == '2')
+        {
+            $array = array(
+                'id_tour' => $request->id_tour,
+                'tour_name' => $request->tour_name,
+                'id_category' => $request->id_category,
+                'id_type' => $request->id_type,
+                'id_duration' => $request->id_duration,
+                'overview' => $request->overview,
+                'id_gallery' => $request->id_gallery
+            );
+            $request->session()->put($array);
+            return redirect('/admin/tour-package/add-tour-package?page=3');
+        }
 
         // else if ($request->step =='2')
         // {

@@ -38,7 +38,8 @@
                                 <td>{{ $d->destination_name }}</td>
                                 <td>{{ $d->category_name }}</td>
                                 <td>{{ $d->city_name }}</td>
-                                <td>{{ $d->gallery }}</td>
+                                {{-- <td>{{ $d->gallery }}</td> --}}
+                                <td><img style="height: 200px; width: 200px;" src="{{ url('/public/images/gallery/'.$d->gallery) }}" alt="" class="img-fluid transition"></td>
                                 <td>{{ $d->overview }}</td>
                                 <td>{{ $d->map }}</td>
                                 <td>{{ $d->information }}</td>
