@@ -3,7 +3,7 @@
     <div class="room">
         <div class="row mb-2" id="room">
                     <div class="col-md-2">
-                        <label for="">Day Start</label>
+                        <label fxor="">Day Start</label>
                         <select name="" id="form" class="form-control noSelect">
                             <?php 
                                 for($i=1;$i<=10;$i++){
@@ -24,7 +24,7 @@
                     </div>
                     <div class="col-md-3">
                         <label for="">Hotel</label>
-                    <select name="" class="form-control changeCombo" data-url="{{ url('admin/tour-package/getKodeHotel') }}" data-target="#roomHotel">
+                    <select name="" class="form-control changeCombo noSelect" data-url="{{ url('admin/tour-package/getKodeHotel') }}" data-target="#roomHotel">
                             <option value="">---Option---</option>
                             @foreach ($hotel as $item)
                                 <option value="{{$item->id_hotel}}">{{$item->hotel_name}}</option>
@@ -33,7 +33,7 @@
                     </div>
                     <div class="col-md-3">
                         <label for="">Room Hotel</label>
-                        <select name="" id="roomHotel" class="form-control">
+                        <select name="" id="roomHotel" class="form-control noSelect">
                             <option value="">---Option---</option>
                         </select>
                     </div>
