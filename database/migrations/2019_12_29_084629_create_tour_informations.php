@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTourPrice extends Migration
+class CreateTourInformations extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateTourPrice extends Migration
      */
     public function up()
     {
-        Schema::create('tour_price', function (Blueprint $table) {
-            $table->increments('id_price');
-            $table->tinyInteger('id_price_category');
+        Schema::create('tour_informations', function (Blueprint $table) {
+            $table->increments('id_tour_information');
             $table->tinyInteger('id_tour');
-            $table->integer('price');
-            $table->tinyInteger('discount');
+            $table->tinyInteger('id_information');
         });
     }
 
@@ -29,6 +27,6 @@ class CreateTourPrice extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tour_price');
+        Schema::dropIfExists('tour_informations');
     }
 }
