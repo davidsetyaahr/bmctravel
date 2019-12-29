@@ -48,7 +48,7 @@
             </div>
             <div class="bottom">
                 <a href="" class="info">Step {{$_GET['page']}} of 5</a>
-                <a href="?page=2" class="next">Next <span class="ion-ios-arrow-dropright"></span> </a>
+                <a href="?page=2" class="next"><?php echo $_GET['page']!=5 ? "Next" : "Payment" ?> <span class="ion-ios-arrow-dropright"></span> </a>
             </div>
           </div>
         </div>
