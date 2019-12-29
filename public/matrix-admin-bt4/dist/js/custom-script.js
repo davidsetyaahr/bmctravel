@@ -1,9 +1,49 @@
 $(document).ready(function(){
     $("select").select2()
+    $(".noSelect").select2('destroy')
     $(".close-gallery, .open-gallery").click(function(e){
         e.preventDefault()
         $(".gallery").toggleClass("hide-gallery")
     })
+    function changeCombo(thisParam){
+        var thisUrl = thisParam.data("url")
+        var thisData = thisParam.val()
+        var target = thisParam.data("target")
+
+        $(target)
+        .find('option')
+        .remove()
+        .end()
+        .append("<option  value=''>---Option---</option>")
+        
+        $.ajax({
+            type : "get",
+            data : {"id" : thisData},
+            url : thisUrl,
+            success : function(data){
+                $.each(data, function(index, value){
+                    $(target).append($("<option></option>").attr("value",value.id_room_hotel).text(value.room_name))
+                })
+            }
+        })
+
+    }
+    $(".changeCombo").change(function(){
+        changeCombo($(this))
+    })
+    
+    
+    $(".add-new").click(function(e){
+        e.preventDefault()
+        $(".changeCombo").change(function(){
+            changeCombo($(this))
+        })
+        var html = $("<div />").append($("#room").clone()).html();
+        $(".room").append(html)
+        $("select").select2()
+
+    })
+
     $(".gallery .grid-container .grid").click(function(){
         var id = $(this).data("id")
         var type = $(".gallery").data("type")
