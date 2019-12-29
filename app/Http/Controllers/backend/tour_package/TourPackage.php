@@ -32,6 +32,7 @@ class TourPackage extends Controller
         $exclude = DB::table('informations')->where('type','1')->get();
         $pack = DB::table('informations')->where('type','2')->get();
         $type = Tour_type::all();
+        $hotel = Hotels::all();
         
         $param = array(
             "gallery" => $gallery,
@@ -41,8 +42,8 @@ class TourPackage extends Controller
             "type" => $type,
             "include" =>$include,
             "exclude" =>$exclude,
-            "pack" =>$pack
-            
+            "pack" =>$pack,
+            "hotel" => $hotel
         );
         return view('backend.tour_package.tour_package.add-tour-package', $param);
     }
@@ -68,7 +69,13 @@ class TourPackage extends Controller
             $array['stepbystep']['step2']=$_POST;
             $request->session()->put($array);
             return redirect('/admin/tour-package/add-tour-package?page=3');
-            }
+        }
+        else if ($request->step == '3')
+        {
+            $array['stepbystep']['step3']=$_POST;
+            $request->session()->put($array);
+            return redirect('/admin/tour-package/add-tour-package?page=4');
+        }
         else if ($request->step == '4')
         {
             $array['stepbystep']['step4']=$_POST;
@@ -96,7 +103,13 @@ class TourPackage extends Controller
 
     function kodehotel()
     {
-        $kode = Input::get('kode');
+        $roomhotel = DB::table("room_hotels")
+                     ->select("*")
+                     ->where("id_hotel", $_GET['id'])
+                     ->get();
+        return response()->json($roomhotel);
+
+/*         $kode = Input::get('kode');
         echo $kode;
         // $roomhotel = DB::table("room_hotels")
         //              ->select("*")
@@ -111,5 +124,5 @@ class TourPackage extends Controller
         //     );
         // }
         // return response()->json($array);
-    }
+ */    }
 }

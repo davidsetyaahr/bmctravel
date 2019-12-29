@@ -10,8 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/admin/tour-package/page4', 'backend\tour_package\TourPackage@page');
-Route::post('/admin/tour-package/page4/kodehotel', 'backend\tour_package\TourPackage@kodehotel');
 Route::get('/admin', 'backend\Admin@login');
 Route::post('/admin', 'backend\Admin@loginPost');
 Route::get('/admin/dashboard', 'backend\Admin@dashboard');
@@ -116,3 +114,4 @@ Route::get('/tour-package/booking/{id}', 'frontend\TourPackage@booking');
 Route::get('/tour-package/attach', 'frontend\TourPackage@attach');
 Route::get('/admin/calculation/{id}', 'backend\Calculation@index');
 Route::get('/my-account', 'frontend\MyAccount@index');
+Route::get('/admin/tour-package/getKodeHotel', 'backend\tour_package\TourPackage@kodehotel');
