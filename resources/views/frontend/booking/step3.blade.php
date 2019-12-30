@@ -4,11 +4,11 @@
             <h6 class="bold text-center">Pax or person</h6>
             <div class="input-group mb-3 input-pax">
                 <div class="input-group-prepend">
-                    <button class="btn btn-outline-primary" type="button">-</button>
+                    <button id="minus" class="btn btn-outline-primary" onclick="kurang()" type="button">-</button>
                 </div>
-                <input type="text" class="form-control" value='1'>
+                <input id="nilai" type="text" class="form-control" value='1'>
                 <div class="input-group-prepend">
-                    <button class="btn btn-outline-primary" type="button">+</button>
+                    <button id="plus" class="btn btn-outline-primary tambah" onclick="tambah()" type="button">+</button>
                 </div>
             </div>
 <!--             <div class="price-pp">
@@ -34,3 +34,20 @@
         </div>
     </div>
 </div>
+<script>
+    function tambah() {
+        var value = parseInt(document.getElementById('nilai').value);
+        value = isNaN(value) ? 0 : value;
+        value++
+        document.getElementById('nilai').value = value;
+    }
+    function kurang() {
+        var value = parseInt(document.getElementById('nilai').value);
+        value = isNaN(value) ? 0 : value;
+        value--
+        document.getElementById('nilai').value = value;
+    }
+
+
+</script>
+    
