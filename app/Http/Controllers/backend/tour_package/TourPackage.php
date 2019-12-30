@@ -33,7 +33,7 @@ class TourPackage extends Controller
         $pack = DB::table('informations')->where('type','2')->get();
         $type = Tour_type::all();
         $hotel = Hotels::all();
-        
+
         $param = array(
             "gallery" => $gallery,
             "categories" => $gallery_categories,
@@ -47,7 +47,7 @@ class TourPackage extends Controller
         );
         return view('backend.tour_package.tour_package.add-tour-package', $param);
     }
-    
+
     function stepbystep(Request $request)
     {
         if ($request->step == '1')
@@ -88,10 +88,10 @@ class TourPackage extends Controller
             $array['stepbystep']['step5']=$_POST;
             $request->session()->put($array);
             }
-            
-            
+
+
     }
-    
+
     function page()
     {
         $hotel = Hotels::all();

@@ -45,16 +45,16 @@
                 <div class="col-md-12 mt-3">
                     <label for="">Tour Type</label>
                     <div class="bg-light p-10">
-                    
+
                     @foreach($type as $type)
-                     
+
                         <div class="form-check custom-control custom-checkbox mb-2">
                             <input type="checkbox" class="form-check-input custom-control-input" id="check{{ $type->id_type }}" name="tourtype[0][]" value="{{ $type->id_type }}">{{ $type->type_name }}
                             <label class="custom-control-label" for="check{{ $type->id_type }}">
-                                
+
                             </label>
                         </div>
-                    
+
                         @endforeach
                     </div>
                 </div>
@@ -116,7 +116,7 @@
                         <div class="form-check custom-control custom-checkbox mb-2">
                         <input type="checkbox" class="form-check-input custom-control-input" id="check" name="tourtype[][]" value="">
                         <label class="custom-control-label" for="check">
-                            
+
                         </label>
                     </div>
                     </div>

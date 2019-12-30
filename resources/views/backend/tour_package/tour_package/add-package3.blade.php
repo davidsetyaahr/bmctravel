@@ -5,20 +5,20 @@
                     <div class="col-md-2">
                         <label fxor="">Day Start</label>
                         <select name="" id="form" class="form-control noSelect">
-                            <?php 
+                            <?php
                                 for($i=1;$i<=10;$i++){
                                     echo "<option>$i</option>";
-                                }    
+                                }
                             ?>
                         </select>
                     </div>
                     <div class="col-md-2">
                         <label for="">Day End</label>
                         <select name="" id="" class="form-control noSelect">
-                            <?php 
+                            <?php
                                 for($x=1;$x<=10;$x++){
                                     echo "<option>$x</option>";
-                                }    
+                                }
                             ?>
                         </select>
                     </div>
@@ -53,7 +53,7 @@
             <hr class="mt-4">
             </div>
         </div>
-    </div> 
+    </div>
     <div class="row">
         <div class="col-md-12">
             <div class="float-right">

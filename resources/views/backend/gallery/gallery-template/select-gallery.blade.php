@@ -16,7 +16,7 @@
                             <div class="grid" data-id="{{ $data->id_gallery }}">
                                 <div class="blue-overlay">
                                     <div class="overlay"></div>
-                                    <img src="{{ asset('/images/gallery').'/'.$data->img }}">
+                                    <img src="{{ asset('/public/images/gallery').'/'.$data->img }}">
                                     <span class="mdi mdi-check-circle-outline mdi-36px"></span>
                                 </div>
                             </div>
