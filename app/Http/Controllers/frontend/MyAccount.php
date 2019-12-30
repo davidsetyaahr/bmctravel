@@ -13,7 +13,25 @@ class MyAccount extends Controller
             "title" => "BMC Travel Service - My Account",
             "desc" => "Welcome to BMC Travel Service. One Stop Travel Solution"
         );
-        return view('frontend.myAccount.my-account', $attr);
+        return view('frontend.myAccount.profile', $attr);
+    }
+    
+    public function setting()
+    {
+        $attr = array(
+            "title" => "BMC Travel Service - My Account",
+            "desc" => "Welcome to BMC Travel Service. One Stop Travel Solution"
+        );
+        return view('frontend.myAccount.setting', $attr);
+    }
+    
+    public function security()
+    {
+        $attr = array(
+            "title" => "BMC Travel Service - My Account",
+            "desc" => "Welcome to BMC Travel Service. One Stop Travel Solution"
+        );
+        return view('frontend.myAccount.security', $attr);
     }
 
 }

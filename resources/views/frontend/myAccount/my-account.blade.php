@@ -34,35 +34,53 @@
                       </div>
                       <input type="submit" class="search-submit btn btn-primary" value="Search">
                     </form>
+              </div>
+            </div>
           </div>
-
-<!--                 <div class="m-t-30">
-                <p >Filter By</p>
-                    <p class="m-t-auto browse d-md-flex">
-                        <span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-guarantee"></i>Mountain</a></span>
-                        <span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-like"></i>Waterfall</a></span>
-                        <span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-like"></i>Adventure</a></span>
-                        <span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-meeting-point"></i>City</a></span>
-                        <span class="d-flex justify-content-md-center align-items-md-	center"><a href="#"><i class="flaticon-shopping-bag"></i>Beach</a></span>
-                    </p>
-                </div>
- -->        </div>
         </div>
-      </div>
       </div>
       
-     <div class="container">
-       <div class="columns">
-         <div class="col-md-4 bg-danger">
-           MENU 1
-         </div>
-         <div class="col-md-3 bg-warning">
-           MENU 2
-         </div>
-         <div class="col-md-2 bg-info">
-           MENU 3
-        </div>
-       </div>
-     </div>
+      <div class="container">
+        <div class="row menu-account">
+          <div class="col-md-3">
+             <div class="row mt-1 side-line">
+               <div class="col-md-12">
+                   <div class="text-center">
+                     <h6 class="mb-3 bottom-line">Menu</h6>
+                   </div>
+                 </div>
+                 <div class="col-md-12">
+                    <a href="{{ url("my-account") }}">
+                      <div class="mt-2">
+                        <p> Profile<p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-md-12">
+                    <a href="{{ url("my-account/setting") }}">
+                      <div class="mt-2">
+                        <p> Settings</p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="col-md-12">
+                    <a href="{{ url("my-account/security") }}">
+                      <div class="mt-2">
+                       <p> Security</p>
+                      </div>
+                   </a>
+                   </div>
+               </div>
+            </div>
+            <div class="col-md-9">
+              <div class="row mt-1">
+                <div class="col-md-12">
+                  <div class="text-center">
+                    @yield('menu-account')
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
    
 @endsection
