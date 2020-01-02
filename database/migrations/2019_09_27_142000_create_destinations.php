@@ -18,7 +18,7 @@ class CreateDestinations extends Migration
             $table->string('destination_name', 255);
             $table->tinyInteger('id_category');
             $table->tinyInteger('id_city');
-            $table->string('gallery', 25);
+            $table->string('id_gallery', 25);
             $table->text('overview');
             $table->string('map', 255);
             $table->text('information');

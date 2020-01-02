@@ -16,7 +16,8 @@ class Gallery extends Controller
         // $galeri = Gallery_model::all();
         $galeri = DB::table('gallery')
         ->join('gallery_categories','gallery_categories.id_category','gallery.id_category')
-        ->select('gallery.id_gallery','gallery.img','gallery.id_category','gallery_categories.id_category','gallery_categories.category_name')->get();
+        ->select('gallery.id_gallery','gallery.img','gallery.id_category','gallery_categories.id_category',
+        'gallery_categories.category_name')->get();
         return view('backend.gallery.gallery.list-gallery' ,  ['gallery' => $galeri]);
     }
 
@@ -44,7 +45,7 @@ class Gallery extends Controller
                 // upload file
                 $time = time();
                 $newName = substr($time, strlen($time) - 5, 5) . "." . $img->getClientOriginalExtension();
-                $tujuan_upload = 'images/gallery';
+                $tujuan_upload = 'public/images/gallery';
                 $img->move($tujuan_upload, $newName);
 
                 // insert
@@ -57,10 +58,15 @@ class Gallery extends Controller
                 }
 
     function edit($id)
+    // {
+    //     $galeri["galeri"] = DB::table('gallery')->where('id_gallery',$id)->get();
+    //     $galeri["id_kategori"] = DB::table('gallery_categories')->where('id_category',$id)->get();
+	//     return view('backend.gallery.gallery.edit-gallery',['id_category' => $galeri]);
+    // }
     {
-        $galeri["galeri"] = DB::table('gallery')->where('id_gallery',$id)->get();
-        $galeri["id_kategori"] = DB::table('gallery_categories')->where('id_category',$id)->get();
-	    return view('backend.gallery.gallery.edit-gallery',['id_category' => $galeri]);
+        $gallery = Gallery_model::all();
+        $gallery_categories = Gallery_categories_model::all();
+        return view('backend.gallery.gallery.edit-gallery',['id_gallery' => $gallery, 'id_category' => $gallery_categories]);
     }
 
     function update(Request $request)

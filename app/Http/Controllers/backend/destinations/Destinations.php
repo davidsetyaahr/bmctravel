@@ -19,9 +19,12 @@ class Destinations extends Controller
     function index()
     {
         $destination = DB::table('destinations')
+        ->join('gallery','gallery.id_gallery','destinations.id_gallery')
         ->join('destination_categories','destination_categories.id_category','destinations.id_category')
         ->join('city','city.id_city','destinations.id_city')
-        ->select('destinations.id_destination','destinations.destination_name','destination_categories.category_name','city.city_name','destinations.gallery','destinations.overview','destinations.map','destinations.information')
+        ->select('destinations.id_destination','destinations.destination_name','destination_categories.category_name'
+        ,'city.city_name','destinations.id_gallery','gallery.img','destinations.overview','destinations.map'
+        ,'destinations.information')
         ->orderBy('id_destination', 'desc')
         ->get();
         return view('backend.destinations.destinations.list', ['destinations' => $destination]);
@@ -88,7 +91,7 @@ class Destinations extends Controller
                 'destination_name' => $request->destination_name,
                 'id_category' => $request->id_category,
                 'id_city' => $request->id_city,
-                'gallery' => $request->id_gallery,
+                'id_gallery' => $request->id_gallery,
                 'map' => $request->map,
                 'information' => $request->information,
                 'overview' => $request->overview

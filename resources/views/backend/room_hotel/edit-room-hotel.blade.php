@@ -21,7 +21,7 @@
                             <option value="">---Select---</option>
                                 @foreach($hotels as $htl)
                             <option value="{{ $htl->id_hotel }}">{{ $htl->hotel_name}}</option>
-                                @endforeach 
+                                @endforeach
                         </select>
                         @error('id_hotel')
                     <div class="invalid-feedback"> {{ $message}} </div>

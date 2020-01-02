@@ -33,7 +33,8 @@
                             <tr>
                                 <th>{{ $loop->iteration}}</th>
                                 <td>{{$htl->hotel_name}}</td>
-                                <td>{{$htl->id_gallery}}</td>
+                                <td><img style="height: 200px; width: 200px;" src="{{ url('/public/images/gallery/'.$htl->img) }}" alt="" class="img-fluid transition"></td>
+                                {{-- <td>{{$htl->id_gallery}}</td> --}}
                                 <td>{{$htl->map}}</td>
                                 <td>{{$htl->overview}}</td>
                                 <td>

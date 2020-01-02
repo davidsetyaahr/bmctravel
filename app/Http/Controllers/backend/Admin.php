@@ -11,15 +11,15 @@ use \App\Admins;
 
 class Admin extends Controller
 {
-    
+
     function login()
     {
         return view('backend.login');
     }
 
     public function loginPost(Request $request){
-        
-        
+
+
          $email = $request->email;
          $password = md5($request->password);
 
@@ -31,7 +31,7 @@ class Admin extends Controller
             return redirect('admin/dashboard');
         }
     }
-    
+
     function dashboard()
     {
         // if(!Session::get('login')){

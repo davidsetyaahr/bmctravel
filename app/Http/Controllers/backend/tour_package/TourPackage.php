@@ -51,7 +51,7 @@ class TourPackage extends Controller
         }
         return view('backend.tour_package.tour_package.add-tour-package', $param);
     }
-    
+
     function stepbystep(Request $request)
     {
         if ($request->step == '1')
@@ -92,8 +92,8 @@ class TourPackage extends Controller
             $array['stepbystep']['step5']=$_POST;
             $request->session()->put($array);
             }
-            
-            
+
+
     }
     public function newtrip()
     {
@@ -104,6 +104,7 @@ class TourPackage extends Controller
         );
         return view('backend.tour_package.tour_package.new-trip', $param);
     }
+
     function page()
     {
         $hotel = Hotels::all();
