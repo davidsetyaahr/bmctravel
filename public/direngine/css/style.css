@@ -130,6 +130,33 @@
     overflow: none !important;
   }
 }  
+.menu-account{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #D42E28;
+  /* opacity: 0.8; */
+}
+.menu-account .bottom-line{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid white;
+  color: white;
+}
+.menu-account .side-line .bottom-line{
+  padding-bottom: 15px;
+  border-bottom: 1px solid white;
+}
+.menu-account .side-line{
+  padding-bottom: 15px;
+  border-right: 1px solid white;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  color: white;
+}
+.menu-account .side-line a{
+  color: white;
+}
+
 .bank-list img{
   width : 80px;
   height : 30px;

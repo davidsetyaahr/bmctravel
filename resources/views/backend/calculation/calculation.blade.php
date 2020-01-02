@@ -12,6 +12,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
+            @foreach($bookings as $book)
                 <div class="table-responsive">
                     <table class="table " width="100%">
                         <tr>
@@ -19,36 +20,36 @@
                                 <b>Kode Booking</b>
                             </td>
                             <td>:</td>
-                            <td></td>
+                            <td>{{ $book->id_booking}}</td>
                             <td>
                                 <b>User</b>
                             </td>
                             <td>:</td>
-                            <td></td>
+                            <td>{{ $book->email}}</td>
                         </tr>
                         <tr>
                             <td>
                                 <b>Booking Date</b>
                             </td>
                             <td>:</td>
-                            <td></td>
+                            <td>{{ $book->booking_date}}></td>
                             <td>
                                 <b>Travel Date</b>
                             </td>
                             <td>:</td>
-                            <td></td>
+                            <td>{{ $book->travel_date}}</td>
                         </tr>
                         <tr>
                             <td>
                                 <b>Package</b>
                             </td>
                             <td>:</td>
-                            <td></td>
+                            <td>{{ $book->tour_name}}</td>
                             <td>
                                 <b>Total</b>
                             </td>
                             <td>:</td>
-                            <td></td>
+                            <td>{{ $book->price}}</td>
                         </tr>
                     </table>
                 </div>
@@ -58,6 +59,9 @@
                         <label for="">Label</label>
                         <select name="" class="form-control" id="">
                             <option value="">---Option---</option>
+                        @foreach($calculation as $cal)
+                            <option value="{{ $cal->id_calculation }}">{{ $cal->label}}</option>
+                        @endforeach 
                         </select>
                     </div>
                     <div class="col-md-1">
@@ -97,6 +101,7 @@
                         <a href="" class="btn btn-danger">Download PDF</a>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
     </div>
