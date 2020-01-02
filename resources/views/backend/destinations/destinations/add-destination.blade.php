@@ -53,6 +53,19 @@
                                 @enderror
                                 </div>
                             <div class="col-md-12 m-t-15">
+                                <label for="">Trip Activities</label>
+                                <div class="bg-light p-10">
+                                    @foreach($activities as $act)
+                                    <div class="form-check custom-control custom-checkbox mb-2">
+                                        <input type="checkbox" class="form-check-input custom-control-input" id="check{{$act->id_activities}}" name="activities[]" value="{{$act->id_activities}}">
+                                        <label class="custom-control-label" for="check{{$act->id_activities}}">
+                                        {{$act->activities}}
+                                        </label>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                            <div class="col-md-12 m-t-15">
                                 <label for="">Gallery</label>
                                 @include('backend.gallery.gallery-template.gallery-hidden')
                             </div>

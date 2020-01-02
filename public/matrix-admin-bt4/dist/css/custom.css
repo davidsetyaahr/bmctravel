@@ -152,8 +152,50 @@ thead{
     -webkit-box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
     box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
 }
+/* width */
+.custom-scroll::-webkit-scrollbar {
+    width: 5px;
+}
+/* Track */
+.custom-scroll::-webkit-scrollbar-track {
+    background: #f3f5f8;
+}
+
+/* Handle */
+.custom-scroll::-webkit-scrollbar-thumb {
+    background: #d2dae6; 
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+/* Handle on hover */
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: #a9b8cf; 
+}
+.disable-mode.on{
+    display: block;
+}
+.disable-mode{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background : rgba(0,0,0,.5);
+    z-index: 100;
+    display: none;
+}
+
+
+.gallery .gallery-categories{
+    height : 20%;
+    overflow: auto;
+    padding : 10px 0px;
+    margin-right: 10px;
+}
 .gallery .gallery-body{
     overflow: auto;
+    height: 100%;
 }
 .gallery .open-gallery{
     cursor: pointer;

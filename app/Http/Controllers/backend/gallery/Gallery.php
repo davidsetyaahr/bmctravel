@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend\gallery;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\URL;
 use App\Gallery_categories_model;
 use App\Gallery_model;
 
@@ -80,5 +81,12 @@ class Gallery extends Controller
             'id_category' => $request->id_category
         ]);
         return redirect('/admin/gallery/gallery');
+    }
+    
+    public function bycategory()
+    {
+        $data['gallery'] = DB::table('gallery')->where('id_category',$_GET['id_category'])->get();
+        $data['url'] = URL::to('/');
+        return response()->json($data);
     }
 }
