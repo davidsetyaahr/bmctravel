@@ -114,6 +114,6 @@ Route::get('/tour-package/booking/{id}', 'frontend\TourPackage@booking');
 Route::get('/tour-package/attach', 'frontend\TourPackage@attach');
 Route::get('/admin/calculation/{id}', 'backend\Calculation@index');
 Route::get('/my-account', 'frontend\MyAccount@index');
-Route::get('/my-account/setting', 'frontend\MyAccount@setting');
+Route::get('/my-account/notifacation', 'frontend\MyAccount@setting');
 Route::get('/my-account/security', 'frontend\MyAccount@security');
 Route::get('/admin/tour-package/getKodeHotel', 'backend\tour_package\TourPackage@kodehotel');
