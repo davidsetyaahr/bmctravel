@@ -115,3 +115,5 @@ Route::get('/tour-package/attach', 'frontend\TourPackage@attach');
 Route::get('/admin/calculation/{id}', 'backend\Calculation@index');
 Route::get('/my-account', 'frontend\MyAccount@index');
 Route::get('/admin/tour-package/getKodeHotel', 'backend\tour_package\TourPackage@kodehotel');
+Route::get('/admin/gallery/bycategory', 'backend\gallery\Gallery@bycategory');
+Route::get('/admin/tour-package/newtrip', 'backend\tour_package\TourPackage@newtrip');

@@ -12,6 +12,7 @@ use \App\Tour_type;
 use \App\Hotels;
 use \App\Room_hotels;
 use \App\Informations;
+use \App\Destination;
 use Illuminate\Support\Facades\DB;
 
 
@@ -23,28 +24,31 @@ class TourPackage extends Controller
     }
     function add()
     {
-        $gallery = Gallery_model::orderBy("id_gallery","desc")->get();
-        $gallery_categories = Gallery_categories_model::orderBy("id_category","desc")->get();
-        $category = Tour_categories::orderBy("id_category","desc")->get();
-        $categoryAll = Tour_categories::orderBy("id_category","desc")->get();
-        $durations = Tour_durations::orderBy("id_duration","desc")->get();
-        $include = DB::table('informations')->where('type','0')->get();
-        $exclude = DB::table('informations')->where('type','1')->get();
-        $pack = DB::table('informations')->where('type','2')->get();
-        $type = Tour_type::all();
-        $hotel = Hotels::all();
-        
-        $param = array(
-            "gallery" => $gallery,
-            "categories" => $gallery_categories,
-            "tour_categories" => $category,
-            "durations" => $durations,
-            "type" => $type,
-            "include" =>$include,
-            "exclude" =>$exclude,
-            "pack" =>$pack,
-            "hotel" => $hotel
-        );
+        if(!isset($_GET['page']) || $_GET['page']==1){
+            $gallery = Gallery_model::orderBy("id_gallery","desc")->get();
+            $gallery_categories = Gallery_categories_model::orderBy("id_category","desc")->get();
+            $category = Tour_categories::orderBy("id_category","desc")->get();
+            $durations = Tour_durations::orderBy("id_duration","desc")->get();
+            $type = Tour_type::all();
+            $param = array(
+                "gallery" => $gallery,
+                "categories" => $gallery_categories,
+                "tour_categories" => $category,
+                "durations" => $durations,
+                "type" => $type,
+            );
+        }
+        else if($_GET['page']==2){
+            $include = DB::table('informations')->where('type','0')->get();
+            $exclude = DB::table('informations')->where('type','1')->get();
+            $pack = DB::table('informations')->where('type','2')->get();
+            $hotel = Hotels::all();
+            $param = array(
+                'destination' => Destination::select('id_destination','destination_name')
+                ->orderBy('destination_name','asc')
+                ->get(),
+            );
+        }
         return view('backend.tour_package.tour_package.add-tour-package', $param);
     }
     
@@ -91,7 +95,15 @@ class TourPackage extends Controller
             
             
     }
-    
+    public function newtrip()
+    {
+        $param = array(
+            'destination' => Destination::select('id_destination','destination_name')
+            ->orderBy('destination_name','asc')
+            ->get(),
+        );
+        return view('backend.tour_package.tour_package.new-trip', $param);
+    }
     function page()
     {
         $hotel = Hotels::all();

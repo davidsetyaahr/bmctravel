@@ -10,7 +10,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-            @if(empty($_GET['page']))
+            @if(empty($_GET['page']) || $_GET['page']==1)
                 @include('backend.tour_package.tour_package.add-package1')
             @else
                 @if($_GET['page']==2)
