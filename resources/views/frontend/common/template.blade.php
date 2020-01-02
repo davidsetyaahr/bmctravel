@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="<?php echo $desc ?>">
-    
+
 <!--     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
- -->	
-    <link href="https://fonts.googleapis.com/css?family=Sacramento&display=swap" rel="stylesheet">   
+ -->
+    <link href="https://fonts.googleapis.com/css?family=Sacramento&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('public/direngine/css/open-iconic-bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/direngine/css/animate.css') }}">
-    
+
     <link rel="stylesheet" href="{{ asset('public/direngine/css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/direngine/css/owl.theme.default.min.css') }}">
 
@@ -54,7 +54,7 @@
           </li>
         </ul>
  -->        </div>
-</div>  
+</div>
 </nav>
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light nav-white" id="ftco-navbar">
     <div class="container">
@@ -62,7 +62,7 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="oi oi-menu"></span>
       </button>
-      
+
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
@@ -75,11 +75,11 @@
               <a class="dropdown-item" href="#"><span class="ion-ios-car"></span> Transportations</a>
               <a class="dropdown-item" href="#"><span class="ion-ios-airplane"></span> Airport/City Transfer</a>
               <a class="dropdown-item" href="#"><span class="ion-ios-paw"></span> Outbond</a>
-            </div>			
+            </div>
 		    	</li>
           <li class="nav-item"><a href="{{ url('destinations') }}" class="nav-link">Destinations</a></li>
           <li class="nav-item"><a href="#" class="nav-link">Travel Tips</a></li>
-          <?php 
+          <?php
             $userSession = session()->all();
             if(isset($userSession['user'])){
           ?>
@@ -179,8 +179,8 @@
         </div>
       </div>
     </footer>
-    
-  
+
+
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>

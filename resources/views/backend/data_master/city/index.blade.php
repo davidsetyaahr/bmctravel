@@ -26,7 +26,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach( $city as $city) 
+                            @foreach( $city as $city)
                             <tr>
                             <th scope="row">{{ $loop->iteration }}</th>
                                 <td>{{ $city->province_name }}</td>
@@ -38,12 +38,12 @@
                                         </a>
 
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                            <a class="dropdown-item"  href="{{url('admin/data-master/edit-city')}}/{{ $city->id_city }}">Edit</a>
+                                            <a class="dropdown-item"  href="edit-city/{{ $city->id_city }}">Edit</a>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
-                            @endforeach 
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

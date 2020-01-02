@@ -1,9 +1,21 @@
 $(document).ready(function(){
     $("select").select2()
     $(".noSelect").select2('destroy')
+
     $(".close-gallery, .open-gallery").click(function(e){
         e.preventDefault()
-        $(".gallery").toggleClass("hide-gallery")
+        if($(".disable-mode.on").length==1){
+            $(".gallery").addClass("hide-gallery")
+            $(".disable-mode").removeClass("on")
+        }
+        else{
+            $(".gallery").removeClass("hide-gallery")
+            $(".disable-mode").addClass("on")
+        }
+        $(".disable-mode.on").click(function(){
+            $(".gallery").addClass("hide-gallery")
+            $(".disable-mode").removeClass("on")
+        })
     })
     function changeCombo(thisParam){
         var thisUrl = thisParam.data("url")
@@ -43,7 +55,33 @@ $(document).ready(function(){
         $("select").select2()
 
     })
+    function zoomRemove(){
+        $(".zoom").click(function(){
+            var dataSrc = $(this).data('src')
+            $("#zoomImage").modal("hide")
+            $("#zoomImage").modal("show")
+            $("#zoomImage .modal-dialog .modal-content .modal-body img").attr("src",dataSrc)
+        })
+        
+        $(".remove").click(function(){
+            var dataId = $(this).data("id")
+            $(".row-gallery .col-gallery[data-id='"+dataId+"']").remove()
+            $(".gallery .grid-container .grid[data-id='"+dataId+"'] .blue-overlay").removeClass("active")
 
+            if(type=="single"){
+                $(hiddenId).val('')
+            }
+            else{
+                var arrVal = $(hiddenId).val().split(',')
+                function newVal(arrVal){
+                    return arrVal != dataId
+                }
+                var newValue = arrVal.filter(newVal)
+                $(hiddenId).val(newValue)
+            }
+        })
+    }
+    function clickGallery(){
     $(".gallery .grid-container .grid").click(function(){
         var id = $(this).data("id")
         var type = $(".gallery").data("type")
@@ -69,30 +107,75 @@ $(document).ready(function(){
             $(perImg).toggleClass("active")
             $(".row-gallery").append('<div class="col-md-2 mb-3 col-gallery" data-id="'+id+'"><div class="img blue-overlay"><img src="'+src+'" class="img-fluid" alt=""><div class="overlay"></div><div class="option"><span class="zoom" data-src="'+src+'">Open</span> <span class="remove" data-id="'+id+'">X Remove</span></div></div></div>')
 
-            $(".zoom").click(function(){
-                var dataSrc = $(this).data('src')
-                $("#zoomImage").modal("hide")
-                $("#zoomImage").modal("show")
-                $("#zoomImage .modal-dialog .modal-content .modal-body img").attr("src",dataSrc)
-            })
-            
-            $(".remove").click(function(){
-                var dataId = $(this).data("id")
-                $(".row-gallery .col-gallery[data-id='"+dataId+"']").remove()
-                $(".gallery .grid-container .grid[data-id='"+dataId+"'] .blue-overlay").removeClass("active")
-
-                if(type=="single"){
-                    $(hiddenId).val('')
-                }
-                else{
-                    var arrVal = $(hiddenId).val().split(',')
-                    function newVal(arrVal){
-                        return arrVal != dataId
-                    }
-                    var newValue = arrVal.filter(newVal)
-                    $(hiddenId).val(newValue)
-                }
-            })
+            zoomRemove()
         }
     })
+}
+    zoomRemove()
+    clickGallery()
+    $(".category-gallery").click(function(e){
+        e.preventDefault()
+        var dataId = $(this).data("id")
+        var dataUrl = $(this).data("url")
+        
+        $(".grid").remove()
+
+        $.ajax({
+            type : "get",
+            data : {"id_category" : dataId},
+            url : dataUrl,
+            success : function(data){
+                $.each(data.gallery, function(index,value){
+                    if($(".col-gallery").length>0){
+                        var getId = $(".col-gallery").data("id")
+                        var active = getId==value.id_gallery ? 'active' : ''
+                    }
+                    else{
+                        var active = ''
+                    }
+                    $(".grid-container").append('<div class="grid" data-id="'+value.id_gallery+'"><div class="blue-overlay '+active+'"><div class="overlay"></div><img src="'+data.url+'/images/gallery/'+value.img+'"><span class="mdi mdi-check-circle-outline mdi-36px"></span></div></div>')
+                })
+                clickGallery()
+            }
+        })
+        
+    })
+    $(".new-trip").click(function(e){
+        e.preventDefault()
+        var url = $("#url").val()
+        var day = $(this).attr('data-day')
+        var dayElement = ".day[data-day='"+day+"']"
+        var countTrip = $(dayElement).attr('data-count')
+        var newCountTrip = parseInt(countTrip) + 1
+        $(dayElement).attr('data-count',newCountTrip)
+        $.ajax({
+            type : 'get',
+            url : url,
+            data : {day : day, trip : newCountTrip},
+            success : function(data){
+                $(dayElement+" .card-body").append(data)
+                $("select").select2()
+
+                $(".remove-trip").click(function(e){
+                    e.preventDefault()
+                    var day = $(this).data('day')
+                    var trip = $(this).data('trip')
+                    var dataCount = ".day[data-day='"+day+"']"
+                    var count = parseInt($(dataCount).attr('data-count'))
+                    $(dataCount+" .row-trip").each(function(index,value){
+                        console.log(value)
+/*                         $(dataCount+" .row-trip").attr('data-trip',index)
+                        $(dataCount+" .row-trip .changeTrip").html(index)
+ */                    })
+/*                     $(dataCount).attr('data-count',count-1)
+                    $(dataCount+" .row-trip[data-trip='"+trip+"']").remove()
+ */
+                })
+            }
+        })
+    })
+    
+    function removeField(){
+    }
+
 })

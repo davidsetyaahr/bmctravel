@@ -1,3 +1,12 @@
+<?php
+    if(!empty(session()->all())){
+        $session = session()->all();
+        if(empty($session['admin']))
+        {
+            echo "<script>window.location='".url('/admin?error=true')."'</script>";
+        }
+    }
+?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -30,11 +39,12 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    
+
 <![endif]-->
 </head>
 
 <body>
+    <div class="disable-mode"></div>
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
@@ -65,21 +75,21 @@
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
                             <img src="{{ asset('public/matrix-admin-bt4') }}/assets/images/BMC-Logo.png" alt="homepage" class="bmc-logo" />
-                           
+
                         </b>
                         <!--End Logo icon -->
                          <!-- Logo text -->
                         <span class="logo-text">
                             BMC TRAVEL SERVICE
                              <!-- dark Logo text -->
-                            
+
                         </span>
                         <!-- Logo icon -->
                         <!-- <b class="logo-icon"> -->
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
                             <!-- <img src="{{ asset('/matrix-admin-bt4') }}/assets/images/logo-text.png" alt="homepage" class="light-logo" /> -->
-                            
+
                         <!-- </b> -->
                         <!--End Logo icon -->
                     </a>
@@ -123,8 +133,8 @@
                                                             <div class="d-flex no-block align-items-center p-10">
                                                                 <span class="btn btn-success btn-circle"><i class="ti-calendar"></i></span>
                                                                 <div class="m-l-10">
-                                                                    <h5 class="m-b-0">Event today</h5> 
-                                                                    <span class="mail-desc">Just a reminder that event</span> 
+                                                                    <h5 class="m-b-0">Event today</h5>
+                                                                    <span class="mail-desc">Just a reminder that event</span>
                                                                 </div>
                                                             </div>
                                                         </a>
@@ -133,8 +143,8 @@
                                                             <div class="d-flex no-block align-items-center p-10">
                                                                 <span class="btn btn-info btn-circle"><i class="ti-settings"></i></span>
                                                                 <div class="m-l-10">
-                                                                    <h5 class="m-b-0">Settings</h5> 
-                                                                    <span class="mail-desc">You can customize this template</span> 
+                                                                    <h5 class="m-b-0">Settings</h5>
+                                                                    <span class="mail-desc">You can customize this template</span>
                                                                 </div>
                                                             </div>
                                                         </a>
@@ -143,8 +153,8 @@
                                                             <div class="d-flex no-block align-items-center p-10">
                                                                 <span class="btn btn-primary btn-circle"><i class="ti-user"></i></span>
                                                                 <div class="m-l-10">
-                                                                    <h5 class="m-b-0">Pavan kumar</h5> 
-                                                                    <span class="mail-desc">Just see the my admin!</span> 
+                                                                    <h5 class="m-b-0">Pavan kumar</h5>
+                                                                    <span class="mail-desc">Just see the my admin!</span>
                                                                 </div>
                                                             </div>
                                                         </a>
@@ -153,8 +163,8 @@
                                                             <div class="d-flex no-block align-items-center p-10">
                                                                 <span class="btn btn-danger btn-circle"><i class="fa fa-link"></i></span>
                                                                 <div class="m-l-10">
-                                                                    <h5 class="m-b-0">Luanch Admin</h5> 
-                                                                    <span class="mail-desc">Just see the my new admin!</span> 
+                                                                    <h5 class="m-b-0">Luanch Admin</h5>
+                                                                    <span class="mail-desc">Just see the my new admin!</span>
                                                                 </div>
                                                             </div>
                                                         </a>
@@ -166,7 +176,7 @@
                                     <!-- ============================================================== -->
                                     <!-- End Messages -->
                                     <!-- ============================================================== -->
-            
+
                                     <!-- ============================================================== -->
                                     <!-- User profile and search -->
                                     <!-- ============================================================== -->
@@ -179,7 +189,7 @@
                                             <div class="dropdown-divider"></div>
                                             <a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
                                             <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="javascript:void(0)"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
+                                        <a class="dropdown-item" href="{{url('admin/logout')}}"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
                                             <div class="dropdown-divider"></div>
                                             <div class="p-l-30 p-10"><a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Profile</a></div>
                                         </div>
@@ -202,7 +212,7 @@
                                     <li class="nav-item">
                                         <a href="" class="nav-link">
                                             <small>
-                                                <?php $str = str_replace("-"," ",Request::segment(2)) ?>{{ ucwords($str) }} <i class="mdi mdi-menu-right"></i> @yield('pagetitle') <i class="mdi mdi-menu-right"></i> 
+                                                <?php $str = str_replace("-"," ",Request::segment(2)) ?>{{ ucwords($str) }} <i class="mdi mdi-menu-right"></i> @yield('pagetitle') <i class="mdi mdi-menu-right"></i>
                                                 @if($__env->yieldContent('view_status')=="active")
                                                     @yield('view_caption')
                                                 @else
@@ -236,7 +246,7 @@
                                 <li class="sidebar-item"><a href="{{ url('admin/tour-package/categories') }}" class="sidebar-link"><i class="mdi mdi-format-list-bulleted-type"></i><span class="hide-menu"> Categories </span></a></li>
                                 <li class="sidebar-item"><a href="{{ url('admin/tour-package/tour-type') }}" class="sidebar-link"><i class="mdi mdi-heart-box-outline"></i><span class="hide-menu"> Tour Type </span></a></li>
                                 <li class="sidebar-item"><a href="{{ url('admin/tour-package/durations') }}" class="sidebar-link"><i class="mdi mdi-av-timer"></i><span class="hide-menu"> Durations </span></a></li>
-                                <li class="sidebar-item"><a href="{{ url('admin/tour-package/price-categories') }}" class="sidebar-link"><i class="mdi mdi-cash-usd"></i><span class="hide-menu"> Price Categories </span></a></li>
+                                <!--li class="sidebar-item"><a href="{{ url('admin/tour-package/price-categories') }}" class="sidebar-link"><i class="mdi mdi-cash-usd"></i><span class="hide-menu"> Price Categories </span></a></li-->
                               </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-find-replace"></i><span class="hide-menu">Destinations </span></a>

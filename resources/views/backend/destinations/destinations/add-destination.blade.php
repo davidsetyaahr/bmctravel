@@ -33,11 +33,11 @@
                                     <option value="">---Select---</option>
                                     @foreach($destination_categories as $c)
                                     <option value="{{ $c->id_category }}">{{ $c->category_name}}</option>
-                                    @endforeach 
+                                    @endforeach
                                 </select>
                                  @error('Category')
                                     <div class="invalid-feedback"> {{ $message}} </div>
-                                @enderror 
+                                @enderror
                                 </div>
                             <div class="col-md-6 m-t-15">
                                 <label for="">City & Province</label>
@@ -50,11 +50,24 @@
                                 </select>
                                 @error('City')
                                     <div class="invalid-feedback"> {{ $message}} </div>
-                                @enderror 
+                                @enderror
                                 </div>
                             <div class="col-md-12 m-t-15">
+                                <label for="">Trip Activities</label>
+                                <div class="bg-light p-10">
+                                    @foreach($activities as $act)
+                                    <div class="form-check custom-control custom-checkbox mb-2">
+                                        <input type="checkbox" class="form-check-input custom-control-input" id="check{{$act->id_activities}}" name="activities[]" value="{{$act->id_activities}}">
+                                        <label class="custom-control-label" for="check{{$act->id_activities}}">
+                                        {{$act->activities}}
+                                        </label>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                            <div class="col-md-12 m-t-15">
                                 <label for="">Gallery</label>
-                                @include('backend.gallery.gallery-template.gallery-hidden')     
+                                @include('backend.gallery.gallery-template.gallery-hidden')
                             </div>
                             <div class="col-md-12 m-t-15">
                                 <label for="">Map</label>

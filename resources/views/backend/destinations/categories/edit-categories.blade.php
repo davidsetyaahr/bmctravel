@@ -12,7 +12,7 @@
             <div class="card-body">
             @include('backend.gallery.gallery-template.select-gallery', ['type' => 'multiple', 'gallery' => $gallery, 'categories' => $categories])
             @foreach($destination_categories as $dc)
-            <form action="/admin/destinations/categories/update" method="post">
+            <form action="{{url("admin/destinations/categories/update")}}" method="post">
             @csrf
             <input type="hidden" name="id" value="{{ $dc->id_category }}">
                 <label for="">Categories Name</label>
@@ -23,7 +23,7 @@
                 <br>
                 <div class="col-md-12 m-t-15">
                     <label for="">Gallery</label>
-                        @include('backend.gallery.gallery-template.gallery-hidden')     
+                        @include('backend.gallery.gallery-template.gallery-hidden')
                 </div>
                 <br>
                 <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Save</button>

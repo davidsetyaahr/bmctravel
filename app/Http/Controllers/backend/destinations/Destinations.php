@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 
 use \App\Destination;
+use \App\Destination_activitie;
 use \App\City_model;
 use \App\Gallery_model;
 use \App\Gallery_categories_model;
@@ -18,11 +19,11 @@ class Destinations extends Controller
     function index()
     {
         $destination = DB::table('destinations')
-        // ->join('gallery','gallery.id_gallery','destinations.id_gallery')
+        ->join('gallery','gallery.id_gallery','destinations.id_gallery')
         ->join('destination_categories','destination_categories.id_category','destinations.id_category')
         ->join('city','city.id_city','destinations.id_city')
         ->select('destinations.id_destination','destinations.destination_name','destination_categories.category_name'
-        ,'city.city_name','destinations.gallery','destinations.overview','destinations.map'
+        ,'city.city_name','destinations.id_gallery','gallery.img','destinations.overview','destinations.map'
         ,'destinations.information')
         ->orderBy('id_destination', 'desc')
         ->get();
@@ -34,34 +35,43 @@ class Destinations extends Controller
     }
     function create()
     {
+        $activities = DB::table('trip_activities')
+        ->orderBy('activities','asc')
+        ->get();
         $gallery = Gallery_model::all();
         $gallery_categories = Gallery_categories_model::all();
         $categories = Destination_categories::all(['id_category','category_name']);
         $city = City_model::all(['id_city','city_name']);
-        return view('backend.destinations.destinations.add-destination',['gallery' => $gallery, 'categories' => $gallery_categories, 'destination_categories' => $categories, 'city' => $city]);
+        return view('backend.destinations.destinations.add-destination',['gallery' => $gallery, 'categories' => $gallery_categories, 'destination_categories' => $categories, 'city' => $city, 'activities' => $activities]);
     }
     function store(Request $request)
     {
-        $request->validate([
+                 $request->validate([
             'destination_name' => 'required',
             'id_category' => 'required',
             'id_city' => 'required',
             'overview' => 'required',
             'map' => 'required',
             'information' => 'required',
-        ]);
-
-        Destination::create([
-            'destination_name' => $request->destination_name,
-            'id_category' => $request->id_category,
-            'id_city' => $request->id_city,
-            'gallery' => $request->id_gallery,
-            'map' => $request->map,
-            'information' => $request->information,
-            'overview' => $request->overview
-
-
-        ]);
+            ]);
+            
+            DB::table('destinations')->insert([
+                'destination_name' => $request->destination_name,
+                'id_category' => $request->id_category,
+                'id_city' => $request->id_city,
+                'gallery' => $request->id_gallery,
+                'map' => $request->map,
+                'information' => $request->information,
+                'overview' => $request->overview
+                
+                ]);
+            $lastId = DB::getPDO()->lastInsertId();
+            foreach ($_POST['activities'] as $key => $value) {
+                Destination_activitie::create([
+                    'id_destination' => $lastId,
+                    'id_activities' => $value
+                ]);
+            }
 
          return redirect('/admin/destinations/destinations/list')->with('status', 'Destinasi berhasil ditambahkan');
     }
@@ -81,7 +91,7 @@ class Destinations extends Controller
                 'destination_name' => $request->destination_name,
                 'id_category' => $request->id_category,
                 'id_city' => $request->id_city,
-                'gallery' => $request->id_gallery,
+                'id_gallery' => $request->id_gallery,
                 'map' => $request->map,
                 'information' => $request->information,
                 'overview' => $request->overview

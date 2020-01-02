@@ -12,7 +12,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-            @include('backend.gallery.gallery-template.select-gallery', ['type' => 'multiple', 'gallery' => $gallery, 'categories' => $categories])
+            @include('backend.gallery.gallery-template.select-gallery', ['type' => 'single', 'gallery' => $gallery, 'categories' => $categories])
             <form action="{{url("admin/destinations/add-categories")}}" method="post">
             @csrf
                 <label for="">Categories Name</label>

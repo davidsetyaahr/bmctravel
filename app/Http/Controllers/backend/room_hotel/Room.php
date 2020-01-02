@@ -18,7 +18,8 @@ class Room extends Controller
         $room = DB::table('room_hotels')
 
         ->join('hotels','hotels.id_hotel','room_hotels.id_hotel')
-        ->select('room_hotels.id_room_hotel','hotels.hotel_name','room_hotels.room_name','room_hotels.gallery')
+        ->join('gallery','gallery.id_gallery','room_hotels.gallery')
+        ->select('room_hotels.id_room_hotel','hotels.hotel_name','room_hotels.room_name','gallery.img')
         ->orderBy('id_room_hotel', 'desc')
         ->get();
         return view('backend.room_hotel.list-room-hotel', ['room_hotels' => $room]);

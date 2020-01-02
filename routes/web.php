@@ -12,6 +12,7 @@
 */
 Route::get('/admin', 'backend\Admin@login');
 Route::post('/admin', 'backend\Admin@loginPost');
+Route::get('/admin/logout', 'backend\Admin@logout');
 Route::get('/admin/dashboard', 'backend\Admin@dashboard');
 Route::get('/admin/tour-package/tour-package', 'backend\tour_package\TourPackage@index');
 Route::get('/admin/tour-package/add-tour-package', 'backend\tour_package\TourPackage@add');
@@ -79,6 +80,7 @@ Route::get('/travel-tips', 'frontend\TravelTips@index');
 Route::get('/signin', 'frontend\SignIn@index');
 Route::get('/admin/tour-package/edit-price-categories/{id}', 'backend\tour_package\PriceCategories@edit');
 Route::get('/admin/gallery/edit-gallery/{id}', 'backend\gallery\Gallery@edit');
+Route::get('/admin/gallery/edit-gallery/update', 'backend\gallery\Gallery@update');
 Route::get('/admin/hotel/edit-hotel/{id}', 'backend\hotel\Hotel@edit');
 Route::get('/admin/destinations/edit-categories/{id}', 'backend\destinations\Categories@edit');
 Route::post('/admin/tour-package/price-categories/update','backend\tour_package\PriceCategories@update');
@@ -115,5 +117,9 @@ Route::get('/tour-package/attach', 'frontend\TourPackage@attach');
 Route::get('/admin/calculation/{id}', 'backend\Calculation@index');
 Route::get('/my-account', 'frontend\MyAccount@index');
 Route::get('/my-account/notifacation', 'frontend\MyAccount@setting');
+Route::get('/admin/tour-package/getKodeHotel', 'backend\tour_package\TourPackage@kodehotel');
+Route::get('/admin/gallery/bycategory', 'backend\gallery\Gallery@bycategory');
+Route::get('/admin/tour-package/newtrip', 'backend\tour_package\TourPackage@newtrip');
+Route::get('/my-account/setting', 'frontend\MyAccount@setting');
 Route::get('/my-account/security', 'frontend\MyAccount@security');
 Route::get('/admin/tour-package/getKodeHotel', 'backend\tour_package\TourPackage@kodehotel');

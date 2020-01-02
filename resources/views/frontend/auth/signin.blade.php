@@ -4,7 +4,7 @@
     <title>Bmc Travel Service - Home</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('public/direngine/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('public/direngine/css/ionicons.min.css') }}">
@@ -44,7 +44,7 @@
                     <span>or</span>
                   </div>
                   <div class="form">
-                    <form action="signin/auth" method="post" class="formNoLoad">
+                      <form action="{{ url("signin/auth" )}}" method="post" class="formNoLoad">
                       @csrf
                       <label for="">Email</label>
                       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
@@ -81,6 +81,6 @@
 
   <script src="{{ asset('public/direngine/js/jquery.min.js') }}"></script>
   <script src="{{ asset('public/direngine/js/frontend.js') }}"></script>
-    
+
   </body>
 </html>

@@ -13,7 +13,7 @@
         <div class="card">
             <div class="card-body">
                 @foreach ($id_tag as $tt)
-                <form action="/admin/travel-tips/tags/update" method="post">
+                <form action="{{url("admin/travel-tips/tags/update")}}" method="post">
                     @csrf
                     <input type="hidden" name="id" value="{{ $tt->id_tag }}">
                         <label for="">Edit Tags</label>
