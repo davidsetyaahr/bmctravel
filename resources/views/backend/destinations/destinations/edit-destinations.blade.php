@@ -11,7 +11,7 @@
             <div class="card-body">
             @foreach($destinations as $d)
             @include('backend.gallery.gallery-template.select-gallery', ['type' => 'multiple', 'gallery' => $gallery, 'categories' => $categories])
-            <form action="/admin/destinations/destinations/update" method="post">
+            <form action="{{url("admin/destinations/destinations/update")}}" method="post">
                 {{ csrf_field()}}
                 <input type="hidden" name="id" value="{{ $d->id_destination }}">
                     <div class="form-group">
@@ -26,9 +26,9 @@
                                     <option value="">---Select---</option>
                                     @foreach($destination_categories as $c)
                                     <option value="{{ $c->id_category }}">{{ $c->category_name}}</option>
-                                    @endforeach 
+                                    @endforeach
                                 </select>
-                               
+
                             </div>
                             <div class="col-md-6 m-t-15">
                                 <label for="">City & Province</label>
@@ -41,7 +41,7 @@
                             </div>
                             <div class="col-md-12 m-t-15">
                                 <label for="">Gallery</label>
-                                @include('backend.gallery.gallery-template.gallery-hidden')     
+                                @include('backend.gallery.gallery-template.gallery-hidden')
                             </div>
                             <div class="col-md-12 m-t-15">
                                 <label for="">Map</label>

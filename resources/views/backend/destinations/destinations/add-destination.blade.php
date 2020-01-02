@@ -33,11 +33,11 @@
                                     <option value="">---Select---</option>
                                     @foreach($destination_categories as $c)
                                     <option value="{{ $c->id_category }}">{{ $c->category_name}}</option>
-                                    @endforeach 
+                                    @endforeach
                                 </select>
                                  @error('Category')
                                     <div class="invalid-feedback"> {{ $message}} </div>
-                                @enderror 
+                                @enderror
                                 </div>
                             <div class="col-md-6 m-t-15">
                                 <label for="">City & Province</label>
@@ -50,11 +50,11 @@
                                 </select>
                                 @error('City')
                                     <div class="invalid-feedback"> {{ $message}} </div>
-                                @enderror 
+                                @enderror
                                 </div>
                             <div class="col-md-12 m-t-15">
                                 <label for="">Gallery</label>
-                                @include('backend.gallery.gallery-template.gallery-hidden')     
+                                @include('backend.gallery.gallery-template.gallery-hidden')
                             </div>
                             <div class="col-md-12 m-t-15">
                                 <label for="">Map</label>

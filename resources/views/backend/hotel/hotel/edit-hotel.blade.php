@@ -12,7 +12,7 @@
             <div class="card-body">
             @foreach($hotels as $htl)
                 @include('backend.gallery.gallery-template.select-gallery', ['type' => 'single', 'gallery' => $gallery, 'categories' => $categories])
-                <form action="/admin/hotel/update" method="post">
+                <form action="{{url("admin/hotel/update")}}" method="post">
                 @csrf
                 <input type="hidden" name="id" value="{{ $htl->id_hotel }}">
                 <label for="">Hotel Name</label>

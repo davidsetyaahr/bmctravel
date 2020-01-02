@@ -12,7 +12,7 @@
         <div class="card">
             <div class="card-body">
                 @foreach ($id_category as $gc)
-                <form action="/admin/gallery/categories/update" method="post">
+                <form action="{{url("admin/gallery/categories/update")}}" method="post">
                 @csrf
                 <input type="hidden" name="id" value="{{ $gc->id_category }}">
                     <label for="">Category Name</label>

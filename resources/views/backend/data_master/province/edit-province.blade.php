@@ -10,7 +10,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-            <form action="/admin/data-master/update-province" method="post">
+            <form action="{{url("admin/data-master/update-province")}}" method="post">
             @csrf
                 <label for="">Province</label>
                 <input type="hidden" name="id_province" value="{{ $province[0]->id_province }}">

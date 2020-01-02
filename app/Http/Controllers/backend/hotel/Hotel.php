@@ -14,7 +14,10 @@ class Hotel extends Controller
 {
     function index()
     {
-        $hotel = Hotels::orderBy('id_hotel', 'DESC')->get();
+        // $hotel = Hotels::orderBy('id_hotel', 'DESC')->get();
+        $hotel = DB::table('hotels')
+        ->join('gallery','gallery.id_gallery','hotels.id_gallery')
+        ->select('hotels.id_hotel','hotels.hotel_name','gallery.img','hotels.map','hotels.overview')->get();
         return view('backend.hotel.hotel.list-hotel', ['hotels' => $hotel]);
     }
     function create(){

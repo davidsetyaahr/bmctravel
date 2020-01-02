@@ -36,12 +36,12 @@
                                         </a>
 
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                            <a class="dropdown-item" href="/admin/data-master/edit-province/{{ $province->id_province }}">Edit</a>
+                                            <a class="dropdown-item" href="edit-province/{{ $province->id_province }}">Edit</a>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
-                        @endforeach 
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
