@@ -120,6 +120,6 @@ Route::get('/my-account/notifacation', 'frontend\MyAccount@setting');
 Route::get('/admin/tour-package/getKodeHotel', 'backend\tour_package\TourPackage@kodehotel');
 Route::get('/admin/gallery/bycategory', 'backend\gallery\Gallery@bycategory');
 Route::get('/admin/tour-package/newtrip', 'backend\tour_package\TourPackage@newtrip');
-Route::get('/my-account/setting', 'frontend\MyAccount@setting');
-Route::get('/my-account/security', 'frontend\MyAccount@security');
+Route::get('/my-account/notification', 'frontend\MyAccount@notification');
+Route::get('/my-account/booking', 'frontend\MyAccount@booking');
 Route::get('/admin/tour-package/getKodeHotel', 'backend\tour_package\TourPackage@kodehotel');
