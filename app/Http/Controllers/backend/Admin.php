@@ -4,18 +4,31 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 
-use \App\Admins;
+use App\Admins;
+use Validator;
 
 class Admin extends Controller
 {
+
+    public function index(){
+        if(!Session::get('login')){
+            return redirect('login')->with('alert','Kamu harus login dulu');
+        }
+        else{
+            return view('backend.login');
+        }
+    }
 
     function login()
     {
         return view('backend.login');
     }
+
 
     public function loginPost(Request $request){
 
@@ -28,18 +41,88 @@ class Admin extends Controller
             return redirect('admin')->with('alert','Password atau Email, Salah !');
         }
         else{
+            $data["admin"] = array(
+                'id_admin' => $cek[0]->id_admin,
+                'firstname' => $cek[0]->firstname
+            );
+            $request->session()->put($data);
             return redirect('admin/dashboard');
         }
+
+        // coba ke 2
+        // $cek = Admins::where("email",$request->email)->get();
+        // $json['succes'] = 'error';
+        // $json['error'] = 'Sign in failed';
+        // if(isset($cek[0]->email)){
+        //     if(password_verify($request->password, $cek[0]->password)){
+        //         $data['admin'] = array(
+        //             'id_admin' => $cek[0]->id_admin,
+        //             'email' => $cek[0]->email,
+        //             'password' => $cek[0]->password
+        //         );
+        //         $request->session()->put($data);
+        //         $json = array(
+        //             "success" => "Sign in success.",
+        //             "redirect" => url('admin')
+        //         );
+        //     }
+        // }
+        // return response()->json($json);
+        // return redirect('admin/dashboard');
+
+
+        // coba ke 3
+        // $email = $request->email;
+        // $password = md5($request->password);
+        // $cek = Admins::where('email',$email)->first();
+        // if($cek){ //untuk ngecek email tsb ada apa tidak
+        //     if(Hash::check($password, $cek->password)){
+        //         Session::put('firstname',$cek->firstname);
+        //         Session::put('email',$cek->email);
+        //         Session::put('login',TRUE);
+        //         return redirect('admin/dashboard');
+        //     }
+        //     else{
+        //         return redirect('admin')->with('alert','Password atau email salah!');
+        //     }
+        // }
+        // else{
+        //     return redirect('admin')->with('alert','Password atau email salah!');
+        // }
+
+        // coba ke 4
+        // $email = $request->email;
+        // $password = md5($request->password);
+
+        // $cek = Admins::where('email',$email)->first();
+        // if($cek){ //apakah email tersebut ada atau tidak
+        //     if(Hash::check($password,$cek->password)){
+        //         Session::put('email',$cek->email);
+        //         Session::put('login',TRUE);
+        //         return redirect('dashboard');
+        //     }
+        //     else{
+        //         return redirect('admin')->with('alert','Password atau Email, Salah !');
+        //     }
+        // }
+        // else{
+        //     return redirect('admin')->with('alert','Password atau Email, Salah!');
+        // }
     }
 
     function dashboard()
     {
-        // if(!Session::get('login')){
+        // if(!Session::get('loginPost')){
         //     return redirect('admin')->with('alert','login dulu woyyyy');
         // }
         // else{
         //     return view('admin.dashboard');
         // }
         return view('backend.index');
+    }
+
+    function logout(){
+        Session::forget('admin');
+        return redirect('admin')->with('alert','Kamu sudah logout');
     }
 }

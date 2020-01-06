@@ -44,7 +44,7 @@
                     <span>or</span>
                   </div>
                   <div class="form">
-                    <form action="signin/auth" method="post" class="formNoLoad">
+                      <form action="{{ url("signin/auth" )}}" method="post" class="formNoLoad">
                       @csrf
                       <label for="">Email</label>
                       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>

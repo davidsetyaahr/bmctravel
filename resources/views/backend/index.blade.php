@@ -5,7 +5,8 @@
 @section('view_link','')
 @section('view_status','')
 @section('insert_status','')
-@section('admin')
+@extends('backend.template.main');
+@section('admin');
                 <div class="row">
                     <!-- Column -->
                     <div class="col-md-6 col-lg-2 col-xlg-3">

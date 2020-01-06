@@ -6,9 +6,9 @@ File: js
 */
 $(function() {
     "use strict";
-    // ============================================================== 
+    // ==============================================================
     // Newsletter
-    // ============================================================== 
+    // ==============================================================
 
     /*var chart = new Chartist.Line('.campaign', {
         labels: [1, 2, 3, 4, 5, 6, 7, 8],
@@ -37,7 +37,7 @@ $(function() {
     });
 */
     // Offset x1 a tiny amount so that the straight stroke gets a bounding box
-    // Straight lines don't get a bounding box 
+    // Straight lines don't get a bounding box
     // Last remark on -> http://www.w3.org/TR/SVG11/coords.html#ObjectBoundingBox
     chart.on('draw', function(ctx) {
         if (ctx.type === 'area') {
@@ -69,9 +69,9 @@ $(function() {
     var chart = [chart];
 
 
-    // ============================================================== 
+    // ==============================================================
     // Our Visitor
-    // ============================================================== 
+    // ==============================================================
     var sparklineLogin = function() {
         $('#ravenue').sparkline([6, 10, 9, 11, 9, 10, 12], {
             type: 'bar',

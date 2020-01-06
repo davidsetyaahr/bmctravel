@@ -55,7 +55,7 @@
                         </div>
                     @endif
                     <!-- Form -->
-                    <form class="form-horizontal m-t-20" id="loginform" action="{{ url('/admin') }}" method="post">
+                    <form class="form-horizontal m-t-20" id="loginform" action="{{ url("/admin") }}" method="post">
                     {{ csrf_field() }}
                         <div class="row p-b-30">
                             <div class="col-12">
@@ -130,6 +130,7 @@
     <!-- ============================================================== -->
     <!-- All Required js -->
     <!-- ============================================================== -->
+
     <script src="{{ asset('/public/matrix-admin-bt4') }}/assets/libs/jquery/dist/jquery.min.js"></script>
     <script src="{{ asset('/public/matrix-admin-bt4') }}/assets/libs/popper.js/dist/umd/popper.min.js"></script>
     <script src="{{ asset('/public/matrix-admin-bt4') }}/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -153,6 +154,8 @@
         $("#loginform").fadeIn();
     });
     </script>
+
+
 
 </body>
 
