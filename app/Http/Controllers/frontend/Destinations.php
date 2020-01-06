@@ -14,7 +14,7 @@ class Destinations extends Controller
 {
     public function index()
     {
-        
+
         $destination = DB::table('destinations')
         ->join('destination_categories','destination_categories.id_category','destinations.id_category')
         ->join('city','destinations.id_city','city.id_city')

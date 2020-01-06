@@ -17,33 +17,6 @@ $(document).ready(function(){
             $(".disable-mode").removeClass("on")
         })
     })
-    function changeCombo(thisParam){
-        var thisUrl = thisParam.data("url")
-        var thisData = thisParam.val()
-        var target = thisParam.data("target")
-
-        $(target)
-        .find('option')
-        .remove()
-        .end()
-        .append("<option  value=''>---Option---</option>")
-        
-        $.ajax({
-            type : "get",
-            data : {"id" : thisData},
-            url : thisUrl,
-            success : function(data){
-                $.each(data, function(index, value){
-                    $(target).append($("<option></option>").attr("value",value.id_room_hotel).text(value.room_name))
-                })
-            }
-        })
-
-    }
-    $(".changeCombo").change(function(){
-        changeCombo($(this))
-    })
-    
     
     $(".add-new").click(function(e){
         e.preventDefault()
@@ -153,29 +126,75 @@ $(document).ready(function(){
             url : url,
             data : {day : day, trip : newCountTrip},
             success : function(data){
-                $(dayElement+" .card-body").append(data)
+                $(dayElement+" .append-trip").append(data)
                 $("select").select2()
-
-                $(".remove-trip").click(function(e){
-                    e.preventDefault()
-                    var day = $(this).data('day')
-                    var trip = $(this).data('trip')
-                    var dataCount = ".day[data-day='"+day+"']"
-                    var count = parseInt($(dataCount).attr('data-count'))
-                    $(dataCount+" .row-trip").each(function(index,value){
-                        console.log(value)
-/*                         $(dataCount+" .row-trip").attr('data-trip',index)
-                        $(dataCount+" .row-trip .changeTrip").html(index)
- */                    })
-/*                     $(dataCount).attr('data-count',count-1)
-                    $(dataCount+" .row-trip[data-trip='"+trip+"']").remove()
- */
+                $(dayElement+" .row-trip[data-trip='"+newCountTrip+"'] .checkHotel").change(function(){
+                    checkHotel($(this))
                 })
+        
+                removeTrip()
             }
         })
     })
-    
-    function removeField(){
-    }
 
+    function removeTrip(){
+        $(".remove-trip").click(function(e){
+            e.preventDefault()
+            var day = $(this).data('day')
+            var trip = $(this).data('trip')
+            var dataCount = ".day[data-day='"+day+"']"
+            var count = parseInt($(dataCount).attr('data-count'))
+            $(dataCount).attr('data-count',count-1)
+            $(dataCount+" .row-trip[data-trip='"+trip+"']").remove()
+        })
+    }
+    removeTrip()
+    
+    function checkHotel(thisParam){
+        var day = thisParam.data('day')
+        var trip = thisParam.data('trip')
+        var thisVal = thisParam.val()
+        var selector = ".day[data-day='"+day+"'] .row-trip[data-trip='"+trip+"'] .append-hotel"
+        if(thisVal==1){
+            $.ajax({
+                type : "get",
+                url : 'gethotel',
+                data : {day : day, trip : trip},
+                success : function(data){
+                    $(selector).append(data)
+                    $("select").select2()
+
+                    $(".changeHotel").change(function(){
+                        var thisData = $(this).val()
+                        var target = $(this).data("target")
+                
+                        $(target)
+                        .find('option')
+                        .remove()
+                        .end()
+                        .append("<option  value=''>---Option---</option>")
+                        
+                        $.ajax({
+                            type : "get",
+                            data : {"id_hotel" : thisData},
+                            url : "getKodeHotel",
+                            success : function(data){
+                                $.each(data, function(index, value){
+                                    $(target).append($("<option></option>").attr("value",value.id_room_hotel).text(value.room_name))
+                                })
+                            }
+                        })
+                    })
+                }
+            })
+        }
+        else{
+            if($(selector+" .changeRoom").length==1){
+                $(selector+" .changeRoom").remove()
+            }
+        }
+    }
+        $(".checkHotel").change(function(){
+            checkHotel($(this))
+        })
 })

@@ -15,10 +15,8 @@ class CreateHotelWhenTour extends Migration
     {
         Schema::create('hotel_when_tour', function (Blueprint $table) {
             $table->increments('id_hotel_tour');
-            $table->tinyInteger('id_hotel');
-            $table->tinyInteger('id_tour');
-            $table->tinyInteger('day_start');
-            $table->tinyInteger('day_end');
+            $table->tinyInteger('id_rom_hotel');
+            $table->tinyInteger('id_detail_itinerary');
         });
     }
 

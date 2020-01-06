@@ -57,16 +57,16 @@
                     </a>
                   </div>
                   <div class="col-md-12">
-                    <a href="{{ url("my-account/setting") }}">
+                    <a href="{{ url("my-account/notification") }}">
                       <div class="mt-2">
-                        <p> Settings</p>
+                        <p> Notification</p>
                       </div>
                     </a>
                   </div>
                   <div class="col-md-12">
-                    <a href="{{ url("my-account/security") }}">
+                    <a href="{{ url("my-account/booking") }}">
                       <div class="mt-2">
-                       <p> Security</p>
+                       <p> Booking</p>
                       </div>
                    </a>
                    </div>

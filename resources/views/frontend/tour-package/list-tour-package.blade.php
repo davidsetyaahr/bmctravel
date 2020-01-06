@@ -193,19 +193,20 @@
                   </select>
                 </div>
               </div>
+              @foreach ($tourp as $tp)
               <div class="col-md-12 mt-3">
                 <div class="inline-package">
                   <div class="top">
-                  <div class="left">
+                    <div class="left">
                       <img src="public/direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid">
                       <div class="sticky-note">
-        								<span>Reguler Package</span>
+        								<span> {{$tp->category_name}}</span>
 				        			</div>
                     </div>
                     <div class="right">
                       <div class="right-top">
                         <div class="title">
-                           <h6 class="mb-0"> Wonderfull Bromo Ijen Papuma</h6>
+                           <h6 class="mb-0">{{ $tp->tour_name}}</h6>
                         </div>
                         <div class="compare">
                         <div class="form-check custom-control custom-checkbox">
@@ -219,22 +220,26 @@
                       <div class="right-bottom">
                         <div class="left">
                           <div class="durations">
-                            3Days & 2Nights
+                            {{$tp->day}}Days & {{$tp->night}}Nights
                           </div>
                           <div class="price">
                             <small>Starting from</small>
-                            <span class="badge badge-success">12% off</span>
+                            <span class="badge badge-success">{{$tp->discount}}% off</span>
                             <div class="perpax">
-                              1.000.000 <span>/ person</span>
-                              <del>1.200.000</del>
+                              @currency($discount) @if($tp->discount != 0)
+                              <span>/ person</span>
+                              <del>@currency($tp->price)</del>    
+                              @endif
                             </div>
                           </div>
                           <div class="include mb-3 mt-2">
-                              <div class="title">Destinations : <small>Mount Bromo, Ijen, Papuma Beach</small></div>
+                              <div class="title">Destinations : <small>@foreach ($itinerary as $item)
+                                  {{"(".$item->destination_name.")"}}
+                              @endforeach</small></div>
                           </div>
                           <div class="include">
                               <div class="title">Package include : </div>
-                              <small>Travel T-shirt If More Than 6pax</small>
+                              <small>{{$tp->text}}</small>
                           </div>
                         </div>
                         <div class="right">
@@ -245,7 +250,7 @@
                               <a href="">Hiking</a>
                             </div>
                             <div class="desc">
-                              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi voluptas soluta
+                              {{$tp->overview}}
                             </div>
                         </div>
                       </div>
@@ -277,6 +282,7 @@
                 </div>
               </div>
             </div>
+            @endforeach
           </div>
         </div>
       </div>
