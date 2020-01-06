@@ -23,24 +23,30 @@
                             <th>Tour Name</th>
                             <th>Category</th>
                             <th>Tipe</th>  
-                            <th>Durations</th>
+                            <th>Durations Day</th>
+                            <th>Durations Night</th>
                             <th>Overview</th>
                             <th>Gallery</th>
-                            <th>Action</th>
+                            <th>Price</th>
+                            <th>Sale</th>
+                            <th>Meeting Point</th>
                         </thead>
                         <tbody>
-                        {{-- @foreach($tourpackage as $tp) --}}
+                        @foreach($tour_packages as $tp)
                             <tr>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
+                            <th>{{ $loop->iteration}}</th>
+                                <th>{{$tp->tour_name}}</th>
+                                <th>{{$tp->category_name}}</th>
+                                <th>{{$tp->type_name}}</th>
+                                <th>{{$tp->day}}</th>
+                                <th>{{$tp->night}}</th>
+                                <th>{{$tp->overview}}</th>
+                                <th>{{$tp->img}}</th>
+                                <th>{{$tp->price}}</th>
+                                <th>{{$tp->sale}}</th>
+                                <th>{{$tp->meeting_point}}</th>
                             </tr>
-                        {{-- @endforeach --}}
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
