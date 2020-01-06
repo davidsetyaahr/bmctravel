@@ -59,57 +59,19 @@
                 <p class="mt-2">Tour Packages are one of the best ways to travel hassle-free. With seamless planning, arrangements, and transfers being taken care of, booking holiday packages is the best way to explore the world’s varied landscapes. We all have our reasons and excuses to travel. Either we’re looking for a solo adventure, seeking a quiet romantic getaway with our partner, or taking the whole family for a memorable holiday vacation. Whatever the reason is, travel packages of Travel Triangle make sure every tourist get an experience to cherish for a long time.</p>    
             </div>
             <div class="col-md-12 mt-5">
-    				<div class="destinationtext owl-carousel ftco-animate">
-						<div class="item">
-              <div class="relative">
-                <img src="public/direngine/images/destinations/kawah-wurung.png" alt="" class="img-fluid">
-                <div class="box">
-                  <h6>Explore East Java</h6>
+              <div class="destinationtext owl-carousel ftco-animate">
+                @foreach ($type as $type)
+                <div class="item">
+                  <div class="relative">
+                    <img src="{{url("public/images/gallery/$type->img")}}" alt="" class="img-fluid">
+                    <div class="box">
+                      <h6>{{$type->type_name}}</h6>
+                    </div>
+                  </div>
                 </div>
+                @endforeach
               </div>
-						</div>
-						<div class="item">
-              <div class="relative">
-                <img src="public/direngine/images/destinations/ijen.jpg" alt="" class="img-fluid">
-                <div class="box">
-                  <h6>Explore Bondowoso</h6>
-                </div>
-              </div>
-						</div>
-						<div class="item">
-              <div class="relative">
-                <img src="public/direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid">
-                <div class="box">
-                  <h6>Mountain Vibes</h6>
-                </div>
-              </div>
-						</div>
-						<div class="item">
-              <div class="relative">
-                <img src="public/direngine/images/destinations/bali.jpg" alt="" class="img-fluid">
-                <div class="box">
-                  <h6>Beach Vibes</h6>
-                </div>
-              </div>
-						</div>
-						<div class="item">
-              <div class="relative">
-                <img src="public/direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid">
-                <div class="box">
-                  <h6>Menjangan & Tabuhan Island</h6>
-                </div>
-              </div>
-						</div>
-						<div class="item">
-              <div class="relative">
-                <img src="public/direngine/images/destinations/bromo.jpg" alt="" class="img-fluid">
-                <div class="box">
-                  <h6>Bromo Midnight</h6>
-                </div>
-              </div>
-						</div>
-    				</div>
-                </div>
+            </div>
             <div class="col-md-12 mt-5 mb-3">
                 <h5>Best Destinations For Your Trip</h5>
                 <div class="mt-3">
@@ -126,28 +88,30 @@
               <div class="col-md-12 mt-4">
                 <h6 class="mb-3">Tour Categories <span class="ion-ios-arrow-down float-right"></span></h6>
                 <?php 
-                  for ($i=1; $i <= 5; $i++) { 
+                  $num = 1; 
                 ?>
-                <div class="form-check custom-control custom-checkbox mb-2">
-                  <input type="checkbox" class="form-check-input custom-control-input" id="a<?= $i?>">
-                  <label class="custom-control-label" for="a<?= $i?>">
-                    <span>Category <?= $i?></span>
+                @foreach ($category as $ct)
+                <div class="form-check custom-control custom-checkbox mb-2">    
+                  <input type="checkbox" class="form-check-input custom-control-input" id="a<?= $num?>">
+                  <label class="custom-control-label" for="a<?= $num?>">
+                    <span>{{$ct->category_name}}</span>
                   </label>
                 </div>
-                <?php } ?>
+                <?php $num = $num+1; ?>
+                @endforeach
               </div>
               <div class="col-md-12 mt-4">
                 <h6 class="mb-3">Tour Type <span class="ion-ios-arrow-down float-right"></span></h6>
-                <?php 
-                  for ($i=1; $i <= 5; $i++) { 
-                ?>
+                @foreach ($tour_type as $item)
+                    
                 <div class="form-check custom-control custom-checkbox mb-2">
-                  <input type="checkbox" class="form-check-input custom-control-input" id="a<?= $i?>">
-                  <label class="custom-control-label" for="a<?= $i?>">
-                    <span>Category <?= $i?></span>
+                  <input type="checkbox" class="form-check-input custom-control-input" id="a<?= $num?>">
+                  <label class="custom-control-label" for="a<?= $num?>">
+                    <span>{{$item->type_name}}</span>
                   </label>
                 </div>
-                <?php } ?>
+                <?php $num = $num+1 ?>
+                @endforeach
               </div>
               <div class="col-md-12 mt-4">
                 <h6 class="mb-3">Durations <span class="ion-ios-arrow-down float-right"></span></h6>
@@ -244,10 +208,9 @@
                         </div>
                         <div class="right">
                             <div class="activities">
-                              <a href="">Adventure</a>
-                              <a href="">Honey Moon</a>
-                              <a href="">Family</a>
-                              <a href="">Hiking</a>
+                              @foreach ($itinerary as $activities)
+                              <a href="">{{ $activities->activities}}</a>
+                              @endforeach
                             </div>
                             <div class="desc">
                               {{$tp->overview}}

@@ -17,7 +17,7 @@
                     </div>
                 @endif
                 <div class="table-responsive">
-                    <table class="table table-bordered table-hover table-striped">
+                <table id="zero_config" class="table table-striped table-bordered">
                         <thead>
                             <tr>
                                 <th>#</th>
