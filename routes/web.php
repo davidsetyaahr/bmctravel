@@ -122,3 +122,4 @@ Route::get('/admin/tour-package/newtrip', 'backend\tour_package\TourPackage@newt
 Route::get('/my-account/setting', 'frontend\MyAccount@setting');
 Route::get('/my-account/security', 'frontend\MyAccount@security');
 Route::get('/admin/tour-package/getKodeHotel', 'backend\tour_package\TourPackage@kodehotel');
+Route::get('/admin/tour-package/gethotel', 'backend\tour_package\TourPackage@gethotel');
