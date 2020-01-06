@@ -1,7 +1,7 @@
 @extends('backend.template.main')
 @section('insert_caption','Insert New Information')
 @section('view_caption','View All Information')
-@section('insert_link','add-information')
+@section('insert_link','information/add-information')
 @section('view_link','information')
 @section('view_status','active')
 @section('insert_status','')

@@ -15,4 +15,19 @@ class Information extends Controller
     {
         return view('backend.tour_package.information.add-information');
     }
+    public function store(Request $request)
+    {
+        $request->validate([
+            "information" => "required",
+            "type" => "required"
+        ]);
+
+        DB::table("informations")->insert([
+            "text" => $request->text,
+            "type" => $request->type
+        ]);
+
+        return redirect('admin.tour-package.information.list-information')->with('status', 'Informartion berhasil ditambahkan');
+
+    }
 }
