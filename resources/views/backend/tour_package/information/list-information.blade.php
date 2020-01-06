@@ -28,7 +28,26 @@
                             </tr>
                         </thead>
                         <tbody>
+                        @foreach($id_informations as $inf)
+                        <tr>
+                                    <th>{{$loop->iteration}}</th>
+                                    <td>{{$inf->text}}</td>
+                                    <td>{{$inf->type}}</td>
+                                    <td>
+                                    <div class="dropdown show">
+                                        <a class="btn btn-sm btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Options
+                                        </a>
 
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <a class="dropdown-item" href="informations/edit-information/{{ $inf->id_informations }}">Edit</a>
+                                        </div>
+                                    </div>
+                                </td>
+                                        </div>
+                                    </td>
+                                </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
