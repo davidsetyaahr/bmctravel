@@ -9,62 +9,32 @@ use Illuminate\Support\Facades\DB;
 
 use \App\Tour_packages;
 use \App\Tour_type;
-use \App\Tour_categories;
 use \App\Tour_durations;
-use \App\Destination;
-use \App\Gallery_model;
-use \App\City_model;
+use \App\Trip_activities;
+use \App\Destination_categories;
 
 class TourPackage extends Controller
 {
     public function index()
     {   
-        Blade::directive('currency', function ($expression) {
-            return "Rp. <?php echo number_format($expression, 0, ',', '.'); ?>";
-        });
-        $type = DB::table("tour_type AS tp")
-            ->join("gallery AS g", "tp.id_gallery", "g.id_gallery")
-            ->select("g.img", "tp.*")
-            ->get();
-
-        $tour_package = DB::table("tour_packages AS tp")
-            ->join("tour_categories AS tpc", "tp.id_category", "tpc.id_category")
-            ->join("tour_durations AS tpd", "tp.id_duration", "tpd.id_duration")
-            ->join("tour_price AS tppc", "tp.id_tour", "tppc.id_tour")
-            ->join("tour_informations AS ti", "tp.id_tour", "ti.id_tour")
-            ->join("informations AS i", "ti.id_information", "i.id_informations")
-            ->select("tp.*", "tpc.category_name", "tpd.*", "tppc.*", "i.text", "ti.id_information")
-            ->get();
-        
-        foreach ($tour_package as $val) {
-                $begin_discount = $val->price * $val->discount / 100;
-                $final_discount = $val->price - $begin_discount;
-                $id_tour = $val->id_tour;
-        }
-        
-        $itinerary = DB::table("itinerary AS it")
-            ->join("detail_itinerary AS dit", "it.id_itinerary", "dit.id_itinerary")
-            ->join("destinations AS dest", "dit.id_destination", "dest.id_destination")
-            ->join("destination_categories AS dtc", "dest.id_category", "dtc.id_category")
-            ->join("destination_activities AS dta", "dit.id_destination", "dta.id_destination")
-            ->join("trip_activities AS ta", "dta.id_activities", "ta.id_activities")
-            // di where untuk nampilkan honey moon dll, susah note: fathan kayaknya sih dari tabelnya butuh tabel tambahan, ya kayaknya aja, dk usah di ambil hati :)
-            ->where([["it.id_tour", "=" ,$id_tour], ["dta.id_destination","=", "ta.id_destination"]])
-            ->select("it.*", "dit.*", "dest.id_destination", "dest.destination_name")
-            ->get();
-        
-        $category = Tour_categories::all();
-        $tour_type = Tour_type::all();
+        $category = Destination_categories::select('id_category','category_name')->get();
+        $tour_type = DB::table('tour_type as tt')->select('tt.type_name', 'g.img', 'tt.id_type')->join('gallery as g', 'tt.id_gallery', 'g.id_gallery')->get();
+        $activities = Trip_activities::select('id_activities','activities')->get();
+        $durations = Tour_durations::all();
+        $packages = DB::table('tour_packages as tp')
+        ->join('tour_categories as tc','tp.id_category','tc.id_category')
+        ->join('tour_durations as td','tp.id_duration','td.id_duration')
+        ->select('tp.*','tc.category_name', 'td.day', 'td.night')
+        ->get();
 
         $attr = array(
             "title" => "BMC Travel Service - Travel Package",
             "desc" => "Our awesome travel package",
-            "tourp" => $tour_package,
-            "discount" => $final_discount,
-            "itinerary" => $itinerary,
-            "type" => $type,
             "tour_type" => $tour_type,
-            "category" => $category
+            "activities" => $activities,
+            "category" => $category,
+            "durations" => $durations,
+            "packages" => $packages,
         );
 
         return view('frontend.tour-package.list-tour-package', $attr);

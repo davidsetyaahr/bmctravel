@@ -1044,6 +1044,9 @@
  width : 30%;
  position: relative;
 }
+.inline-package .top .left img{
+  height : 200px;
+}
 .inline-package .top .right{
   margin-left : 3%;
  float: left;
@@ -1055,6 +1058,10 @@
 .inline-package .top .right .right-top .title{
   float : left;
   width : 60%;
+}
+.inline-package .top .right .right-top .title h6{
+  font-weight: bold;
+  letter-spacing: .4px;
 }
 .inline-package .top .right .right-top .compare{
   float : right;
@@ -1070,9 +1077,14 @@
   margin-right : 2%;
 }
 .inline-package .top .right .right-bottom .left .durations{
-  font-size : 13px;
+  font-size : 10px;
   color : #da2f29;
-  font-weight: 500;
+  font-weight: bold;
+  letter-spacing: .8px;
+  padding : 2px 10px;
+  display : inline-block;
+  border : 1px solid;
+  border-radius: 5px;
 }
 .inline-package .top .right .right-bottom .left .price{
   margin-bottom: 0;
@@ -1083,7 +1095,7 @@
   font-weight: normal;
 }
 .inline-package .top .right .right-bottom .left .price .badge{
-  margin-left : 3%;
+  margin-left : 1%;
   font-size : 12px;
   font-weight: normal;
 }
@@ -1091,13 +1103,13 @@
   color : #4caf50;
   font-weight: 500;
 }
-.inline-package .top .right .right-bottom .left .price .perpax span{
-  color : #b2b2b2!important;
+.inline-package .top .right .right-bottom .left .price .perpax{
   font-size : 14px;
+  font-weight: bold;
+  letter-spacing: .8px;
 }
 .inline-package .top .right .right-bottom .left .price .perpax del{
   color : black;
-  font-size : 14px;
 }
 .inline-package .top .right .right-bottom .left .include{
   border-bottom: 0;
@@ -1105,11 +1117,12 @@
 .inline-package .top .right .right-bottom .left .include .title small{
   color : #b2b2b2!important;
   font-size : 11px;
+  display: block;
+  margin-top : 8px;
 }
 .inline-package .top .right .right-bottom .left .include .title{
   line-height: 90%;
-  color : black;
-  font-size : 13px;
+  color : #4d4d4d;;
   font-weight: 500;
 }
 .inline-package .top .right .right-bottom .right{

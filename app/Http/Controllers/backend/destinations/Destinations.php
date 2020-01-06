@@ -47,20 +47,20 @@ class Destinations extends Controller
     function store(Request $request)
     {
                  $request->validate([
-            'destination_name' => 'required',
-            'id_category' => 'required',
-            'id_city' => 'required',
-            'gallery' => 'required',
-            'overview' => 'required',
-            'map' => 'required',
-            'information' => 'required',
+                    'destination_name' => 'required',
+                    'id_category' => 'required',
+                    'id_city' => 'required',
+                    'id_gallery' => 'required',
+                    'overview' => 'required',
+                    'map' => 'required',
+                    'information' => 'required',
             ]);
 
             DB::table('destinations')->insert([
                 'destination_name' => $request->destination_name,
                 'id_category' => $request->id_category,
                 'id_city' => $request->id_city,
-                'gallery' => $request->gallery,
+                'gallery' => $request->id_gallery,
                 'map' => $request->map,
                 'information' => $request->information,
                 'overview' => $request->overview
