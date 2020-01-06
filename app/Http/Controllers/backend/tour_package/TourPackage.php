@@ -13,6 +13,7 @@ use \App\Hotels;
 use \App\Room_hotels;
 use \App\Informations;
 use \App\Destination;
+use \App\Tour_packages;
 use Illuminate\Support\Facades\DB;
 
 
@@ -20,7 +21,13 @@ class TourPackage extends Controller
 {
     function index()
     {
-        return view('backend.tour_package.tour_package.list');
+        $tourpackage = DB::table('tour_packages')
+        ->join('tour_categories','tour_categories.id_category','tour_packages.id_Category')
+        ->join('tour_type','tour_type.id_type','tour_packages.id_type')
+        ->join('tour_durations','tour_durations.id_duration','tour_packages.id_duration')
+        ->join('gallery','gallery.id_gallery','tour_packages.id_gallery')
+        ->select('tour_packages.id_tour','tour_packages.tour_name','tour_categories.category_name','tour_type.type_name','tour_durations.day','tour_durations.night','tour_packages.overview','gallery.img','tour_packages.price','tour_packages.sale','tour_packages.meeting_point')->get();
+        return view('backend.tour_package.tour_package.list', ['tour_packages' => $tourpackage]);
     }
     function add()
     {
