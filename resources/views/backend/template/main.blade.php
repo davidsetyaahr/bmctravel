@@ -252,6 +252,7 @@
                                 <li class="sidebar-item"><a href="{{ url('admin/tour-package/categories') }}" class="sidebar-link"><i class="mdi mdi-format-list-bulleted-type"></i><span class="hide-menu"> Categories </span></a></li>
                                 <li class="sidebar-item"><a href="{{ url('admin/tour-package/tour-type') }}" class="sidebar-link"><i class="mdi mdi-heart-box-outline"></i><span class="hide-menu"> Tour Type </span></a></li>
                                 <li class="sidebar-item"><a href="{{ url('admin/tour-package/durations') }}" class="sidebar-link"><i class="mdi mdi-av-timer"></i><span class="hide-menu"> Durations </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('admin/tour-package/information') }}" class="sidebar-link"><i class="mdi mdi-information"></i><span class="hide-menu"> Information </span></a></li>
                                 <!--li class="sidebar-item"><a href="{{ url('admin/tour-package/price-categories') }}" class="sidebar-link"><i class="mdi mdi-cash-usd"></i><span class="hide-menu"> Price Categories </span></a></li-->
                               </ul>
                         </li>
