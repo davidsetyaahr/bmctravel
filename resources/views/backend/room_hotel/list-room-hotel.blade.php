@@ -34,7 +34,7 @@
                                 <td>{{$r->hotel_name}}</td>
                                 <td>{{$r->room_name}}</td>
                                 {{-- <td>{{$r->gallery}}</td> --}}
-                                <td><img style="height: 200px; width: 200px;" src="{{ url('/public/images/gallery/'.$r->img) }}" alt="" class="img-fluid transition"></td>
+                                <td><img style="height: 200px; width: 200px;" src="{{ url('/images/gallery/'.$r->img) }}" alt="" class="img-fluid transition"></td>
                                 <td>
                                     <div class="dropdown show">
                                         <a class="btn btn-sm btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -42,7 +42,7 @@
                                         </a>
 
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                            <a class="dropdown-item" href="edit-room-hotel/{{ $r->id_room_hotel }}">Edit</a>
+                                        <a class="dropdown-item" href="{{url('/admin/room-hotel/edit-room-hotel/'.$r->id_room_hotel)}}">Edit</a>
                                         </div>
                                     </div>
                                 </td>

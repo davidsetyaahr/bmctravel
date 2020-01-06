@@ -46,7 +46,7 @@ class Destinations extends Controller
     }
     function store(Request $request)
     {
-                 $request->validate([
+            $request->validate([
             'destination_name' => 'required',
             'id_category' => 'required',
             'id_city' => 'required',

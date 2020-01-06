@@ -15,7 +15,10 @@ class TourType extends Controller
 {
     public function index()
     {
-        $type = Tour_type::orderBy('id_type', 'DESC')->get();
+        // $type = Tour_type::orderBy('id_type', 'DESC')->get();
+        $type = DB::table('tour_type')
+        ->join('gallery','gallery.id_gallery','tour_type.id_gallery')
+        ->select('tour_type.id_type','tour_type.type_name','gallery.img')->get();
         return view('backend.tour_package.tour_type.list-tour-type' , ['tour_type' => $type]);
     }
 
