@@ -201,12 +201,16 @@
                             </div>
                             <div class="col-md-12 mt-3">
                                 <ul class="nav top-bottom float-left">
+                                @if($__env->yieldContent('view_caption')!='')
                                     <li class="nav-item @yield('view_status')">
                                         <a href="@yield('view_link')" class="nav-link"><i class="mdi mdi-playlist-check"></i> @yield('view_caption')</a>
                                     </li>
+                                @endif
+                                @if($__env->yieldContent('insert_caption')!='')
                                     <li class="nav-item  @yield('insert_status')">
                                         <a href="@yield('insert_link')" class="nav-link"><i class="mdi mdi-playlist-plus"></i> @yield('insert_caption')</a>
                                     </li>
+                                @endif
                                 </ul>
                                 <ul class="nav top-bottom float-right">
                                     <li class="nav-item">
@@ -240,6 +244,8 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="p-t-10 mt-4">
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-package"></i><span class="hide-menu">Tour Package </span></a>
+                    </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-package"></i><span class="hide-menu">Tour Package </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item"><a href="{{ url('admin/tour-package/tour-package') }}" class="sidebar-link"><i class="mdi mdi-package"></i><span class="hide-menu"> Tour Package </span></a></li>
@@ -254,6 +260,7 @@
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item"><a href="{{ url('admin/destinations/destinations/list') }}" class="sidebar-link"><i class="mdi mdi-find-replace"></i><span class="hide-menu"> Destinations </span></a></li>
                                 <li class="sidebar-item"><a href="{{ url('admin/destinations/categories') }}" class="sidebar-link"><i class="mdi mdi-format-list-bulleted-type"></i><span class="hide-menu"> Categories </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('admin/destinations/activities') }}" class="sidebar-link"><i class="mdi mdi-format-list-bulleted-type"></i><span class="hide-menu"> Activities </span></a></li>
                             </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-move-resize-variant"></i><span class="hide-menu">Gallery </span></a>

@@ -1,7 +1,7 @@
 @extends('backend.template.main')
 @section('insert_caption','Insert New Tour Package')
 @section('view_caption','View All Tour Package')
-@section('insert_link','add-tour-package')
+@section('insert_link','add-tour-package?page=1')
 @section('view_link','tour-package')
 @section('view_status','active')
 @section('insert_status','')

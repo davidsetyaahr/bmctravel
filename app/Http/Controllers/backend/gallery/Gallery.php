@@ -45,7 +45,7 @@ class Gallery extends Controller
                 // upload file
                 $time = time();
                 $newName = substr($time, strlen($time) - 5, 5) . "." . $img->getClientOriginalExtension();
-                $tujuan_upload = 'public/images/gallery';
+                $tujuan_upload = '/images/gallery';
                 $img->move($tujuan_upload, $newName);
 
                 // insert

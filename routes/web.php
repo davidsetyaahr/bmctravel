@@ -41,6 +41,9 @@ Route::post('/admin/destinations/destinations/add-destination','backend\destinat
 Route::get('/admin/destinations/categories','backend\destinations\Categories@index');
 Route::get('/admin/destinations/add-categories', 'backend\destinations\Categories@create');
 Route::post('/admin/destinations/add-categories', 'backend\destinations\Categories@store');
+Route::get('/admin/destinations/activities', 'backend\destinations\Activities@index');
+Route::get('/admin/destinations/add-activities', 'backend\destinations\Activities@create');
+Route::post('/admin/destinations/add-activities', 'backend\destinations\Activities@store');
 Route::get('/admin/gallery/gallery','backend\gallery\Gallery@index');
 Route::post('/admin/gallery/add-gallery','backend\gallery\Gallery@store');
 Route::get('/admin/gallery/add-gallery','backend\gallery\Gallery@add');
@@ -125,3 +128,4 @@ Route::get('/admin/tour-package/newtrip', 'backend\tour_package\TourPackage@newt
 Route::get('/my-account/notification', 'frontend\MyAccount@notification');
 Route::get('/my-account/booking', 'frontend\MyAccount@booking');
 Route::get('/admin/tour-package/getKodeHotel', 'backend\tour_package\TourPackage@kodehotel');
+Route::get('/admin/tour-package/gethotel', 'backend\tour_package\TourPackage@gethotel');

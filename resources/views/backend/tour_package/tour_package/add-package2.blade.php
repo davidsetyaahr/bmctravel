@@ -5,10 +5,12 @@
     <?php 
         $step1 = session()->all()['stepbystep']['step1'];
         $getDuration = DB::table('tour_durations')->select('day')->where('id_duration',$step1['id_duration'])->get();
+        $session = session()->all();
+        $step2 = !empty($session['stepbystep']['step2']) ? $session['stepbystep']['step2'] : "";
 
         for ($i=1; $i <= $getDuration[0]->day ; $i++) { 
     ?>
-        @include('backend.tour_package.tour_package.new-day', ['destination' => $destination, 'day' => $i])
+        @include('backend.tour_package.tour_package.new-day', ['destination' => $destination, 'day' => $i,'session' => $step2])
     <?php
         }
     ?>
