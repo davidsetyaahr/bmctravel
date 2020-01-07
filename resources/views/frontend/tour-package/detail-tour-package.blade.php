@@ -1,32 +1,39 @@
 @extends('frontend.common.template')
 @section('container')
 
-<div class="hero-wrap js-fullheight" style="background-image: url({{ url('public/direngine/images/bg_2.jpg') }});">
+<div class="hero-wrap js-fullheight" style="background-image: url({{ url('/images/gallery/'.$packages->img) }});">
 <div class="overlay js-fullheight"></div>
     <div class="container">
       <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
         <div class="col-md-9 mt-5 text-center ftco-animate" data-scrollax=" properties: { translateY: '100%' }">
-          <h1 class="color-white mt-5 mb-4" data-scrollax="properties: { translateY: '30%'}"><b>Wonderfull Bromo Ijen Papuma</b> </h1>
-          <h6 class="color-white badge-green" data-scrollax="properties: { translateY: '30%'}">3 Days 2 Nights </h6>
+          <h1 class="color-white mt-5 mb-4" data-scrollax="properties: { translateY: '30%'}"><b class="bold">{{$packages->tour_name}}</b> </h1>
+          <h4 class="color-white" data-scrollax="properties: { translateY: '30%'}">{{$packages->day}} Days / {{$packages->night}} Nights </h4>
           <div class="inline-package detail mt-4">
             <div class="bottom">
               <div class="left" style="width :100%">
-                <div class="img">
-                  <img src="{{ url('public/images/gallery/rocks.png') }}" alt="">
-                  <p>Mountain</p>
+              <?php 
+                  $cat = DB::table('itinerary as i')
+                  ->join('detail_itinerary as di','i.id_itinerary','di.id_itinerary')
+                  ->join('destinations as d','di.id_destination','d.id_destination')
+                  ->join('destination_categories as dc','dc.id_category','d.id_category')
+                  ->join('gallery as g','dc.id_gallery','g.id_gallery')
+                  ->select('dc.category_name','g.img')
+                  ->groupBy('dc.category_name')
+                  ->groupBy('g.img')
+                  ->where('i.id_tour', $packages->id_tour)
+                  ->where('di.id_destination','!=','1')
+                  ->where('di.id_destination','!=','2')
+                  ->where('di.id_destination','!=','3')
+                  ->limit(4)
+                  ->get();
+                  $width = 100/count($cat);
+              ?>
+              @foreach($cat as $c)
+                <div class="img" style="width:{{$width}}%">
+                  <img src="{{ url('images/gallery/'.$c->img) }}" alt="">
+                  <p>{{$c->category_name}}</p>
                 </div>
-                <div class="img">
-                  <img src="{{ url('public/images/gallery/sunrise.png') }}" alt="">
-                  <p>Beach</p>
-                </div>
-                <div class="img">
-                  <img src="{{ url('public/images/gallery/waterfall.png') }}" alt="">
-                  <p>Waterfall</p>
-                </div>
-                <div class="img">
-                  <img src="{{ url('public/images/gallery/office.png') }}" alt="">
-                  <p>City</p>
-                </div>
+              @endforeach
               </div>
             </div>
           </div>

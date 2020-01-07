@@ -24,7 +24,8 @@ class TourPackage extends Controller
         $packages = DB::table('tour_packages as tp')
         ->join('tour_categories as tc','tp.id_category','tc.id_category')
         ->join('tour_durations as td','tp.id_duration','td.id_duration')
-        ->select('tp.*','tc.category_name', 'td.day', 'td.night')
+        ->join('gallery as g','tp.id_gallery','g.id_gallery')
+        ->select('tp.*','tc.category_name', 'td.day', 'td.night','g.img')
         ->get();
 
         $attr = array(
@@ -41,9 +42,19 @@ class TourPackage extends Controller
     }
     public function detail($id)
     {
+        $packages = DB::table('tour_packages as tp')
+        ->join('tour_categories as tc','tp.id_category','tc.id_category')
+        ->join('tour_durations as td','tp.id_duration','td.id_duration')
+        ->select('tp.*','tc.category_name', 'td.day', 'td.night')
+        ->join('gallery as g','tp.id_gallery','g.id_gallery')
+        ->select('tp.*','tc.category_name', 'td.day', 'td.night','g.img')
+        ->where('id_tour',$id)
+        ->get();
+
         $attr = array(
             "title" => "BMC Travel Service - Travel Package",
-            "desc" => "Our awesome travel package"
+            "desc" => "Our awesome travel package",
+            'packages' => $packages[0]
         );
 
         return view('frontend.tour-package.detail-tour-package', $attr);

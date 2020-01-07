@@ -1171,6 +1171,7 @@
 .inline-package.detail .bottom{
   border : none;
   background: rgb(255, 255, 255, 0.5);
+  border-radius: 5px;
 }
 .inline-package.detail .bottom .left .img img{
   width : 30px;
@@ -1603,7 +1604,7 @@ hr.bold{
   border-top : 2px solid #D7DCE3;
 }
 .bold{
-  font-weight: bold;
+  font-weight: bold !important;
 }
 .ls-1{
   letter-spacing: 1px;
@@ -9364,7 +9365,7 @@ h1, h2, h3, h4, h5,
     left: 0;
     right: 0;
     width : 100%;
-    background: rgb(0, 0,0, 0.3)
+    background: rgb(0, 0,0, 0.4)
 }
 
 .slider-text {

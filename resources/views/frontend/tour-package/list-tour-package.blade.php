@@ -166,7 +166,7 @@
                 <div class="inline-package">
                   <div class="top">
                     <div class="left">
-                      <img src="public/direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid">
+                      <img src="{{url('/images/gallery/'.$data->img)}}" alt="" class="img-fluid">
                       <div class="sticky-note">
         								<span>{{$data->category_name}}</span>
 				        			</div>
@@ -296,7 +296,7 @@
                     </div>
                     <div class="right">
                       <?php 
-                        $name = str_replace(' ','-',$data->tour_name);
+                        $name = strtolower(str_replace(' ','-',$data->tour_name));
                       ?>
                       <a href="{{ url('tour-package/detail-package/'.$data->id_tour.'/'.$name) }}"><span>View Details</span></a>
                     </div>
