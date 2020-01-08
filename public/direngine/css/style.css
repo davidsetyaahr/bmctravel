@@ -547,8 +547,8 @@
         border-radius: 8px;
         position: relative;
         overflow: auto;
-
-        =======.inline-package .top .right .right-bottom .left .price .perpax {
+    }
+        .inline-package .top .right .right-bottom .left .price .perpax {
             font-size: 14px;
             font-weight: bold;
             letter-spacing: .8px;
@@ -556,7 +556,6 @@
 
         .inline-package .top .right .right-bottom .left .price .perpax del {
             color: black;
-            >>>>>>>0edcaf0d2df95d0b2950aabb3122401a2e20d051
         }
 
         .sign-in .left {
@@ -567,7 +566,7 @@
             background: white;
         }
 
-        <<<<<<< HEAD .sign-in .left .logo {
+        .sign-in .left .logo {
             text-align: center;
             font-size: 25px;
             font-weight: bold;
@@ -576,8 +575,8 @@
         .sign-in .left .info {
             text-align: center;
             color: #95a6b3;
-
-            =======.inline-package .top .right .right-bottom .left .include .title small {
+        }
+            .inline-package .top .right .right-bottom .left .include .title small {
                 color: #b2b2b2 !important;
                 font-size: 11px;
                 display: block;
@@ -589,7 +588,6 @@
                 color: #4d4d4d;
                 ;
                 font-weight: 500;
-                >>>>>>>0edcaf0d2df95d0b2950aabb3122401a2e20d051
             }
 
             .sign-in .left .sosmed {
@@ -635,7 +633,7 @@
                 margin-top: 30px;
             }
 
-            <<<<<<< HEAD .sign-in .left .or span {
+            .sign-in .left .or span {
                 position: absolute;
                 top: 0;
                 left: 50%;
@@ -646,12 +644,11 @@
                 background: white;
                 padding: 5px 10px;
                 color: #95a6b3;
-
-                =======.inline-package.detail .bottom {
+            }
+                .inline-package.detail .bottom {
                     border: none;
                     background: rgb(255, 255, 255, 0.5);
                     border-radius: 5px;
-                    >>>>>>>0edcaf0d2df95d0b2950aabb3122401a2e20d051
                 }
 
                 .sign-in .left .form {
@@ -1032,13 +1029,12 @@
                     overflow: auto;
                 }
 
-                <<<<<<< HEAD .review-info .rated {
+                .review-info .rated {
                     float: left;
                     width: 15%;
-
-                    =======.bold {
+                }
+                    .bold {
                         font-weight: bold !important;
-                        >>>>>>>0edcaf0d2df95d0b2950aabb3122401a2e20d051
                     }
 
                     .review-info .rated .rounded-score {
@@ -13067,11 +13063,11 @@
                         margin-right: 7px;
                     }
 
-                    <<<<<<< HEAD .slider-text .browse span a:hover {
+.slider-text .browse span a:hover {
                         color: white;
                         background: #da2f29;
-
-                        =======.hero-wrap {
+}
+.hero-wrap {
                             width: 100%;
                             height: 100%;
                             position: relative;
@@ -13083,7 +13079,7 @@
                             left: 0;
                             right: 0;
                             width: 100%;
-                            background: rgb(0, 0, 0, 0.4) >>>>>>> 0edcaf0d2df95d0b2950aabb3122401a2e20d051
+                            background: rgb(0, 0, 0, 0.4)
                         }
 
                         .slider-text .browse span a:hover i {
