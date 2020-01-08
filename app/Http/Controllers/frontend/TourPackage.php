@@ -61,6 +61,9 @@ class TourPackage extends Controller
     }
     public function booking($id)
     {
+
+        $date = new DateTime($initial);
+        
             $attr = array(
                 "title" => "BMC Travel Service - Travel Package",
                 "desc" => "Our awesome travel package"
