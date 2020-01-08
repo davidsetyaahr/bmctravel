@@ -21,6 +21,9 @@ class CreateTourPackages extends Migration
             $table->tinyInteger('id_duration');
             $table->text('overview');
             $table->tinyInteger('id_gallery');
+            $table->integer('price');
+            $table->tinyInteger('sale');
+            $table->text('meeting_point');
         });
     }
 

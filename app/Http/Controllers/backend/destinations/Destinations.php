@@ -19,11 +19,11 @@ class Destinations extends Controller
     function index()
     {
         $destination = DB::table('destinations')
-        ->join('gallery','gallery.id_gallery','destinations.id_gallery')
+        ->join('gallery','gallery.id_gallery','destinations.gallery')
         ->join('destination_categories','destination_categories.id_category','destinations.id_category')
         ->join('city','city.id_city','destinations.id_city')
         ->select('destinations.id_destination','destinations.destination_name','destination_categories.category_name'
-        ,'city.city_name','destinations.id_gallery','gallery.img','destinations.overview','destinations.map'
+        ,'city.city_name','destinations.gallery','gallery.img','destinations.overview','destinations.map'
         ,'destinations.information')
         ->orderBy('id_destination', 'desc')
         ->get();
@@ -47,14 +47,15 @@ class Destinations extends Controller
     function store(Request $request)
     {
                  $request->validate([
-            'destination_name' => 'required',
-            'id_category' => 'required',
-            'id_city' => 'required',
-            'overview' => 'required',
-            'map' => 'required',
-            'information' => 'required',
+                    'destination_name' => 'required',
+                    'id_category' => 'required',
+                    'id_city' => 'required',
+                    'id_gallery' => 'required',
+                    'overview' => 'required',
+                    'map' => 'required',
+                    'information' => 'required',
             ]);
-            
+
             DB::table('destinations')->insert([
                 'destination_name' => $request->destination_name,
                 'id_category' => $request->id_category,
@@ -63,7 +64,7 @@ class Destinations extends Controller
                 'map' => $request->map,
                 'information' => $request->information,
                 'overview' => $request->overview
-                
+
                 ]);
             $lastId = DB::getPDO()->lastInsertId();
             foreach ($_POST['activities'] as $key => $value) {
@@ -91,7 +92,7 @@ class Destinations extends Controller
                 'destination_name' => $request->destination_name,
                 'id_category' => $request->id_category,
                 'id_city' => $request->id_city,
-                'id_gallery' => $request->id_gallery,
+                'gallery' => $request->gallery,
                 'map' => $request->map,
                 'information' => $request->information,
                 'overview' => $request->overview

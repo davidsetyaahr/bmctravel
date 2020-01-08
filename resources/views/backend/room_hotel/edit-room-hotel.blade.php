@@ -12,7 +12,7 @@
             <div class="card-body">
             @foreach($room_hotels as $r)
                 @include('backend.gallery.gallery-template.select-gallery', ['type' => 'multiple', 'gallery' => $gallery, 'categories' => $categories])
-                <form action="/admin/room-hotel/update" method="post">
+                <form action="{{url('admin/room-hotel/update')}}" method="post">
                 @csrf
                 <input type="hidden" name="id" value="{{ $r->id_room_hotel }}">
                 <label for="">Hotel Name</label>

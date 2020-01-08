@@ -1,7 +1,7 @@
 @extends('backend.template.main')
 @section('insert_caption','Insert New Tour Package')
 @section('view_caption','View All Tour Package')
-@section('insert_link','add-tour-package')
+@section('insert_link','add-tour-package?page=1')
 @section('view_link','tour-package')
 @section('view_status','')
 @section('insert_status','active')
@@ -9,6 +9,19 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card">
+                <div class="input-step">
+                    <?php 
+                        $arrStep = ['Overview','Itinerary','Information','Pricing'];
+                        foreach($arrStep as $i => $step) { 
+                            $i++;
+                            $active = $i<=$_GET['page'] ? "active" : "disable";
+                            $link = $i-1<=$_GET['page'] ? "?page=".$i : "#";
+                    ?>
+                            <a href="{{$link}}" class="{{$active}}">Step {{$i}} : {{$step}}</a>
+                    <?php
+                        }                    
+                    ?>
+                </div>
             <div class="card-body">
             @if(empty($_GET['page']) || $_GET['page']==1)
                 @include('backend.tour_package.tour_package.add-package1')

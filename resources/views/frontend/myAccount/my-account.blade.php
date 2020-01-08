@@ -57,14 +57,14 @@
                     </a>
                   </div>
                   <div class="col-md-12">
-                    <a href="{{ url("my-account/setting") }}">
+                    <a href="{{ url("my-account/notification") }}">
                       <div class="mt-2">
                         <p> Notifications</p>
                       </div>
                     </a>
                   </div>
                   <div class="col-md-12">
-                    <a href="{{ url("my-account/security") }}">
+                    <a href="{{ url("my-account/booking") }}">
                       <div class="mt-2">
                        <p> Booking</p>
                       </div>

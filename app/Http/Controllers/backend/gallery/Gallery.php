@@ -45,7 +45,7 @@ class Gallery extends Controller
                 // upload file
                 $time = time();
                 $newName = substr($time, strlen($time) - 5, 5) . "." . $img->getClientOriginalExtension();
-                $tujuan_upload = 'public/images/gallery';
+                $tujuan_upload = 'images/gallery';
                 $img->move($tujuan_upload, $newName);
 
                 // insert
@@ -82,7 +82,7 @@ class Gallery extends Controller
         ]);
         return redirect('/admin/gallery/gallery');
     }
-    
+
     public function bycategory()
     {
         $data['gallery'] = DB::table('gallery')->where('id_category',$_GET['id_category'])->get();
