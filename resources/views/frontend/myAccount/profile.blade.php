@@ -8,9 +8,9 @@
     <form class="posisi-nama">
         Nama : 
         <br>
-        Alamat :
+        Email :
         
-        
+        Phone :
 
     </form>
     
