@@ -39,7 +39,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="container">
         <div class="row menu-account">
           <div class="col-md-2">
@@ -84,12 +84,12 @@
           </div>
       </div>
 
-      
-        
-          
-        
-            
 
-        
-   
+
+
+
+
+
+
+
 @endsection

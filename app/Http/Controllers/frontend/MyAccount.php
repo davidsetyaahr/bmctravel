@@ -16,11 +16,10 @@ class MyAccount extends Controller
             "title" => "BMC Travel Service - My Account",
             "desc" => "Welcome to BMC Travel Service. One Stop Travel Solution"
         );
-        $profile = Users::all();
-        $profile = Users::orderBy('id_user', 'DESC')->get();
+        $profile = DB::table('users')->get();
         return view('frontend.myAccount.profile',['users' => $profile], $attr);
     }
-    
+
     public function notification()
     {
         $attr = array(
@@ -29,7 +28,7 @@ class MyAccount extends Controller
         );
         return view('frontend.myAccount.notifications', $attr);
     }
-    
+
     public function booking()
     {
         $attr = array(
@@ -44,7 +43,7 @@ class MyAccount extends Controller
         ->select('bookings.id_booking','tour_packages.tour_name','bookings.booking_date','bookings.travel_date','users.email','bookings.pax','bookings.price','bookings.identity_card','bookings.status')
         ->orderBy('id_booking', 'desc')
         ->get();
-        
+
         return view('frontend.myAccount.booking', ['bookings' => $book] ,$attr);
     }
 

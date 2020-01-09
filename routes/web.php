@@ -120,6 +120,7 @@ Route::post('/signup/auth', 'frontend\Signin@register');
 Route::get('/admin/transaction/booking/list-booking','backend\transaction\booking\book@index');
 Route::get('/admin/transaction/payment/list-payment','backend\transaction\payment\payment@index');
 Route::post('/signin/auth', 'frontend\Signin@authLogin');
+Route::get('/logout', 'frontend\Signin@signout');
 Route::get('/tour-package/booking/{id}', 'frontend\TourPackage@booking');
 Route::get('/tour-package/attach', 'frontend\TourPackage@attach');
 Route::get('/admin/calculation/{id}', 'backend\Calculation@index');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 
 use App\Users;
@@ -32,6 +33,9 @@ class SignIn extends Controller
                 $data['user'] = array(
                     'id_user' => $cek[0]->id_user,
                     'firstname' => $cek[0]->firstname,
+                    'lastname' => $cek[0]->lastname,
+                    'email' => $cek[0]->email,
+                    'phone' => $cek[0]->phone,
                     'avatar' => $cek[0]->avatar
                 );
                 $request->session()->put($data);
@@ -91,5 +95,10 @@ class SignIn extends Controller
         }
 
     	return response()->json($json);
+    }
+
+    function signout(){
+        Session::forget('user');
+        return redirect('/');
     }
 }
