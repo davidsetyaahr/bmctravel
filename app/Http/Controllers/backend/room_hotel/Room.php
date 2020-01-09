@@ -50,7 +50,11 @@ class Room extends Controller
         $gallery = Gallery_model::all();
         $gallery_categories = Gallery_categories_model::all();
         $htl = Hotels::all(['id_hotel','hotel_name']);
-        $room = DB::table('room_hotels')->where('id_room_hotel',$id)->get();
+        $room = DB::table('room_hotels')
+            // ->join('hotels','hotels.id_hotels','room_hotels.id_hotels')
+            // // ->join('')
+            // ->select('room_hotels.room_name','hotels.hotel_name','room_hotels.id_room_hotel')
+            ->where('id_room_hotel',$id)->get();
         return view('backend.room_hotel.edit-room-hotel', ['gallery' => $gallery, 'categories' => $gallery_categories, 'room_hotels' => $room,'hotels' => $htl]);
     }
     public function update(Request $request)

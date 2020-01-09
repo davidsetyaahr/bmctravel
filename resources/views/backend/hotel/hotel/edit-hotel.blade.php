@@ -16,7 +16,7 @@
                 @csrf
                 <input type="hidden" name="id" value="{{ $htl->id_hotel }}">
                 <label for="">Hotel Name</label>
-                <input type="text" class="form-control @error('hotel_name') is-invalid @enderror" name="hotel_name" value="{{ $htl->hotel_name}}">
+                <input type="text" class="form-control @error('hotel_name') is-invalid @enderror" name="hotel_name" value="{{ $htl->hotel_name}}" disabled>
                 @error('hotel_name')
                 <div class="invalid-feedback"> {{ $message}} </div>
                 @enderror

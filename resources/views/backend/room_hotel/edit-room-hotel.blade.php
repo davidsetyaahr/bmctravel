@@ -11,21 +11,30 @@
         <div class="card">
             <div class="card-body">
             @foreach($room_hotels as $r)
-                @include('backend.gallery.gallery-template.select-gallery', ['type' => 'multiple', 'gallery' => $gallery, 'categories' => $categories])
+                @include('backend.gallery.gallery-template.select-gallery', ['type' => 'multiple', 'gallery' => $gallery, 'categories' => $categories,'id_gallery' => $r->gallery])
                 <form action="{{url('admin/room-hotel/update')}}" method="post">
                 @csrf
                 <input type="hidden" name="id" value="{{ $r->id_room_hotel }}">
                 <label for="">Hotel Name</label>
-                        <select class="select form-control @error('id_hotel') is-invalid @enderror" name="id_hotel" id=""
+                        <select disabled class="select form-control @error('id_hotel') is-invalid @enderror" name="id_hotel" id=""
                         value="{{ old('id_hotel')}}">
                             <option value="">---Select---</option>
                                 @foreach($hotels as $htl)
-                            <option value="{{ $htl->id_hotel }}">{{ $htl->hotel_name}}</option>
+                                <?php
+                                    foreach ($room_hotels as $item) {
+                                        $selected = ($htl->id_hotel == $item->id_hotel ? "selected":"");
+                                    }
+                                ?>
+                            <option {{$selected}} value="{{ $htl->id_hotel }}">{{ $htl->hotel_name}}</option>
                                 @endforeach
                         </select>
                         @error('id_hotel')
                     <div class="invalid-feedback"> {{ $message}} </div>
                     @enderror
+                    {{-- <label for="">Hotel Name</label>
+                    @foreach ($room_hotels as $htl)
+                    <input type="text" disabled class="form-control @error('id_hotel') is-invalid @enderror" name="hotel_name" value="{{ $htl->hotel_name }}">
+                    @endforeach --}}
                 <br>
                 <label for="">Room Name</label>
                 <input type="text" class="form-control @error('room_name') is-invalid @enderror" name="room_name" value="{{ $r->room_name}}">
@@ -34,7 +43,7 @@
                     @enderror
                 <br>
                 <label for="">Gallery</label>
-                @include('backend.gallery.gallery-template.gallery-hidden')
+                @include('backend.gallery.gallery-template.gallery-hidden', ['id_gallery' => $r->gallery])
                 <br>
                 <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Save</button>
                 <button class="btn btn-secondary" type="reset"><span class="mdi mdi-refresh"></span> Reset</button>
