@@ -95,6 +95,7 @@ class TourPackage extends Controller
         }
         else if ($request->step == '4')
         {
+            $request->session()->put('stepbystep.step4', $_POST);
             $session = session()->all()['stepbystep'];
             unset($session['step1']['step']);
             unset($session['step1']['_token']);

@@ -1,32 +1,39 @@
 @extends('frontend.common.template')
 @section('container')
 
-<div class="hero-wrap js-fullheight" style="background-image: url({{ url('public/direngine/images/bg_2.jpg') }});">
+<div class="hero-wrap js-fullheight" style="background-image: url({{ url('/images/gallery/'.$packages->img) }});">
 <div class="overlay js-fullheight"></div>
     <div class="container">
       <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
         <div class="col-md-9 mt-5 text-center ftco-animate" data-scrollax=" properties: { translateY: '100%' }">
-          <h1 class="color-white mt-5 mb-4" data-scrollax="properties: { translateY: '30%'}"><b>Wonderfull Bromo Ijen Papuma</b> </h1>
-          <h6 class="color-white badge-green" data-scrollax="properties: { translateY: '30%'}">3 Days 2 Nights </h6>
+          <h1 class="color-white mt-5 mb-4" data-scrollax="properties: { translateY: '30%'}"><b class="bold">{{$packages->tour_name}}</b> </h1>
+          <h4 class="color-white" data-scrollax="properties: { translateY: '30%'}">{{$packages->day}} Days / {{$packages->night}} Nights </h4>
           <div class="inline-package detail mt-4">
             <div class="bottom">
               <div class="left" style="width :100%">
-                <div class="img">
-                  <img src="{{ url('public/images/gallery/rocks.png') }}" alt="">
-                  <p>Mountain</p>
+              <?php 
+                  $cat = DB::table('itinerary as i')
+                  ->join('detail_itinerary as di','i.id_itinerary','di.id_itinerary')
+                  ->join('destinations as d','di.id_destination','d.id_destination')
+                  ->join('destination_categories as dc','dc.id_category','d.id_category')
+                  ->join('gallery as g','dc.id_gallery','g.id_gallery')
+                  ->select('dc.category_name','g.img')
+                  ->groupBy('dc.category_name')
+                  ->groupBy('g.img')
+                  ->where('i.id_tour', $packages->id_tour)
+                  ->where('di.id_destination','!=','1')
+                  ->where('di.id_destination','!=','2')
+                  ->where('di.id_destination','!=','3')
+                  ->limit(4)
+                  ->get();
+                  $width = 100/count($cat);
+              ?>
+              @foreach($cat as $c)
+                <div class="img" style="width:{{$width}}%">
+                  <img src="{{ url('images/gallery/'.$c->img) }}" alt="">
+                  <p>{{$c->category_name}}</p>
                 </div>
-                <div class="img">
-                  <img src="{{ url('public/images/gallery/sunrise.png') }}" alt="">
-                  <p>Beach</p>
-                </div>
-                <div class="img">
-                  <img src="{{ url('public/images/gallery/waterfall.png') }}" alt="">
-                  <p>Waterfall</p>
-                </div>
-                <div class="img">
-                  <img src="{{ url('public/images/gallery/office.png') }}" alt="">
-                  <p>City</p>
-                </div>
+              @endforeach
               </div>
             </div>
           </div>
@@ -90,23 +97,47 @@
     <div class="row">
       <div class="col-md-12 text-center">
         <h3><b> OVERVIEW</b></h3>
-        <p class="mt-3">Bali / Malang / Bondowoso</p>
+        <?php 
+              $destination = DB::table('itinerary as i')
+              ->join('detail_itinerary as di','i.id_itinerary','di.id_itinerary')
+              ->join('destinations as d','di.id_destination','d.id_destination')
+              ->select('d.destination_name','d.gallery')
+              ->groupBy('d.destination_name', 'd.gallery')
+              ->where('i.id_tour', $packages->id_tour)
+              ->where('di.id_destination','!=','1')
+              ->where('di.id_destination','!=','2')
+              ->where('di.id_destination','!=','3')
+              ->limit(4)
+              ->get();
+              $countDest = count($destination);
+        ?>
+        <p class="mt-3">
+          @foreach($destination as $key => $dest)
+            {{$dest->destination_name}}
+            @if($key < $countDest-1)
+            /
+            @endif
+          @endforeach
+        </p>
       </div>
     </div>
     <div class="row mt-5 justify-content-center">
+    <?php 
+      foreach ($destination as $key => $value) {
+        $ex = explode(',',$value->gallery);
+        $gallery = DB::table('gallery')
+        ->select('img')
+        ->where('id_gallery',$ex[0])
+        ->get();
+    ?>
       <div class="col-md-3 mb-3">
-        <img src="{{url('public/direngine/images/destinations/tabuhan.jpg')}}" class="img-fluid img-overview" alt="">
+        <img src="{{url('images/gallery/'.$gallery[0]->img)}}" class="img-fluid img-overview" alt="">
       </div>
-      <div class="col-md-3 mb-3">
-        <img src="{{url('public/direngine/images/destinations/merbabu.jpg')}}" class="img-fluid img-overview" alt="">
-      </div>
-      <div class="col-md-3 mb-3">
-        <img src="{{url('public/direngine/images/destinations/menjangan.jpg')}}" class="img-fluid img-overview" alt="">
-      </div>
+    <?php } ?>
     </div>
     <div class="row mt-5 justify-content-center">
-      <div class="col-md-10 text-center">
-        <div class="text-overview">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio asperiores sapiente eius dolor consequuntur itaque impedit? Laboriosam repudiandae nam quisquam quod possimus, officiis velit sunt quam eum similique quibusdam! Ab.</div>
+      <div class="col-md-12 text-center">
+        <div class="text-overview">{{$packages->overview}}</div>
       </div>
     </div>
   </div>
@@ -124,241 +155,153 @@
             <h4 class="bold mb-4 mt-3">Itinerary</h4>
         </div>
       </div>
+      <?php
+        $itinerary = DB::table('itinerary')
+        ->where('id_tour',$packages->id_tour)
+        ->orderBy('day','asc')
+        ->get();
+
+      ?>
+      @foreach($itinerary as $iry)
+      <?php 
+        $getImg = DB::table('detail_itinerary as di')
+        ->join('destinations as d','di.id_destination','d.id_destination')
+        ->select('d.gallery')
+        ->where('di.id_itinerary',$iry->id_itinerary)
+        ->where('di.id_destination','!=','1')
+        ->where('di.id_destination','!=','2')
+        ->where('di.id_destination','!=','3')
+        ->limit(1)
+        ->orderBy('di.id_detail','asc')
+        ->get();
+
+        if(count($getImg)==0){
+          $bgImg = "28131.jpg";
+        }
+        else{
+          $ex = explode(',',$getImg[0]->gallery);
+          $getGallery = DB::table('gallery')
+          ->select('img')
+          ->where('id_gallery', $ex[0])
+          ->get();
+          $bgImg = $getGallery[0]->img;
+        }
+?>
       <div class="row justify-content-center mb-5">
         <div class="col-md-10">
           <div class="itinerary">
-            <div class="banner" style="background : url({{ url('public/images/gallery/banner1.png') }})">
+            <div class="banner" style="background : url({{ url('images/gallery/'.$bgImg) }})">
               <div class="layer">
                 <div class="text">
                   <div class="day">
-                    Day 1
+                    Day {{$iry->day}}
                   </div>
                   <div class="title">
-                    Let's Start Trip to Bromo
+                  {{$iry->overview}}
                   </div>
                 </div>
               </div>
             </div>
             <div class="body">
+            <?php 
+              $trip = DB::table('detail_itinerary as di')
+              ->select('di.*','d.destination_name','dc.category_name','g.img')
+              ->join('destinations as d','di.id_destination','d.id_destination')
+              ->join('destination_categories as dc','d.id_category','dc.id_category')
+              ->join('gallery as g','dc.id_gallery','g.id_gallery')
+              ->orderBy('di.id_detail','asc')
+              ->where('id_itinerary',$iry->id_itinerary)
+              ->get();
+              $tripKe = 1;
+              
+            ?>
+            @foreach($trip as $trp)
+            <?php 
+              if($trp->id_destination==1){
+                $hotel = DB::table('hotel_when_tour as hw')
+                ->select('h.hotel_name','rh.room_name')
+                ->join('room_hotels as rh','hw.id_room_hotel','rh.id_room_hotel')
+                ->join('hotels as h','rh.id_hotel','h.id_hotel')
+                ->where('hw.id_detail_itinerary', $trp->id_detail)
+                ->get();
+
+                $captDestination = $hotel[0]->hotel_name." - ".$hotel[0]->room_name;
+              }
+              else{
+                $captDestination = $trp->destination_name;
+              }
+            ?>
               <div class="row row-border">
                 <div class="col-md-2 p-0">
                   <div class="trip">
                     <div class="text">
-                      Trip <p>1</p>
+                      Trip <p>{{$tripKe}}</p>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-7 p-0">
                   <div class="schedule">
                     <div class="time">
-                      <span><span class="dest">Mount Bromo</span> <span class="float-right">07:00 - 12:00</span></span>
+                      <span><span class="dest">{{$captDestination}}</span> <span class="float-right">{{date('H:i', strtotime($trp->time_start))}} - {{date('H:i', strtotime($trp->time_end))}}</span></span>
                     </div>
                     <div class="desc">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem ducimus illum ut repudiandae cupiditate, fugiat quia culpa autem aut laudantium inventore a adipisci blanditiis odit molestiae modi officiis dolor odio.
+                    {{$trp->caption}}
                     </div>
                   </div>
                 </div>
                 <div class="col-md-3 p-0">
                   <div class="others">
                     <div class="tour-style">
-                    <div class="carousel-tour-style owl-carousel">
-    		              <div class="item">
-                        <center>
-                          <img src="{{ url('public/images/gallery/boot.png') }}" alt="">
-                        </center>
-                        <p>Hiking</p>
-                      </div>
-                      <div class="item">
-                        <center>
-                          <img src="{{ url('public/images/gallery/honey-moon.png') }}" alt="">
-                        </center>
-                          <p>Honey Moon</p>
-                    </div>
-		            </div>
+                      <img src="{{ url('images/gallery/'.$trp->img) }}" alt="">
+                      <p>{{$trp->category_name}}</p>
                       <div class="destinations">
-                          <span>#Bromo</span> <span>#Mountain</span>
+                          <?php 
+                            $activities = DB::table('destination_activities as da')
+                            ->join('trip_activities as ta','da.id_activities','ta.id_activities')
+                            ->select('ta.activities')
+                            ->where('da.id_destination',$trp->id_destination)
+                            ->limit(2)
+                            ->get();
+
+                            if($trp->id_destination==1 || $trp->id_destination==2 || $trp->id_destination==3){
+                              echo "<span>#".$trp->destination_name."</span>";
+                            }
+                            else{
+                          ?>
+                          @foreach($activities as $act)
+                            <span>#{{$act->activities}}</span>
+                          @endforeach
+                         <?php } ?>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="row row-border">
-                <div class="col-md-2 p-0">
-                  <div class="trip">
-                    <div class="text">
-                      Trip <p>3</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-7 p-0">
-                  <div class="schedule">
-                    <div class="time">
-                      <span><span class="dest">Mount Ijen</span> <span class="float-right">07:00 - 12:00</span></span>
-                    </div>
-                    <div class="desc">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem ducimus illum ut repudiandae cupiditate, fugiat quia culpa autem aut laudantium inventore a adipisci blanditiis odit molestiae modi officiis dolor odio.
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 p-0">
-                  <div class="others">
-                    <div class="tour-style">
-                      <img src="{{ url('public/images/gallery/boot.png') }}" alt="">
-                      <p>Hiking</p>
-                      <div class="destinations">
-                          <span>#Bromo</span> <span>#Mountain</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row row-border">
-                <div class="col-md-2 p-0">
-                  <div class="trip">
-                    <div class="text">
-                      Trip <p>3</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-7 p-0">
-                  <div class="schedule">
-                    <div class="time">
-                      <span><span class="dest">Tabuhan Island</span> <span class="float-right">07:00 - 12:00</span></span>
-                    </div>
-                    <div class="desc">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem ducimus illum ut repudiandae cupiditate, fugiat quia culpa autem aut laudantium inventore a adipisci blanditiis odit molestiae modi officiis dolor odio.
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 p-0">
-                  <div class="others">
-                    <div class="tour-style">
-                      <img src="{{ url('public/images/gallery/honey-moon.png') }}" alt="">
-                      <p>Honey Moon</p>
-                      <div class="destinations">
-                          <span>#Bromo</span> <span>#Mountain</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <?php $tripKe++ ?>
+              @endforeach
             </div>
           </div>
         </div>
       </div>
-      <div class="row justify-content-center mb-5">
-        <div class="col-md-10">
-          <div class="itinerary">
-            <div class="banner" style="background : url({{ url('public/images/gallery/banner1.png') }})">
-              <div class="layer">
-                <div class="text">
-                  <div class="day">
-                    Day 1
-                  </div>
-                  <div class="title">
-                    Let's Start Trip to Bromo
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="body">
-              <div class="row row-border">
-                <div class="col-md-2 p-0">
-                  <div class="trip">
-                    <div class="text">
-                      Trip <p>1</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-7 p-0">
-                  <div class="schedule">
-                    <div class="time">
-                      <span><span class="dest">Mount Bromo</span> <span class="float-right">07:00 - 12:00</span></span>
-                    </div>
-                    <div class="desc">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem ducimus illum ut repudiandae cupiditate, fugiat quia culpa autem aut laudantium inventore a adipisci blanditiis odit molestiae modi officiis dolor odio.
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 p-0">
-                  <div class="others">
-                    <div class="tour-style">
-                      <img src="{{ url('public/images/gallery/boot.png') }}" alt="">
-                      <p>Hiking</p>
-                      <div class="destinations">
-                          <span>#Bromo</span> <span>#Mountain</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row row-border">
-                <div class="col-md-2 p-0">
-                  <div class="trip">
-                    <div class="text">
-                      Trip <p>3</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-7 p-0">
-                  <div class="schedule">
-                    <div class="time">
-                      <span><span class="dest">Mount Ijen</span> <span class="float-right">07:00 - 12:00</span></span>
-                    </div>
-                    <div class="desc">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem ducimus illum ut repudiandae cupiditate, fugiat quia culpa autem aut laudantium inventore a adipisci blanditiis odit molestiae modi officiis dolor odio.
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 p-0">
-                  <div class="others">
-                    <div class="tour-style">
-                      <img src="{{ url('public/images/gallery/boot.png') }}" alt="">
-                      <p>Hiking</p>
-                      <div class="destinations">
-                          <span>#Bromo</span> <span>#Mountain</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row row-border">
-                <div class="col-md-2 p-0">
-                  <div class="trip">
-                    <div class="text">
-                      Trip <p>3</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-7 p-0">
-                  <div class="schedule">
-                    <div class="time">
-                      <span><span class="dest">Tabuhan Island</span> <span class="float-right">07:00 - 12:00</span></span>
-                    </div>
-                    <div class="desc">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem ducimus illum ut repudiandae cupiditate, fugiat quia culpa autem aut laudantium inventore a adipisci blanditiis odit molestiae modi officiis dolor odio.
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-3 p-0">
-                  <div class="others">
-                    <div class="tour-style">
-                      <img src="{{ url('public/images/gallery/honey-moon.png') }}" alt="">
-                      <p>Honey Moon</p>
-                      <div class="destinations">
-                          <span>#Bromo</span> <span>#Mountain</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      @endforeach
       <div class="row justify-content-center mb-5" id="hotels">
         <div class="col-md-10">
-            <h4 class="bold mb-4 mt-3">Hotels</h4>
+          <h4 class="bold mb-4 mt-3">Hotels</h4>
+          <?php 
+            $hotels = DB::table('detail_itinerary as di')
+            ->join('hotel_when_tour as hw','di.id_detail','hw.id_detail_itinerary')
+            ->join('room_hotels as rh','hw.id_room_hotel','rh.id_room_hotel')
+            ->join('hotels as h','rh.id_hotel','h.id_hotel')
+            ->join('itinerary as i','di.id_itinerary','i.id_itinerary')
+            ->select("h.hotel_name")
+            ->where('di.id_itinerary',$packages->id_tour)
+            ->groupBy('h.hotel_name')
+            ->get();
+            
+            echo "<pre>";
+            print_r($hotels);
+            echo "</pre>";
+          ?>
           <div class="hotel">
             <div class="row">
               <div class="col-md-12">

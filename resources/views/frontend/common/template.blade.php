@@ -91,7 +91,7 @@
                 <a href="{{ url('my-account') }}" class="dropdown-item">
                   My account
                 </a>
-                <a href="" class="dropdown-item">
+                <a href="{{ url('logout') }}" class="dropdown-item">
                   Sign out
                 </a>
               </div>

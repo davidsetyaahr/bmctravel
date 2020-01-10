@@ -15,13 +15,14 @@
                 <form action="{{url("admin/tour-package/information/add-information")}}" method="post">
                     @csrf
                         <label for="">Information Name</label>
-                        <input type="text" class="form-control @error('Information') is-invalid @enderror" name="text">
-                        @error('information')
+                        <input type="text" class="form-control @error('text') is-invalid @enderror" name="text">
+                        @error('text')
                             <div class="invalid-feedback"> {{ $message }} </div>
                         @enderror
                         <br>
                         <label for="">Type</label>
                         <select name="type" id="" class="form-control">
+                            <option value="0">---Select---</option>
                             <option value="0">Include</option>
                             <option value="1">Exclude</option>
                             <option value="2">What should I pack</option>

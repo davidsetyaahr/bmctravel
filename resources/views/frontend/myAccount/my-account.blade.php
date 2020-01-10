@@ -39,10 +39,10 @@
           </div>
         </div>
       </div>
-      
+
       <div class="container">
         <div class="row menu-account">
-          <div class="col-md-3">
+          <div class="col-md-2">
              <div class="row mt-1 side-line">
                <div class="col-md-12">
                    <div class="text-center">
@@ -59,7 +59,7 @@
                   <div class="col-md-12">
                     <a href="{{ url("my-account/notification") }}">
                       <div class="mt-2">
-                        <p> Notification</p>
+                        <p> Notifications</p>
                       </div>
                     </a>
                   </div>
@@ -72,7 +72,7 @@
                    </div>
                </div>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-10">
               <div class="row mt-1">
                 <div class="col-md-12">
                   <div class="text-center">
@@ -81,6 +81,15 @@
                 </div>
               </div>
             </div>
+          </div>
       </div>
-   
+
+
+
+
+
+
+
+
+
 @endsection

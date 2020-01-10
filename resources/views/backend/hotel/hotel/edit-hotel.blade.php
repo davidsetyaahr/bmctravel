@@ -11,22 +11,18 @@
         <div class="card">
             <div class="card-body">
             @foreach($hotels as $htl)
-                @include('backend.gallery.gallery-template.select-gallery', ['type' => 'single', 'gallery' => $gallery, 'categories' => $categories])
+                @include('backend.gallery.gallery-template.select-gallery', ['type' => 'single', 'gallery' => $gallery, 'categories' => $categories,'id_gallery' => $htl->id_gallery])
                 <form action="{{url("admin/hotel/update")}}" method="post">
                 @csrf
                 <input type="hidden" name="id" value="{{ $htl->id_hotel }}">
                 <label for="">Hotel Name</label>
-                <input type="text" class="form-control @error('hotel_name') is-invalid @enderror" name="hotel_name" value="{{ $htl->hotel_name}}">
+                <input type="text" class="form-control @error('hotel_name') is-invalid @enderror" name="hotel_name" value="{{ $htl->hotel_name}}" disabled>
                 @error('hotel_name')
                 <div class="invalid-feedback"> {{ $message}} </div>
                 @enderror
                 <br>
                 <label for="">Gallery</label>
-                <input type="hidden" id="id_gallery" name="id_gallery">
-                <div class="selected-gallery">
-                    <div class="row row-gallery">
-                    </div>
-                </div>
+                @include('backend.gallery.gallery-template.gallery-hidden', ['id_gallery' => $htl->id_gallery])
                 <br>
                 <label for="">Map</label>
                 <input type="text" class="form-control @error('map') is-invalid @enderror" name="map" value="{{ $htl->map}}">
