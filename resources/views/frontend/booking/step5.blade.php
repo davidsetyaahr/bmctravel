@@ -9,22 +9,22 @@
                 <tr>
                     <td class="bold">Name</td>
                     <td>:</td>
-                    <td>David Setya</td>
+                    <td>{{$firstname}} {{$lastname}}</td>
                 </tr>
                 <tr>
                     <td class="bold">Email</td>
                     <td>:</td>
-                    <td>davidsetya24@gmail.com</td>
+                    <td>{{$email}}</td>
                 </tr>
                 <tr>
                     <td class="bold">Person / Pax</td>
                     <td>:</td>
-                    <td>3 Pax</td>
+                    <td>{{$pax}} Pax</td>
                 </tr>
                 <tr>
                     <td class="bold">Package</td>
                     <td>:</td>
-                    <td><a href="">3D 2N Bromo Malang Ijen</a></td>
+                    <td><a href="">{{$package}}</a></td>
                 </tr>
             </table>
         </div>
@@ -33,22 +33,22 @@
                 <tr>
                     <td class="bold">Type</td>
                     <td>:</td>
-                    <td>Reguler Package</td>
+                    <td>{{$type}}</td>
                 </tr>
                 <tr>
                     <td class="bold">Durations</td>
                     <td>:</td>
-                    <td>3 Days 2 Nights</td>
+                    <td>{{$day}} Days {{$night}} Nights</td>
                 </tr>
                 <tr>
                     <td class="bold">Travel Date</td>
                     <td>:</td>
-                    <td>29 December 2019 - 1 January 2020</td>
+                    <td>{{$start_date}} - {{$end_date}}</td>
                 </tr>
                 <tr>
                     <td class="bold">Attachment</td>
                     <td>:</td>
-                    <td><a href="" class="color-blue">View here</a></td>
+                    <td><a href="#" class="color-blue" data-toggle="modal" data-target="#attach">View here</a></td>
                 </tr>
             </table>
         </div>
@@ -66,7 +66,25 @@
         </div>
         <div class="col-md-6">
             <br>
-            <h4 class="bold color-orange text-right">IDR 5,000,000</h4>
+            <h4 class="bold color-orange text-right">IDR {{$price}}</h4>
         </div>
     </div>
+</div>
+
+<div class="modal fade" id="attach">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h5 class="modal-title">Attachment</h5>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <img src="{{url('images/attach/'.$attach)}}" alt="" class="img-fluid">
+      </div>
+
+    </div>
+  </div>
 </div>

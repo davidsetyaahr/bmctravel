@@ -18,6 +18,7 @@ class CreateBookings extends Migration
             $table->integer('id_tour');
             $table->dateTime('booking_date');
             $table->dateTime('travel_date');
+            $table->tinyInteger('day');
             $table->integer('id_user');
             $table->integer('pax',);
             $table->integer('price',);

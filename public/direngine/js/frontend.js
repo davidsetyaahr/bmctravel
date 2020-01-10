@@ -90,6 +90,132 @@ $(document).ready(function(){
                 }
             }
         })
-
     })
+
+    $(".table-booking tbody tr").click(function(){
+        var startDate = $(this).data("start")
+        $(".table-booking tbody tr").removeClass("selected")
+        $(this).addClass("selected")
+        $("#start_date").val(startDate)
+    })
+
+    $(".next.page2").click(function(e){
+        e.preventDefault()
+        var startDate = $("#start_date").val()
+        var tour = $("#id_tour").val()
+        var url = $("#formStep2").attr("action")
+        $.ajax({
+            type : "get",
+            data : {start_date : startDate, tour : tour},
+            url : url,
+            success : function(data){
+                if(data['msg']=="success"){
+                    window.location="?page=3"
+                }else if(data['msg']=="empty"){
+                    $(".for-alert").html("<div class='alert alert-danger'><span class='bold'>Error</span>. Choose a date</div>")
+                    
+                    $("body,html").animate({"scrollTop" : 0},1200)
+                }
+            }
+        })
+    })
+    
+    $(".next.page3").click(function(e){
+        e.preventDefault()
+        var pax = $("#nilai").val()
+        var url = $(".body-data").data("url")
+        $.ajax({
+            type : "get",
+            data : {pax : pax},
+            url : url,
+            success : function(data){
+                if(data['msg']=="success"){
+                    window.location="?page=4"
+                }else if(data['msg']=="empty"){
+                    $(".for-alert").html("<div class='alert alert-danger'><span class='bold'>Error</span>. Error pax or person</div>")
+                }
+            }
+        })
+    })
+
+    $(".next.page4").click(function(e){
+        e.preventDefault()
+
+        var form = $("#formUpload")[0]
+        var frmData = new FormData(form)
+        var action = $("#formUpload").attr("action")
+        $.ajax({
+            type : "post",
+            url : action,
+            data : frmData,
+            cache : false,
+            processData: false,
+            dataType : 'json',
+            contentType: false,
+            success : function(data){
+                window.location="?page=5"
+            }
+        })
+    })
+
+    $("#nilai").keyup(function(){
+        getTotal()
+    })
+
+    $(".plus-minus").click(function(e){
+        e.preventDefault()
+        getTotal()
+    })
+    $("#fileUpload").on('change', function(){
+          //Get count of selected files
+          var countFiles = $(this)[0].files.length;
+          var imgPath = $(this)[0].value;
+          var extn = imgPath.substring(imgPath.lastIndexOf('.') + 1).toLowerCase();
+          var image_holder = $("#image-holder");
+          image_holder.empty();
+          if (extn == "gif" || extn == "png" || extn == "jpg" || extn == "jpeg") {
+            if (typeof(FileReader) != "undefined") {
+              //loop for each file selected for uploaded.
+              for (var i = 0; i < countFiles; i++) 
+              {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                  $("<img />", {
+                    "src": e.target.result,
+                    "class": "img-fluid"
+                  }).appendTo(image_holder);
+                }
+                image_holder.show();
+                reader.readAsDataURL($(this)[0].files[i]);
+              }
+              $(".left").addClass('uploaded')
+            } else {
+              alert("This browser does not support FileReader.");
+            }
+          } else {
+            alert("Pls select only images");
+          }
+    })
+
+    function getTotal(){
+        var nilai = parseInt($("#nilai").val())
+        var price = parseInt($("#nilai").data("price"))
+
+        var total = price*nilai;
+
+        $("#total").html(formatRupiah(total))
+        $("#pax").html(nilai)
+    }
+    
+    getTotal()
+    
+
+    function formatRupiah(bilangan){
+        var	reverse = bilangan.toString().split('').reverse().join(''),
+        ribuan 	= reverse.match(/\d{1,3}/g);
+        ribuan	= ribuan.join('.').split('').reverse().join('');
+        
+        return ribuan
+    }    
+
 })
