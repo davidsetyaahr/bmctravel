@@ -125,6 +125,8 @@ Route::get('/tour-package/booking/stepbystep', 'frontend\TourPackage@stepbystep'
 Route::post('/tour-package/booking/attach', 'frontend\TourPackage@attach');
 Route::get('/tour-package/booking/success', 'frontend\TourPackage@bookingtrue');
 Route::get('/tour-package/booking/booking-success', 'frontend\TourPackage@bookingsuccess');
+Route::get('/logout', 'frontend\Signin@signout');
+Route::get('/tour-package/booking/{id}', 'frontend\TourPackage@booking');
 Route::get('/tour-package/attach', 'frontend\TourPackage@attach');
 Route::get('/admin/calculation/{id}', 'backend\Calculation@index');
 Route::get('/my-account', 'frontend\MyAccount@index');
@@ -134,5 +136,6 @@ Route::get('/admin/gallery/bycategory', 'backend\gallery\Gallery@bycategory');
 Route::get('/admin/tour-package/newtrip', 'backend\tour_package\TourPackage@newtrip');
 Route::get('/my-account/notification', 'frontend\MyAccount@notification');
 Route::get('/my-account/booking', 'frontend\MyAccount@booking');
+Route::get('/my-account/changepassword', 'frontend\MyAccount@changepass');
 Route::get('/admin/tour-package/getKodeHotel', 'backend\tour_package\TourPackage@kodehotel');
 Route::get('/admin/tour-package/gethotel', 'backend\tour_package\TourPackage@gethotel');
