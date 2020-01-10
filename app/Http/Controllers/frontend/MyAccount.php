@@ -46,6 +46,14 @@ class MyAccount extends Controller
 
         return view('frontend.myAccount.booking', ['bookings' => $book] ,$attr);
     }
+    public function changepass()
+    {
+        $attr = array(
+            "title" => "BMC Travel Service - My Account",
+            "desc" => "Welcome to BMC Travel Service. One Stop Travel Solution"
+        );
+        return view('frontend.myAccount.changepass', $attr);
+    }
 
 }
 

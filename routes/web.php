@@ -131,5 +131,6 @@ Route::get('/admin/gallery/bycategory', 'backend\gallery\Gallery@bycategory');
 Route::get('/admin/tour-package/newtrip', 'backend\tour_package\TourPackage@newtrip');
 Route::get('/my-account/notification', 'frontend\MyAccount@notification');
 Route::get('/my-account/booking', 'frontend\MyAccount@booking');
+Route::get('/my-account/changepassword', 'frontend\MyAccount@changepass');
 Route::get('/admin/tour-package/getKodeHotel', 'backend\tour_package\TourPackage@kodehotel');
 Route::get('/admin/tour-package/gethotel', 'backend\tour_package\TourPackage@gethotel');

@@ -70,6 +70,13 @@
                       </div>
                    </a>
                    </div>
+                  <div class="col-md-12">
+                    <a href="{{ url("my-account/changepassword") }}">
+                      <div class="mt-2">
+                       <p> Change Password</p>
+                      </div>
+                   </a>
+                   </div>
                </div>
             </div>
             <div class="col-md-10">
