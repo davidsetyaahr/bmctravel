@@ -1,6 +1,6 @@
 @extends('frontend/common/template')
 @section('container')
-    <div class="hero-wrap js-fullheight-travel" style="background-image: url('direngine/images/bg_4.jpg');">
+    <div class="hero-wrap js-fullheight-travel" style="background-image: url('public/direngine/images/bg_4.jpg');">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text js-fullheight-travel align-items-center justify-content-center" data-scrollax-parent="true">

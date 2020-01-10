@@ -53,7 +53,6 @@ class TourPackage extends Controller
             ->select("it.*", "dit.*", "dest.id_destination", "dest.destination_name")
             ->get();
         
-        $category = Tour_categories::all();
         $tour_type = Tour_type::all();
 
         $attr = array(

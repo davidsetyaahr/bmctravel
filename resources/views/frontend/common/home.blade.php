@@ -111,54 +111,16 @@ window.onload = function() {
     		<div class="row">
     			<div class="col-md-12">
     				<div class="destinationtext owl-carousel ftco-animate">
+						@foreach ($type as $item)
 						<div class="item">
 							<div class="relative">
-								<img src="public/direngine/images/destinations/kawah-wurung.png" alt="" class="img-fluid">
+								<img src="{{$item->img}}" alt="" class="img-fluid">
 								<div class="box">
-									<h6>Explore East Java</h6>
+									<h6>{{$item->type_name}}</h6>
 								</div>
 							</div>
 						</div>
-						<div class="item">
-						<div class="relative">
-							<img src="public/direngine/images/destinations/ijen.jpg" alt="" class="img-fluid">
-							<div class="box">
-								<h6>Explore Bondowoso</h6>
-							</div>
-							</div>
-						</div>
-						<div class="item">
-						<div class="relative">
-							<img src="public/direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid">
-							<div class="box">
-								<h6>Mountain Vibes</h6>
-							</div>
-							</div>
-						</div>
-						<div class="item">
-						<div class="relative">
-							<img src="public/direngine/images/destinations/bali.jpg" alt="" class="img-fluid">
-							<div class="box">
-								<h6>Beach Vibes</h6>
-							</div>
-							</div>
-						</div>
-						<div class="item">
-						<div class="relative">
-							<img src="public/direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid">
-							<div class="box">
-								<h6>Menjangan & Tabuhan Island</h6>
-							</div>
-							</div>
-						</div>
-						<div class="item">
-						<div class="relative">
-							<img src="public/direngine/images/destinations/bromo.jpg" alt="" class="img-fluid">
-							<div class="box">
-								<h6>Bromo Midnight</h6>
-							</div>
-							</div>
-						</div>
+						@endforeach
     				</div>
     			</div>
     		</div>
@@ -172,86 +134,32 @@ window.onload = function() {
 					<h4 class="mb-4"><strong>Top</strong> Tour Packages</h4>
 				</div>
 				<div class="col-md-2">
-					<a href="http://127.0.0.1:8000/tour-package" class="btn border-grey">Explore More  <span class="ion-md-arrow-dropright"></span></a>
+					<a href="{{ url('tour-package') }}" class="btn border-grey">Explore More  <span class="ion-md-arrow-dropright"></span></a>
 				</div>
 	        </div>
-<!-- 			<div class="row mt-3">
-				<div class="col-md-12">
-					<ul class="progressbar">
-						<li>1 to 3 days</li>
-						<li>4 to 6 days</li>
-						<li>7 to 9 days</li>
-						<li>10 to 12 days</li>
-					  </ul>
-				</div>
-			</div>    		
- -->    	</div>
+ 		</div>
     	<div class="container">
     		<div class="row mt-5 ftco-animate">
+				@foreach ($tour_package as $item)
 				<div class="col-md-3">
 					<div class="package1 mb-4">
 						<div class="relative hidden">
 							<div class="layer transition"></div>
 							<div class="sticky-note">
-								<span>Beach Vibes</span>
+								<span>{{$item->category_name}}</span>
 							</div>
-							<img src="public/direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid transition">
-							<div class="view-link transition">View Package</div>
+							<img src="{{$item->img}}" alt="" class="img-fluid transition">
+							<a href="#">
+								<div class="view-link transition">View Package</div>
+							</a>
 						</div>
 						<div class="text-bottom mt-2">
-							<div class="title">3D 2N Menjangan Island</div>
-							<div class="price-tour"><span><small>start from</small>1.000.000 </span></div>
+							<div class="title">{{$item->day}}D {{$item->night}}N {{$item->tour_name}}</div>
+							<div class="price-tour"><span><small>start from</small>@currency($item->price) </span></div>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-3">
-					<div class="package1 mb-4">
-						<div class="relative hidden">
-							<div class="layer transition"></div>
-							<div class="sticky-note">
-								<span>Explore Bondowoso</span>
-							</div>
-							<img src="public/direngine/images/destinations/ijen.jpg" alt="" class="img-fluid transition">
-							<div class="view-link transition">View Package</div>
-						</div>
-						<div class="text-bottom mt-2">
-							<div class="title">3D 2N Bondowoso</div>
-							<div class="price-tour"><span><small>start from</small>1.000.000 </span></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="package1 mb-4">
-						<div class="relative hidden">
-							<div class="layer transition"></div>
-							<div class="sticky-note">
-								<span>Mountain Vibes</span>
-							</div>
-							<img src="public/direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid transition">
-							<div class="view-link transition">View Package</div>
-						</div>
-						<div class="text-bottom mt-2">
-							<div class="title">3D 2N Menjangan Island</div>
-							<div class="price-tour"><span><small>start from</small>1.000.000 </span></div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="package1 mb-4">
-						<div class="relative hidden">
-							<div class="layer transition"></div>
-							<div class="sticky-note">
-								<span>Beach Vibes</span>
-							</div>
-							<img src="public/direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid transition">
-							<div class="view-link transition">View Package</div>
-						</div>
-						<div class="text-bottom mt-2">
-							<div class="title">3D 2N Menjangan Island</div>
-							<div class="price-tour"><span><small>start from</small>1.000.000 </span></div>
-						</div>
-					</div>
-				</div>
+				@endforeach
 			</div>
     	</div>
     </section>
@@ -312,30 +220,14 @@ window.onload = function() {
 				</div>
 			</div>
 			<div class="row justify-content-center">
+				@foreach ($destination_categories as $item)
 				<div class="col-md-3 col-6 mb-4">
 					<div class="border text-center p-3">
-						<img src="{{ asset('public/images/gallery/rocks.png') }}" alt="">
-						<h6 class="mt-3">Mountain</h6>
+						<img src="{{$item->img}}" alt="">
+						<h6 class="mt-3">{{$item->category_name}}</h6>
 					</div>
 				</div>
-				<div class="col-md-3 col-6 mb-4">
-					<div class="border text-center p-3">
-						<img src="{{ asset('public/images/gallery/sunrise.png') }}" alt="">
-						<h6 class="mt-3">Beach</h6>
-					</div>
-				</div>
-				<div class="col-md-3 col-6 mb-4">
-					<div class="border text-center p-3">
-						<img src="{{ asset('public/images/gallery/waterfall.png') }}" alt="">
-						<h6 class="mt-3">Waterfall</h6>
-					</div>
-				</div>
-				<div class="col-md-3 col-6 mb-4">
-					<div class="border text-center p-3">
-						<img src="{{ asset('public/images/gallery/office.png') }}" alt="">
-						<h6 class="mt-3">City</h6>
-					</div>
-				</div>
+				@endforeach
 			</div>
 		</div>
 	</section>
@@ -415,42 +307,20 @@ window.onload = function() {
 			</div>
         </div>
         <div class="row d-flex">
-          <div class="col-md-4 mb-3">
-		  	<div class="travel-tips">
+		@foreach ($travel_tips as $item)
+		<div class="col-md-4 mb-3">
+			<div class="travel-tips">
 				<div class="relative">
 					<div class="layer transition"></div>
-					<img src="public/direngine/images/destinations/tabuhan.jpg" alt="" class="img-fluid transition">
+					<img src="{{$item->img}}" alt="" class="img-fluid transition">
 				</div>
 				<div class="bottom">
-					<div class="title">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet .....</div>
-					<div class="link">Read More</div>
+					<div class="title">{{$item->title}}</div>
+					<div class="link"><a href="#">Read More</a></div>
 				</div>
 			</div>
-          </div>
-          <div class="col-md-4 mb-3">
-		  	<div class="travel-tips">
-				<div class="relative">
-					<div class="layer transition"></div>
-					<img src="public/direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid transition">
-				</div>
-				<div class="bottom">
-					<div class="title">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet .....</div>
-					<div class="link">Read More</div>
-				</div>
-			</div>
-          </div>
-          <div class="col-md-4 mb-3">
-		  	<div class="travel-tips">
-				<div class="relative">
-					<div class="layer transition"></div>
-					<img src="public/direngine/images/destinations/bromo.jpg" alt="" class="img-fluid transition">
-				</div>
-				<div class="bottom">
-					<div class="title">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet .....</div>
-					<div class="link">Read More</div>
-				</div>
-			</div>
-          </div>
+		</div>
+		@endforeach
         </div>
       </div>
     </section>

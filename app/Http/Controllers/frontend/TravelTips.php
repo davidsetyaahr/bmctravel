@@ -20,7 +20,12 @@ class TravelTips extends Controller
         ->join('gallery','gallery.id_gallery','travel_tips.id_gallery')
         ->select('travel_tips.id_travel_tips','travel_tips.title','travel_tips.id_admin','travel_tips.id_gallery','gallery.img','travel_tips.content')
         ->get();
-        return view('frontend.travel-tips.list-travel-tips',['travel_tips' => $trvltips]);
+        $attr = array(
+            "title" => "BMC Travel Service - Travel Package",
+            "desc" => "Our awesome travel package",
+            "travel_tips" => $trvltips
+        );
+        return view('frontend.travel-tips.list-travel-tips', $attr);
         // $trvltips = Traveltip::all();
         // return view('frontend.travel-tips.list-travel-tips',['travel_tips' => $trvltips]);
     }

@@ -16,11 +16,9 @@ class TravelTips extends Controller
     function index()
     {
         $trvltips = DB::table('travel_tips')
-
-        ->join('travel_tips','travel_tips.id_travel_tips')
         ->join('admin','admin.id_admin','travel_tips.id_admin')
         ->join('gallery','gallery.id_gallery','travel_tips.id_gallery')
-        ->select('travel_tips.id_travel_tips','travel_tips.title','admin.firstname','travel_tips.content','travel_tips.permalink','travel_tips.insert_date','travel_tips.update_date')
+        ->select('travel_tips.id_travel_tips','travel_tips.title','admin.firstname','travel_tips.content','travel_tips.permalink','travel_tips.insert_date','travel_tips.update_date', 'admin.id_admin')
         ->orderBy('id_travel_tips', 'desc')
         ->get();
         // print_r($trvltips);
