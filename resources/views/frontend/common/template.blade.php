@@ -68,7 +68,7 @@
             </div>
 		    	</li>
           <li class="nav-item"><a href="{{ url('destinations') }}" class="nav-link">Destinations</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Travel Tips</a></li>
+          <li class="nav-item"><a href="{{ url('travel-tips') }}" class="nav-link">Travel Tips</a></li>
           <?php
             $userSession = session()->all();
             if(isset($userSession['user'])){

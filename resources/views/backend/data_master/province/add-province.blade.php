@@ -5,6 +5,7 @@
 @section('view_link','province')
 @section('view_status','')
 @section('insert_status','active')
+@section('pagetitle','Province')
 @section('admin')
 <div class="row">
     <div class="col-md-12">

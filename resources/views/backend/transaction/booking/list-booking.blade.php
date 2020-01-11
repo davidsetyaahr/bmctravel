@@ -43,7 +43,24 @@
                                 <td>{{ $b->pax }}</td>
                                 <td>{{ $b->price }}</td>
                                 <td>{{ $b->identity_card }}</td>
-                                <td>{{ $b->status }}</td>
+                                <td><?php
+                                        $status = $b->status; 
+                                        if($status == 0) {
+                                            echo "Belum Bayar";
+                                        }
+                                        else if($status == 11) {
+                                            echo "Belum Belum Di konfirmasi";
+                                        }
+                                        else if($status == 1) {
+                                            echo "Pembayaran 50%";
+                                        }
+                                        else if($status == 22) {
+                                            echo "Belum Belum Di konfirmasi";
+                                        }
+                                        else if($status == 2) {
+                                            echo "Lunas";
+                                        }
+                                ?></td>
 
                                 <td>
                                     <div class="dropdown show">
