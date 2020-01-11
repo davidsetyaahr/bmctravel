@@ -8,7 +8,7 @@
             <p class="breadcrumbs" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><span class="mr-2"><a href="index.html">Home</a></span> <span>Travel Tips</span></p>
             <h3 class="color-white" data-scrollax="properties: { translateY: '30%'}">Travel Tips</h3>
             <div class="block-17 my-4">
-                <form action="" method="post" class="d-block d-flex">
+                <form action="{{url("travel-tips/search")}}" method="get" class="d-block d-flex">
                   <div class="fields d-block d-flex">
                     <div class="textfield-search one-third">
                         <input type="text" class="form-control" placeholder="Search Here...">
@@ -26,42 +26,19 @@
        <div class="container">
         <div class="row d-flex">
             @foreach ($travel_tips as $trvltips)
-            <div class="col-md-4">
-                        <div class="travel-tips">
-                            <div class="relative">
-                                <div class="layer transition"></div>
-                                    <img src="{{ url('/images/gallery/'.$trvltips->img) }}" alt="" class="img-fluid transition">
-                        </div>
-                        <div class="bottom">
-                            <div class="title">{{$trvltips->title}}</div>
-                <div class="link"><a href="{{url('/travel-tips/detail-travel/'.$trvltips->id_travel_tips) }}">Read More</a></div>
-                        </div>
-                    </div>
-                </div>
-                 <div class="col-md-4">
-                    <div class="travel-tips">
-                        <div class="relative">
-                            <div class="layer transition"></div>
-                            <img src="direngine/images/destinations/merbabu.jpg" alt="" class="img-fluid transition">
-                        </div>
-                        <div class="bottom">
-                            <div class="title">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet .....</div>
-                            <div class="link">Read More</div>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-md-4">
                     <div class="travel-tips">
                         <div class="relative">
                             <div class="layer transition"></div>
-                            <img src="direngine/images/destinations/bromo.jpg" alt="" class="img-fluid transition">
+                                <img src="{{ url('/images/gallery/'.$trvltips->img) }}" alt="" class="img-fluid transition">
                         </div>
                         <div class="bottom">
-                            <div class="title">Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet .....</div>
-                            <div class="link"><a href="{{url('/travel-tips/detail-travel') }}">Read More</a></div>
+                            <div class="title">{{$trvltips->title}}</div>
+                            <div class="link"><a href="{{url('/travel-tips/detail-travel/'.$trvltips->permalink) }}">Read More</a></div>
                         </div>
                     </div>
-                    @endforeach
+                </div>
+            @endforeach
                 </div>
             </div>
          </div>

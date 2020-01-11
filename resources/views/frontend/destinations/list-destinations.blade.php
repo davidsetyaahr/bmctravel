@@ -1,6 +1,6 @@
 @extends('frontend/common/template')
 @section('container')
-<div style="background-image: url('direngine/images/bg_4.jpg');"  class="js-fullheight-travel">
+<div style="background-image: url('{{url('public/direngine/images/bg_4.jpg')}}');"  class="js-fullheight-travel">
       <div class="overlay"></div>
       <div class="container">
         <div class="row justify-content-center">
@@ -9,43 +9,34 @@
 
           <h3 class="color-white">Destinations</h3>
           <div class="block-17 my-4">
-          <form action="" method="post" class="d-block d-flex">
+          <form action="{{url("destinations/search")}}" method="get" class="d-block d-flex">
                       <div class="fields d-block d-flex">
                         <div class="textfield-search one-third">
-                            <input type="text" class="form-control" placeholder="Destinations, Ex : Mountain, Waterfall, etc ">
+                            <input type="text" class="form-control" name="category" placeholder="Destinations, Ex : Mountain, Waterfall, etc ">
                         </div>
                         <div class="select-wrap one-third">
                           <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                          <select name="" id="" class="form-control" placeholder="Keyword search">
-                              <option>Where</option>
-                              <optgroup label="East Java">
-                                  <option>Bondowoso</option>
-                                  <option>Probolinggo</option>
-                                  <option>Jember</option>
+                          <select name="id_city" id="" class="form-control" placeholder="Keyword search">
+                              <option value="0">Where</option>
+                              @foreach ($province as $item)
+                              <optgroup label="{{$item->province_name}}">
+                                <?php 
+                                  $city = DB::table('city')
+                                    ->where('province_id', $item->id_province)
+                                    ->get(); 
+                                ?>
+                                @foreach ($city as $item)
+                                <option value="{{$item->id_city}}">{{$item->city_name}}</option>
+                                @endforeach
                               </optgroup>
-                              <optgroup label="Bali">
-                                  <option>Bali</option>
-                              </optgroup>
-                              <optgroup label="West Nusa Tenggara">
-                                  <option>Lombok</option>
-                              </optgroup>
+                              @endforeach
                           </select>
                         </div>
                       </div>
                       <input type="submit" class="search-submit btn btn-primary" value="Search">
                     </form>
           </div>
-<!--                 <div class="m-t-30">
-                <p >Filter By</p>
-                    <p class="m-t-auto browse d-md-flex">
-                        <span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-guarantee"></i>Mountain</a></span>
-                        <span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-like"></i>Waterfall</a></span>
-                        <span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-like"></i>Adventure</a></span>
-                        <span class="d-flex justify-content-md-center align-items-md-center"><a href="#"><i class="flaticon-meeting-point"></i>City</a></span>
-                        <span class="d-flex justify-content-md-center align-items-md-	center"><a href="#"><i class="flaticon-shopping-bag"></i>Beach</a></span>
-                    </p>
-                </div>
- -->        </div>
+         </div>
         </div>
       </div>
       </div>

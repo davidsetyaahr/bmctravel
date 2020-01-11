@@ -39,13 +39,16 @@ class TravelTips extends Controller
     }
     function store(Request $request)
     {
+        $session = session()->all();
+        $time = time();
+        $permalink = substr($time, strlen($time) - 5, 5);
 
         Traveltip::create([
             'title' => $request->title,
-            'id_admin' => 1,
+            'id_admin' => $session['admin']['id_admin'],
             'id_gallery' => $request->id_gallery,
             'content' => $request->content,
-            'permalink' => $request->permalink,
+            'permalink' => $permalink,
             'insert_date'=> Carbon::now(),
             'update_date'=> Carbon::now()
         ]);
