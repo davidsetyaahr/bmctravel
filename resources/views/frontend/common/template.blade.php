@@ -26,10 +26,10 @@
     <link rel="stylesheet" href="{{ asset('public/direngine/css/icomoon.css') }}">
     <link rel="stylesheet" href="{{ asset('public/direngine/css/style.css') }}">
   </head>
-  <body>
+  <body <?php echo !empty($__env->yieldContent('my-account')) ? "class='my-account bg-light'" : "" ?>>
 <div class="to-top">Back To Top</div>
 <div class="top-menu">
-
+<?php if(empty($__env->yieldContent('my-account'))){?>
 <nav class="navbar navbar-expand-sm navbar-dark nav-grey">
       <div class="container">
         <div class="left">
@@ -42,23 +42,13 @@
           <a href="https://api.whatsapp.com/send?phone=6281252744445&text=Hello BMC Travel Service. I want to book some package. Can you help me?" target="_blank" class="navbar-brand view-map"><span class="ion-logo-whatsapp"></span> Whatsapp</a>
           <a href="#" class="navbar-brand view-map"><span class="ion-logo-youtube"></span> YouTube</a>
 
-<!--           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#"><span class="ion-logo-facebook"></span> Instagram</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#"><span class="ion-logo-whatsapp"></span> Whatsapp</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><span class="ion-logo-youtube"></span> YouTube</a>
-          </li>
-        </ul>
- -->        </div>
+ </div>
 </div>
 </nav>
+<?php } ?>
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light nav-white" id="ftco-navbar">
     <div class="container">
-      <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ asset('public/direngine/images/BMC-Logo.png') }}" alt="" style="height:40px;"> <span> BMC Travel Service.</span></a>
+      <a class="navbar-brand" href="{{ url('/') }}"><img src="{{ url('public/direngine/images/BMC-Logo.png') }}" alt="" style="height:40px;"> <span> BMC Travel Service.</span></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="oi oi-menu"></span>
       </button>

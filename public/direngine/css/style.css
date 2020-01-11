@@ -166,7 +166,68 @@
         overflow: none !important;
     }
 }
-
+.badge{
+    color : white !important;
+}
+.btn{
+    font-size : 13px  !important;
+    letter-spacing: .5px;
+    border-radius : 6px !important;
+    color : inherit;
+}
+.btn-default{
+    background : white;
+    border : 1px solid #ddd !important;
+}
+.user-info{
+    color : #7c7c7c;
+    margin-bottom : 20px;
+}
+.user-info p.email{
+    font-weight : bold;
+    letter-spacing: .6px;
+    color : #da302a;
+    margin-bottom : 10px;
+}
+.user-info p{
+    font-size : 13px;
+}
+.user-info p,.user-info h5{
+    margin-bottom : 0px;
+}
+.banner-account{
+    background: url('../../images/common/banner-login.jpg');
+    height: 33%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    text-align: center;
+    margin-bottom : 5%;
+}
+.banner-account:before{
+    content : "";
+    position : absolute;
+    width : 100%;
+    height: 100%;
+    background : rgba(0, 0, 0, 0.4);
+    top : 0;
+    left : 0;
+}
+.banner-account img{
+    width : 110px;
+    height : 110px;
+    position: absolute;
+    left : 50%;
+    bottom : 0;
+    z-index: 2;
+    transform: translate(-50%,50%);
+    -webkit-transform: translate(-50%,50%);
+    -o-transform: translate(-50%,50%);
+    -moz-transform: translate(-50%,50%);
+    border-radius: 100%;
+    border : 5px solid white;
+}
 .success-page{
     background : white;
     height : 600px;
@@ -392,7 +453,7 @@
     color : #3598dc;
     font-size : 20px;
 }
-.table-booking tbody tr:hover,.table-booking tbody tr.selected{
+.table-booking.choose tbody tr:hover,.table-booking tbody tr.selected{
     cursor: pointer;
 }
 .table-booking tbody tr.selected,.table-booking tbody tr.selected:hover{
@@ -455,7 +516,7 @@
     padding: 0px !important;
 }
 
-.booking .body .body-data .bg-bmc {
+.bg-bmc {
     position: absolute;
     opacity: 0.1;
     left: 0;
@@ -464,12 +525,12 @@
     text-align: center;
 }
 
-.booking .body .body-data .bg-bmc p {
+.bg-bmc p {
     font-weight: bold;
     font-size: 16px;
 }
 
-.booking .body .body-data .bg-bmc img {
+.bg-bmc img {
     width: 20%;
     height: 70%;
     position: relative;
@@ -1888,6 +1949,12 @@
                         z-index: 3;
                         width: 100%;
                         background: transparent !important;
+                    }
+                    .my-account .nav-grey{
+                        position: relative !important;
+                    }
+                    .my-account .nav-grey a{
+                        color : inherit !important;
                     }
 
                     .nav-grey .left,
@@ -4647,6 +4714,20 @@
                         border: 0;
                     }
 
+                    .form-control.normal {
+                        font-size : 14px;
+                        height : 40px !important;
+                    }
+                    .form-control.custom {
+                        border-radius: 5px;
+                        background: #f9fafa !important;
+                        border : 2px solid #d4d9dd;
+                        color : inherit !important;
+                        font-weight: bold;
+                    }
+                    .form-control.custom:focus {
+                        border-color :#72c8f9 !important;
+                    }
                     .form-control {
                         display: block;
                         width: 100%;
@@ -13022,14 +13103,15 @@
                         letter-spacing: .1em;
                     }
 
-                    .ftco-navbar-light.scrolled {
+                    .ftco-navbar-light.scrolled, .my-account .ftco-navbar-light {
                         position: fixed;
                         right: 0;
                         left: 0;
                         top: 0;
-                        margin-top: -130px;
+/*                         margin-top: -130px; */
                         background: #fff !important;
                     }
+                     
 
                     .nav-shadow {
                         box-shadow: 0 4px 8px 0 rgba(27, 27, 27, .1), 0 1px 3px 0 rgba(27, 27, 27, .1);
@@ -13092,7 +13174,7 @@
                         letter-spacing: .1em;
                     }
 
-                    .ftco-navbar-light.scrolled .nav-link {
+                    .ftco-navbar-light.scrolled .nav-link, .my-account .ftco-navbar-light .nav-link {
                         padding-top: 0.9rem !important;
                         padding-bottom: 0.9rem !important;
                         color: #000000 !important;
@@ -13116,7 +13198,7 @@
                         transition: .3s all ease-out;
                     }
 
-                    .ftco-navbar-light.scrolled .navbar-brand {
+                    .ftco-navbar-light.scrolled .navbar-brand, .my-account .ftco-navbar-light .navbar-brand {
                         color: #000000;
                     }
 
@@ -14196,6 +14278,7 @@
                             border-top: 1px solid #ddd;
                             font-size: 16px;
                             padding: 8em 0 8em 0;
+                            background : white;
                         }
 
                         .ftco-footer .ftco-footer-logo {

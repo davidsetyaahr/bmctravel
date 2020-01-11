@@ -92,7 +92,7 @@ $(document).ready(function(){
         })
     })
 
-    $(".table-booking tbody tr").click(function(){
+    $(".table-booking.choose tbody tr").click(function(){
         var startDate = $(this).data("start")
         $(".table-booking tbody tr").removeClass("selected")
         $(this).addClass("selected")
@@ -195,6 +195,20 @@ $(document).ready(function(){
           } else {
             alert("Pls select only images");
           }
+    })
+
+    $(".payment-option").change(function(){
+        var thisVal = $(this).val()
+        var price = $(this).data("price")
+        var total = price
+        var min = price
+        if(thisVal==50){
+            total = price/2
+            min = price
+        }
+
+        $("#total").val(formatRupiah(total))
+        $("#min").val(formatRupiah(min))
     })
 
     function getTotal(){

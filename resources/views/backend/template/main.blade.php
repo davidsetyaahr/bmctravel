@@ -120,54 +120,23 @@
                                 <!-- ============================================================== -->
                                 <!-- Right side toggle and nav items -->
                                 <!-- ============================================================== -->
-                                <ul class="navbar-nav float-right">
+                                <ul class="navbar-nav float-right interval" data-url="{{url('admin/getnotif')}}">
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-bell font-24"></i>
+                                        <a class="nav-link dropdown-toggle waves-effect waves-dark link-notif" data-url="{{url('admin/loopnotif')}}" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-bell font-24"></i> 
+                                        <?php 
+                                                $countNotif = DB::table('notif_admin as na')
+                                                ->select("na.status")
+                                                ->where('na.view','0')
+                                                ->get()->toArray();
+
+/*                                                 echo count($countNotif)!=0 ? "<span class='badge badge-success'>".count($countNotif)."</span>" : ""
+ */                                                   ?>
+                                         <span class="badge badge-success" id="countNotif"></span>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown" aria-labelledby="2">
                                             <ul class="list-style-none">
                                                 <li>
-                                                    <div class="">
-                                                        <!-- Message -->
-                                                        <a href="javascript:void(0)" class="link border-top">
-                                                            <div class="d-flex no-block align-items-center p-10">
-                                                                <span class="btn btn-success btn-circle"><i class="ti-calendar"></i></span>
-                                                                <div class="m-l-10">
-                                                                    <h5 class="m-b-0">Event today</h5>
-                                                                    <span class="mail-desc">Just a reminder that event</span>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                        <!-- Message -->
-                                                        <a href="javascript:void(0)" class="link border-top">
-                                                            <div class="d-flex no-block align-items-center p-10">
-                                                                <span class="btn btn-info btn-circle"><i class="ti-settings"></i></span>
-                                                                <div class="m-l-10">
-                                                                    <h5 class="m-b-0">Settings</h5>
-                                                                    <span class="mail-desc">You can customize this template</span>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                        <!-- Message -->
-                                                        <a href="javascript:void(0)" class="link border-top">
-                                                            <div class="d-flex no-block align-items-center p-10">
-                                                                <span class="btn btn-primary btn-circle"><i class="ti-user"></i></span>
-                                                                <div class="m-l-10">
-                                                                    <h5 class="m-b-0">Pavan kumar</h5>
-                                                                    <span class="mail-desc">Just see the my admin!</span>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                        <!-- Message -->
-                                                        <a href="javascript:void(0)" class="link border-top">
-                                                            <div class="d-flex no-block align-items-center p-10">
-                                                                <span class="btn btn-danger btn-circle"><i class="fa fa-link"></i></span>
-                                                                <div class="m-l-10">
-                                                                    <h5 class="m-b-0">Luanch Admin</h5>
-                                                                    <span class="mail-desc">Just see the my new admin!</span>
-                                                                </div>
-                                                            </div>
-                                                        </a>
+                                                    <div class="" id="loopNotif">
                                                     </div>
                                                 </li>
                                             </ul>
@@ -244,8 +213,12 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="p-t-10 mt-4">
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-package"></i><span class="hide-menu">Tour Package </span></a>
-                    </li>
+                    <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-coin"></i><span class="hide-menu">Transaction </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="{{ url('admin/transaction/booking/list-booking') }}" class="sidebar-link"><i class="mdi mdi-calendar-multiple-check"></i><span class="hide-menu"> Booking </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('admin/transaction/payment/list-payment') }}" class="sidebar-link"><i class="mdi mdi-credit-card-multiple"></i><span class="hide-menu"> Payment </span></a></li>
+                            </ul>
+                        </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-package"></i><span class="hide-menu">Tour Package </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item"><a href="{{ url('admin/tour-package/tour-package') }}" class="sidebar-link"><i class="mdi mdi-package"></i><span class="hide-menu"> Tour Package </span></a></li>
@@ -280,12 +253,6 @@
                                 <li class="sidebar-item"><a href="{{ url('admin/travel-tips/travel-tips/list') }}" class="sidebar-link"><i class="mdi mdi-help"></i><span class="hide-menu"> Travel Tips </span></a></li>
                                 <li class="sidebar-item"><a href="{{ url('admin/travel-tips/tags') }}" class="sidebar-link"><i class="mdi mdi-sign-caution"></i><span class="hide-menu"> Tags </span></a></li>
                             </ul>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-coin"></i><span class="hide-menu">Transaction </span></a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="{{ url('admin/transaction/booking/list-booking') }}" class="sidebar-link"><i class="mdi mdi-calendar-multiple-check"></i><span class="hide-menu"> Booking </span></a></li>
-                                <li class="sidebar-item"><a href="{{ url('admin/transaction/payment/list-payment') }}" class="sidebar-link"><i class="mdi mdi-credit-card-multiple"></i><span class="hide-menu"> Payment </span></a></li>
-                            </ul>
-                        </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account"></i><span class="hide-menu">Users </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item"><a href="{{ url('admin/users/user') }}" class="sidebar-link"><i class="mdi mdi-account"></i><span class="hide-menu"> User </span></a></li>

@@ -8,7 +8,7 @@
         <input type="hidden" name="start_date" id="start_date" value="<?php echo isset($session['booking'][$session['user']['id_user']]['step2']) ? $session['booking'][$session['user']['id_user']]['step2']['start_date'] : "" ?>">
     </form>
     <div class="table-responsive">
-        <table class="table table-hover table-booking">
+        <table class="table table-hover table-booking choose">
         <thead>
             <tr>
                 <th></th>

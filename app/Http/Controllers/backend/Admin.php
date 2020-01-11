@@ -120,6 +120,31 @@ class Admin extends Controller
         // }
         return view('backend.index');
     }
+    
+    public function getnotif()
+    {
+        $countNotif = DB::table('notif_admin as na')
+        ->select("na.status")
+        ->where('na.view','0')
+        ->get()->toArray();
+        
+        echo count($countNotif);
+    }
+    
+    public function loopnotif()
+    {
+        DB::table('notif_admin')->update(['view'=>'1']);
+        $loopNotif = DB::table('notif_admin as na')
+        ->join("payment as p","na.id_payment","p.id_payment")
+        ->join("bookings as b","p.id_booking","b.id_booking")
+        ->join("users as u","b.id_user","u.id_user")
+        ->select("na.status","u.firstname","u.firstname",'u.lastname','na.id_payment')
+        ->where('na.view','0')
+        ->limit('5')
+        ->get();
+        
+        return view('backend.notifications.loop-notif',['loopNotif' => $loopNotif]);
+    }
 
     function logout(){
         Session::forget('admin');
