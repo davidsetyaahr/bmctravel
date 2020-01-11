@@ -26,12 +26,24 @@ class MyAccount extends Controller
     public function notification()
     {
         $session = session()->all();
+        DB::table('notif_user as nu')
+        ->join("payment as p","nu.id_payment","p.id_payment")
+        ->join("bookings as b","p.id_booking","b.id_booking")
+        ->where('b.id_user',$session['user']['id_user'])->update(["view" => "1"]);
         $profile = DB::table('users')->where("id_user",$session['user']['id_user'])->get();
+        $notif = DB::table('notif_user as nu')
+        ->join("payment as p","nu.id_payment","p.id_payment")
+        ->join("bookings as b","p.id_booking","b.id_booking")
+        ->join("tour_packages as tp","b.id_tour","tp.id_tour")
+        ->select("tp.tour_name", "nu.status","nu.datetime")
+        ->where("b.id_user",$session['user']['id_user'])
+        ->get();
         
         $attr = array(
             "title" => "BMC Travel Service - My Account",
             "desc" => "Welcome to BMC Travel Service. One Stop Travel Solution",
             "user" => $profile[0],
+            "notif" => $notif
         );
         return view('frontend.myAccount.notifications', $attr);
     }
@@ -144,6 +156,14 @@ class MyAccount extends Controller
         $update = array(
             'status' => $status
         );
+
+        //jika payment option 50 & booking status 0, check count payment(jika di payment ada, update, jika tidak ada, insert)
+
+        $cek = DB::table('payment as p')
+        ->join("bookings as b","p.id_booking","b.id_booking")
+        ->where("p.id_booking", $payment['id_booking']);
+        ->where("b.status", $payment['id_booking']);
+
         DB::table('bookings')->where('id_booking',$payment['id_booking'])->update($update);
         DB::table('payment')->insert($payment);
         $lastId = DB::getPDO()->lastInsertId();
@@ -157,6 +177,17 @@ class MyAccount extends Controller
         DB::table('notif_admin')->insert($notif);
         return redirect('my-account/booking')->with('status', 'Upload success. Wait for a moment, we will check your uploaded file ');
     }
+
+    public function getnotif()
+    {
+        $countNotif = DB::table('notif_user')
+        ->select("status")
+        ->where('view','0')
+        ->get()->toArray();
+        
+        echo count($countNotif);
+    }
+
 
 }
 

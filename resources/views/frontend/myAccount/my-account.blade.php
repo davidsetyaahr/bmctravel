@@ -23,7 +23,7 @@
       break;
   }
 ?>
-<div class="banner-account">
+<div class="banner-account" data-notif="{{url('my-account/getnotif')}}">
   <img src="{{url('images/avatar/david.jpeg')}}" alt="">
 </div>
 <div class="container">
@@ -40,7 +40,7 @@
             <a class="nav-link <?php echo isset($dashboard) ? "active" : "" ?>" href="{{url('my-account')}}">Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php echo isset($notif) ? "active" : "" ?>" href="{{url('my-account/notification')}}">Notifications</a>
+            <a class="nav-link <?php echo isset($notif) ? "active" : "" ?>" href="{{url('my-account/notification')}}">Notifications <span class="badge badge-info" id="countNotif"></span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link <?php echo isset($booking) ? "active" : "" ?>" href="{{url('my-account/booking')}}">Booking and Payment</a>

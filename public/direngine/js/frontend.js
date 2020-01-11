@@ -2,6 +2,23 @@ $(document).ready(function(){
     $(".to-top").click(function(){
         $("body,html").animate({"scrollTop":0},1200)
     })
+    if($("body.my-account").length==1){
+        setInterval(getNotif, 2000)
+        function getNotif(){
+            var url = $(".banner-account").data("notif")
+            $.ajax({
+                url : url,
+                success : function(data){
+                    if(data>0){
+                        $("#countNotif").html(data)
+                    }
+                    else{
+                        $("#countNotif").html("")
+                    }
+                }
+            })
+        }
+    }
     $(".navbar-toggler").click(function(){
         $(".nav-white").toggleClass("scrolled")
         $(".nav-white").toggleClass("awake")

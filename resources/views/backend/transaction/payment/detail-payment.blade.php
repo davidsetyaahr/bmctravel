@@ -82,19 +82,36 @@
                         <tr>
                             <td class="bold">Attachment</td>
                             <td>:</td>
-                            <td><a href="">View Attachment</a></td>
+                            <td><a href="" data-toggle="modal" data-target="#attach">View Attachment</a></td>
                         </tr>
                     </table>
                 </div>
                 <div class="col-md-12">
                     <hr>
-                    <a href="" class="btn btn-default">Decline</a>
-                    <a href="" class="btn btn-success">Accept</a>
+                    <a href="{{url('admin/transaction/payment/status/'.$payment->id_payment.'?status=0')}}" class="btn btn-default">Decline</a>
+                    <a href="{{url('admin/transaction/payment/status/'.$payment->id_payment.'?status=1')}}" class="btn btn-success">Accept</a>
                 </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
+<div class="modal fade" id="attach">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h5 class="modal-title">Attachment</h5>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <img src="{{url('images/attach/'.$payment->attachment)}}" alt="" class="img-fluid">
+      </div>
+
+    </div>
+  </div>
 </div>
 
 @endsection

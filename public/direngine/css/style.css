@@ -166,6 +166,34 @@
         overflow: none !important;
     }
 }
+.notifications div:before{
+    content : "";
+    position: absolute;
+    top : 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    left : 5px;
+    padding : 4px;
+    border-radius : 100%;
+}
+.notifications div.success:before{
+    background :#17a2b8;
+}
+.notifications div.failed:before{
+    background :#ffc107;
+}
+.notifications div{
+    padding-left : 30px;
+    position: relative;
+    font-weight: bold;
+    letter-spacing: .5px;
+}
+.notifications p{
+    color : #cad2d9;
+    font-size : 11px;
+}
 .badge{
     color : white !important;
 }
