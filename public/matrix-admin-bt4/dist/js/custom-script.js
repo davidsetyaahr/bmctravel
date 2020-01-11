@@ -1,4 +1,32 @@
 $(document).ready(function(){
+
+    setInterval(getNotif,2000)
+    function getNotif(){
+        var url = $(".interval").data("url")
+        $.ajax({
+            url : url,
+            success : function(data){
+                if(data>0){
+                    $("#countNotif").html(data)
+                }
+                else{
+                    $("#countNotif").html("")
+                }
+            }
+        })
+    }
+
+    $(".link-notif").click(function(){
+        var url = $(this).data("url")
+
+        $.ajax({
+            url : url,
+            success : function(data){
+                $("#loopNotif").html(data)
+            }
+        })
+    })
+
     $("select").select2()
     $(".noSelect").select2('destroy')
 

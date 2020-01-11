@@ -104,6 +104,8 @@ class TourPackage extends Controller
             $insert['tour_packages'] = $session['step1'];
             $insert['tour_packages'] = array_merge($insert['tour_packages'],$session['step4']);
             $insert['tour_packages']['meeting_point'] = $insert['tour_packages']['meeting'];
+            date_default_timezone_set("Asia/Jakarta");
+            $insert['tour_packages']['date_created'] = date("Y-m-d");
             unset($insert['tour_packages']['meeting']);
             DB::table('tour_packages')->insert($insert['tour_packages']);
             $lastIdTourPackages = DB::getPDO()->lastInsertId();

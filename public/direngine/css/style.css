@@ -166,7 +166,117 @@
         overflow: none !important;
     }
 }
-
+.badge{
+    color : white !important;
+}
+.btn{
+    font-size : 13px  !important;
+    letter-spacing: .5px;
+    border-radius : 6px !important;
+    color : inherit;
+}
+.btn-default{
+    background : white;
+    border : 1px solid #ddd !important;
+}
+.user-info{
+    color : #7c7c7c;
+    margin-bottom : 20px;
+}
+.user-info p.email{
+    font-weight : bold;
+    letter-spacing: .6px;
+    color : #da302a;
+    margin-bottom : 10px;
+}
+.user-info p{
+    font-size : 13px;
+}
+.user-info p,.user-info h5{
+    margin-bottom : 0px;
+}
+.banner-account{
+    background: url('../../images/common/banner-login.jpg');
+    height: 33%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    text-align: center;
+    margin-bottom : 5%;
+}
+.banner-account:before{
+    content : "";
+    position : absolute;
+    width : 100%;
+    height: 100%;
+    background : rgba(0, 0, 0, 0.4);
+    top : 0;
+    left : 0;
+}
+.banner-account img{
+    width : 110px;
+    height : 110px;
+    position: absolute;
+    left : 50%;
+    bottom : 0;
+    z-index: 2;
+    transform: translate(-50%,50%);
+    -webkit-transform: translate(-50%,50%);
+    -o-transform: translate(-50%,50%);
+    -moz-transform: translate(-50%,50%);
+    border-radius: 100%;
+    border : 5px solid white;
+}
+.success-page{
+    background : white;
+    height : 600px;
+    border-radius: 10px;
+    text-align: center;
+    padding : 40px;
+    margin-top : 6%;
+}
+.success-page a.payment{
+    color  : #ecd500;
+    border-color : #ecd500;
+}
+.success-page .link{
+    margin-bottom : 30px;
+}
+.success-page a{
+    color : #ec525b;
+    font-weight: bold;
+    border-bottom : 1.5px solid #ec525b;
+    padding : 2px;
+}
+.success-page p.bold{
+    font-size : 17px;
+}
+.success-page p{
+    font-size : 13px;
+}
+.success-page .img{
+    position: relative;
+}
+.success-page .img img{
+    width : 150px;
+    z-index: 2;
+    opacity: .7;
+    left : 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    position: absolute;
+}
+.success-page .img p{
+    top : 0;
+    line-height: 150%;
+    font-weight: bold;
+    color : #e6eaed;
+    position: relative;
+    font-size : 120px;
+}
 .menu-account {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -206,16 +316,71 @@
     border-radius: 5px;
 }
 
-.dropzone span {
-    color: #c7cfd6
+.attach {
+    text-align: center;
+    height: 300px;
+    border: 3px dotted #72c8f9;
+    padding : 3%;
+}
+.attach .left{
+    float : left;
+    width : 100%;
+}
+.attach .left.uploaded{
+    width : 45%;
+    margin-right : 5%;
+}
+    .attach .right{
+    width : 50%;
+    float : left;
 }
 
-.attach form {
+#image-holder img{
+    width : 90%;
+    height : 100%;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+.upload-btn-wrapper {
     position: relative;
-    top: 25%;
-
+    overflow: hidden;
+  }
+  
+  .upload-btn-wrapper .btn div:before{
+      content : "";
+      border : 2px solid #e6eaed;
+      top : 7;
+      left : 7;
+      position: absolute;
+      width : 103%;
+      height: 103%;
+  }
+  .upload-btn-wrapper .btn div{
+      position: relative;
+      display: inline-block;
+      padding : 20px;
+      border : 2px solid #e6eaed;
+  }
+  .upload-btn-wrapper .btn {
+    background : white;
+    color : #bfbfc8;
+    font-size : 14px;
+    font-weight: bold;
+    letter-spacing: .7px;
+    display: block;
+    height : 100%;
+    width: 100%;
 }
 
+.upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
 .gambar img {
     float: left !important;
     border-radius: 25px;
@@ -234,12 +399,6 @@
     color: white;
 }
 
-.attach {
-    text-align: center;
-    height: 300px;
-    border: 3px dotted #72c8f9;
-}
-
 .input-pax {
     border: 2px solid #d4d9dd;
     background: #d4d9dd;
@@ -248,6 +407,9 @@
 
 .input-pax button {
     border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    -o-border-radius: 0px !important;
+    -webkit-border-radius: 0px !important;
     background: #d4d9dd;
     border-color: transparent !important;
     color: #3e474f !important;
@@ -259,13 +421,50 @@
     text-align: center;
     background: #f9fafa !important;
 }
-
-.table-booking tbody {
-    font-size: 15px;
-    font-weight: normal;
-    color: #808088;
+.table-booking tr td,.table-booking tr th{
+    border-color : #f2f2f2;
+    padding-top : 25px;
+    padding-bottom : 20px;
 }
-
+.table-booking thead {
+    background: #3598dc;
+    color: white;
+    letter-spacing: 1px;
+}
+.table-booking thead th:first-child{
+    border-radius: 10px 0px 0px 0px;
+    -webkit-border-radius: 10px 0px 0px 0px;
+    -o-border-radius: 10px 0px 0px 0px;
+    -webkit-border-radius: 10px 0px 0px 0px;
+}
+.table-booking thead th:last-child{
+    border-radius: 0px 10px 0px 0px;
+    -webkit-border-radius: 0px 10px 0px 0px;
+    -moz-border-radius: 0px 10px 0px 0px;
+    -o-border-radius: 0px 10px 0px 0px;
+}
+.table-booking tbody {
+    font-size: 14.5px;
+    color: #666;
+    letter-spacing: .5px;
+}
+.table-booking tbody tr td .ion-ios-checkbox{
+    opacity: 0;
+    color : #3598dc;
+    font-size : 20px;
+}
+.table-booking.choose tbody tr:hover,.table-booking tbody tr.selected{
+    cursor: pointer;
+}
+.table-booking tbody tr.selected,.table-booking tbody tr.selected:hover{
+    background:rgb(53, 152, 220, 0.2) !important;
+}
+.table-booking tbody tr:hover{
+    background:rgb(53, 152, 220, 0.05) !important;
+}
+.table-booking tbody tr:hover td .ion-ios-checkbox,.table-booking tbody tr.selected td .ion-ios-checkbox{
+    opacity : 1;
+}
 .booking {
     width: 100%;
     overflow: auto;
@@ -317,7 +516,7 @@
     padding: 0px !important;
 }
 
-.booking .body .body-data .bg-bmc {
+.bg-bmc {
     position: absolute;
     opacity: 0.1;
     left: 0;
@@ -326,12 +525,12 @@
     text-align: center;
 }
 
-.booking .body .body-data .bg-bmc p {
+.bg-bmc p {
     font-weight: bold;
     font-size: 16px;
 }
 
-.booking .body .body-data .bg-bmc img {
+.bg-bmc img {
     width: 20%;
     height: 70%;
     position: relative;
@@ -1147,7 +1346,8 @@
 
                     .hotel .images .img-bottom .img {
                         float: left;
-                        width: 32.5%;
+                        width: 33%;
+                        padding : 0px 2px;
                     }
 
                     .hotel .images .desc {
@@ -1199,6 +1399,8 @@
                     }
 
                     .menu-detail-package .nav-item {
+                        float : left;
+                        list-style: none;
                         padding: 10px;
                         border-right: 1px solid #ddd;
                         border-bottom: 2px solid transparent;
@@ -1747,6 +1949,12 @@
                         z-index: 3;
                         width: 100%;
                         background: transparent !important;
+                    }
+                    .my-account .nav-grey{
+                        position: relative !important;
+                    }
+                    .my-account .nav-grey a{
+                        color : inherit !important;
                     }
 
                     .nav-grey .left,
@@ -2871,14 +3079,14 @@
                     }
 
                     .container {
-                        width: 100%;
+                        width: 85%;
                         padding-right: 15px;
                         padding-left: 15px;
                         margin-right: auto;
                         margin-left: auto;
                     }
 
-                    @media (min-width: 576px) {
+/*                     @media (min-width: 576px) {
                         .container {
                             max-width: 540px;
                         }
@@ -2901,7 +3109,7 @@
                             max-width: 1140px;
                         }
                     }
-
+ */
                     .container-fluid {
                         width: 100%;
                         padding-right: 15px;
@@ -4506,6 +4714,20 @@
                         border: 0;
                     }
 
+                    .form-control.normal {
+                        font-size : 14px;
+                        height : 40px !important;
+                    }
+                    .form-control.custom {
+                        border-radius: 5px;
+                        background: #f9fafa !important;
+                        border : 2px solid #d4d9dd;
+                        color : inherit !important;
+                        font-weight: bold;
+                    }
+                    .form-control.custom:focus {
+                        border-color :#72c8f9 !important;
+                    }
                     .form-control {
                         display: block;
                         width: 100%;
@@ -12881,14 +13103,15 @@
                         letter-spacing: .1em;
                     }
 
-                    .ftco-navbar-light.scrolled {
+                    .ftco-navbar-light.scrolled, .my-account .ftco-navbar-light {
                         position: fixed;
                         right: 0;
                         left: 0;
                         top: 0;
-                        margin-top: -130px;
+/*                         margin-top: -130px; */
                         background: #fff !important;
                     }
+                     
 
                     .nav-shadow {
                         box-shadow: 0 4px 8px 0 rgba(27, 27, 27, .1), 0 1px 3px 0 rgba(27, 27, 27, .1);
@@ -12951,7 +13174,7 @@
                         letter-spacing: .1em;
                     }
 
-                    .ftco-navbar-light.scrolled .nav-link {
+                    .ftco-navbar-light.scrolled .nav-link, .my-account .ftco-navbar-light .nav-link {
                         padding-top: 0.9rem !important;
                         padding-bottom: 0.9rem !important;
                         color: #000000 !important;
@@ -12975,7 +13198,7 @@
                         transition: .3s all ease-out;
                     }
 
-                    .ftco-navbar-light.scrolled .navbar-brand {
+                    .ftco-navbar-light.scrolled .navbar-brand, .my-account .ftco-navbar-light .navbar-brand {
                         color: #000000;
                     }
 
@@ -14055,6 +14278,7 @@
                             border-top: 1px solid #ddd;
                             font-size: 16px;
                             padding: 8em 0 8em 0;
+                            background : white;
                         }
 
                         .ftco-footer .ftco-footer-logo {

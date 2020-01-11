@@ -11,6 +11,8 @@
 |
 */
 Route::get('/admin', 'backend\Admin@login');
+Route::get('/admin/getnotif', 'backend\Admin@getnotif');
+Route::get('/admin/loopnotif', 'backend\Admin@loopnotif');
 Route::post('/admin', 'backend\Admin@loginPost');
 Route::get('/admin/logout', 'backend\Admin@logout');
 Route::get('/admin/dashboard', 'backend\Admin@dashboard');
@@ -119,7 +121,13 @@ Route::post('/admin/tour-package/stepbystep', 'backend\tour_package\TourPackage@
 Route::post('/signup/auth', 'frontend\Signin@register');
 Route::get('/admin/transaction/booking/list-booking','backend\transaction\booking\book@index');
 Route::get('/admin/transaction/payment/list-payment','backend\transaction\payment\payment@index');
+Route::get('/admin/transaction/payment/detail/{id}','backend\transaction\payment\payment@detail');
 Route::post('/signin/auth', 'frontend\Signin@authLogin');
+Route::get('/tour-package/booking/{id}/{name}', 'frontend\TourPackage@booking');
+Route::get('/tour-package/booking/stepbystep', 'frontend\TourPackage@stepbystep');
+Route::post('/tour-package/booking/attach', 'frontend\TourPackage@attach');
+Route::get('/tour-package/booking/success', 'frontend\TourPackage@bookingtrue');
+Route::get('/tour-package/booking/booking-success', 'frontend\TourPackage@bookingsuccess');
 Route::get('/logout', 'frontend\Signin@signout');
 Route::get('/tour-package/booking/{id}', 'frontend\TourPackage@booking');
 Route::get('/tour-package/attach', 'frontend\TourPackage@attach');
@@ -131,5 +139,9 @@ Route::get('/admin/gallery/bycategory', 'backend\gallery\Gallery@bycategory');
 Route::get('/admin/tour-package/newtrip', 'backend\tour_package\TourPackage@newtrip');
 Route::get('/my-account/notification', 'frontend\MyAccount@notification');
 Route::get('/my-account/booking', 'frontend\MyAccount@booking');
+Route::get('/my-account/booking/detail/{id}', 'frontend\MyAccount@detailbooking');
+Route::get('/my-account/booking/payment/{id}', 'frontend\MyAccount@payment');
+Route::get('/my-account/changepassword', 'frontend\MyAccount@changepass');
+Route::post('/my-account/paymentaction', 'frontend\MyAccount@paymentaction');
 Route::get('/admin/tour-package/getKodeHotel', 'backend\tour_package\TourPackage@kodehotel');
 Route::get('/admin/tour-package/gethotel', 'backend\tour_package\TourPackage@gethotel');

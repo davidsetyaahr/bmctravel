@@ -14,6 +14,9 @@
     font-weight: normal;
     font-style: normal;
   }
+.bold{
+    font-weight: bold !important;
+}
 .sidebar-nav ul .sidebar-item.selected>.sidebar-link.has-arrow,.sidebar-nav ul .sidebar-item .sidebar-link.has-arrow:focus{
     background: #15181e !important;
     border-left : 3px solid #1386b6;

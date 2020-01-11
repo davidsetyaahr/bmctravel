@@ -52,7 +52,9 @@
                                                     echo '<a class="dropdown-item" href="'.url("admin/calculation/".$p->id_payment).'">Calculating</a>';
                                                 } 
                                                 else{
-                                                    echo '<a class="dropdown-item" href="edit-categories/{{ $p->id_payment }}">Edit</a>';
+                                                    ?>
+                                                    <a class="dropdown-item" href="{{url('admin/transaction/payment/detail/'.$p->id_payment)}}">Detail</a>
+                                                    <?php
                                                 }
                                             ?>                                   
                                         </div>

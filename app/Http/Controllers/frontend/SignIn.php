@@ -38,7 +38,7 @@ class SignIn extends Controller
                     'phone' => $cek[0]->phone,
                     'avatar' => $cek[0]->avatar
                 );
-                $request->session()->put($data);
+                $request->session()->put('user', $data['user']);
                 $json = array(
                     "success" => "Sign in success.",
                     "redirect" =>  url('/')

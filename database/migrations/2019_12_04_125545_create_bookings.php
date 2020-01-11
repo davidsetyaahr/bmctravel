@@ -18,11 +18,12 @@ class CreateBookings extends Migration
             $table->integer('id_tour');
             $table->dateTime('booking_date');
             $table->dateTime('travel_date');
+            $table->tinyInteger('day');
             $table->integer('id_user');
             $table->integer('pax',);
             $table->integer('price',);
             $table->string('identity_card');
-            $table->enum('status', ['0', '1', '2']);
+            $table->enum('status', ['0','11', '1','22','2']);
         });
     }
 
