@@ -1,48 +1,57 @@
               <div class="body-data">
                 <h6 class="bold text-center"><img src="{{ url('public/images/common/location.png') }}" width='30px' alt=""> <br> Meeting Point</h6>
                 <p class="text-center mt-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, repellat natus fugit quasi, debitis ullam voluptatem exercitationem maiores nisi quo sapiente numquam iste quia excepturi deleniti porro necessitatibus nihil laboriosam!
+                  {{$meeting_point}}
                 </p>
                 <br>
                 <h6 class="bold text-center"><img src="{{ url('public/images/common/hotel.png') }}" width='30px' alt=""> <br> Accommodation</h6>
-                <div class="hotel mt-4">
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="hotel-name">
-                        Baratha Hotel
+
+                @foreach($hotels as $h)
+          <div class="hotel">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="hotel-name">
+                  {{$h->hotel_name}}
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="images">
+                  <div class="img-top">
+                    <img src="{{ url('images/gallery/'.$h->img) }}" alt="" class="img-fluid">
+                  </div>
+                  <div class="img-bottom">
+                    <?php 
+                      $img = explode(",",$h->gallery);
+                      foreach ($img as $img) {
+                        $imgRoom = DB::table("gallery")
+                        ->select("img")
+                        ->where("id_gallery",$img)
+                        ->get();
+                    ?>
+                    <div class="img">
+                      <img src="{{ url('images/gallery/'.$imgRoom[0]->img) }}" alt="" class="img-fluid">
+                    </div>
+                    <?php
+                      }
+                    ?>
+                  </div>
+                  <div class="desc">
+                      <div class="website">
+                        <a href="">View Website</a>
                       </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="images">
-                        <div class="img-top">
-                          <img src="{{ url('public/images/gallery/hotel1-min.jpg') }}" alt="" class="img-fluid">
-                        </div>
-                        <div class="img-bottom">
-                          <div class="img">
-                            <img src="{{ url('public/images/gallery/hotel2-min.jpg') }}" alt="" class="img-fluid">
-                          </div>
-                          <div class="img" style="margin-left : 1%;">
-                            <img src="{{ url('public/images/gallery/hotel3-min.jpg') }}" alt="" class="img-fluid">
-                          </div>
-                          <div class="img" style="margin-left : 1%;">
-                            <img src="{{ url('public/images/gallery/hotel4-min.jpg') }}" alt="" class="img-fluid">
-                          </div>
-                        </div>
-                        <div class="desc">
-                            <div class="website">
-                              <a href="">View Website</a>
-                            </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="hotel-information">
-                          <h6 class="bold">Day 1 - 4 &nbsp; <span class="color-green"><small> Duluxe Room</small></span> <span class="float-right color-orange"><small>Bondowoso - East Java</small></span></h6>
-                          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque veritatis praesentium sapiente fuga. Nemo, eos temporibus beatae quas facilis praesentium. Voluptas nostrum esse recusandae vero ipsa? Et ullam aut facere!</p>
-                          <hr>
-                          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.86354306294!2d113.80818541405226!3d-7.909320594302319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6dd2769f1e9a5%3A0xdf0667af9e288f3e!2sBaratha%20Hotel%20%26%20Coffee!5e0!3m2!1sen!2sid!4v1572879802648!5m2!1sen!2sid" width="100%" height="150" frameborder="0" style="border:0;" allowfullscreen=""></iframe>                    
-                        </div>
-                    </div>
                   </div>
                 </div>
+              </div>
+              <div class="col-md-8">
+                  <div class="hotel-information">
+                    <h6 class="bold">Day {{$h->day}} &nbsp; <span class="color-green"><small> {{$h->room_name}}</small></span> <span class="float-right color-orange"><small>Bondowoso - East Java</small></span></h6>
+                    <p>{{$h->overview}}</p>
+                    <hr>
+                    <iframe src="{{$h->map}}" width="100%" height="150" frameborder="0" style="border:0;" allowfullscreen=""></iframe>                    
+                  </div>
+              </div>
+            </div>
+          </div>
+          @endforeach
+                
                 </div>

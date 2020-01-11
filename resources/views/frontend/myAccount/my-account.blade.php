@@ -1,95 +1,65 @@
 @extends('frontend/common/template')
+@section('my-account',true)
 @section('container')
-<div style="background-image: url('public/direngine/images/bg_4.jpg');"  class="js-fullheight-travel">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row justify-content-center">
-
-          <div class="col-md-8 text-center mt-5 ftco-animate">
-
-          <h3 class="color-white">My Account</h3>
-          <div class="block-17 my-4">
-          <form action="" method="post" class="d-block d-flex">
-                      <div class="fields d-block d-flex">
-                        <div class="textfield-search one-third">
-                            <input type="text" class="form-control" placeholder="Destinations, Ex : Mountain, Waterfall, etc ">
-                        </div>
-                        <div class="select-wrap one-third">
-                          <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                          <select name="" id="" class="form-control" placeholder="Keyword search">
-                              <option>Where</option>
-                              <optgroup label="East Java">
-                                  <option>Bondowoso</option>
-                                  <option>Probolinggo</option>
-                                  <option>Jember</option>
-                              </optgroup>
-                              <optgroup label="Bali">
-                                  <option>Bali</option>
-                              </optgroup>
-                              <optgroup label="West Nusa Tenggara">
-                                  <option>Lombok</option>
-                              </optgroup>
-                          </select>
-                        </div>
-                      </div>
-                      <input type="submit" class="search-submit btn btn-primary" value="Search">
-                    </form>
-              </div>
-            </div>
-          </div>
-        </div>
+<?php 
+  switch (Request::segment(2)) {
+    case '':
+      $dashboard = "active";
+      break;
+    case 'notification':
+      $notif = "active";
+      break;
+    case 'booking':
+      $booking = "active";
+      break;
+    case 'custom-package':
+      $custom = "active";
+      break;
+    case 'profile':
+      $profile = "active";
+      break;
+    case 'change':
+      $change = "active";
+      break;
+  }
+?>
+<div class="banner-account">
+  <img src="{{url('images/avatar/david.jpeg')}}" alt="">
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="user-info text-center">
+        <h5 class="bold">{{$user->firstname}} {{$user->lastname}}</h5>
+        <p class="email">{{$user->email}}</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus fugiat a maiores nam id illo? Provident, doloribus, fugiat dolore officiis dolor pariatur consectetur quam molestiae expedita nobis ad sequi itaque!</p>
       </div>
-
-      <div class="container">
-        <div class="row menu-account">
-          <div class="col-md-2">
-             <div class="row mt-1 side-line">
-               <div class="col-md-12">
-                   <div class="text-center">
-                     <h6 class="mb-3 bottom-line">Menu</h6>
-                   </div>
-                 </div>
-                 <div class="col-md-12">
-                    <a href="{{ url("my-account") }}">
-                      <div class="mt-2">
-                        <p> Profile<p>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-md-12">
-                    <a href="{{ url("my-account/notification") }}">
-                      <div class="mt-2">
-                        <p> Notifications</p>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="col-md-12">
-                    <a href="{{ url("my-account/booking") }}">
-                      <div class="mt-2">
-                       <p> Booking</p>
-                      </div>
-                   </a>
-                   </div>
-               </div>
-            </div>
-            <div class="col-md-10">
-              <div class="row mt-1">
-                <div class="col-md-12">
-                  <div class="text-center">
-                    @yield('menu-account')
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div class="box-white">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link <?php echo isset($dashboard) ? "active" : "" ?>" href="{{url('my-account')}}">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <?php echo isset($notif) ? "active" : "" ?>" href="{{url('my-account/notification')}}">Notifications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <?php echo isset($booking) ? "active" : "" ?>" href="{{url('my-account/booking')}}">Booking and Payment</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <?php echo isset($custom) ? "active" : "" ?>" href="#others">Custom Package</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <?php echo isset($profile) ? "active" : "" ?>" href="#include">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <?php echo isset($change) ? "active" : "" ?>" href="#include">Change Password</a>
+          </li>
+        </ul>
+        <br>
+        @yield('menu-account')
       </div>
-
-
-
-
-
-
-
-
-
+    </div>
+  </div>
+</div>
+<br>
 @endsection

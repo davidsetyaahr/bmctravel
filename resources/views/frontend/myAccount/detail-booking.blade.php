@@ -1,6 +1,7 @@
-<div class="body-data" style="position:relative">
-    <div class="bg-bmc">
-        <img src="{{ url('public/direngine/images/BMC-Logo.png') }}" alt="">
+@extends('frontend/myAccount/my-account')
+@section('menu-account')
+<div class="bg-bmc">
+        <img src="{{ url('public/direngine/images/BMC-Logo.png') }}" alt="" style="height : 40%;width:15% ">
         <p>BMC Travel Service</p>
     </div>
     <div class="row">
@@ -9,41 +10,44 @@
                 <tr>
                     <td class="bold">Name</td>
                     <td>:</td>
-                    <td>{{$firstname}} {{$lastname}}</td>
-                </tr>
-                <tr>
-                    <td class="bold">Email</td>
-                    <td>:</td>
-                    <td>{{$email}}</td>
+                    <td>{{$user->firstname}} {{$user->lastname}}</td>
                 </tr>
                 <tr>
                     <td class="bold">Person / Pax</td>
                     <td>:</td>
-                    <td>{{$pax}} Pax</td>
+                    <td>{{$booking->pax}} pax</td>
                 </tr>
                 <tr>
                     <td class="bold">Package</td>
                     <td>:</td>
-                    <td><a href="">{{$package}}</a></td>
+                    <td><a href="">{{$booking->tour_name}}</a></td>
+                </tr>
+                <tr>
+                    <td class="bold">Type</td>
+                    <td>:</td>
+                    <td>{{$booking->type_name}}</td>
                 </tr>
             </table>
         </div>
         <div class="col-md-6">
             <table width="100%" cellpadding="5" style="font-size :14px;">
                 <tr>
-                    <td class="bold">Type</td>
-                    <td>:</td>
-                    <td>{{$type}}</td>
-                </tr>
-                <tr>
                     <td class="bold">Durations</td>
                     <td>:</td>
-                    <td>{{$day}} Days {{$night}} Nights</td>
+                    <td>{{$booking->day}} Days {{$booking->night}} Nights</td>
                 </tr>
                 <tr>
-                    <td class="bold">Travel Date</td>
+                    <td class="bold">Travel Start</td>
                     <td>:</td>
-                    <td>{{$start_date}} - {{$end_date}}</td>
+                    <td>{{ date("l, d F Y", strtotime($booking->travel_date)) }}</td>
+                </tr>
+                <tr>
+                    <td class="bold">Travel Finish</td>
+                    <td>:</td>
+                    <?php 
+                        $plus = $booking->day-1;
+                    ?>
+                    <td>{{ date("l, d F Y", strtotime($booking->travel_date.' +'.$plus.' day')) }}</td>
                 </tr>
                 <tr>
                     <td class="bold">Attachment</td>
@@ -66,12 +70,10 @@
         </div>
         <div class="col-md-6">
             <br>
-            <h4 class="bold color-orange text-right">IDR {{$price}}</h4>
+            <h4 class="bold color-orange text-right">IDR {{number_format($booking->price,0,',','.')}}<h4>
         </div>
     </div>
-</div>
-
-<div class="modal fade" id="attach">
+    <div class="modal fade" id="attach">
   <div class="modal-dialog">
     <div class="modal-content">
 
@@ -82,9 +84,10 @@
       </div>
 
       <div class="modal-body">
-        <img src="{{url('images/attach/'.$attach)}}" alt="" class="img-fluid">
+        <img src="{{url('images/attach/'.$booking->identity_card)}}" alt="" class="img-fluid">
       </div>
 
     </div>
   </div>
 </div>
+@endsection

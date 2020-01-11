@@ -62,9 +62,11 @@
       </div>
     </li>
   </ul>
-  <nav class="navbar navbar-expand-sm menu-detail-package nav-pills" id="myScrollspy">
+  <nav class="menu-detail-package nav-pills" id="myScrollspy">
     <div class="container">
-      <ul class="navbar-nav ml-auto">
+      <div class="row justify-content-center">
+        <div class="col-md-12">
+        <ul>
           <li class="nav-item">
             <a class="nav-link" href="#overview"><span class="ion-ios-images"></span> Overview</a>
           </li>
@@ -86,10 +88,13 @@
           <li class="nav-item">
             <a class="nav-link" href="#another-package"><span class="ion-ios-globe"></span> Another Package</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" style="border:none">
             <a class="nav-link" href="#booking"><span class="ion-ios-cart"></span> Booking</a>
           </li>
         </ul>
+
+        </div>
+      </div>
       </div>
   </nav>
   <section class="ftco-section mb-5" id="overview">
@@ -288,42 +293,46 @@
         <div class="col-md-10">
           <h4 class="bold mb-4 mt-3">Hotels</h4>
           <?php 
-            $hotels = DB::table('detail_itinerary as di')
-            ->join('hotel_when_tour as hw','di.id_detail','hw.id_detail_itinerary')
+            $hotels = DB::table('hotel_when_tour as hw')
+            ->join('detail_itinerary as di','di.id_detail','hw.id_detail_itinerary')
+            ->join('itinerary as i','di.id_itinerary','i.id_itinerary')
             ->join('room_hotels as rh','hw.id_room_hotel','rh.id_room_hotel')
             ->join('hotels as h','rh.id_hotel','h.id_hotel')
-            ->join('itinerary as i','di.id_itinerary','i.id_itinerary')
-            ->select("h.hotel_name")
-            ->where('di.id_itinerary',$packages->id_tour)
-            ->groupBy('h.hotel_name')
+            ->join("gallery as g","h.id_gallery","g.id_gallery")
+            ->select("h.hotel_name","i.day","g.img","rh.room_name","rh.gallery","h.overview","h.map")
+            ->groupBy("h.hotel_name","i.day","g.img","rh.room_name","rh.gallery","h.overview","h.map")
+            ->where('i.id_tour',$packages->id_tour)
             ->get();
             
-            echo "<pre>";
-            print_r($hotels);
-            echo "</pre>";
           ?>
+          @foreach($hotels as $h)
           <div class="hotel">
             <div class="row">
               <div class="col-md-12">
                 <div class="hotel-name">
-                  Baratha Hotel
+                  {{$h->hotel_name}}
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="images">
                   <div class="img-top">
-                    <img src="{{ url('public/images/gallery/hotel1-min.jpg') }}" alt="" class="img-fluid">
+                    <img src="{{ url('images/gallery/'.$h->img) }}" alt="" class="img-fluid">
                   </div>
                   <div class="img-bottom">
+                    <?php 
+                      $img = explode(",",$h->gallery);
+                      foreach ($img as $img) {
+                        $imgRoom = DB::table("gallery")
+                        ->select("img")
+                        ->where("id_gallery",$img)
+                        ->get();
+                    ?>
                     <div class="img">
-                      <img src="{{ url('public/images/gallery/hotel2-min.jpg') }}" alt="" class="img-fluid">
+                      <img src="{{ url('images/gallery/'.$imgRoom[0]->img) }}" alt="" class="img-fluid">
                     </div>
-                    <div class="img" style="margin-left : 1%;">
-                      <img src="{{ url('public/images/gallery/hotel3-min.jpg') }}" alt="" class="img-fluid">
-                    </div>
-                    <div class="img" style="margin-left : 1%;">
-                      <img src="{{ url('public/images/gallery/hotel4-min.jpg') }}" alt="" class="img-fluid">
-                    </div>
+                    <?php
+                      }
+                    ?>
                   </div>
                   <div class="desc">
                       <div class="website">
@@ -334,19 +343,20 @@
               </div>
               <div class="col-md-8">
                   <div class="hotel-information">
-                    <h6 class="bold">Day 1 - 4 &nbsp; <span class="color-green"><small> Duluxe Room</small></span> <span class="float-right color-orange"><small>Bondowoso - East Java</small></span></h6>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque veritatis praesentium sapiente fuga. Nemo, eos temporibus beatae quas facilis praesentium. Voluptas nostrum esse recusandae vero ipsa? Et ullam aut facere!</p>
+                    <h6 class="bold">Day {{$h->day}} &nbsp; <span class="color-green"><small> {{$h->room_name}}</small></span> <span class="float-right color-orange"><small>Bondowoso - East Java</small></span></h6>
+                    <p>{{$h->overview}}</p>
                     <hr>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.86354306294!2d113.80818541405226!3d-7.909320594302319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6dd2769f1e9a5%3A0xdf0667af9e288f3e!2sBaratha%20Hotel%20%26%20Coffee!5e0!3m2!1sen!2sid!4v1572879802648!5m2!1sen!2sid" width="100%" height="150" frameborder="0" style="border:0;" allowfullscreen=""></iframe>                    
+                    <iframe src="{{$h->map}}" width="100%" height="150" frameborder="0" style="border:0;" allowfullscreen=""></iframe>                    
                   </div>
               </div>
             </div>
           </div>
+          @endforeach
         </div>
       </div>
       <div class="row justify-content-center" id="information">
           <div class="col-md-10">
-            <h4 class="bold mb-4 mt-3">Information</h4>
+            <h4 class="bold mb-4 mt-3">Informations</h4>
             <div class="box-white">
               <!-- Nav tabs -->
               <ul class="nav nav-tabs">
@@ -363,9 +373,27 @@
               
               <!-- Tab panes -->
               <div class="tab-content mt-3">
-                <div class="tab-pane container active" id="include">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ratione dicta quisquam corrupti illo corporis quis, libero atque ducimus excepturi expedita tempore tenetur possimus non ut esse debitis in saepe.</div>
-                <div class="tab-pane container fade" id="exclude">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ratione dicta quisquam corrupti illo corporis quis, libero atque ducimus excepturi expedita tempore tenetur possimus non ut esse debitis in saepe.</div>
-                <div class="tab-pane container fade" id="others">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ratione dicta quisquam corrupti illo corporis quis, libero atque ducimus excepturi expedita tempore tenetur possimus non ut esse debitis in saepe.</div>
+                <div class="tab-pane container active" id="include">
+                  <ul>
+                    @foreach($informations['include'] as $inc)
+                    <li>{{$inc->text}}</li>
+                    @endforeach
+                  </ul>
+                </div>
+                <div class="tab-pane container fade" id="exclude">
+                <ul>
+                    @foreach($informations['exclude'] as $ex)
+                    <li>{{$ex->text}}</li>
+                    @endforeach
+                  </ul>
+                </div>
+                <div class="tab-pane container fade" id="others">
+                <ul>
+                    @foreach($informations['pack'] as $pack)
+                    <li>{{$pack->text}}</li>
+                    @endforeach
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -467,54 +495,27 @@
           <div class="col-md-10">
           <h4 class="bold mt-4 mb-4">Another Same Package</h4>
               <div class="row mt-4">
+                @foreach($another_packages as $ap)
                   <div class="col-md-4 mb-3">
                     <div class="package1">
                       <div class="relative hidden">
                         <div class="layer transition"></div>
                         <div class="sticky-note">
-                          <span>Beach Vibes</span>
+                          <span>{{$ap->type_name}}</span>
                         </div>
-                        <img src="{{url('public/direngine/images/destinations/tabuhan.jpg')}}" alt="" class="img-fluid transition">
-                        <div class="view-link transition">View Package</div>
+                        <img src="{{url('images/gallery/'.$ap->img)}}" alt="" class="img-fluid transition">
+                        <?php 
+                        $name = strtolower(str_replace(' ','-',$ap->tour_name));
+                      ?>
+                        <a href="{{ url('tour-package/detail-package/'.$ap->id_tour.'/'.$name) }}" class="view-link transition">View Package</a>
                       </div>
                       <div class="text-bottom mt-2">
-                        <div class="title">3D 2N Menjangan Island</div>
-                        <div class="price-tour"><span><small>start from</small>1.000.000 </span></div>
+                        <div class="title">{{$ap->tour_name}}</div>
+                        <div class="price-tour"><span><small>start from</small>{{number_format($ap->price,0,',','.')}}</span></div>
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-4 mb-3">
-                    <div class="package1">
-                      <div class="relative hidden">
-                        <div class="layer transition"></div>
-                        <div class="sticky-note">
-                          <span>Beach Vibes</span>
-                        </div>
-                        <img src="{{url('public/direngine/images/destinations/menjangan.jpg')}}" alt="" class="img-fluid transition">
-                        <div class="view-link transition">View Package</div>
-                      </div>
-                      <div class="text-bottom mt-2">
-                        <div class="title">3D 2N Menjangan Island</div>
-                        <div class="price-tour"><span><small>start from</small>1.000.000 </span></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 mb-3">
-                    <div class="package1">
-                      <div class="relative hidden">
-                        <div class="layer transition"></div>
-                        <div class="sticky-note">
-                          <span>Beach Vibes</span>
-                        </div>
-                        <img src="{{url('public/direngine/images/destinations/bromo.jpg')}}" alt="" class="img-fluid transition">
-                        <div class="view-link transition">View Package</div>
-                      </div>
-                      <div class="text-bottom mt-2">
-                        <div class="title">3D 2N Menjangan Island</div>
-                        <div class="price-tour"><span><small>start from</small>1.000.000 </span></div>
-                      </div>
-                    </div>
-                  </div>
+                    @endforeach
               </div>
           </div>
       </div>
@@ -548,7 +549,10 @@
                     </div>
                       <a href="" class="btn btn-outline-primary f14 mb-3">Another package</a>
                       &nbsp;
-                      <a href="{{url('tour-package/booking/1?page=1')}}" class="btn btn-primary f14 mb-3">Book this package</a>
+                      <?php 
+                        $name = strtolower(str_replace(' ','-',$packages->tour_name));
+                      ?>
+                      <a href="{{url('tour-package/booking/1/'.$name.'?page=1')}}" class="btn btn-primary f14 mb-3">Book this package</a>
                   </div>
                 </div>
               </div>

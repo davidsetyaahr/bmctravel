@@ -24,6 +24,7 @@ class CreateTourPackages extends Migration
             $table->integer('price');
             $table->tinyInteger('sale');
             $table->text('meeting_point');
+            $table->date('date_created');
         });
     }
 
