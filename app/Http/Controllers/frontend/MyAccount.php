@@ -161,7 +161,7 @@ class MyAccount extends Controller
 
         $cek = DB::table('payment as p')
         ->join("bookings as b","p.id_booking","b.id_booking")
-        ->where("p.id_booking", $payment['id_booking']);
+        ->where("p.id_booking", $payment['id_booking'])
         ->where("b.status", $payment['id_booking']);
 
         DB::table('bookings')->where('id_booking',$payment['id_booking'])->update($update);

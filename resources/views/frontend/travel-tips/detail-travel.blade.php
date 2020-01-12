@@ -43,7 +43,7 @@
                 @endforeach
               </div>
             </div>
-
+            
             {{-- <div class="about-author d-flex p-5 bg-light">
               <div class="bio align-self-md-center mr-5">
                 <img src="images/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4">
