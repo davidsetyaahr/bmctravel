@@ -222,4 +222,23 @@ class TourPackage extends Controller
         // }
         // return response()->json($array);
  */    }
+
+    public function review()
+    {
+        $review = DB::table('review as r')
+        ->join("tour_packages as tp","r.id_tour","tp.id_tour")
+        ->join("users as u","r.id_user","u.id_user")
+        ->select("r.*","tp.tour_name","u.firstname","u.lastname")
+        ->orderBy('r.id_review',"desc")->get();
+
+        $param = array(
+            "review" => $review
+        );
+        return view('backend.tour_package.tour_package.list-review', $param);
+    }
+    public function reviewaction($id)
+    {
+        DB::table('review')->where("id_review",$id)->update(['status' => $_GET['status']]);
+        return redirect('/admin/review')->with('status', 'Update Success');
+    }
 }

@@ -11,6 +11,8 @@
 |
 */
 Route::get('/admin', 'backend\Admin@login');
+Route::get('/admin/review', 'backend\tour_package\TourPackage@review');
+Route::get('/admin/review/action/{id}', 'backend\tour_package\TourPackage@reviewaction');
 Route::get('/admin/getnotif', 'backend\Admin@getnotif');
 Route::get('/admin/loopnotif', 'backend\Admin@loopnotif');
 Route::post('/admin', 'backend\Admin@loginPost');
@@ -83,6 +85,7 @@ Route::get('/admin/data-master/city','backend\data_master\City@index');
 Route::get('/', 'frontend\Home@index');
 Route::get('/about', 'frontend\About@index');
 Route::get('/tour-package', 'frontend\TourPackage@index');
+Route::post('/tour-package/rate', 'frontend\TourPackage@rate');
 Route::get('/tour-package/detail-package/{id}/{name}', 'frontend\TourPackage@detail');
 Route::get('/destinations', 'frontend\Destinations@index');
 Route::get('/destinations/search', 'frontend\Destinations@search');
@@ -134,8 +137,11 @@ Route::get('/tour-package/booking/booking-success', 'frontend\TourPackage@bookin
 Route::get('/logout', 'frontend\Signin@signout');
 Route::get('/tour-package/booking/{id}', 'frontend\TourPackage@booking');
 Route::get('/tour-package/attach', 'frontend\TourPackage@attach');
-Route::get('/admin/calculation/{id}', 'backend\Calculation@index');
+Route::get('/admin/calculation/detail/{id}', 'backend\Calculation@detail');
+Route::post('/admin/calculation/show', 'backend\Calculation@show');
+Route::get('/admin/calculation/newcalc', 'backend\Calculation@newcalc');
 Route::get('/my-account/getnotif', 'frontend\MyAccount@getnotif');
+Route::get('/my-account/review', 'frontend\MyAccount@review');
 Route::get('/my-account', 'frontend\MyAccount@index');
 Route::get('/my-account/notifacation', 'frontend\MyAccount@setting');
 Route::get('/admin/tour-package/getKodeHotel', 'backend\tour_package\TourPackage@kodehotel');

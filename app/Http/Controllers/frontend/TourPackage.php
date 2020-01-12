@@ -50,6 +50,49 @@ class TourPackage extends Controller
         ->where('id_tour',$id)
         ->get();
 
+        $reviews = DB::table("review as r")
+        ->join("users as u","r.id_user","u.id_user")
+        ->select("r.*","u.firstname","u.lastname","u.avatar")
+        ->where('r.status','1')
+        ->orderBy('r.id_review',"desc")->get()->toArray();
+
+        $average = DB::table('review')
+        ->where("status",'1')
+        ->avg('rate');
+
+        $progresBar = array(
+            "fantastic" => DB::table("review")
+                            ->select(array(DB::raw('count(id_review) as ttl')))
+                            ->where("status","1")
+                            ->where("rate",5)
+                            ->get(),
+            "verygood" => DB::table("review")
+                            ->select(array(DB::raw('count(id_review) as ttl')))
+                            ->where("status","1")
+                            ->where("rate",4)
+                            ->get(),
+            "satisfying" => DB::table("review")
+                            ->select(array(DB::raw('count(id_review) as ttl')))
+                            ->where("status","1")
+                            ->where("rate",3)
+                            ->get(),
+            "average" => DB::table("review")
+                            ->select(array(DB::raw('count(id_review) as ttl')))
+                            ->where("status","1")
+                            ->where("rate",2)
+                            ->get(),
+            "poor" => DB::table("review")
+                            ->select(array(DB::raw('count(id_review) as ttl')))
+                            ->where("status","1")
+                            ->where("rate",1)
+                            ->get(),
+        );
+        $rev['fantastic'] = ($progresBar['fantastic'][0]->ttl/count($reviews)) * 100;
+        $rev['verygood'] = ($progresBar['verygood'][0]->ttl/count($reviews)) * 100;
+        $rev['satisfying'] = ($progresBar['satisfying'][0]->ttl/count($reviews)) * 100;
+        $rev['average'] = ($progresBar['average'][0]->ttl/count($reviews)) * 100;
+        $rev['poor'] = ($progresBar['poor'][0]->ttl/count($reviews)) * 100;
+
         $information = array(
             "include" => DB::table('tour_informations as ti')
                         ->join("informations as i","ti.id_information","i.id_informations")
@@ -83,9 +126,12 @@ class TourPackage extends Controller
             "desc" => "Our awesome travel package",
             'packages' => $packages[0],
             'informations' => $information,
-            'another_packages' => $anotherPackages
+            'another_packages' => $anotherPackages,
+            "progress" => $progresBar,
+            "reviews" => $reviews,
+            "rev" => $rev,
+            "average" => $average
         );
-
         return view('frontend.tour-package.detail-tour-package', $attr);
     }
     public function booking($id)
@@ -194,5 +240,21 @@ class TourPackage extends Controller
     public function bookingsuccess()
     {
         return view('frontend.booking.success');
+    }
+    public function rate(Request $request)
+    {
+        date_default_timezone_set("Asia/Jakarta");
+        $session = session()->all();
+        $arr = array(
+            "id_tour" => $_POST['id_tour'],
+            "id_user" => $session['user']['id_user'],
+            "rate" => $_POST['rate'],
+            "comment" => $_POST['comment'],
+            "datetime" => date("Y-m-d H:i:s"),
+            "status" => "0"
+        );
+        
+        DB::table('review')->insert($arr);
+        return redirect('my-account/review');
     }
 }

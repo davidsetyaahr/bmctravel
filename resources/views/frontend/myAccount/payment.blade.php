@@ -25,17 +25,25 @@
         <div class="col-md-3">
             <p class="bold mb-2">Payment Option</p>
             <select name="payment_option" id="" class="form-control normal custom payment-option" data-price="{{$booking->price}}">
+                <?php 
+                    if($booking->status=='0'){
+                        $price  = $booking->price;
+                ?>
                 <option value="100">Full 100%</option>
                 <option value="50">50%  Payment</option>
+                <?php } else{
+                    $price = $booking->price/2;
+                    echo "<option value='0'>Pelunasan</option>";
+                } ?>
             </select>
         </div>
         <div class="col-md-3">
             <p class="bold mb-2">Total</p>
-            <input type="text" name="" class="form-control normal custom" id="total" value="{{number_format($booking->price,0,',','.')}}" disabled>
+            <input type="text" name="" class="form-control normal custom" id="total" value="{{number_format($price,0,',','.')}}" disabled>
         </div>
         <div class="col-md-3">
             <p class="bold mb-2">Kekurangan</p>
-            <input type="text" name="" class="form-control normal custom" id="min" value="{{number_format($booking->price,0,',','.')}}" disabled>
+            <input type="text" name="" class="form-control normal custom" id="min" value="{{number_format($price,0,',','.')}}" disabled>
         </div>
     </div>
     <br>

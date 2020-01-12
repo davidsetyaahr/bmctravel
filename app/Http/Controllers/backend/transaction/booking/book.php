@@ -11,13 +11,11 @@ class Book extends Controller
 {
     function index()
     {
-        $book = DB::table('bookings')
-
-
-        ->join('tour_packages','tour_packages.id_tour','bookings.id_tour')
-        ->join('users','users.id_user','bookings.id_user')
-        ->select('bookings.id_booking','tour_packages.tour_name','bookings.booking_date','bookings.travel_date','users.email','bookings.pax','bookings.price','bookings.identity_card','bookings.status')
-        ->orderBy('id_booking', 'desc')
+        $book = DB::table('bookings as b')
+        ->join('tour_packages as tp','tp.id_tour','b.id_tour')
+        ->join('users as u','u.id_user','b.id_user')
+        ->select('b.id_booking','tp.tour_name','b.booking_date','b.travel_date','u.firstname','u.lastname','b.pax','b.status')
+        ->orderBy('b.id_booking', 'desc')
         ->get();
         return view('backend.transaction.booking.list-booking' , ['bookings' => $book]);
     }
