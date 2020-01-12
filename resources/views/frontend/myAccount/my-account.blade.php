@@ -18,7 +18,7 @@
     case 'profile':
       $profile = "active";
       break;
-    case 'change':
+    case 'changepassword':
       $change = "active";
       break;
     case 'review':
@@ -59,7 +59,7 @@
             <a class="nav-link <?php echo isset($profile) ? "active" : "" ?>" href="{{url('my-account/profile')}}">Profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php echo isset($change) ? "active" : "" ?>" href="#include">Change Password</a>
+            <a class="nav-link <?php echo isset($change) ? "active" : "" ?>" href="{{url('my-account/changepassword')}}">Change Password</a>
           </li>
         </ul>
         <br>

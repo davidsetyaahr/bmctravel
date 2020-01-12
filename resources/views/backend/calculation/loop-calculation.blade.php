@@ -2,13 +2,13 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="">Label</label>
-                                <select name="" class="form-control calc" data-type="select" data-id="{{$id}}" data-target="#amount{{$id}}" id="label{{$id}}">
+                                <select name="nominal[]" class="form-control calc" data-type="select" data-id="{{$id}}" data-target="#amount{{$id}}" id="label{{$id}}">
                                     <option value="">---Option---</option>
                                 @foreach($calculation as $cal)
-                                    <option value="{{ $cal->nominal }}" data-id="{{$cal->id_calculation}}">{{ $cal->label}} - {{number_format($cal->nominal,0,',','.')}}</option>
+                                    <option value="{{ $cal->nominal }}" data-label="{{$cal->label}}">{{ $cal->label}} - {{number_format($cal->nominal,0,',','.')}}</option>
                                 @endforeach
                                 </select>
-                                <input type="hidden" id="hidden{{$id}}" name="id_calculation[]">
+                                <input type="hidden" id="hidden{{$id}}" name="label[]">
                             </div>
                             <div class="col-md-1">
                                 <label for="">Amount</label>
