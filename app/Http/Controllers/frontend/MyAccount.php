@@ -22,7 +22,7 @@ class MyAccount extends Controller
         );
         return view('frontend.myAccount.dashboard',$attr);
     }
-    
+
     public function notification()
     {
         $session = session()->all();
@@ -38,7 +38,7 @@ class MyAccount extends Controller
         ->select("tp.tour_name", "nu.status","nu.datetime")
         ->where("b.id_user",$session['user']['id_user'])
         ->get();
-        
+
         $attr = array(
             "title" => "BMC Travel Service - My Account",
             "desc" => "Welcome to BMC Travel Service. One Stop Travel Solution",
@@ -59,7 +59,7 @@ class MyAccount extends Controller
         ->select('bookings.id_booking','tour_packages.tour_name','bookings.booking_date','bookings.travel_date','bookings.pax','bookings.price','d.day','bookings.status')
         ->where('bookings.id_user',$profile[0]->id_user)
         ->get();
-        
+
         $attr = array(
             "title" => "BMC Travel Service - My Account",
             "desc" => "Welcome to BMC Travel Service. One Stop Travel Solution",
@@ -82,7 +82,7 @@ class MyAccount extends Controller
         ->where('bookings.id_user',$profile[0]->id_user)
         ->where('bookings.id_booking',$id)
         ->get();
-        
+
         $attr = array(
             "title" => "BMC Travel Service - My Account",
             "desc" => "Welcome to BMC Travel Service. One Stop Travel Solution",
@@ -161,7 +161,7 @@ class MyAccount extends Controller
 
         $cek = DB::table('payment as p')
         ->join("bookings as b","p.id_booking","b.id_booking")
-        ->where("p.id_booking", $payment['id_booking']);
+        ->where("p.id_booking", $payment['id_booking'])
         ->where("b.status", $payment['id_booking']);
 
         DB::table('bookings')->where('id_booking',$payment['id_booking'])->update($update);
@@ -184,7 +184,7 @@ class MyAccount extends Controller
         ->select("status")
         ->where('view','0')
         ->get()->toArray();
-        
+
         echo count($countNotif);
     }
 
