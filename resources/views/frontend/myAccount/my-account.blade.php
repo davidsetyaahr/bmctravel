@@ -18,7 +18,7 @@
     case 'profile':
       $profile = "active";
       break;
-    case 'change':
+    case 'changepassword':
       $change = "active";
       break;
     case 'review':
