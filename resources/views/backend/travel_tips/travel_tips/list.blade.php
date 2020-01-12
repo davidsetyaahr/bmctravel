@@ -35,7 +35,7 @@
                                 <th>{{ $loop->iteration}}</th>
                                 <td>{{$trvltips->title}}</td>
                                 <td>{{$trvltips->id_admin}}</td>
-                                <td>{{substr(strip_tags($trvltips->content), 50)}}</td>
+                                <td>{{substr(strip_tags($trvltips->content),0,100). ' ...'}}</td>
                                 <td>{{$trvltips->permalink}}</td>
                                 <td>{{$trvltips->insert_date}}</td>
                                 <td>{{$trvltips->update_date}}</td>

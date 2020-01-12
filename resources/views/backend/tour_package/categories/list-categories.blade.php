@@ -24,7 +24,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Category</th>
-                                <th>Id Gallery</th>
+                                <th>Gallery</th>
                                 <th>Options</th>
                             </tr>
                         </thead>

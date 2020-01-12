@@ -31,7 +31,7 @@
                             <tr>
                                 <th>{{ $loop->iteration}}</th>
                                 <td>{{$dc->category_name}}</td>
-                                <td><img style="height: 200px; width: 200px;" src="{{ url('/images/gallery/'.$dc->img) }}" alt="" class="img-fluid transition"></td>
+                                <td><img style="height: 50px; width: 50px;" src="{{ url('/images/gallery/'.$dc->img) }}" alt="" class="img-fluid transition"></td>
                                 {{-- <td>{{$dc->id_gallery}}</td> --}}
                                 <td>
                                     <div class="dropdown show">
