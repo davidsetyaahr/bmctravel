@@ -405,86 +405,124 @@
       <div class="row justify-content-center">
         <div class="col-md-10">
           <h4 class="bold">Reviews</h4>
-          <h6>Based on <span class="bold">65</span> reviews</h6>
+          <h6>Based on <span class="bold">{{count($reviews)}}</span> reviews</h6>
           <div class="review-info mt-4">
             <div class="rated">
               <div class="rounded-score">
-                  <div class="score">8.7</div>
+                  <div class="score">{{ceil($average)}}</div>
               </div>
-              <div class="value">Impressive</div>
+                <?php 
+                  $arr = array("Poor","Average","Satisying","Very Good","Fantastic");
+                ?>
+              <div class="value"><?php echo $arr[ceil($average)-1] ?></div>
             </div>
             <div class="percentage">
               <div class="title">Fantastic</div>
-              <div class="progress"><div class="progress-rate" style="width : 50%"></div></div>
-              <div class="count">4,986</div>
+              <div class="progress"><div class="progress-rate" style="width : {{$rev['fantastic']}}%"></div></div>
+              <div class="count">{{$progress['fantastic'][0]->ttl}}</div>
             </div>
             <div class="percentage">
               <div class="title">Very Good</div>
-              <div class="progress"><div class="progress-rate" style="width : 25%"></div></div>
-              <div class="count">4,986</div>
+              <div class="progress"><div class="progress-rate" style="width : {{$rev['verygood']}}%"></div></div>
+              <div class="count">{{$progress['verygood'][0]->ttl}}</div>
             </div>
             <div class="percentage">
               <div class="title">Satisfying</div>
-              <div class="progress"><div class="progress-rate" style="width : 15%"></div></div>
-              <div class="count">4,986</div>
+              <div class="progress"><div class="progress-rate" style="width : {{$rev['satisfying']}}%"></div></div>
+              <div class="count">{{$progress['satisfying'][0]->ttl}}</div>
             </div>
             <div class="percentage">
               <div class="title">Average</div>
-              <div class="progress"><div class="progress-rate" style="width : 10%"></div></div>
-              <div class="count">4,986</div>
+              <div class="progress"><div class="progress-rate" style="width : {{$rev['average']}}%"></div></div>
+              <div class="count">{{$progress['average'][0]->ttl}}</div>
             </div>
             <div class="percentage">
               <div class="title">Poor</div>
-              <div class="progress"><div class="progress-rate" style="width : 2%"></div></div>
-              <div class="count">4,986</div>
+              <div class="progress"><div class="progress-rate" style="width : {{$rev['poor']}}%"></div></div>
+              <div class="count">{{$progress['poor'][0]->ttl}}</div>
             </div>
           </div>
         </div>
       </div>
       <div class="row justify-content-center">
          <div class="col-md-10 reviews-row">
+           @foreach($reviews as $r)
            <div class="review-content">
              <div class="top">
                <div class="avatar">
-                 <span>DS</span>
+                 <img src="{{url('images/avatar/'.$r->avatar)}}" alt="">
                </div>
                <div class="desc">
                  <div class="name">
-                    David Setya
+                   {{$r->firstname}} {{$r->lastname}}
                  </div>
                  <div class="datetime">
-                      22 OCT 2019
-                 </div>
+                   {{date("d M Y, H:i", strtotime($r->datetime))}}
+                </div>
                 </div>
                 <div class="score">
-                  Rated <span class="score-blue"> 9.0 </span>/ 10
+                  Rated <span class="score-blue"> {{$r->rate}}.0 </span>/ 5
                 </div>
              </div>
              <div class="bottom">
-               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, deleniti? Non minima quos error quam beatae quas laboriosam reprehenderit quia magnam architecto. Consectetur rerum, debitis esse at dolores impedit porro.
+               {{$r->comment}}
              </div>
             </div>
+            @endforeach
+            <?php 
+              if(!empty(session()->all()['user'])){
+                $user = session()->all()['user'];
+                $cek = DB::table('bookings as b')
+                ->join("users as u","b.id_user","u.id_user")
+                ->select(array('u.avatar',DB::raw('count(b.id_booking) as ttl')))
+                ->where('b.id_user',$user['id_user'])
+                ->where('b.id_tour',$packages->id_tour)
+                ->where('b.status','2')
+                ->groupBy('b.id_booking','u.avatar')
+                ->get();
+                if($cek[0]->ttl==1)
+                {
+            ?>
            <div class="review-content">
              <div class="top">
                <div class="avatar">
-                 <span>DS</span>
+                 <img src="{{url('images/avatar/'.$cek[0]->avatar)}}" alt="">
                </div>
                <div class="desc">
                  <div class="name">
-                    David Setya
+                   {{$user['firstname']}} {{$user['lastname']}}
                  </div>
                  <div class="datetime">
-                      22 OCT 2019
+                   {{date("d M Y")}}
                  </div>
                 </div>
                 <div class="score">
-                  Rated <span class="score-blue"> 9.0 </span>/ 10
+                  Rated <span class="score-blue comment"> 0 </span>/ 5
                 </div>
              </div>
              <div class="bottom">
-               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint, deleniti? Non minima quos error quam beatae quas laboriosam reprehenderit quia magnam architecto. Consectetur rerum, debitis esse at dolores impedit porro.
+               <label style="margin-bottom:0px" for="">Rating (Give us coffe!)</label>
+               <div class="choose-coffe" data-click="">
+                 <?php 
+                  for($i=1;$i<=5;$i++){
+                    echo "<span class='flaticon flaticon-coffee-cup' data-rate='".$i."'></span>";
+                  }
+                 ?>
+               </div>
+               <form action="{{url('tour-package/rate')}}" method="post">
+               @csrf
+                 <input type="hidden" name="rate" id="hiddenrate">
+                 <input type="hidden" name="id_tour" value="{{$packages->id_tour}}">
+                 <br>
+                 <label for="">Comment</label>
+                 <textarea id="" rows="5" class="form-control custom normal" style="height:auto !important" name="comment"></textarea>
+                 <br>
+                 <input type="reset" class="btn btn-default">
+                 <input type="submit" class="btn btn-warning">
+                </form>
              </div>
             </div>
+            <?php } } ?>
         </div>
       </div>
   </div>

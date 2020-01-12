@@ -21,6 +21,9 @@
     case 'change':
       $change = "active";
       break;
+    case 'review':
+      $rev = "active";
+      break;
   }
 ?>
 <div class="banner-account" data-notif="{{url('my-account/getnotif')}}">
@@ -49,7 +52,10 @@
             <a class="nav-link <?php echo isset($custom) ? "active" : "" ?>" href="#others">Custom Package</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php echo isset($profile) ? "active" : "" ?>" href="#include">Profile</a>
+            <a class="nav-link <?php echo isset($rev) ? "active" : "" ?>" href="{{url('my-account/review')}}">Review</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <?php echo isset($profile) ? "active" : "" ?>" href="{{url('my-account/profile')}}">Profile</a>
           </li>
           <li class="nav-item">
             <a class="nav-link <?php echo isset($change) ? "active" : "" ?>" href="#include">Change Password</a>

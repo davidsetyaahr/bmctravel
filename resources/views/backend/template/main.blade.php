@@ -26,7 +26,9 @@
     <!-- Custom CSS -->
     <link href="{{ asset('public/matrix-admin-bt4') }}/dist/css/style.min.css" rel="stylesheet">
 <!--     <link rel="stylesheet" type="text/css" href="{{ asset('/matrix-admin-bt4') }}/assets/libs/quill/dist/quill.snow.css">
- -->    <link href="{{ asset('public/matrix-admin-bt4') }}/dist/css/custom.css" rel="stylesheet">
+ -->
+    
+     <link href="{{ asset('public/matrix-admin-bt4') }}/dist/css/custom.css" rel="stylesheet">
     <link href="{{ asset('public/matrix-admin-bt4') }}/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
     <link href="{{ url('public/select2-develop/dist/css/select2.min.css') }}" rel="stylesheet">
     <script src="{{ asset('public/ckeditor') }}/ckeditor.js"></script>
@@ -213,7 +215,8 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="p-t-10 mt-4">
-                    <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-coin"></i><span class="hide-menu">Transaction </span></a>
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link active" href="{{url('admin/dashboard')}}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>            
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link active" href="{{url('admin/review')}}" aria-expanded="false"><i class="mdi mdi-comment"></i><span class="hide-menu">Trip Review</span></a></li>                                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-coin"></i><span class="hide-menu">Transaction </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item"><a href="{{ url('admin/transaction/booking/list-booking') }}" class="sidebar-link"><i class="mdi mdi-calendar-multiple-check"></i><span class="hide-menu"> Booking </span></a></li>
                                 <li class="sidebar-item"><a href="{{ url('admin/transaction/payment/list-payment') }}" class="sidebar-link"><i class="mdi mdi-credit-card-multiple"></i><span class="hide-menu"> Payment </span></a></li>

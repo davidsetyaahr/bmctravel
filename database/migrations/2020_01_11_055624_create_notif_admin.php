@@ -16,7 +16,7 @@ class CreateNotifAdmin extends Migration
         Schema::create('notif_admin', function (Blueprint $table) {
             $table->increments('id_notif');
             $table->integer('id_payment');
-            $table->enum('status',['11','22']);
+            $table->enum('status',['11','22','222']);
             $table->enum('view',['0','1']);
         });
     }

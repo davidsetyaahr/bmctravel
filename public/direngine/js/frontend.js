@@ -205,13 +205,47 @@ $(document).ready(function(){
                 image_holder.show();
                 reader.readAsDataURL($(this)[0].files[i]);
               }
-              $(".left").addClass('uploaded')
+              $(".attach").addClass('uploaded')
             } else {
               alert("This browser does not support FileReader.");
             }
           } else {
             alert("Pls select only images");
           }
+    })
+
+    function addCoffee(thisParam){
+        var rate = thisParam.data("rate")
+        for(var i=1;i<=rate;i++){
+            $(".choose-coffe span[data-rate='"+i+"']").addClass('choosed')
+        }
+
+    }
+    
+    $(".choose-coffe span").mouseover(function(){
+        addCoffee($(this))
+    })
+    
+    $(".choose-coffe span").mouseleave(function(){
+        var rate = $(this).data("rate")
+        var click = $(".choose-coffe").attr("data-click")
+        var i = click=='' ? 1 : parseInt(click)
+        i = $(".choose-coffe.clicked").length==0 ? i : i+1 
+        for(var i=i;i<=rate;i++){
+                $(".choose-coffe span[data-rate='"+i+"']").removeClass('choosed')
+            }
+    })
+    $(".choose-coffe span").click(function(){
+        addCoffee($(this))
+        var rate = $(this).data("rate")
+        $(".choose-coffe").addClass("clicked")
+        $(".choose-coffe").attr("data-click",rate)
+        var click = parseInt($(".choose-coffe").attr("data-click"))
+        for(var i=click+1;i<=5;i++){
+            $(".choose-coffe span[data-rate='"+i+"']").removeClass('choosed')
+        }
+        $(".score-blue.comment").html(rate+".0")
+        $("#hiddenrate").val(rate)
     })
 
     $(".payment-option").change(function(){
