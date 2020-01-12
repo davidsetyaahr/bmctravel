@@ -16,7 +16,7 @@
                             <thead>
                                     <th>#</th>
                                     <th>email</th>
-                                    <th>passwword</th>
+                                    {{-- <th>passwword</th> --}}
                                     <th>firstname</th>
                                     <th>lastname</th>
                                     <th>phone</th>
@@ -26,7 +26,7 @@
                                         <tr>
                                             <th>{{ $loop->iteration }}</th>
                                             <td>{{ $usr->email }}</td>
-                                            <td>{{ $usr->password }}</td>
+                                            {{-- <td>{{ $usr->password }}</td> --}}
                                             <td>{{ $usr->firstname }}</td>
                                             <td>{{ $usr->lastname }}</td>
                                             <td>{{ $usr->phone }}</td>

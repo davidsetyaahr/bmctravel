@@ -15,14 +15,14 @@
                         {{session('status')}}
                     </div>
                 @endif
-                
+
                 <div class="table-responsive">
                     <table id="zero_config" class="table table-striped table-bordered">
                         <thead>
                             <th>#</th>
                             <th>Tour Name</th>
                             <th>Category</th>
-                            <th>Tipe</th>  
+                            <th>Tipe</th>
                             <th>Durations Day</th>
                             <th>Durations Night</th>
                             <th>Overview</th>
@@ -40,8 +40,13 @@
                                 <th>{{$tp->type_name}}</th>
                                 <th>{{$tp->day}}</th>
                                 <th>{{$tp->night}}</th>
-                                <th>{{$tp->overview}}</th>
-                                <th>{{$tp->img}}</th>
+                                <th><?php
+                                    $overview= $tp->overview;
+                                    echo substr($overview,0,100).'...';
+                                    ?>
+                                </th>
+                                <th><img style="height: 50px; width: 50px;" src="{{ url('images/gallery/'.$tp->img) }}" alt="" class="img-fluid transition"></th>
+                                {{-- <th>{{$tp->img}}</th> --}}
                                 <th>{{$tp->price}}</th>
                                 <th>{{$tp->sale}}</th>
                                 <th>{{$tp->meeting_point}}</th>

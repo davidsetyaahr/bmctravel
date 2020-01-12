@@ -72,8 +72,9 @@ class TourPackage extends Controller
 
             }
         }
-        
+
         return view('backend.tour_package.tour_package.add-tour-package', $param);
+        // return Tour_packages::whereRaw('SUBSTRING(overview, -2,  2) = '.$param)->get();
     }
 
     function stepbystep(Request $request)
@@ -84,7 +85,7 @@ class TourPackage extends Controller
             return redirect('/admin/tour-package/add-tour-package?page=2');
         }
         else if ($request->step == '2')
-        {   
+        {
             $request->session()->put('stepbystep.step2', $_POST);
             return redirect('/admin/tour-package/add-tour-package?page=3');
         }
@@ -123,7 +124,7 @@ class TourPackage extends Controller
                 array_push($insert['itinerary'],$arr);
                 DB::table('itinerary')->insert($arr);
                 $lastIdItinerary = DB::getPDO()->lastInsertId();
-    
+
                 $trip = 1;
                 foreach ($session['step2']['timestart'][$day] as $index => $val) {
                     $detailItinerary = array(
@@ -189,11 +190,11 @@ class TourPackage extends Controller
         );
         return view('backend.tour_package.tour_package.add-package3', $array);
     }
-    
+
     public function getHotel()
     {
         $hotel = Hotels::all();
-        
+
         return view('backend.room_hotel.changeRoom', ['hotel' => $hotel]);
     }
 
