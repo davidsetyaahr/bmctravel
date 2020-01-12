@@ -9,18 +9,39 @@ use \App\Calculation_model;
 
 class Calculation extends Controller
 {
-    public function index($id)
+    public function detail($id)
     {
         
         $lbl = Calculation_model::all();
         $book = DB::table('bookings')->where('id_booking',$id)
-
-
         ->join('tour_packages','tour_packages.id_tour','bookings.id_tour')
         ->join('users','users.id_user','bookings.id_user')
-        ->select('bookings.id_booking','tour_packages.tour_name','bookings.booking_date','bookings.travel_date','users.email','bookings.pax','bookings.price','bookings.identity_card','bookings.status')
+        ->join("tour_durations as td","tour_packages.id_duration","td.id_duration")
+        ->select('bookings.id_booking','tour_packages.tour_name','bookings.booking_date','bookings.travel_date','users.email','bookings.pax','bookings.price','bookings.identity_card','bookings.status',"td.day","td.night")
         ->orderBy('id_booking', 'desc')
         ->get();
         return view('backend/calculation/calculation' , ['bookings' => $book,'calculation' => $lbl]);
+    }
+    
+    public function newcalc()
+    {
+        $lbl = Calculation_model::all();
+        return view('backend/calculation/loop-calculation' , ['calculation' => $lbl,'id' => $_GET['id']]);
+    }
+    public function show()
+    {
+        $book = DB::table('bookings')->where('id_booking',$_POST['id_booking'])
+        ->join('tour_packages','tour_packages.id_tour','bookings.id_tour')
+        ->join('users','users.id_user','bookings.id_user')
+        ->join("tour_durations as td","tour_packages.id_duration","td.id_duration")
+        ->select('bookings.id_booking','tour_packages.tour_name','bookings.booking_date','bookings.travel_date','users.email','bookings.pax','bookings.price','bookings.identity_card','bookings.status',"td.day","td.night")
+        ->orderBy('id_booking', 'desc')
+        ->get();
+
+        $array = array(
+            'book' => $book[0],
+            'post' => $_POST,
+        );
+        return view('backend/calculation/show-calculation' , $array);
     }
 }

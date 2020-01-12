@@ -23,7 +23,7 @@ class CreateBookings extends Migration
             $table->integer('pax',);
             $table->integer('price',);
             $table->string('identity_card');
-            $table->enum('status', ['0','11', '1','22','2']);
+            $table->enum('status', ['0','11', '1','22','222','2']);
         });
     }
 

@@ -22,13 +22,12 @@
                     <table id="zero_config" class="table table-striped table-bordered">
                         <thead>
                             <th>#</th>
+                            <th>User</th>
                             <th>Tour name</th>
                             <th>Booking date</th>
-                            <th>Travel date</th>
-                            <th>Email</th>
+                            <th>Travel Start</th>
+                            <th>Travel Finish</th>
                             <th>Pax</th>
-                            <th>Price</th>
-                            <th>Identity card</th>
                             <th>Status</th>
                             <th>Action</th>
                         </thead>
@@ -36,31 +35,34 @@
                         @foreach($bookings as $b)
                             <tr>
                                 <th>{{ $loop->iteration}}</th>
+                                <td>{{ $b->firstname }} {{ $b->lastname }}</td>
                                 <td>{{ $b->tour_name }}</td>
-                                <td>{{ $b->booking_date }}</td>
-                                <td>{{ $b->travel_date }}</td>
-                                <td>{{ $b->email }}</td>
+                                <td>{{ date("d-m-Y H:i", strtotime($b->booking_date)) }}</td>
+                                <td>{{ date("l, d F Y", strtotime($b->travel_date)) }}</td>
+                                <td>{{ date("l, d F Y", strtotime($b->travel_date)) }}</td>
                                 <td>{{ $b->pax }}</td>
-                                <td>{{ $b->price }}</td>
-                                <td>{{ $b->identity_card }}</td>
                                 <td><?php
-                                        $status = $b->status; 
-                                        if($status == 0) {
-                                            echo "Belum Bayar";
-                                        }
-                                        else if($status == 11) {
-                                            echo "Belum Belum Di konfirmasi";
-                                        }
-                                        else if($status == 1) {
-                                            echo "Pembayaran 50%";
-                                        }
-                                        else if($status == 22) {
-                                            echo "Belum Belum Di konfirmasi";
-                                        }
-                                        else if($status == 2) {
-                                            echo "Lunas";
-                                        }
-                                ?></td>
+                                    switch ($b->status) {
+                                        case '0':
+                                        echo "<span class='badge badge-info'>Booked</span>";
+                                        break;
+                                        case '11':
+                                        echo "<span class='badge badge-warning'>Waiting for approval (50% payment)</span>";
+                                        break;
+                                        case '1':
+                                        echo "<span class='badge badge-primary'>50% Payment</span>";
+                                        break;
+                                        case '22':
+                                        echo "<span class='badge badge-warning'>Waiting for approval (100% payment)</span>";
+                                        break;
+                                        case '222':
+                                        echo "<span class='badge badge-warning'>Waiting for approval (pelunasan)</span>";
+                                        break;
+                                        case '2':
+                                        echo "<span class='badge badge-success'>Payment Success</span>";
+                                        break;
+                                    }
+                               ?></td>
 
                                 <td>
                                     <div class="dropdown show">
@@ -69,7 +71,14 @@
                                         </a>
 
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                            <a class="dropdown-item" href="edit-categories/{{ $b->id_booking }}">Edit</a>
+                                            <a class="dropdown-item" href="edit-categories/{{ $b->id_booking }}">Detail</a>
+                                            <?php 
+                                                if($b->status=='2'){
+                                            ?>
+                                                <a class="dropdown-item" href="{{ url('admin/calculation/detail/'.$b->id_booking) }}">Calculation</a>
+                                            <?php
+                                                }
+                                            ?>
                                         </div>
                                     </div>
                                 </td>

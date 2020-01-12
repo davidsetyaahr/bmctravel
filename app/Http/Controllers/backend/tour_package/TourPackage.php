@@ -72,8 +72,9 @@ class TourPackage extends Controller
 
             }
         }
-        
+
         return view('backend.tour_package.tour_package.add-tour-package', $param);
+        // return Tour_packages::whereRaw('SUBSTRING(overview, -2,  2) = '.$param)->get();
     }
 
     function stepbystep(Request $request)
@@ -84,7 +85,7 @@ class TourPackage extends Controller
             return redirect('/admin/tour-package/add-tour-package?page=2');
         }
         else if ($request->step == '2')
-        {   
+        {
             $request->session()->put('stepbystep.step2', $_POST);
             return redirect('/admin/tour-package/add-tour-package?page=3');
         }
@@ -123,7 +124,7 @@ class TourPackage extends Controller
                 array_push($insert['itinerary'],$arr);
                 DB::table('itinerary')->insert($arr);
                 $lastIdItinerary = DB::getPDO()->lastInsertId();
-    
+
                 $trip = 1;
                 foreach ($session['step2']['timestart'][$day] as $index => $val) {
                     $detailItinerary = array(
@@ -189,11 +190,11 @@ class TourPackage extends Controller
         );
         return view('backend.tour_package.tour_package.add-package3', $array);
     }
-    
+
     public function getHotel()
     {
         $hotel = Hotels::all();
-        
+
         return view('backend.room_hotel.changeRoom', ['hotel' => $hotel]);
     }
 
@@ -221,4 +222,23 @@ class TourPackage extends Controller
         // }
         // return response()->json($array);
  */    }
+
+    public function review()
+    {
+        $review = DB::table('review as r')
+        ->join("tour_packages as tp","r.id_tour","tp.id_tour")
+        ->join("users as u","r.id_user","u.id_user")
+        ->select("r.*","tp.tour_name","u.firstname","u.lastname")
+        ->orderBy('r.id_review',"desc")->get();
+
+        $param = array(
+            "review" => $review
+        );
+        return view('backend.tour_package.tour_package.list-review', $param);
+    }
+    public function reviewaction($id)
+    {
+        DB::table('review')->where("id_review",$id)->update(['status' => $_GET['status']]);
+        return redirect('/admin/review')->with('status', 'Update Success');
+    }
 }

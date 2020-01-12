@@ -37,10 +37,23 @@
                                     <div class="invalid-feedback"> {{ $message}} </div>
                                 @enderror
                             </div>
+                            <div class="col-md-12 m-t-15">
+                                <label for="">Tag Activities</label>
+                                <div class="bg-light p-10">
+                                    @foreach($tags as $t)
+                                    <div class="form-check custom-control custom-checkbox mb-2">
+                                        <input type="checkbox" class="form-check-input custom-control-input" id="check{{$t->id_tag}}" name="tag_name[]" value="{{$t->id_tag}}">
+                                        <label class="custom-control-label" for="check{{$t->id_tag}}">
+                                        {{$t->tag_name}}
+                                        </label>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
                             <div class="col-12 m-t-15">
                                 <label for="">Permalink</label>
                                 <input type="text" name="permalink" class="form-control @error('permalink') is-invalid @enderror"
-                                value="{{ old('permalink')}}">
+                                value="{{ old('permalink')}}" disabled>
                                 @error('permalink')
                                     <div class="invalid-feedback"> {{ $message}} </div>
                                 @enderror

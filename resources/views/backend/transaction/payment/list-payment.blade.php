@@ -22,43 +22,24 @@
                     <table id="zero_config" class="table table-striped table-bordered">
                         <thead>
                             <th>#</th>
-                            <th>Identity</th>
-                            <th>Nominal</th>
-                            <th>Price</th>
+                            <th>User</th>
+                            <th>Package</th>
+                            <th>Total Payment</th>
+                            <th>Total Price</th>
                             <th>Payment date</th>
-                            <th>attachment</th>
                             <th>Action</th>
                         </thead>
                         <tbody>
                         @foreach($payment as $p)
                             <tr>
                                 <th>{{ $loop->iteration}}</th>
-                                <td>{{ $p->identity_card }}</td>
-                                <td>{{ $p->nominal }}</td>
-                                <td>{{ $p->price }}</td>
-                                <td>{{ $p->payment_date }}</td>
-                                <td>{{ $p->attachment }}</td>
+                                <td>{{ $p->firstname }} {{ $p->lastname }}</td>
+                                <td>{{ $p->tour_name }}</td>
+                                <td>{{ number_format($p->nominal,0,',','.') }}</td>
+                                <td>{{ number_format($p->price,0,',','.') }}</td>
+                                <td>{{ date("d-m-Y H:i", strtotime($p->payment_date)) }}</td>
                                 <td>
-                                    <div class="dropdown show">
-                                        <a class="btn btn-sm btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Options
-                                        </a>
-
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                            <?php   
-                                                $nominal = $p->nominal;
-                                                $price = $p->price;
-                                                if ($nominal == $price) {
-                                                    echo '<a class="dropdown-item" href="'.url("admin/calculation/".$p->id_payment).'">Calculating</a>';
-                                                } 
-                                                else{
-                                                    ?>
-                                                    <a class="dropdown-item" href="{{url('admin/transaction/payment/detail/'.$p->id_payment)}}">Detail</a>
-                                                    <?php
-                                                }
-                                            ?>                                   
-                                        </div>
-                                    </div>
+                                        <a class="btn btn-default" href="{{url('admin/transaction/payment/detail/'.$p->id_payment)}}">Detail</a>
                                 </td>
                             </tr>
                         @endforeach

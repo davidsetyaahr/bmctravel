@@ -39,13 +39,16 @@
           echo "<span class='badge badge-info'>Booked</span>";
           break;
           case '11':
-          echo "<span class='badge badge-warning'>Waiting for approval</span>";
+          echo "<span class='badge badge-warning'>Waiting for approval (50% payment)</span>";
           break;
           case '1':
           echo "<span class='badge badge-primary'>50% Payment</span>";
           break;
           case '22':
-          echo "<span class='badge badge-warning'>Waiting for approval</span>";
+          echo "<span class='badge badge-warning'>Waiting for approval (100% payment)</span>";
+          break;
+          case '222':
+          echo "<span class='badge badge-warning'>Waiting for approval (pelunasan)</span>";
           break;
           case '2':
           echo "<span class='badge badge-success'>Payment Success</span>";
@@ -65,7 +68,13 @@
             {
           ?>
             <a class="dropdown-item" href="booking/payment/{{$b->id_booking}}">Payment</a>
+            <?php }
+            if($b->status=='2'){
+              $name = strtolower(str_replace(' ','-',$b->tour_name));
+              ?>
+            <a class="dropdown-item" href="{{url('/tour-package/detail-package/'.$b->id_tour.'/'.$name)}}">Write Review</a>
             <?php } ?>
+
         </div>
       </div>
       </td>

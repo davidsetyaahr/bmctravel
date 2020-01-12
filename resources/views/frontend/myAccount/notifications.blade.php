@@ -15,8 +15,12 @@
         $status = "100% has failed, check your uploaded file";
         $class = "failed";
     }
+    else if($notif->status=='222'){
+        $status = "Pelunasan has failed, check your uploaded file";
+        $class = "failed";
+    }
     else if($notif->status=='2'){
-        $status = "100% was successfull";
+        $status = "was successfull (Paid off)";
         $class = "success";
     }
 ?>

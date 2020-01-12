@@ -29,7 +29,7 @@
                                     @foreach ($gallery as $gc)
                                         <tr>
                                             <td>{{ $loop->iteration}}</td>
-                                            <td><img style="height: 200px; width: 200px;" src="{{ url('images/gallery/'.$gc->img) }}" alt="" class="img-fluid transition"></td>
+                                            <td><img style="height: 100px; width: 100px;" src="{{ url('images/gallery/'.$gc->img) }}" alt="" class="img-fluid transition"></td>
                                             <td>{{ $gc->category_name}}</td>
                                             <td>
                                                 <div class="dropdown show">

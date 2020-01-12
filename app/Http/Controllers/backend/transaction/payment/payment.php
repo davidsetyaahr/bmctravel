@@ -11,9 +11,11 @@ class Payment extends Controller
 {
     function index()
     {
-        $pymnt = DB::table('payment')
-        ->join('bookings','bookings.id_booking','payment.id_booking')
-        ->select('payment.id_payment','bookings.identity_card','payment.nominal','bookings.price','payment.payment_date','payment.attachment')
+        $pymnt = DB::table('payment as p')
+        ->join('bookings as b','b.id_booking','p.id_booking')
+        ->join('users as u',"b.id_user","u.id_user")
+        ->join("tour_packages as tp","b.id_tour","tp.id_tour")
+        ->select('p.id_payment','p.nominal','b.price','p.payment_date','b.status',"tp.tour_name","u.firstname","u.lastname")
         ->orderBy('id_payment', 'desc')
         ->get();
         return view('backend.transaction.payment.list-payment' , ['payment' => $pymnt]);
@@ -41,14 +43,15 @@ class Payment extends Controller
         ->select('p.id_booking',"b.status")->where('p.id_payment',$id)->get();
         
         if($_GET['status']==0){
-            $status = $data[0]->status=='11' ? "0" : "1";
-            $status2 = $data[0]->status;
+            $status = $data[0]->status=='11' || $data[0]->status=='22' ? "0" : "1";
+            $status2 = $data[0]->status=='11' || $data[0]->status=='22' ? $data[0]->status : '222';
         }
         else{
-            $status = $data[0]->status=='11' ? "1" : "2";
+            $status = $data[0]->status=='22' || $data[0]->status=='222' ? "2" : "1";
             $status2 = $status;
         }
         DB::table('bookings')->where('id_booking',$data[0]->id_booking)->update(["status" => $status]);
+
         $arr = array(
             "id_payment" => $id,
             "status" => $status2,

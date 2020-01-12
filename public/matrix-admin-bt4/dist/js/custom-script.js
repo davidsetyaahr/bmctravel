@@ -225,4 +225,63 @@ $(document).ready(function(){
         $(".checkHotel").change(function(){
             checkHotel($(this))
         })
+    $(".new-calc").click(function(e){
+        e.preventDefault()
+        var url = $(this).data("url")
+        var count = parseInt($(".place-calc").attr("data-count"))
+        var newId = count+1
+        $.ajax({
+            type : "get",
+            url : url,
+            data : {id:newId},
+            success : function(data){
+                $(".place-calc").attr("data-count", newId)
+                $(".place-calc").append(data)
+                $("select").select2()
+                eventCalc()
+            }
+        })
+    })
+    function eventCalc(){
+        $(".calc").change(function(){
+            calc($(this))
+            if($(this).data('type')=="select"){
+                var label = $(this).find(":selected").attr("data-label")
+                var dataId = $(this).data("id")
+
+                $("#hidden"+dataId).val(label)
+            }
+        })
+        $(".calc").keyup(function(){
+            calc($(this))
+        })
+    }
+    eventCalc()
+    function rupiah(bilangan){
+        var	reverse = bilangan.toString().split('').reverse().join(''),
+        ribuan 	= reverse.match(/\d{1,3}/g);
+        ribuan	= ribuan.join('.').split('').reverse().join('');
+        return ribuan
+    }
+    function calc(thisParam){
+        var dataId  = $(thisParam).data('id')
+        var thisVal = parseInt(thisParam.val())
+        var target = thisParam.data('target')
+        var valTarget = parseInt($(target).val())
+        thisVal = Number.isNaN(thisVal) ?  0 : thisVal
+        var subtotal = thisVal * valTarget
+        $("#subtotal"+dataId).val(subtotal)
+
+        var total = 0
+        $(".subtotal").each(function(){
+            total = total + parseInt($(this).val())
+        })
+
+        var price = parseInt($("#profit").data("price"))
+        var profit = price-total
+        var percent = parseInt(profit/price*100)
+        $("#profit #percent").html(percent)
+        $("#profit #change").html(rupiah(profit))
+        $("#idr #change").html(rupiah(total))
+    }
 })
