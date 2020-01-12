@@ -22,7 +22,7 @@ class MyAccount extends Controller
         );
         return view('frontend.myAccount.dashboard',$attr);
     }
-    
+
     public function notification()
     {
         $session = session()->all();
@@ -39,7 +39,7 @@ class MyAccount extends Controller
         ->where("b.id_user",$session['user']['id_user'])
         ->orderBy("nu.id_notif","desc")
         ->get();
-        
+
         $attr = array(
             "title" => "BMC Travel Service - My Account",
             "desc" => "Welcome to BMC Travel Service. One Stop Travel Solution",
@@ -60,7 +60,7 @@ class MyAccount extends Controller
         ->select('bookings.id_tour','bookings.id_booking','tour_packages.tour_name','bookings.booking_date','bookings.travel_date','bookings.pax','bookings.price','d.day','bookings.status')
         ->where('bookings.id_user',$profile[0]->id_user)
         ->get();
-        
+
         $attr = array(
             "title" => "BMC Travel Service - My Account",
             "desc" => "Welcome to BMC Travel Service. One Stop Travel Solution",
@@ -83,7 +83,7 @@ class MyAccount extends Controller
         ->where('bookings.id_user',$profile[0]->id_user)
         ->where('bookings.id_booking',$id)
         ->get();
-        
+
         $attr = array(
             "title" => "BMC Travel Service - My Account",
             "desc" => "Welcome to BMC Travel Service. One Stop Travel Solution",
@@ -172,17 +172,17 @@ class MyAccount extends Controller
                 $idPayment = $cek[0]->id_payment;
                 DB::table('payment')->where('id_payment',$idPayment)->update($payment);
             }
-            
+
             $notif = array(
                 'id_payment' => $idPayment,
                 'status' => $status,
                 'view' => '0'
             );
-    
+
             DB::table('notif_admin')->insert($notif);
         }
         else{
-            
+
             $payment = array(
                 "id_booking" => $_POST['id_booking'],
                 "nominal" => $booking->price/2,
@@ -198,6 +198,10 @@ class MyAccount extends Controller
                 ->limit(1)
                 ->get();
 
+        $cek = DB::table('payment as p')
+        ->join("bookings as b","p.id_booking","b.id_booking")
+        ->where("p.id_booking", $payment['id_booking'])
+        ->where("b.status", $payment['id_booking']);
                 DB::table('payment')->where('id_payment', $getId[0]->id_payment)->update($payment);
                 $idPayment = $getId[0]->id_payment;
             }
@@ -205,7 +209,7 @@ class MyAccount extends Controller
                 DB::table('payment')->insert($payment);
                 $idPayment = DB::getPDO()->lastInsertId();
             }
-            
+
             DB::table('bookings')->where('id_booking', $payment['id_booking'])->update(['status' => '222']);
             $notif = array(
                 'id_payment' => $idPayment,
@@ -225,7 +229,7 @@ class MyAccount extends Controller
         ->select("status")
         ->where('view','0')
         ->get()->toArray();
-        
+
         echo count($countNotif);
     }
     public function review()

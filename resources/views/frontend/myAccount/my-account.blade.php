@@ -1,7 +1,7 @@
 @extends('frontend/common/template')
 @section('my-account',true)
 @section('container')
-<?php 
+<?php
   switch (Request::segment(2)) {
     case '':
       $dashboard = "active";
@@ -27,7 +27,8 @@
   }
 ?>
 <div class="banner-account" data-notif="{{url('my-account/getnotif')}}">
-  <img src="{{url('images/avatar/david.jpeg')}}" alt="">
+  {{-- <img src="{{url('images/avatar/david.jpeg')}}" alt=""> --}}
+  <img src="{{ url('images/avatar/'.$user->avatar) }}" alt="" >>
 </div>
 <div class="container">
   <div class="row">
