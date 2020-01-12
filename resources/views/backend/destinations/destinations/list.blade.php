@@ -27,8 +27,8 @@
                             <th>city</th>
                             <th>Gallery</th>
                             <th>Overview</th>
-                            <th>Map</th>
-                            <th>Information</th>
+                            {{-- <th>Map</th> --}}
+                            {{-- <th>Information</th> --}}
                             <th>Action</th>
                         </thead>
                         <tbody>
@@ -40,9 +40,9 @@
                                 <td>{{ $d->city_name }}</td>
                                 <td>{{ $d->gallery }}</td>
                                 {{-- <td><img style="height: 200px; width: 200px;" src="{{ url('/public/images/gallery/'.$d->img) }}" alt="" class="img-fluid transition"></td> --}}
-                                <td>{{ $d->overview }}</td>
-                                <td>{{ $d->map }}</td>
-                                <td>{{ $d->information }}</td>
+                                <td>{{substr(strip_tags($d->overview),0,100). ' ...'}}</td>
+                                {{-- <td>{{ $d->map }}</td> --}}
+                                {{-- <td>{{ $d->information }}</td> --}}
 
                                 <td>
                                     <div class="dropdown show">

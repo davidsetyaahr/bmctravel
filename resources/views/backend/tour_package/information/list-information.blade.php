@@ -32,7 +32,18 @@
                         <tr>
                                     <th>{{$loop->iteration}}</th>
                                     <td>{{$inf->text}}</td>
-                                    <td>{{$inf->type}}</td>
+                                    <td><?php
+                                    if ($inf->type == 0){
+                                        echo 'Include';
+                                    }
+                                    elseif ($inf->type ==1) {
+                                        echo 'Exclude';
+                                    }
+                                    elseif ($inf->type ==2) {
+                                        echo 'What should i pack';
+                                    }
+                                    ?>
+                                    </td>
                                     <td>
                                     <div class="dropdown show">
                                         <a class="btn btn-sm btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -5,7 +5,10 @@ namespace App\Http\Controllers\backend\travel_tips;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use  Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use \App\Traveltip;
+use \App\Tags_model;
+use \App\Travel_tips_tag;
 // use \App\Admins;
 use \App\Gallery_model;
 use \App\Gallery_categories_model;
@@ -33,15 +36,19 @@ class TravelTips extends Controller
     }
     function create()
     {
+        $tag = DB::table('tags')
+        ->orderBy('tag_name','asc')
+        ->get();
         $gallery = Gallery_model::all();
         $gallery_categories = Gallery_categories_model::all();
-        return view('backend.travel_tips.travel_tips.add-travel-tips',['gallery' => $gallery, 'categories' => $gallery_categories]);
+        return view('backend.travel_tips.travel_tips.add-travel-tips',['gallery' => $gallery, 'categories' => $gallery_categories, 'tags' => $tag]);
     }
     function store(Request $request)
     {
         $session = session()->all();
-        $time = time();
-        $permalink = substr($time, strlen($time) - 5, 5);
+        //$time = time();
+        //$permalink = substr($time, strlen($time) - 5, 5);
+        $permalink = Str::random(32);
 
         Traveltip::create([
             'title' => $request->title,
@@ -52,6 +59,13 @@ class TravelTips extends Controller
             'insert_date'=> Carbon::now(),
             'update_date'=> Carbon::now()
         ]);
+        $lastId = DB::getPDO()->lastInsertId();
+            foreach ($_POST['tag_name'] as $key => $value) {
+                Travel_tips_tag::create([
+                    'id_travel_tips' => $lastId,
+                    'id_tag' => $value
+                ]);
+            }
 
          return redirect('/admin/travel-tips/travel-tips/list')->with('status', 'Travel Tips berhasil ditambahkan');
     }

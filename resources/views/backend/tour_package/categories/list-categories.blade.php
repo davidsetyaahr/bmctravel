@@ -19,12 +19,12 @@
                 @endif
                 <div class="table-responsive">
                 <table id="zero_config" class="table table-striped table-bordered">
-                
+
                         <thead>
                             <tr>
                                 <th>#</th>
                                 <th>Category</th>
-                                <th>Id Gallery</th>
+                                <th>Gallery</th>
                                 <th>Options</th>
                             </tr>
                         </thead>
@@ -34,7 +34,7 @@
                                     <th>{{$loop->iteration}}</th>
                                     <td>{{$item->category_name}}</td>
                                     {{-- <td>{{$item->id_gallery}}</td> --}}
-                                    <td><img style="height: 200px; width: 200px;" src="{{ url('images/gallery/'.$item->img) }}" alt="" class="img-fluid transition"></td>
+                                    <td><img style="height: 50px; width: 50px;" src="{{ url('images/gallery/'.$item->img) }}" alt="" class="img-fluid transition"></td>
                                     <td>
                                         <div class="dropdown show">
                                             <a class="btn btn-sm btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
