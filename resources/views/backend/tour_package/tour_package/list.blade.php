@@ -40,11 +40,8 @@
                                 <th>{{$tp->type_name}}</th>
                                 <th>{{$tp->day}}</th>
                                 <th>{{$tp->night}}</th>
-                                <th><?php
-                                    $overview= $tp->overview;
-                                    echo substr($overview,0,100).'...';
-                                    ?>
-                                </th>
+                                <th>{{substr(strip_tags($tp->overview),0,100).'...'}}</th>
+
                                 <th><img style="height: 50px; width: 50px;" src="{{ url('images/gallery/'.$tp->img) }}" alt="" class="img-fluid transition"></th>
                                 {{-- <th>{{$tp->img}}</th> --}}
                                 <th>{{$tp->price}}</th>

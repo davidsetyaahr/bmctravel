@@ -11,7 +11,7 @@ class Information extends Controller
 {
     function index()
     {
-        $info = Informations::orderBy('id_informations', 'DESC')->get();
+        $info = Informations::orderBy('id_informations')->get();
         return view('backend.tour_package.information.list-information' ,  ['id_informations' => $info]);
     }
     function add()
