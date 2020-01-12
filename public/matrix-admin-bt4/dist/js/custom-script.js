@@ -246,10 +246,10 @@ $(document).ready(function(){
         $(".calc").change(function(){
             calc($(this))
             if($(this).data('type')=="select"){
-                var id_calc = $(this).find(":selected").attr("data-id")
+                var label = $(this).find(":selected").attr("data-label")
                 var dataId = $(this).data("id")
 
-                $("#hidden"+dataId).val(id_calc)
+                $("#hidden"+dataId).val(label)
             }
         })
         $(".calc").keyup(function(){
