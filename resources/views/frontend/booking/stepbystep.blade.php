@@ -54,7 +54,8 @@
                         @include('frontend.booking.step1', $param)
                     @elseif($_GET['page']==2)
                     <?php 
-                 $start_date = date("Y-m-d", strtotime("+1 day"));
+                    date_default_timezone_set("Asia/Jakarta");
+                     $start_date = date("Y-m-d", strtotime("+1 day"));
                       $param = array(
                         "id_tour" => $packages->id_tour,
                         "day" => $packages->day,

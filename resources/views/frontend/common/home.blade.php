@@ -1,6 +1,5 @@
 @extends('frontend/common/template')
 @section('container')
-<link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
 <script>
  var TxtRotate = function(el, toRotate, period) {
   this.toRotate = toRotate;
@@ -82,7 +81,7 @@ window.onload = function() {
 			</div>
 		</div>
 	</div>
- <section class="ftco-section">
+ <section class="ftco-section bg-light">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 text-center heading-section ftco-animate" style="margin-top:100vh">
@@ -96,14 +95,14 @@ window.onload = function() {
 		</div>
     </section>
  
-    <section class="ftco-section">
+    <section class="ftco-section pb-0">
     	<div class="container">
     		<div class="row">
 				<div class="col-md-10 heading-section ftco-animate">
 					<h4 class="mb-4"><strong>Featured</strong> Destination</h4>
 				</div>
 				<div class="col-md-2">
-					<a href="http://127.0.0.1:8000/destinations" class="btn border-grey">Explore More <span class="ion-md-arrow-dropright"></span> </a>
+					<a href="{{url('destinations')}}" class="btn border-grey">Explore More <span class="ion-md-arrow-dropright"></span> </a>
 				</div>
 			</div>
 		</div>
@@ -114,7 +113,7 @@ window.onload = function() {
 						@foreach ($type as $item)
 						<div class="item">
 							<div class="relative">
-								<img src="{{$item->img}}" alt="" class="img-fluid">
+								<img src="{{url('images/gallery/'.$item->img)}}" alt="" class="img-fluid">
 								<div class="box">
 									<h6>{{$item->type_name}}</h6>
 								</div>
@@ -127,7 +126,7 @@ window.onload = function() {
     	</div>
     </section>
 
-    <section class="ftco-section">
+    <section class="ftco-section pb-0">
     	<div class="container">
 			<div class="row">
 				<div class="col-md-10 heading-section ftco-animate">
@@ -139,7 +138,7 @@ window.onload = function() {
 	        </div>
  		</div>
     	<div class="container">
-    		<div class="row mt-5 ftco-animate">
+    		<div class="row ftco-animate">
 				@foreach ($tour_package as $item)
 				<div class="col-md-3">
 					<div class="package1 mb-4">
@@ -148,10 +147,13 @@ window.onload = function() {
 							<div class="sticky-note">
 								<span>{{$item->category_name}}</span>
 							</div>
-							<img src="{{$item->img}}" alt="" class="img-fluid transition">
-							<a href="#">
-								<div class="view-link transition">View Package</div>
-							</a>
+							<img src="{{url('images/gallery/'.$item->img)}}" alt="" class="img-fluid transition">
+							<?php 
+                      	  $name = strtolower(str_replace(' ','-',$item->tour_name));
+                      ?>
+                      <a href="{{ url('tour-package/detail-package/'.$item->id_tour.'/'.$name) }}">
+						<div class="view-link transition">View Package</div>
+					  </a>
 						</div>
 						<div class="text-bottom mt-2">
 							<div class="title">{{$item->day}}D {{$item->night}}N {{$item->tour_name}}</div>
@@ -164,7 +166,7 @@ window.onload = function() {
     	</div>
     </section>
 
-	<section class="ftco-section ftco-animate">
+	<section class="ftco-section ftco-animate pb-0">
 		<div class="container">
 			<div class="row text-center">
 				<div class="col-md-6 mb-5">
@@ -223,7 +225,7 @@ window.onload = function() {
 				@foreach ($destination_categories as $item)
 				<div class="col-md-3 col-6 mb-4">
 					<div class="border text-center p-3">
-						<img src="{{$item->img}}" alt="">
+						<img src="{{url('images/gallery/'.$item->img)}}" alt="">
 						<h6 class="mt-3">{{$item->category_name}}</h6>
 					</div>
 				</div>
@@ -312,11 +314,14 @@ window.onload = function() {
 			<div class="travel-tips">
 				<div class="relative">
 					<div class="layer transition"></div>
-					<img src="{{$item->img}}" alt="" class="img-fluid transition">
+					<img src="{{url('images/gallery/'.$item->img)}}" alt="" class="img-fluid transition">
 				</div>
 				<div class="bottom">
 					<div class="title">{{$item->title}}</div>
-					<div class="link"><a href="#">Read More</a></div>
+					<div class="link">
+						<a href="#" class="by">By: {{$item->firstname}}</a>
+						<a href="{{url('travel-tips/detail-travel/'.$item->permalink)}}" class="float-right">Read More</a>
+					</div>
 				</div>
 			</div>
 		</div>

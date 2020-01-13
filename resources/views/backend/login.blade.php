@@ -42,7 +42,7 @@
             <div class="auth-box bg-dark border-top border-secondary">
                 <div id="loginform">
                     <div class="text-center p-t-20 p-b-20">
-                        <span class="db"><img src="{{ asset('/public/matrix-admin-bt4') }}/assets/images/logo.png" alt="logo" /></span>
+                        <span class="db"><img src="{{ asset('/public/direngine/images/BMC-Logo.png') }}" alt="logo" width="75px;" /></span>
                     </div>
                     @if(\Session::has('alert'))
                         <div class="alert alert-danger">

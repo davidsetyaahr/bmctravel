@@ -24,7 +24,7 @@
                         <img src="{{url('public/images/common/mountain.png')}}" alt="">
                         <p>Thank You</p>
                     </div>
-                    <p class="bold">Your Booking Is Successfull</p>
+                    <p class="bold">Your transaction has been successful</p>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis alias tempora recusandae tempore eveniet ipsam reprehenderit ut laudantium distinctio nemo ipsum voluptates dolores sed expedita aperiam magnam obcaecati, veniam cupiditate.</p>
                     <div class="link">
                     <a href="" class="payment">Payment</a>

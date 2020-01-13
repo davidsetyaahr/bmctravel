@@ -1,6 +1,6 @@
 @extends('frontend.common.template')
 @section('container')
-    <div class="js-fullheight-travel" style="background-image: url('https://img.traveltriangle.com/attachments/pictures/847252/original/tour.jpg?tr=w-1366,h-305')">
+    <div class="js-fullheight-travel" style="background-image: url('{{url('images/banner/indonesia.jpg')}}');background-position:bottom">
       <div class="overlay"></div>
       <div class="container">
         <div class="row justify-content-center">

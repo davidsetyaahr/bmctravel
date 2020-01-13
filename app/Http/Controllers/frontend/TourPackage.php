@@ -26,6 +26,7 @@ class TourPackage extends Controller
         ->join('tour_durations as td','tp.id_duration','td.id_duration')
         ->join('gallery as g','tp.id_gallery','g.id_gallery')
         ->select('tp.*','tc.category_name', 'td.day', 'td.night','g.img')
+        ->orderBy("tp.id_tour","desc")
         ->get();
 
         $attr = array(

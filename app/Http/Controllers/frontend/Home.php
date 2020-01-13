@@ -31,7 +31,8 @@ class Home extends Controller
 
         $travel_tips = DB::table("travel_tips AS tt")
             ->join("gallery AS g", "tt.id_gallery", "g.id_gallery")
-            ->select("tt.title", "g.img", "tt.id_travel_tips")
+            ->join("admin as a", "tt.id_admin","a.id_admin")
+            ->select("tt.title", "g.img", "tt.id_travel_tips","a.firstname","tt.permalink")
             ->get();
 
         $destination_categories = DB::table("destination_categories AS dc")
