@@ -155,3 +155,4 @@ Route::get('/my-account/changepassword', 'frontend\MyAccount@changepass');
 Route::post('/my-account/paymentaction', 'frontend\MyAccount@paymentaction');
 Route::get('/admin/tour-package/getKodeHotel', 'backend\tour_package\TourPackage@kodehotel');
 Route::get('/admin/tour-package/gethotel', 'backend\tour_package\TourPackage@gethotel');
+Route::post('/my-account/changepassword/', 'frontend\MyAccount@store')->name('change.password');
