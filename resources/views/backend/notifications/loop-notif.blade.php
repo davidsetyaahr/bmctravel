@@ -16,3 +16,6 @@
         </div>
     </div>
 </a>
+<?php 
+        DB::table('notif_admin')->update(['view'=>'1']);
+?>

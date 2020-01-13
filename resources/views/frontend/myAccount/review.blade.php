@@ -1,6 +1,6 @@
 @extends('frontend/myAccount/my-account')
 @section('menu-account')
-<?php 
+<?php
     $arr = array("Poor","Average","Satisying","Very Good","Fantastic");
 ?>
 @foreach($review as $r)
@@ -14,7 +14,7 @@
             <div class="desc">
                 <div class="name">
                     {{$r->tour_name}}
-                    <?php 
+                    <?php
                         $text = $arr[$r->rate-1]."!";
                     ?>
                 </div>
@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="score">
-                Rated <span class="score-blue"> {{$r->rate}}.0 </span>/ 5. 
+                Rated <span class="score-blue"> {{$r->rate}}.0 </span>/ 5.
                 {{$text}}
             </div>
             </div>

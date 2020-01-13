@@ -147,6 +147,7 @@ Route::get('/my-account/notifacation', 'frontend\MyAccount@setting');
 Route::get('/admin/tour-package/getKodeHotel', 'backend\tour_package\TourPackage@kodehotel');
 Route::get('/admin/gallery/bycategory', 'backend\gallery\Gallery@bycategory');
 Route::get('/admin/tour-package/newtrip', 'backend\tour_package\TourPackage@newtrip');
+Route::get('/my-account/profile', 'frontend\MyAccount@profile');
 Route::get('/my-account/notification', 'frontend\MyAccount@notification');
 Route::get('/my-account/booking', 'frontend\MyAccount@booking');
 Route::get('/my-account/booking/detail/{id}', 'frontend\MyAccount@detailbooking');

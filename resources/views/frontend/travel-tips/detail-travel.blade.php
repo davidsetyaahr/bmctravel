@@ -7,17 +7,13 @@
         .bg-ctgr{
             background-color: violet;
         }
-        .overlay{
-            height: 500px !important;
-        }
 </style>
 
     @foreach ($travel_tips as $t)
-    {{-- <div class="hero-wrap js-fullheight" style="background-image: url('images/');"> --}}
-    <div style="background-image: url('/images/gallery/{{$t->img }}');" class="hero-wrap js-fullheight-travel override">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+    <div style="background-image: url('{{url('/images/gallery/'.$t->img)}}');" class="hero-wrap js-fullheight">
+    <div class="overlay js-fullheight"></div>
+    <div class="container">
+      <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
           <div class="col-md-9 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
             <h1 class="mb-3 bread" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">{{$t->title}}</h1>
           </div>
@@ -43,7 +39,7 @@
                 @endforeach
               </div>
             </div>
-
+            
             {{-- <div class="about-author d-flex p-5 bg-light">
               <div class="bio align-self-md-center mr-5">
                 <img src="images/person_1.jpg" alt="Image placeholder" class="img-fluid mb-4">
@@ -212,25 +208,6 @@
             @endforeach
             </div>
 
-            <div class="sidebar-box ftco-animate">
-              <h3>Tag Cloud</h3>
-              <div class="tagcloud">
-                <a href="#" class="tag-cloud-link">dish</a>
-                <a href="#" class="tag-cloud-link">menu</a>
-                <a href="#" class="tag-cloud-link">food</a>
-                <a href="#" class="tag-cloud-link">sweet</a>
-                <a href="#" class="tag-cloud-link">tasty</a>
-                <a href="#" class="tag-cloud-link">delicious</a>
-                <a href="#" class="tag-cloud-link">desserts</a>
-                <a href="#" class="tag-cloud-link">drinks</a>
-              </div>
-            </div>
-
-            <div class="sidebar-box ftco-animate">
-              <h3>Paragraph</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
-            </div>
-          </div>
 
         </div>
       </div>

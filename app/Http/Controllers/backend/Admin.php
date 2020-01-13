@@ -118,7 +118,29 @@ class Admin extends Controller
         // else{
         //     return view('admin.dashboard');
         // }
-        return view('backend.index');
+        $arr = array(
+            "income" => DB::table('payment as p')
+                        ->join('bookings as b','p.id_booking','b.id_booking')
+                        ->where('b.status','2')
+                        ->whereMonth('b.booking_date',date('m'))
+                        ->sum('b.price'),
+            "count" => DB::table('bookings')
+                        ->select(array(DB::raw('count(id_booking) as ttl')))
+                        ->where('status','2')
+                        ->whereMonth('booking_date',date('m'))
+                        ->get(),
+            "package" => DB::table("tour_packages")
+                        ->select(array(DB::raw('count(id_tour) as ttl')))
+                        ->get(),
+/*             "mostBook" => DB::table('tour_packages as tp')
+                            ->leftJoin('bookings as b',"b.id_tour","tp.id_tour")
+                            ->select(array(DB::raw('count(b.id_tour) as ttl')))
+                            ->where('b.status','2')
+                            ->orderBy('ttl','desc')
+                            ->get()
+ */        );
+//        print_r($arr['mostBook']);
+        return view('backend.index', $arr);
     }
     
     public function getnotif()
@@ -133,7 +155,6 @@ class Admin extends Controller
     
     public function loopnotif()
     {
-        DB::table('notif_admin')->update(['view'=>'1']);
         $loopNotif = DB::table('notif_admin as na')
         ->join("payment as p","na.id_payment","p.id_payment")
         ->join("bookings as b","p.id_booking","b.id_booking")
@@ -142,6 +163,7 @@ class Admin extends Controller
         ->where('na.view','0')
         ->limit('5')
         ->get();
+
         
         return view('backend.notifications.loop-notif',['loopNotif' => $loopNotif]);
     }
