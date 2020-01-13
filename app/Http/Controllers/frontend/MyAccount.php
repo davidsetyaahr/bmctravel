@@ -107,6 +107,17 @@ class MyAccount extends Controller
         );
         return view('frontend.myAccount.changepass', $attr);
     }
+    public function store(Request $request)
+    {
+        $request->validate([
+            'current_password' => ['required', new MatchOldPassword],
+            'new_password' => ['required']
+        ]);
+   
+        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
+   
+        dd('Password change successfully.');
+    }
     public function payment($id)
     {
         $session = session()->all();
@@ -254,6 +265,8 @@ class MyAccount extends Controller
         );
         return view('frontend.myAccount.review', $attr);
     }
+
+
 }
 
 
