@@ -109,9 +109,9 @@ class MyAccount extends Controller
             'current_password' => ['required', new MatchOldPassword],
             'new_password' => ['required']
         ]);
-   
+
         User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
-   
+
         dd('Password change successfully.');
     }
     public function payment($id)
@@ -272,6 +272,54 @@ class MyAccount extends Controller
             "user" => $profile[0],
         );
         return view('frontend.myAccount.my-profile',$attr);
+    }
+
+    public function edit()
+    {
+        $session = session()->all();
+        $profile = DB::table('users')->where("id_user",$session['user']['id_user'])->get();
+        $attr = array(
+            "title" => "BMC Travel Service - My Account",
+            "desc" => "Welcome to BMC Travel Service. One Stop Travel Solution",
+            "user" => $profile[0],
+        );
+        return view('frontend.myAccount.edit-my-profile' , $attr);
+    }
+
+    public function update(Request $request)
+    {
+        $request->validate([
+            'email' => 'required',
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'phone' => 'required',
+            // 'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:3072'
+
+        ]);
+        // //mengambil informasi
+        // $avatar = $request->file('avatar');
+
+        // // nama file
+        // $namefile = $avatar->getClientOriginalName();
+
+        // // file size
+        // $size = $avatar->getSize();
+
+        // // upload file
+        // $time = time();
+        // $newName = substr($time, strlen($time) - 5, 5) . "." . $avatar->getClientOriginalExtension();
+        // $tujuan_upload = 'images/gallery';
+        // $avatar->move($tujuan_upload, $newName);
+
+        DB::table('users')->where('id_user',$request->id)->update([
+            'email' => $request->email,
+            'firstname' => $request->firstname,
+            'lastname' => $request->lastname,
+            'phone' => $request->phone,
+            // 'avatar' => $newName
+
+        ]);
+        return redirect('/my-account/profile');
     }
 }
 
