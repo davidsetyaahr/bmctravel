@@ -96,13 +96,9 @@ class MyAccount extends Controller
 
     public function changepass()
     {
-        $session = session()->all();
-        $profile = DB::table('users')->where("id_user",$session['user']['id_user'])->get();
-       
         $attr = array(
             "title" => "BMC Travel Service - My Account",
-            "desc" => "Welcome to BMC Travel Service. One Stop Travel Solution",
-            "user" => $profile[0],
+            "desc" => "Welcome to BMC Travel Service. One Stop Travel Solution"
         );
         return view('frontend.myAccount.changepass', $attr);
     }
@@ -254,7 +250,17 @@ class MyAccount extends Controller
         return view('frontend.myAccount.review', $attr);
     }
 
-
+    public function profile()
+    {
+        $session = session()->all();
+        $profile = DB::table('users')->where("id_user",$session['user']['id_user'])->get();
+        $attr = array(
+            "title" => "BMC Travel Service - My Account",
+            "desc" => "Welcome to BMC Travel Service. One Stop Travel Solution",
+            "user" => $profile[0],
+        );
+        return view('frontend.myAccount.my-profile',$attr);
+    }
 }
 
 
