@@ -1,0 +1,19 @@
+Status Booking
+0 => Belum Bayar
+11 => Upload untuk bayar setengah (Verifikasi admin)
+1 => Sudah Bayar Setengah
+22 => Upload untuk bayar full (Verifikasi Admin)
+222 => Upload setelah pernah bayar setengah (Pelunasan)
+2 => Lunas
+
+Status Notif User
+11 => Pembayaran 50% ditolak
+1 => Pembayaran 50% diterima
+22 => Pembayaran 100% ditolak
+222 => Pelunasan ditolak
+2 => Lunas
+
+Status Notif Admin
+11 => Upload file 50%
+22 => Upload  file 100%
+222 => Upload file  pelunasan

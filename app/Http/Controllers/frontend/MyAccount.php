@@ -59,6 +59,7 @@ class MyAccount extends Controller
         ->join('users','users.id_user','bookings.id_user')
         ->select('bookings.id_tour','bookings.id_booking','tour_packages.tour_name','bookings.booking_date','bookings.travel_date','bookings.pax','bookings.price','d.day','bookings.status')
         ->where('bookings.id_user',$profile[0]->id_user)
+        ->orderBy("bookings.id_booking","desc")
         ->get();
 
         $attr = array(
@@ -101,6 +102,17 @@ class MyAccount extends Controller
             "desc" => "Welcome to BMC Travel Service. One Stop Travel Solution"
         );
         return view('frontend.myAccount.changepass', $attr);
+    }
+    public function store(Request $request)
+    {
+        $request->validate([
+            'current_password' => ['required', new MatchOldPassword],
+            'new_password' => ['required']
+        ]);
+   
+        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
+   
+        dd('Password change successfully.');
     }
     public function payment($id)
     {

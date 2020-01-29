@@ -132,6 +132,29 @@ class Admin extends Controller
             "package" => DB::table("tour_packages")
                         ->select(array(DB::raw('count(id_tour) as ttl')))
                         ->get(),
+            "nearest" => DB::table('bookings as b')
+                        ->join('tour_packages as tp',"b.id_tour","tp.id_tour")
+                        ->join('tour_durations as td',"tp.id_duration",'td.id_duration')
+                        ->join('users as u',"b.id_user",'u.id_user')
+                        ->select("tp.tour_name","b.travel_date",'td.day','td.night','u.firstname','u.lastname')
+                        ->where('b.travel_date','>=',date("Y-m-d"))
+                        ->where('b.status','2')
+                        ->get(),
+                        "best" => DB::table('bookings as b')
+                        ->join("tour_packages as tp","b.id_tour","tp.id_tour")
+                        ->select(array('b.id_tour','tp.tour_name',DB::raw('count(b.id_booking) as ttl')))
+                        ->groupBy("b.id_tour",'tp.tour_name')
+                        ->orderBy("ttl","desc")
+                        ->limit(1)
+                        ->get(),
+          "thebest" => DB::table('tour_packages as tp')
+                        ->leftJoin("bookings as b","b.id_tour","tp.id_tour")
+                        ->join('tour_durations as td',"tp.id_duration",'td.id_duration')
+                        ->select(array('b.id_tour','tp.tour_name','td.day','td.night',DB::raw('count(b.id_booking) as ttl')))
+                        ->groupBy("b.id_tour",'tp.tour_name','td.day','td.night')
+                        ->orderBy("ttl","desc")
+                        ->get(),
+
 /*             "mostBook" => DB::table('tour_packages as tp')
                             ->leftJoin('bookings as b',"b.id_tour","tp.id_tour")
                             ->select(array(DB::raw('count(b.id_tour) as ttl')))

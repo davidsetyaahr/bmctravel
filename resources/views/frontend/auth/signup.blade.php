@@ -84,7 +84,7 @@
                     <p class="mt-1 text-center">Already have account? <a href="{{ url('signin') }}" class="link-red"> Sign in here</a></p>
                   </div>
                 </div>
-                <div class="right">
+                <div class="right" style="background:url('{{url('images/banner/market.jpg')}}');background-size:cover;background-position:center">
                   <div class="layer"></div>
                   <div class="quote">
                     <div class="icon-quote">

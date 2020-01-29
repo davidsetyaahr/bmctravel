@@ -1,6 +1,6 @@
 @extends('frontend/common/template')
 @section('container')
-<div style="background-image: url('{{url('public/direngine/images/bg_4.jpg')}}');"  class="js-fullheight-travel">
+<div style="background-image: url('{{url('images/banner/bromo.jpg')}}');background-position:bottom"  class="js-fullheight-travel">
       <div class="overlay"></div>
       <div class="container">
         <div class="row justify-content-center">
