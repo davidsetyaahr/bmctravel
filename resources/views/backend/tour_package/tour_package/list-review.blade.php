@@ -43,12 +43,12 @@
                                     <?php 
                                         if($r->status=="0"){
                                             ?>
-                                            <a class='btn btn-default' href="{{url('admin/review/action/'.$r->id_review.'?status=1')}}">Activate</a>
+                                            <a class='btn btn-default statusReview' href="{{url('admin/review/action/'.$r->id_review.'?status=1')}}">Activate</a>
                                             <?php
                                         }
                                         else{
                                             ?>
-                                            <a class='btn btn-warning' href="{{url('admin/review/action/'.$r->id_review.'?status=0')}}">Deactive</a>
+                                            <a class='btn btn-warning statusReview' href="{{url('admin/review/action/'.$r->id_review.'?status=0')}}">Deactive</a>
                                             <?php
                                         }
                                     ?>
