@@ -35,6 +35,7 @@
     {{-- step --}}
     <link href="{{ asset('public/matrix-admin-bt4') }}/assets/libs/jquery-steps/jquery.steps.css" rel="stylesheet">
     <link href="{{ asset('public/matrix-admin-bt4') }}/assets/libs/jquery-steps/steps.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('public/matrix-admin-bt4') }}/assets/sweetalert2-master/src/sweetalert2.scss">
     {{-- /step --}}
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -350,6 +351,9 @@
     <script src="{{ asset('public/matrix-admin-bt4') }}/assets/extra-libs/multicheck/jquery.multicheck.js"></script>
     <script src="{{ asset('public/matrix-admin-bt4') }}/assets/extra-libs/DataTables/datatables.min.js"></script>
     <script src="{{ asset('public/matrix-admin-bt4') }}/assets/libs/jquery-steps/build/jquery.steps.min.js"></script>
+    {{-- <script src="{{ asset('public/matrix-admin-bt4') }}/assets/sweetalert2-master/src/sweetalert2.js"></script>
+    <script src="{{ asset('public/matrix-admin-bt4') }}/assets/sweetalert2-master/src/sweetAlert.js"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script>
 /*         // Editor Quill
         var quill = new Quill('#editor-overview', {

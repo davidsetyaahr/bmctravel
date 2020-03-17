@@ -284,4 +284,30 @@ $(document).ready(function(){
         $("#profit #change").html(rupiah(profit))
         $("#idr #change").html(rupiah(total))
     }
+
+    $("#accPayment").click(function(){
+        acc()
+    })
+    $(".statusReview").click(function(){
+        acc()
+    })
+
+    function acc(){
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You accept this",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, Accept this'
+          }).then((result) => {
+            if (result.value) {
+              Swal.fire(
+                'Success'
+              )
+            }
+          })
+    }
+
 })

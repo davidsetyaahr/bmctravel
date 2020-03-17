@@ -92,7 +92,7 @@
                         if($payment->status=='11' || $payment->status=='22' || $payment->status=='222'){
                     ?>
                     <a href="{{url('admin/transaction/payment/status/'.$payment->id_payment.'?status=0')}}" class="btn btn-default">Decline</a>
-                    <a href="{{url('admin/transaction/payment/status/'.$payment->id_payment.'?status=1')}}" class="btn btn-success">Accept</a>
+                    <a href="{{url('admin/transaction/payment/status/'.$payment->id_payment.'?status=1')}}" class="btn btn-success" id="accPayment">Accept</a>
                     <?php } ?>
                 </div>
                 </div>
