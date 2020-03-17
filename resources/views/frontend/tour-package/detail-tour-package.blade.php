@@ -1,7 +1,7 @@
 @extends('frontend.common.template')
 @section('container')
 
-<div class="hero-wrap js-fullheight" style="background-image: url({{ url('/images/gallery/'.$packages->img) }});">
+<div class="hero-wrap js-fullheight" style="background-attachment : fixed;background-image: url({{ url('/images/gallery/'.$packages->img) }});">
 <div class="overlay js-fullheight"></div>
     <div class="container">
       <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
@@ -414,7 +414,7 @@
                 <?php 
                   $arr = array("Poor","Average","Satisying","Very Good","Fantastic");
                 ?>
-              <div class="value"><?php echo $arr[ceil($average)-1] ?></div>
+              <div class="value"><?php echo $average!=0 ? $arr[ceil($average)-1] : "" ?></div>
             </div>
             <div class="percentage">
               <div class="title">Fantastic</div>
@@ -472,15 +472,15 @@
             <?php 
               if(!empty(session()->all()['user'])){
                 $user = session()->all()['user'];
-                $cek = DB::table('bookings as b')
-                ->join("users as u","b.id_user","u.id_user")
+                $cek = DB::table('users as u')
+                ->join("bookings as b","b.id_user","u.id_user")
                 ->select(array('u.avatar',DB::raw('count(b.id_booking) as ttl')))
                 ->where('b.id_user',$user['id_user'])
                 ->where('b.id_tour',$packages->id_tour)
                 ->where('b.status','2')
                 ->groupBy('b.id_booking','u.avatar')
-                ->get();
-                if($cek[0]->ttl==1)
+                ->get()->toArray();
+                if(count($cek)>0)
                 {
             ?>
            <div class="review-content">

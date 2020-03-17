@@ -27,6 +27,8 @@ class Home extends Controller
             ->join("gallery AS g", "tpc.id_gallery", "g.id_gallery")
             ->join("tour_categories AS tc", "tpc.id_category", "tc.id_category")
             ->select("g.img","tpc.id_tour", "tpc.tour_name", "td.day", "td.night", "tc.category_name", "tpc.price")
+            ->orderBy("tpc.id_tour","desc")
+            ->limit(4)
             ->get();
 
         $travel_tips = DB::table("travel_tips AS tt")
@@ -40,13 +42,20 @@ class Home extends Controller
             ->select("g.img", "dc.*")
             ->get();
 
+        $tour_categories = DB::table("tour_categories")->select("*")->get();
+        $tour_durations = DB::table("tour_durations")->select("*")->get();
+        $destinations = DB::table("destinations")->select("destination_name","id_destination")->get();
+
         $attr = array(
             "title" => "BMC Travel Service - Home",
             "desc" => "Welcome to BMC Travel Service. One Stop Travel Solution",
             "type" => $type,
             "tour_package" => $tour_package,
             "travel_tips" => $travel_tips,
-            "destination_categories" => $destination_categories
+            "destination_categories" => $destination_categories,
+            "tour_categories" => $tour_categories,
+            "tour_durations" => $tour_durations,
+            "destinations" => $destinations
         );
         return view('frontend.common.home', $attr);
     }

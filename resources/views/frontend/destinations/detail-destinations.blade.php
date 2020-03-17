@@ -17,7 +17,7 @@
         $ex = explode(",",$item->gallery);
         $img = App\Gallery_model::where("id_gallery",$ex[0])->take(1)->get();
     ?>
-<div style="background-image: url('{{ url('images/gallery/'.$img[0]->img) }}');"  class="js-fullheight-travel full">
+<div style="background-image: url('{{ url('images/gallery/'.$img[0]->img) }}');"  class="js-fullheight-travel hero-wrap full">
       <div class="overlay"></div>
       <div class="container">
         <div class="row justify-content-center">

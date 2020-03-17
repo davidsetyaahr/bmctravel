@@ -12,8 +12,8 @@
     case 'booking':
       $booking = "active";
       break;
-    case 'custom-package':
-      $custom = "active";
+    case 'wishlist':
+      $wishlist = "active";
       break;
     case 'profile':
       $profile = "active";
@@ -50,7 +50,7 @@
             <a class="nav-link <?php echo isset($booking) ? "active" : "" ?>" href="{{url('my-account/booking')}}">Booking and Payment</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php echo isset($custom) ? "active" : "" ?>" href="#others">Custom Package</a>
+            <a class="nav-link <?php echo isset($wishlist) ? "active" : "" ?>" href="{{url('my-account/wishlist')}}">Wishlist</a>
           </li>
           <li class="nav-item">
             <a class="nav-link <?php echo isset($rev) ? "active" : "" ?>" href="{{url('my-account/review')}}">Review</a>

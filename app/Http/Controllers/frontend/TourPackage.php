@@ -21,14 +21,34 @@ class TourPackage extends Controller
         $tour_type = DB::table('tour_type as tt')->select('tt.type_name', 'g.img', 'tt.id_type')->join('gallery as g', 'tt.id_gallery', 'g.id_gallery')->get();
         $activities = Trip_activities::select('id_activities','activities')->get();
         $durations = Tour_durations::all();
-        $packages = DB::table('tour_packages as tp')
-        ->join('tour_categories as tc','tp.id_category','tc.id_category')
-        ->join('tour_durations as td','tp.id_duration','td.id_duration')
-        ->join('gallery as g','tp.id_gallery','g.id_gallery')
-        ->select('tp.*','tc.category_name', 'td.day', 'td.night','g.img')
-        ->orderBy("tp.id_tour","desc")
-        ->get();
 
+        if(isset($_GET['tourfinder'])){
+            $halfBudget = $_GET['budget']/4;
+            $startBudget = $_GET['budget']-$halfBudget;
+            $endBudget = $_GET['budget']+$halfBudget;
+            $packages = DB::table('tour_packages as tp')
+            ->join('tour_categories as tc','tp.id_category','tc.id_category')
+            ->join('tour_durations as td','tp.id_duration','td.id_duration')
+            ->join('gallery as g','tp.id_gallery','g.id_gallery')
+            ->join("itinerary as i","tp.id_tour",'i.id_tour')
+            ->join("detail_itinerary as di","i.id_itinerary","di.id_itinerary")
+            ->select('tp.*','tc.category_name', 'td.day', 'td.night','g.img')
+            ->groupBy("tp.id_tour","tp.tour_name","tp.id_category","tp.id_type","tp.id_duration","overview","tp.id_gallery","price","sale","meeting_point","date_created",'tc.category_name', 'td.day', 'td.night','g.img')
+            ->where("tp.id_category", $_GET['id_category'])
+            ->where("tp.id_duration", $_GET['id_duration'])
+            ->whereBetween("tp.price",array($startBudget, $endBudget))
+            ->orderBy("tp.id_tour","desc")
+            ->get();
+        }
+        else{
+            $packages = DB::table('tour_packages as tp')
+            ->join('tour_categories as tc','tp.id_category','tc.id_category')
+            ->join('tour_durations as td','tp.id_duration','td.id_duration')
+            ->join('gallery as g','tp.id_gallery','g.id_gallery')
+            ->select('tp.*','tc.category_name', 'td.day', 'td.night','g.img')
+            ->orderBy("tp.id_tour","desc")
+            ->get();
+        }            
         $attr = array(
             "title" => "BMC Travel Service - Travel Package",
             "desc" => "Our awesome travel package",
@@ -55,44 +75,51 @@ class TourPackage extends Controller
         ->join("users as u","r.id_user","u.id_user")
         ->select("r.*","u.firstname","u.lastname","u.avatar")
         ->where('r.status','1')
+        ->where("r.id_tour",$id)
         ->orderBy('r.id_review',"desc")->get()->toArray();
 
         $average = DB::table('review')
         ->where("status",'1')
+        ->where("id_tour",$id)
         ->avg('rate');
 
         $progresBar = array(
             "fantastic" => DB::table("review")
                             ->select(array(DB::raw('count(id_review) as ttl')))
                             ->where("status","1")
+                            ->where("id_tour",$id)
                             ->where("rate",5)
-                            ->get(),
+                            ->get()->toArray(),
             "verygood" => DB::table("review")
                             ->select(array(DB::raw('count(id_review) as ttl')))
                             ->where("status","1")
+                            ->where("id_tour",$id)
                             ->where("rate",4)
                             ->get(),
             "satisfying" => DB::table("review")
                             ->select(array(DB::raw('count(id_review) as ttl')))
                             ->where("status","1")
+                            ->where("id_tour",$id)
                             ->where("rate",3)
-                            ->get(),
+                            ->get()->toArray(),
             "average" => DB::table("review")
                             ->select(array(DB::raw('count(id_review) as ttl')))
                             ->where("status","1")
+                            ->where("id_tour",$id)
                             ->where("rate",2)
-                            ->get(),
+                            ->get()->toArray(),
             "poor" => DB::table("review")
                             ->select(array(DB::raw('count(id_review) as ttl')))
                             ->where("status","1")
+                            ->where("id_tour",$id)
                             ->where("rate",1)
-                            ->get(),
+                            ->get()->toArray(),
         );
-        $rev['fantastic'] = ($progresBar['fantastic'][0]->ttl/count($reviews)) * 100;
-        $rev['verygood'] = ($progresBar['verygood'][0]->ttl/count($reviews)) * 100;
-        $rev['satisfying'] = ($progresBar['satisfying'][0]->ttl/count($reviews)) * 100;
-        $rev['average'] = ($progresBar['average'][0]->ttl/count($reviews)) * 100;
-        $rev['poor'] = ($progresBar['poor'][0]->ttl/count($reviews)) * 100;
+        $rev['fantastic'] = count($reviews)==0 ? 0 : ($progresBar['fantastic'][0]->ttl/count($reviews)) * 100;
+        $rev['verygood'] = count($reviews)==0 ? 0 : ($progresBar['verygood'][0]->ttl/count($reviews)) * 100;
+        $rev['satisfying'] = count($reviews)==0 ? 0 : ($progresBar['satisfying'][0]->ttl/count($reviews)) * 100;
+        $rev['average'] = count($reviews)==0 ? 0 : ($progresBar['average'][0]->ttl/count($reviews)) * 100;
+        $rev['poor'] = count($reviews)==0 ? 0 : ($progresBar['poor'][0]->ttl/count($reviews)) * 100;
 
         $information = array(
             "include" => DB::table('tour_informations as ti')
@@ -257,5 +284,54 @@ class TourPackage extends Controller
         
         DB::table('review')->insert($arr);
         return redirect('my-account/review');
+    }
+
+    public function compare()
+    {
+        $ex = explode(",",$_GET['id']);
+        $attr['packages'] = DB::table('tour_packages as tp')
+        ->join('tour_categories as tc','tp.id_category','tc.id_category')
+        ->join('tour_durations as td','tp.id_duration','td.id_duration')
+        ->join('gallery as g','tp.id_gallery','g.id_gallery')
+        ->select('tp.id_tour',"tp.price",'tp.tour_name','tc.category_name', 'td.day', 'td.night','g.img')
+        ->where("tp.id_tour",$ex[0])
+        ->orWhere("tp.id_tour",$ex[1])
+        ->orderBy("tp.id_tour","desc")
+        ->get();
+
+        return view('frontend.tour-package.compare', $attr);
+    }
+
+    public function wishlist()
+    {
+        if(empty(session()->all()['user'])){
+            echo "empty";
+        }
+        else{
+            $session = session()->all()['user'];
+            date_default_timezone_set("Asia/Jakarta");
+    
+            $cek = DB::table("wishlist")
+            ->select(array(DB::raw('count(id_wishlist) ttl')))
+            ->where("id_tour", $_GET['id_tour'])
+            ->where("id_user", $session['id_user'])
+            ->get()->toArray();
+            if($cek[0]->ttl==0){
+                $wishlist = array(
+                    "id_tour" => $_GET['id_tour'],
+                    "id_user" => $session['id_user'],
+                    "datetime" => date("Y-m-d H:i:s")
+                );
+                DB::table('wishlist')->insert($wishlist);
+                echo "added";
+            }
+            else{
+                DB::table("wishlist")
+                ->where("id_tour",$_GET['id_tour'])
+                ->where("id_user", $session['id_user'])
+                ->delete();
+                echo "removed";
+            }
+        }
     }
 }

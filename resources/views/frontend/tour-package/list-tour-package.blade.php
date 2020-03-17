@@ -38,13 +38,13 @@
         </div>
       </div>
     </div>
-    <section class="ftco-section ftco-degree-bg p-0 mb-5">
-      <div class="compare-package">
-        <span>
+    <section class="ftco-section ftco-degree-bg p-0">
+      <div class="compare-package" data-id='[]' data-url="{{ url('tour-package/compare/') }}">
+        <div class="img">
           <img src="public/images/common/balance.png" alt="">
-        </span>
+        </div>
         <p>
-          Compare
+          Compare <span>0</span>
         </p>
       </div>
       <div class="container">
@@ -82,9 +82,18 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-2">
+      </div>
+    </section> <!-- .section -->
+  <section class="bg-light py-4" style="background : #f5f6fa !important">
+    <div class="container">
+    <div class="row mt-2">
           <div class="col-md-3">
-            <div class="row left-filter">
+          <div class="row">
+          <div class="col-md-12">
+                <h5 class="mb-3 bold ls-1">Filter</h5>
+              </div>
+          </div>
+            <div class="row left-filter box-white border">
               <div class="col-md-12 mt-4">
                 <h6 class="mb-3">Destination Categories <span class="ion-ios-arrow-down float-right"></span></h6>
                 <?php 
@@ -103,7 +112,6 @@
               <div class="col-md-12 mt-4">
                 <h6 class="mb-3">Trip Activities <span class="ion-ios-arrow-down float-right"></span></h6>
                 @foreach ($activities as $item)
-                    
                 <div class="form-check custom-control custom-checkbox mb-2">
                   <input type="checkbox" class="form-check-input custom-control-input" id="a<?= $num?>">
                   <label class="custom-control-label" for="a<?= $num?>">
@@ -148,10 +156,10 @@
           <div class="col-md-9">
             <div class="row">
               <div class="col-md-12">
-                <h6 class="mt-4">Showing 10 Tour Packages</h6>
+                <h6 class="mb-4 bold ls-1">Showing 10 Tour Packages</h6>
               </div>
               <div class="col-md-12">
-                <div class="border p-2" style="overflow:auto">
+                <div class="border bg-white p-2" style="overflow:auto">
                   <select name="" class="custom-select float-right" style="width:inherit" id="">
                     <option value="">Popularity</option>
                     <option value="">Price: Hight to Low</option>
@@ -163,7 +171,7 @@
               </div>
               @foreach($packages as $data)
               <div class="col-md-12 mt-3">
-                <div class="inline-package">
+                <div class="inline-package bg-white">
                   <div class="top">
                     <div class="left">
                       <img src="{{url('/images/gallery/'.$data->img)}}" alt="" class="img-fluid">
@@ -177,11 +185,31 @@
                            <h6 class="mb-0">{{$data->tour_name}}</h6>
                         </div>
                         <div class="compare">
-                        <div class="form-check custom-control custom-checkbox">
-                            <input type="checkbox" class="form-check-input custom-control-input" id="aa">
-                            <label class="custom-control-label add-compare" data-id="1" for="aa">
+                          <div class="form-check custom-control custom-checkbox">
+                            <input type="checkbox" class="form-check-input custom-control-input checkCompare" id="{{$data->id_tour}}">
+                            <label class="custom-control-label add-compare" data-id="" for="{{$data->id_tour}}">
                               <span>Add to compare</span>
                             </label>
+                          </div>
+                          <div class="form-check custom-control">
+                          <label for="" class="wishlist" id="wl{{$data->id_tour}}" data-id="{{$data->id_tour}}">
+                            <?php 
+                              $wl = "";
+                              if(!empty(session()->all()['user'])){
+                                  $session = session()->all()['user'];
+                                  $cek = DB::table("wishlist")
+                                  ->select(array(DB::raw('count(id_wishlist) ttl')))
+                                  ->where("id_tour", $data->id_tour)
+                                  ->where("id_user", $session['id_user'])
+                                  ->get()->toArray();
+
+                                  if($cek[0]->ttl==1){
+                                    $wl = "added";
+                                  }
+                                }
+                            ?>
+                              <span class="heart {{$wl}}"></span>&nbsp; Wishlist
+                          </label>
                           </div>
                         </div>
                       </div>
@@ -307,7 +335,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </section> <!-- .section -->
-
+    </div>
+  </section>
     @endsection('container')

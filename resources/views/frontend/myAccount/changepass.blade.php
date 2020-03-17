@@ -2,8 +2,14 @@
 @section('menu-account')
         <div class="row">
             <div class="col-md-12">
-            <form action="{{url("route('change.password')")}}" method="post">
-                {{ csrf_field()}}
+            @if(session('status'))
+                    <div class="alert alert-success">
+                        {{session('status')}}
+                    </div>
+                @endif
+
+            <form action="{{url('my-account/actchangepassword')}}" method="post">
+            @csrf
                 <div class="form-group">
                     <label>Current Password :</label>
                     <input type="password" class="form-control custom normal" name="old_password" id="email">

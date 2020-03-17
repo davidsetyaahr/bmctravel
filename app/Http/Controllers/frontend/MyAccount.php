@@ -97,22 +97,38 @@ class MyAccount extends Controller
 
     public function changepass()
     {
+        $session = session()->all();
+
+        $profile = DB::table('users')->where("id_user",$session['user']['id_user'])->get();
+
         $attr = array(
             "title" => "BMC Travel Service - My Account",
-            "desc" => "Welcome to BMC Travel Service. One Stop Travel Solution"
+            "desc" => "Welcome to BMC Travel Service. One Stop Travel Solution",
+            "user" => $profile[0]
         );
         return view('frontend.myAccount.changepass', $attr);
     }
-    public function store(Request $request)
+    public function actchangepassword(Request $request)
     {
-        $request->validate([
-            'current_password' => ['required', new MatchOldPassword],
-            'new_password' => ['required']
-        ]);
+        $session = session()->all();
+        $oldPass = password_hash($request->old_password, PASSWORD_DEFAULT);
+        $getPass = DB::table("users")
+        ->select("password")
+        ->where("id_user", $session['user']['id_user'])
+        ->get()->toArray();
 
-        User::find(auth()->user()->id)->update(['password'=> Hash::make($request->new_password)]);
-
-        dd('Password change successfully.');
+        if(password_verify($request->old_password, $getPass[0]->password)){
+            $status = "Password has been change";
+            $update = array(
+                'password' => password_hash($request->new_password, PASSWORD_DEFAULT),
+            );
+            
+            DB::table('users')->where('id_user',$session['user']['id_user'])->update($update);
+        }
+        else{
+            $status = "Password failed to change";
+        }
+        return redirect('my-account/changepassword')->with('status', $status);
     }
     public function payment($id)
     {
@@ -320,6 +336,31 @@ class MyAccount extends Controller
 
         ]);
         return redirect('/my-account/profile');
+    }
+    
+    public function wishlist()
+    {
+        $session = session()->all();
+        $profile = DB::table('users')->where("id_user",$session['user']['id_user'])->get();
+
+        $packages = DB::table("wishlist as w")
+        ->join('tour_packages as tp',"w.id_tour","tp.id_tour")
+        ->join('tour_categories as tc','tp.id_category','tc.id_category')
+        ->join('tour_durations as td','tp.id_duration','td.id_duration')
+        ->join('gallery as g','tp.id_gallery','g.id_gallery')
+        ->select('tp.*','tc.category_name', 'td.day', 'td.night','g.img')
+        ->where("w.id_user",$session['user']['id_user'])
+        ->orderBy("tp.id_tour","desc")
+        ->get();
+
+        $attr = array(
+            "title" => "BMC Travel Service - My Account",
+            "desc" => "Welcome to BMC Travel Service. One Stop Travel Solution",
+            "user" => $profile[0],
+            "packages" => $packages
+        );
+
+        return view('frontend.myAccount.wishlist' , $attr);
     }
 }
 

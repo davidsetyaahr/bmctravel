@@ -17,9 +17,9 @@ class Categories extends Controller
     public function index()
     {
         // $category = Tour_categories::orderBy('id_category', 'DESC')->get();
-        $category = DB::table('destination_categories')
-        ->join('gallery','gallery.id_gallery','destination_categories.id_gallery')
-        ->select('destination_categories.id_category','destination_categories.category_name','gallery.img')->get();
+        $category = DB::table('tour_categories')
+        ->join('gallery','gallery.id_gallery','tour_categories.id_gallery')
+        ->select('tour_categories.id_category','tour_categories.category_name','gallery.img')->get();
         return view('backend.tour_package.categories.list-categories' , ['tour_categories' => $category]);
     }
 

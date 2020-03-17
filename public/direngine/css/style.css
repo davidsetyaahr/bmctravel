@@ -166,6 +166,82 @@
         overflow: none !important;
     }
 }
+.tour-finder{
+    display: none;
+}
+.tour-finder.show{
+    display: block;
+}
+.tour-finder .card.finder{
+    background: rgb(255, 255, 255, 0.9);
+    border-radius: 0px;
+}
+.tour-finder .form-control{
+    color : #4d4d4d;
+    font-size : 15px;
+    border-radius: 5px;
+    background : #1A2B48;
+    border  : 2px solid #d4d9dd;
+}
+.tour-finder .form-control:focus{
+    border-color : #da2f29  !important;
+}
+.tour-finder .finder .card-header{
+    font-size : 20px;
+    background: #da2f29;
+    color : white;
+    font-weight : bold;
+    letter-spacing: 1px;
+}
+.tour-finder label{
+    font-size : 16px;
+    font-weight : bold;
+    letter-spacing: .7px;
+}
+.bg-compare, .tour-finder{
+    width : 100%;
+    height : 100%;
+    background : rgb(0, 0, 0, .9);
+    position: fixed;
+    top : 0;
+    left : 0;
+    z-index : 100;
+}
+.bg-compare .close-compare, .tour-finder .close-finder{
+    font-size : 50px;
+    color : white;
+    position: fixed;
+    top : 10px;
+    right : 30px;
+    cursor: pointer;
+}
+.bg-compare .container, .tour-finder .container{
+    position: relative;
+    top : 50%;
+    transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+.bg-compare img{
+    width : 100%;
+    height : 84px;
+}
+.bg-compare .compare-info div{
+    margin-bottom : 10px;
+}
+.bg-compare .compare-info div button{
+    margin-right : 10px;
+    min-width : 33.88px;
+}
+.bg-compare .compare-info.text-right div button{
+    margin-right: 0px;
+    margin-left : 10px;
+}
+.bg-compare .compare-info div span{
+    font-weight: bold;
+    letter-spacing: .7px;
+}
 .notifications div:before{
     content : "";
     position: absolute;
@@ -1488,6 +1564,15 @@
                         height: 100%;
                         width: 100%;
                     }
+                    .overlay-video::before{
+                        content : "";
+                        width : 100%;
+                        height : 100%;
+                        position: absolute;
+                        background : rgb(0, 0, 0, 0.3);
+                        top : 0;
+                        left : 0;
+                    }
 
 
                     .overlay-video .container {
@@ -1503,16 +1588,13 @@
                         margin: auto;
                         color: white;
                         white-space: nowrap;
+                        letter-spacing: 1px;
                     }
                     
                     .overlay-video .container .title h1 {
                         color: white;
                         font-weight : bold  !important;
                         font-size: 50px;
-                    }
-
-                    .overlay-video .container a {
-                        background: white;
                     }
 
                     .img-overview {
@@ -1529,22 +1611,30 @@
                         right: 20px;
                         top: 50%;
                         z-index: 10;
+                        cursor: pointer;
                     }
 
-                    .compare-package span {
+                    .compare-package .img {
                         -o-box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.15);
                         -webkit-box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.15);
                         -moz-box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.15);
                         box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.15);
                         border-radius: 100%;
                         border: 1.2px solid #f8b34d;
-                        padding: 15px 10px;
+                        padding: 18px 10px;
+                        text-align: center;
                     }
 
                     .compare-package p {
                         margin-top: 13px;
                         font-size: 12px;
                         color: black;
+                    }
+                    .compare-package p span{
+                        background: #72c8f9;
+                        color : white;
+                        padding : 4px 8px;
+                        border-radius: 100%;
                     }
 
                     .bg-red {
@@ -1569,7 +1659,7 @@
                     }
 
                     .inline-package .top {
-                        padding: 8px;
+                        padding: 12px;
                         overflow: auto;
                         border: 1px solid #ddd;
                     }
@@ -1592,13 +1682,37 @@
 
                     .inline-package .top .right .right-top .title {
                         float: left;
-                        width: 60%;
-                    }
+/*                         width: 60%;
+ */                    }
 
                     .inline-package .top .right .right-top .compare {
                         float: right;
                         margin-left: 3%;
                         margin-right: 3%;
+                    }
+                    .inline-package .top .right .right-top .compare .custom-control{
+                        display : inline-block;
+                    }
+                    .inline-package .top .right .right-top .compare .custom-control .wishlist{
+                        cursor : pointer;
+                    }
+                    .inline-package .top .right .right-top .compare .custom-control .wishlist .heart:before{
+                        display: inline-block;
+                        font-family: "Ionicons";
+                        speak: none;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-variant: normal;
+                        text-transform: none;
+                        text-rendering: auto;
+                        line-height: 1;
+                        -webkit-font-smoothing: antialiased;                        
+                        content : "\f19b";
+                        font-size : 20px;
+                    }
+                    .inline-package .top .right .right-top .compare .custom-control .wishlist .heart.added:before{
+                        content : "\f443";
+                        color : #da2f29;
                     }
 
                     .inline-package .top .right .right-bottom {
@@ -1774,6 +1888,9 @@
 
                     .color-orange {
                         color: #f96d01;
+                    }
+                    .bg-orange{
+                        background: #f96d01 !important;
                     }
 
                     .color-blue {
@@ -13074,7 +13191,7 @@
                         padding-right: 20px;
                         color: #fff;
                         font-weight: 400;
-                        opacity: 1 !important;
+                        opacity: .8 !important;
                     }
 
                     .ftco-navbar-light .navbar-nav>.nav-item>.nav-link:hover {
@@ -13359,7 +13476,7 @@
                             left: 0;
                             right: 0;
                             width: 100%;
-                            background: rgb(0, 0, 0, 0.4)
+                            background: rgb(0, 0, 0, 0.55)
                         }
 
                         .slider-text .browse span a:hover i {
@@ -14335,7 +14452,8 @@
                             border-top: 1px solid #ddd;
                             font-size: 16px;
                             padding: 8em 0 8em 0;
-                            background : white;
+                            background : #343645;
+                            color : white;
                         }
 
                         .ftco-footer .ftco-footer-logo {
@@ -14363,7 +14481,7 @@
                         .ftco-footer .ftco-heading-2 {
                             font-size: 17px;
                             font-weight: 400;
-                            color: #000000;
+                            color: white;
                         }
 
                         .ftco-footer-social li {
