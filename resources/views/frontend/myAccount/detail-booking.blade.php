@@ -2,28 +2,28 @@
 @section('menu-account')
 <div class="bg-bmc">
         <img src="{{ url('public/direngine/images/BMC-Logo.png') }}" alt="" style="height : 40%;width:15% ">
-        <p>BMC Travel Service</p>
+        <p>Baratha Travel Service</p>
     </div>
     <div class="row">
         <div class="col-md-6">
             <table width="100%" cellpadding="5" style="font-size :14px;">
                 <tr>
-                    <td class="bold">Name</td>
+                    <td class="bold">Nama</td>
                     <td>:</td>
                     <td>{{$user->firstname}} {{$user->lastname}}</td>
                 </tr>
                 <tr>
-                    <td class="bold">Person / Pax</td>
+                    <td class="bold">Orang / Pax</td>
                     <td>:</td>
                     <td>{{$booking->pax}} pax</td>
                 </tr>
                 <tr>
-                    <td class="bold">Package</td>
+                    <td class="bold">Paket</td>
                     <td>:</td>
                     <td><a href="">{{$booking->tour_name}}</a></td>
                 </tr>
                 <tr>
-                    <td class="bold">Type</td>
+                    <td class="bold">Tipe</td>
                     <td>:</td>
                     <td>{{$booking->type_name}}</td>
                 </tr>
@@ -32,17 +32,17 @@
         <div class="col-md-6">
             <table width="100%" cellpadding="5" style="font-size :14px;">
                 <tr>
-                    <td class="bold">Durations</td>
+                    <td class="bold">Durasi</td>
                     <td>:</td>
-                    <td>{{$booking->day}} Days {{$booking->night}} Nights</td>
+                    <td>{{$booking->day}} Malam {{$booking->night}} Malam</td>
                 </tr>
                 <tr>
-                    <td class="bold">Travel Start</td>
+                    <td class="bold">Mulai Travel</td>
                     <td>:</td>
                     <td>{{ date("l, d F Y", strtotime($booking->travel_date)) }}</td>
                 </tr>
                 <tr>
-                    <td class="bold">Travel Finish</td>
+                    <td class="bold">Travel Berakhir</td>
                     <td>:</td>
                     <?php 
                         $plus = $booking->day-1;
@@ -50,9 +50,9 @@
                     <td>{{ date("l, d F Y", strtotime($booking->travel_date.' +'.$plus.' day')) }}</td>
                 </tr>
                 <tr>
-                    <td class="bold">Attachment</td>
+                    <td class="bold">Lampiran</td>
                     <td>:</td>
-                    <td><a href="#" class="color-blue" data-toggle="modal" data-target="#attach">View here</a></td>
+                    <td><a href="#" class="color-blue" data-toggle="modal" data-target="#attach">Lihat disini</a></td>
                 </tr>
             </table>
         </div>
@@ -60,7 +60,7 @@
     <hr>
     <div class="row">
         <div class="col-md-6">
-            <p class="bold color-blue">Payment Option, transfer to:</p>
+            <p class="bold color-blue">Pilih Pembayaran, transfer ke:</p>
             <div class="bank-list">
                 <img src="{{ url('public/images/common/bri.png') }}" alt="">
                 <img src="{{ url('public/images/common/bni.png') }}" alt="">
@@ -79,7 +79,7 @@
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h5 class="modal-title">Attachment</h5>
+        <h5 class="modal-title">Lampiran</h5>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
 

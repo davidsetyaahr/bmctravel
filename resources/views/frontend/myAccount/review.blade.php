@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="score">
-                Rated <span class="score-blue"> {{$r->rate}}.0 </span>/ 5.
+                Nilai <span class="score-blue"> {{$r->rate}}.0 </span>/ 5.
                 {{$text}}
             </div>
             </div>

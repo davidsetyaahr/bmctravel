@@ -1,2 +1,2 @@
-<p>Hi, this is {{ $data['name'] }}</p>
-<p>I have some query like {{ $data['message'] }}</p>
+<p>Hai, Ini adalah {{ $data['name'] }}</p>
+<p>Saya punya beberapa pertanyaan seperti {{ $data['message'] }}</p>

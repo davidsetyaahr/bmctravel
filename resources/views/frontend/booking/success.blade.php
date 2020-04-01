@@ -1,6 +1,6 @@
 <html lang="en">
 <head>
-    <title>Bmc Travel Service - Home</title>
+    <title>Baratha Travel Service - Home</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -22,14 +22,14 @@
 
                     <div class="img">
                         <img src="{{url('public/images/common/mountain.png')}}" alt="">
-                        <p>Thank You</p>
+                        <p>Terimakasih</p>
                     </div>
-                    <p class="bold">Your transaction has been successful</p>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis alias tempora recusandae tempore eveniet ipsam reprehenderit ut laudantium distinctio nemo ipsum voluptates dolores sed expedita aperiam magnam obcaecati, veniam cupiditate.</p>
+                    <p class="bold">Transaksi telah berhasil</p>
+                    <p>Transaksi telah dilakukan dan diterima oleh admin, pesanan akan diproses.</p>
                     <div class="link">
-                    <a href="" class="payment">Payment</a>
+                    <a href="" class="payment">Pembayaran</a>
                     &nbsp;
-                    <a href="{{url('my-account')}}">My Account</a>
+                    <a href="{{url('my-account')}}">Akun Saya</a>
                     </div>
                     <div class="bank-list mt-10">
                         <img src="{{ url('public/images/common/bri.png') }}" alt="">

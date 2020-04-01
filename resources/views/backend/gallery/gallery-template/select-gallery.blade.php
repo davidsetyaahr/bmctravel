@@ -4,7 +4,7 @@
                         <a href="" class="close-gallery">
                             <span class="mdi mdi-close float-right"></span>
                         </a>
-                        <div class="title">Select Image</div>
+                        <div class="title">Pilih Gambar</div>
                         <hr>
                         <div class="gallery-categories custom-scroll mt-3 mb-3">
                             @foreach($categories as $c)

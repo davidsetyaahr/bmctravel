@@ -15,18 +15,16 @@
                         <table id="zero_config" class="table table-striped table-bordered">
                             <thead>
                                     <th>#</th>
-                                    <th>email</th>
-                                    {{-- <th>passwword</th> --}}
-                                    <th>firstname</th>
-                                    <th>lastname</th>
-                                    <th>phone</th>
+                                    <th>Email</th>
+                                    <th>Nama Depan</th>
+                                    <th>Nama Belakang</th>
+                                    <th>No. HP</th>
                             </thead>
                             <tbody>
                                     @foreach ($id_user as $usr)
                                         <tr>
                                             <th>{{ $loop->iteration }}</th>
                                             <td>{{ $usr->email }}</td>
-                                            {{-- <td>{{ $usr->password }}</td> --}}
                                             <td>{{ $usr->firstname }}</td>
                                             <td>{{ $usr->lastname }}</td>
                                             <td>{{ $usr->phone }}</td>

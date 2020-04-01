@@ -13,22 +13,22 @@
             <div class="card-body">
             <form action="/bmctravel/admin/data-master/add-city" method="post">
             @csrf
-            <label for="">Province</label>
+            <label for="">Provinsi</label>
                 <select id="" class="form-control" name="province_id">
-                    <option>----Select------</option>
+                    <option>----Pilih------</option>
                     @foreach ($province as $prov) ?>
                     <option value="{{ $prov->id_province }}">{{ $prov->province_name }} </option>
                     @endforeach
                 </select>
                 <br>
-                <label for="">City</label>
+                <label for="">Kota</label>
                 <input type="text" class="form-control @error('city_name') is-invalid @enderror" name="city_name"
                 value="{{ old('city_name')}}">
                 @error('city_name')
                     <div class="invalid-feedback"> {{ $message}} </div>
                     @enderror
                 <br>
-                <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Save</button>
+                <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Simpan</button>
                 <button class="btn btn-secondary" type="reset"><span class="mdi mdi-refresh"></span> Reset</button>
                 </form>
             </div>

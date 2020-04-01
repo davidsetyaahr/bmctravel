@@ -21,13 +21,13 @@
                     <table id="zero_config" class="table table-striped table-bordered">
                         <thead>
                             <th>#</th>
-                            <th>Title</th>
+                            <th>Judul</th>
                             <th>Admin</th>
-                            <th>Content</th>
+                            <th>Konten</th>
                             <th>Permalink</th>
-                            <th>Insert Date</th>
-                            <th>Update Date</th>
-                            <th>Actions</th>
+                            <th>Tanggal diambahkan</th>
+                            <th>Tanggal diperbnarui</th>
+                            <th>Aksi</th>
                         </thead>
                         <tbody>
                         @foreach($travel_tips as $trvltips)
@@ -42,7 +42,7 @@
                                 <td>
                                     <div class="dropdown show">
                                         <a class="btn btn-sm btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Options
+                                            Opsi
                                         </a>
 
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">

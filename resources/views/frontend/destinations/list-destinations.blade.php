@@ -7,7 +7,7 @@
 
           <div class="col-md-8 text-center mt-5 ftco-animate">
 
-          <h3 class="color-white">Destinations</h3>
+          <h3 class="color-white">Destinasi/Tujuan</h3>
           <div class="block-17 my-4">
           <form action="{{url("destinations/search")}}" method="get" class="d-block d-flex">
                       <div class="fields d-block d-flex">
@@ -65,7 +65,7 @@
                     <span>{{$item->category_name}}</span>
                   </div>
                   <img src="{{ url('/images/gallery/'.$img[0]->img) }}" alt="" class="img-fluid transition">
-                  <div class="view-link transition">View Detail</div>
+                  <div class="view-link transition">Lihat Detail</div>
                 </div>
                 <div class="text-bottom mt-2">
                   <div class="title">{{$item->destination_name}}</div>

@@ -22,9 +22,9 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Text</th>
-                                <th>type</th>
-                                <th>Options</th>
+                                <th>Teks</th>
+                                <th>tipe</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,20 +34,20 @@
                                     <td>{{$inf->text}}</td>
                                     <td><?php
                                     if ($inf->type == 0){
-                                        echo 'Include';
+                                        echo 'Termasuk';
                                     }
                                     elseif ($inf->type ==1) {
-                                        echo 'Exclude';
+                                        echo 'Tidak Termasuk';
                                     }
                                     elseif ($inf->type ==2) {
-                                        echo 'What should i pack';
+                                        echo 'Apa yang harus aku siapkan?';
                                     }
                                     ?>
                                     </td>
                                     <td>
                                     <div class="dropdown show">
                                         <a class="btn btn-sm btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Options
+                                            Opsi
                                         </a>
 
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">

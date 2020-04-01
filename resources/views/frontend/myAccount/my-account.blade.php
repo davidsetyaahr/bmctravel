@@ -44,22 +44,22 @@
             <a class="nav-link <?php echo isset($dashboard) ? "active" : "" ?>" href="{{url('my-account')}}">Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php echo isset($notif) ? "active" : "" ?>" href="{{url('my-account/notification')}}">Notifications <span class="badge badge-info" id="countNotif"></span></a>
+            <a class="nav-link <?php echo isset($notif) ? "active" : "" ?>" href="{{url('my-account/notification')}}">Pemberitahuan <span class="badge badge-info" id="countNotif"></span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php echo isset($booking) ? "active" : "" ?>" href="{{url('my-account/booking')}}">Booking and Payment</a>
+            <a class="nav-link <?php echo isset($booking) ? "active" : "" ?>" href="{{url('my-account/booking')}}">Pemesanan dan Pembayaran</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php echo isset($wishlist) ? "active" : "" ?>" href="{{url('my-account/wishlist')}}">Wishlist</a>
+            <a class="nav-link <?php echo isset($wishlist) ? "active" : "" ?>" href="{{url('my-account/wishlist')}}">Daftar Keinginan</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php echo isset($rev) ? "active" : "" ?>" href="{{url('my-account/review')}}">Review</a>
+            <a class="nav-link <?php echo isset($rev) ? "active" : "" ?>" href="{{url('my-account/review')}}">Ulasan</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php echo isset($profile) ? "active" : "" ?>" href="{{url('my-account/profile')}}">Profile</a>
+            <a class="nav-link <?php echo isset($profile) ? "active" : "" ?>" href="{{url('my-account/profile')}}">Profil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php echo isset($change) ? "active" : "" ?>" href="{{url('my-account/changepassword')}}">Change Password</a>
+            <a class="nav-link <?php echo isset($change) ? "active" : "" ?>" href="{{url('my-account/changepassword')}}">Ubah Password</a>
           </li>
         </ul>
         <br>

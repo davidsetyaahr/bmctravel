@@ -17,16 +17,16 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-12 m-t-15">
-                                <label for="">Title</label>
+                                <label for="">Judul</label>
                                 <input type="text" name="title" class="form-control" placeholder="Title" value="{{ $trvltips->title}}">
                             </div>
                             <div class="col-md-12 m-t-15">
-                                <label for="">Gallery</label>
+                                <label for="">Galeri</label>
                                 @include('backend.gallery.gallery-template.gallery-hidden')     
                             </div>
                                 </div>
                                 <div class="col-md-12 m-t-15">
-                                <label for="">Content</label>
+                                <label for="">Isi Konten</label>
                                 <textarea class="form-control @error('content') is-invalid @enderror" name="content" cols="30" rows="10">{{ $trvltips->content}}</textarea>
                             </div>
                             </div>
@@ -36,7 +36,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Save</button>
+                    <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Simpan</button>
                     <button class="btn btn-secondary" type="reset"><span class="mdi mdi-refresh"></span> Reset</button>
                 </form>
                 @endforeach

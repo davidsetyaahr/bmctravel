@@ -22,14 +22,12 @@
                     <table id="zero_config" class="table table-striped table-bordered">
                         <thead>
                             <th>#</th>
-                            <th>Destination Name</th>
-                            <th>Category</th>
-                            <th>city</th>
-                            <th>Gallery</th>
-                            <th>Overview</th>
-                            {{-- <th>Map</th> --}}
-                            {{-- <th>Information</th> --}}
-                            <th>Action</th>
+                            <th>Nama Destinasi/TUjuan</th>
+                            <th>Kategori</th>
+                            <th>Kota</th>
+                            <th>Galeri</th>
+                            <th>Gambaran</th>
+                            <th>Aksi</th>
                         </thead>
                         <tbody>
                         @foreach($destinations as $d)
@@ -39,15 +37,11 @@
                                 <td>{{ $d->category_name }}</td>
                                 <td>{{ $d->city_name }}</td>
                                 <td>{{ $d->gallery }}</td>
-                                {{-- <td><img style="height: 200px; width: 200px;" src="{{ url('/public/images/gallery/'.$d->img) }}" alt="" class="img-fluid transition"></td> --}}
                                 <td>{{substr(strip_tags($d->overview),0,100). ' ...'}}</td>
-                                {{-- <td>{{ $d->map }}</td> --}}
-                                {{-- <td>{{ $d->information }}</td> --}}
-
                                 <td>
                                     <div class="dropdown show">
                                         <a class="btn btn-sm btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Options
+                                            Opsi
                                         </a>
 
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">

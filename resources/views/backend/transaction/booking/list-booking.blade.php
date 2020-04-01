@@ -22,14 +22,14 @@
                     <table id="zero_config" class="table table-striped table-bordered">
                         <thead>
                             <th>#</th>
-                            <th>User</th>
-                            <th>Tour name</th>
-                            <th>Booking date</th>
-                            <th>Travel Start</th>
-                            <th>Travel Finish</th>
+                            <th>Pengguna</th>
+                            <th>Nama Wisata</th>
+                            <th>Tanggal Pemesanan</th>
+                            <th>Mulai Travel</th>
+                            <th>Travel Berakhir</th>
                             <th>Pax</th>
                             <th>Status</th>
-                            <th>Action</th>
+                            <th>Aksi</th>
                         </thead>
                         <tbody>
                         @foreach($bookings as $b)
@@ -44,22 +44,22 @@
                                 <td><?php
                                     switch ($b->status) {
                                         case '0':
-                                        echo "<span class='badge badge-info'>Booked</span>";
+                                        echo "<span class='badge badge-info'>Sudah dipesan</span>";
                                         break;
                                         case '11':
-                                        echo "<span class='badge badge-warning'>Waiting for approval (50% payment)</span>";
+                                        echo "<span class='badge badge-warning'>Menunggu Persetujuan (50% Pembayaran)</span>";
                                         break;
                                         case '1':
-                                        echo "<span class='badge badge-primary'>50% Payment</span>";
+                                        echo "<span class='badge badge-primary'>50% Pembayaran</span>";
                                         break;
                                         case '22':
-                                        echo "<span class='badge badge-warning'>Waiting for approval (100% payment)</span>";
+                                        echo "<span class='badge badge-warning'>Menunggu Persetujuan (100% Pembayaran)</span>";
                                         break;
                                         case '222':
-                                        echo "<span class='badge badge-warning'>Waiting for approval (pelunasan)</span>";
+                                        echo "<span class='badge badge-warning'>Menunggu Persetujuan (Pelunasan)</span>";
                                         break;
                                         case '2':
-                                        echo "<span class='badge badge-success'>Payment Success</span>";
+                                        echo "<span class='badge badge-success'>Pembayaran Berhasil</span>";
                                         break;
                                     }
                                ?></td>
@@ -67,7 +67,7 @@
                                 <td>
                                     <div class="dropdown show">
                                         <a class="btn btn-sm btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Options
+                                            Opsi
                                         </a>
 
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -75,7 +75,7 @@
                                             <?php 
                                                 if($b->status=='2'){
                                             ?>
-                                                <a class="dropdown-item" href="{{ url('admin/calculation/detail/'.$b->id_booking) }}">Calculation</a>
+                                                <a class="dropdown-item" href="{{ url('admin/calculation/detail/'.$b->id_booking) }}">Kalkulasi</a>
                                             <?php
                                                 }
                                             ?>

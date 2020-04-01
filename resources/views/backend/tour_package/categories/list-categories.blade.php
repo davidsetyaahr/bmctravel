@@ -23,9 +23,9 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Category</th>
-                                <th>Gallery</th>
-                                <th>Options</th>
+                                <th>Kategori</th>
+                                <th>Galeri</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,12 +33,11 @@
                                 <tr>
                                     <th>{{$loop->iteration}}</th>
                                     <td>{{$item->category_name}}</td>
-                                    {{-- <td>{{$item->id_gallery}}</td> --}}
                                     <td><img style="height: 50px; width: 50px;" src="{{ url('images/gallery/'.$item->img) }}" alt="" class="img-fluid transition"></td>
                                     <td>
                                         <div class="dropdown show">
                                             <a class="btn btn-sm btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Option
+                                                Opsi
                                             </a>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                                 <a class="dropdown-item" href="edit-categories/{{ $item->id_category }}">Edit</a>

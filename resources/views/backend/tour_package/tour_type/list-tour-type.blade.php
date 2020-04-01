@@ -21,9 +21,9 @@
                             <thead>
                                 <tr>
                                     <th>#</th>
-                                    <th>Type Name</th>
-                                    <th>Gallery</th>
-                                    <th>Option</th>
+                                    <th>Nama Tipe</th>
+                                    <th>Galeri</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -36,7 +36,7 @@
                                         <td>
                                             <div class="dropdown show">
                                                 <a class="btn btn-sm btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    Option
+                                                    Opsi
                                                 </a>
 
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">

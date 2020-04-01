@@ -15,9 +15,9 @@
         }
     ?>
     
-    <a href="?page=1" class="btn btn-secondary"><span class="mdi mdi-menu-left"></span> Prev</a>
+    <a href="?page=1" class="btn btn-secondary"><span class="mdi mdi-menu-left"></span> Sebelumnya</a>
     <div class="float-right">
         <button class="btn btn-default" type="reset"><span class="mdi mdi-refresh"></span> Reset</button>
-        <button class="btn btn-primary" type="submit">Next <span class="mdi mdi-menu-right"></span></button>
+        <button class="btn btn-primary" type="submit">Selanjutnya <span class="mdi mdi-menu-right"></span></button>
     </div>
 </form>

@@ -5,7 +5,7 @@
     <div class="for-alert"></div>
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <h6 class="bold text-center">Pax or person</h6>
+            <h6 class="bold text-center">Pax atau orang</h6>
             <div class="input-group mb-3 input-pax">
                 <div class="input-group-prepend">
                     <button id="minus" class="btn btn-outline-primary plus-minus" onclick="kurang()" type="button">-</button>
@@ -15,22 +15,13 @@
                     <button id="plus" class="btn btn-outline-primary tambah plus-minus" onclick="tambah()" type="button">+</button>
                 </div>
             </div>
-<!--             <div class="price-pp">
-                <div class="header">
-                    PRICE
-                </div>
-                <div class="total">
-                    IDR <span>5,000,000</span>
-                </div>
-            </div>
- -->
         </div>
     </div>
     <hr>
     <div class="row justify-content-center">
         <div class="col-md-3">
             <span class="color-grey ls-1">
-                <span id="pax">1</span> person for this package
+                <span id="pax">1</span> ornag untuk paket ini
             </span> 
         </div>
         <div class="col-md-8 text-right">

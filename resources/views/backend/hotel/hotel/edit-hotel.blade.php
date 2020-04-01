@@ -15,13 +15,13 @@
                 <form action="{{url("admin/hotel/update")}}" method="post">
                 @csrf
                 <input type="hidden" name="id" value="{{ $htl->id_hotel }}">
-                <label for="">Hotel Name</label>
+                <label for="">Nama Hotel</label>
                 <input type="text" class="form-control @error('hotel_name') is-invalid @enderror" name="hotel_name" value="{{ $htl->hotel_name}}" disabled>
                 @error('hotel_name')
                 <div class="invalid-feedback"> {{ $message}} </div>
                 @enderror
                 <br>
-                <label for="">Gallery</label>
+                <label for="">Galeri</label>
                 @include('backend.gallery.gallery-template.gallery-hidden', ['id_gallery' => $htl->id_gallery])
                 <br>
                 <label for="">Map</label>
@@ -30,13 +30,13 @@
                     <div class="invalid-feedback"> {{ $message}} </div>
                     @enderror
                 <br>
-                <label for="">Overview</label>
+                <label for="">Gambaran</label>
                 <input type="text" class="form-control @error('overview') is-invalid @enderror" name="overview" value="{{ $htl->overview}}">
                 @error('overview')
                     <div class="invalid-feedback"> {{ $message}} </div>
                     @enderror
                 <br>
-                <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Save</button>
+                <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Simpan</button>
                 <button class="btn btn-secondary" type="reset"><span class="mdi mdi-refresh"></span> Reset</button>
             </form>
             @endforeach

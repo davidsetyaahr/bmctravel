@@ -14,14 +14,14 @@
             <div class="card-body">
             <form action="{{url("admin/destinations/add-activities")}}" method="post">
             @csrf
-                <label for="">Activities Name</label>
+                <label for="">Aktivitas</label>
                 <input type="text" class="form-control @error('activities') is-invalid @enderror" name="activities"
                 value="{{ old('activities')}}">
                 @error('activities')
                     <div class="invalid-feedback"> {{ $message}} </div>
                     @enderror
                 <br>
-                <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Save</button>
+                <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Simpan</button>
                 <button class="btn btn-secondary" type="reset"><span class="mdi mdi-refresh"></span> Reset</button>
             </div>
         </div>

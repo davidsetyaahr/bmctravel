@@ -18,7 +18,7 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-12 m-t-15">
-                                <label for="">Title</label>
+                                <label for="">Judul</label>
                                 <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" placeholder="Title"
                                 value="{{ old('title')}}">
                                 @error('title')
@@ -26,11 +26,11 @@
                                 @enderror
                             </div>
                             <div class="col-md-12 m-t-15">
-                                <label for="">Gallery</label>
+                                <label for="">Galeri</label>
                                 @include('backend.gallery.gallery-template.gallery-hidden')     
                             </div>
                             <div class="col-md-12 m-t-15">
-                                <label for="">Content</label>
+                                <label for="">Isi Konten</label>
                                 <textarea class="form-control @error('content') is-invalid @enderror" name="content" id="konten" cols="30" rows="10">
                                 {{ old('content')}}</textarea>
                                 @error('content')
@@ -38,7 +38,7 @@
                                 @enderror
                             </div>
                             <div class="col-md-12 m-t-15">
-                                <label for="">Tag Activities</label>
+                                <label for="">Tag Aktivitas</label>
                                 <div class="bg-light p-10">
                                     @foreach($tags as $t)
                                     <div class="form-check custom-control custom-checkbox mb-2">
@@ -60,7 +60,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Save</button>
+                    <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Simpan</button>
                     <button class="btn btn-secondary" type="reset"><span class="mdi mdi-refresh"></span> Reset</button>
                 </form>
             </div>

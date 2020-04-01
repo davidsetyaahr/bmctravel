@@ -13,11 +13,11 @@
             <div class="card-body">
             <form action="{{url("admin/data-master/update-province")}}" method="post">
             @csrf
-                <label for="">Province</label>
+                <label for="">Provinsi</label>
                 <input type="hidden" name="id_province" value="{{ $province[0]->id_province }}">
                 <input type="text" class="form-control" name="province_name" value="{{ $province[0]->province_name }}">
                 <br>
-                <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Save</button>
+                <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Simpan</button>
                 <button class="btn btn-secondary" type="reset"><span class="mdi mdi-refresh"></span> Reset</button>
             </form>
             </div>

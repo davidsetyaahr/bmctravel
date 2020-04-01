@@ -21,11 +21,10 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Hotel Name</th>
-                                <th>Gallery</th>
-                                {{-- <th>Map</th> --}}
-                                <th>Overview</th>
-                                <th>Option</th>
+                                <th>Nama Hotel</th>
+                                <th>Galeri</th>
+                                <th>Gambaran</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,13 +33,11 @@
                                 <th>{{ $loop->iteration}}</th>
                                 <td>{{$htl->hotel_name}}</td>
                                 <td><img style="height: 200px; width: 200px;" src="{{ url('/images/gallery/'.$htl->img) }}" alt="" class="img-fluid transition"></td>
-                                {{-- <td>{{$htl->id_gallery}}</td> --}}
-                                {{-- <td>{{$htl->map}}</td> --}}
                                 <td>{{$htl->overview}}</td>
                                 <td>
                                     <div class="dropdown show">
                                         <a class="btn btn-sm btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Options
+                                            Opsi
                                         </a>
 
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">

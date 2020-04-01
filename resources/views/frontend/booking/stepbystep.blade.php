@@ -1,6 +1,6 @@
 <html lang="en">
   <head>
-    <title>Bmc Travel Service - Home</title>
+    <title>Baratha Travel Service - Home</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -16,7 +16,7 @@
           <div class="booking">
             <div class="top">
               <img src="{{ url('public/direngine/images/BMC-Logo.png') }}" alt="">
-              <p>Booking Package</p>
+              <p>Tanggal Pemesanan</p>
               <a href="">{{$packages->tour_name}}</a>
             </div>
             <div class="body">
@@ -104,7 +104,7 @@
                 @endif
             </div>
             <div class="bottom">
-                <a href="" class="info">Step {{$_GET['page']}} of 5</a>
+                <a href="" class="info">Langkah {{$_GET['page']}} of 5</a>
                 <?php $newPage = $_GET['page']+1 ?>
                 <a href="<?php echo $_GET['page']!=5 ? "?page=".$newPage : URL::to("tour-package/booking/success") ?> " class="next page{{$_GET['page']}}"><?php echo $_GET['page']!=5 ? "Next" : "Payment" ?> <span class="ion-ios-arrow-dropright"></span> </a>
             </div>

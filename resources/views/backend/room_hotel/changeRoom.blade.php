@@ -14,7 +14,7 @@
                     <div class="col-md-6">
                         <label for="">Hotel</label>
                         <select name="" class="form-control changeHotel" data-target="#roomHotel{{$thisDay}}{{$thisTrip}}">
-                            <option value="">---Option---</option>
+                            <option value="">---Pilih---</option>
                             @foreach ($hotel as $item)
                                 <option value="{{$item->id_hotel}}" <?= $dataRoom!="" && $dataRoom[0]->id_hotel==$item->id_hotel ? "selected" : "" ?>>{{$item->hotel_name}}</option>
                             @endforeach
@@ -22,9 +22,9 @@
                         <br>
                     </div>
                     <div class="col-md-6">
-                        <label for="">Room Hotel</label>
+                        <label for="">Kamar Hotel</label>
                         <select name="room_hotel[{{$thisDay}}][{{$thisTrip}}]" id="roomHotel{{$thisDay}}{{$thisTrip}}" class="form-control">
-                            <option value="">---Option---</option>
+                            <option value="">---Pilih---</option>
                             <?php 
                                 if($dataRoom!="")
                                 {

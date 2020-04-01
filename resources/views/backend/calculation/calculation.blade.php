@@ -17,19 +17,19 @@
                     <table class="table " width="100%">
                         <tr>
                             <td>
-                                <b>Package</b>
+                                <b>Paket</b>
                             </td>
                             <td>:</td>
                             <td>{{ $book->tour_name}}</td>
                             <td>
-                                <b>User</b>
+                                <b>Pengguna</b>
                             </td>
                             <td>:</td>
                             <td>{{ $book->email}}</td>
                         </tr>
                         <tr>
                             <td>
-                                <b>Booking Date</b>
+                                <b>Tanggal Pemesanan</b>
                             </td>
                             <td>:</td>
                             <td>{{ date("l, d F Y", strtotime($book->booking_date))}}</td>
@@ -41,12 +41,12 @@
                         </tr>
                         <tr>
                         <td>
-                                <b>Travel Start</b>
+                                <b>Mulai Travel</b>
                             </td>
                             <td>:</td>
                             <td>{{ date("l, d F Y",strtotime($book->travel_date))}}</td>
                             <td>
-                            <b>Travel Finish</b>
+                                <b>Travel Berakhir</b>
                             </td>
                             <td>:</td>
                             <?php 
@@ -56,7 +56,7 @@
                         </tr>
                         <tr>
                         <td>
-                                <b>Durations</b>
+                                <b>Durasi</b>
                             </td>
                             <td>:</td>
                             <td>{{ $book->day}} Days {{$book->night}} Nights</td>
@@ -80,13 +80,13 @@
                             </div>
                             <div class="col-md-12">
                                 <br>
-                                <a href="" class="btn btn-default new-calc" data-url="{{url('admin/calculation/newcalc')}}">Add New</a>
+                                <a href="" class="btn btn-default new-calc" data-url="{{url('admin/calculation/newcalc')}}">Tambah Baru</a>
                             </div>
                         </div>
                 <hr>
                 <div class="row" style="padding-right : 20px;padding-left : 20px">
                     <div class="col-md-3">
-                        <h4>Total Calculation</h4>
+                        <h4>Total Kalkulasi</h4>
                     </div>
                     <div class="col-md-9 text-right">
                         <h4 class="color-orange" id="idr"><span>IDR</span> <span id="change">0</span></h4>
@@ -95,7 +95,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="alert alert-success" id="profit" data-price="{{$book->price}}">
-                            <h4>Profit : <span id="percent">100</span>% 
+                            <h4>Keuntungan : <span id="percent">100</span>% 
                                 <span>
                                     <span id="change" class="float-right"></span>
                                 </span>

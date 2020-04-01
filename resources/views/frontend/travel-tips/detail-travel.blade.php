@@ -192,7 +192,7 @@
             </div>
 
             <div class="sidebar-box ftco-animate">
-              <h3>Other Travel Tips</h3>
+              <h3>Travel Tips Lainnya</h3>
             @foreach ($travel_tips_all as $tt)
               <div class="block-21 mb-4 d-flex">
                 <a class="blog-img mr-4" style="background-image: url('{{url('/images/gallery/'.$tt->img)}}');"></a>

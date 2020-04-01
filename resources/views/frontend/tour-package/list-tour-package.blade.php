@@ -5,7 +5,7 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-8 mt-5 ftco-animate text-center">
-            <h3 class="color-white">All Travel Package</h3>
+            <h3 class="color-white">Semua Paket Tavel</h3>
             <div class="block-17 my-4">
                     <form action="" method="post" class="d-block d-flex">
                       <div class="fields d-block d-flex">
@@ -50,13 +50,13 @@
       <div class="container">
         <div class="row mt-3">
             <div class="col-md-6">
-                <small><span class="color-red">Home</span> > Tour Package</small>
+                <small><span class="color-red">Home</span> > Paket Wisata</small>
             </div>
             <div class="col-md-6">
-                <small class="float-right"><span class="color-red">Tour Package: </span> rated 4.8/5 (based on 65514 reviews) | Package starting from IDR 1.000.000</small>
+                <small class="float-right"><span class="color-red">Paket Wisata: </span> Nilai 4.8/5 (berdasarkan dari 65514 ulasan) | Paket mulai dari IDR 1.000.000</small>
             </div>
             <div class="col-md-12">
-                <p class="mt-2">Tour Packages are one of the best ways to travel hassle-free. With seamless planning, arrangements, and transfers being taken care of, booking holiday packages is the best way to explore the world’s varied landscapes. We all have our reasons and excuses to travel. Either we’re looking for a solo adventure, seeking a quiet romantic getaway with our partner, or taking the whole family for a memorable holiday vacation. Whatever the reason is, travel packages of Travel Triangle make sure every tourist get an experience to cherish for a long time.</p>    
+                <p class="mt-2">Paket Wisata di Baratha Travel Service adalah salah satu paket wisata untuk berpergian tanpa repot. Dengan perencanaan yang mulus, pengaturan, transfer uang yang sangat mudah, pemesanan paket liburan adalah cara terbaik untuk menjelajahi beragam WIsata dunia. Kita semua memiliki alasan tersendiri untuk bepergian. Entah untuk berpergian sendiri untuk berpetualang, mencari liburan yang tenang dengan pasangan kita, atau mengajak seluruh keluarga untuk liburan yang tak terlupakan. Apapun alasannya, paket wisata Baratha Travel Service memastikan setiap wisatawan mendapatkan pengalaman yang berharga untuk waktu yang lama.</p>    
             </div>
             <div class="col-md-12 mt-5">
               <div class="destinationtext owl-carousel ftco-animate">
@@ -73,7 +73,7 @@
               </div>
             </div>
             <div class="col-md-12 mt-5 mb-3">
-                <h5>Best Destinations For Your Trip</h5>
+                <h5>Wisata terbaik untuk perjalananmu</h5>
                 <div class="mt-3">
                     <a href="#" class="btn btn-primary btn-outline-primary btn-sm mb-2">Mount Bromo</a>
                     <a href="#" class="btn btn-primary btn-outline-primary btn-sm mb-2">Kawah Ijen</a>
@@ -95,7 +95,7 @@
           </div>
             <div class="row left-filter box-white border">
               <div class="col-md-12 mt-4">
-                <h6 class="mb-3">Destination Categories <span class="ion-ios-arrow-down float-right"></span></h6>
+                <h6 class="mb-3">Kategori Destinasi/Tunjuan <span class="ion-ios-arrow-down float-right"></span></h6>
                 <?php 
                   $num = 1; 
                 ?>
@@ -110,7 +110,7 @@
                 @endforeach
               </div>
               <div class="col-md-12 mt-4">
-                <h6 class="mb-3">Trip Activities <span class="ion-ios-arrow-down float-right"></span></h6>
+                <h6 class="mb-3">Aktifitas Perjalanan <span class="ion-ios-arrow-down float-right"></span></h6>
                 @foreach ($activities as $item)
                 <div class="form-check custom-control custom-checkbox mb-2">
                   <input type="checkbox" class="form-check-input custom-control-input" id="a<?= $num?>">
@@ -122,7 +122,7 @@
                 @endforeach
               </div>
               <div class="col-md-12 mt-4">
-                <h6 class="mb-3">Durations <span class="ion-ios-arrow-down float-right"></span></h6>
+                <h6 class="mb-3">Durasi <span class="ion-ios-arrow-down float-right"></span></h6>
               @foreach ($durations as $item)
                 <div class="form-check custom-control custom-checkbox mb-2">
                   <input type="checkbox" class="form-check-input custom-control-input" id="a">
@@ -133,11 +133,11 @@
                 @endforeach
               </div>
               <div class="col-md-12 mt-4">
-                <h6 class="mb-3">Budget Per Person (IDR) <span class="ion-ios-arrow-down float-right"></span></h6>
+                <h6 class="mb-3">Anggaran Per Orang (IDR) <span class="ion-ios-arrow-down float-right"></span></h6>
                 <div class="form-check custom-control custom-checkbox mb-2">
                   <input type="checkbox" class="form-check-input custom-control-input" id="a">
                   <label class="custom-control-label" for="a">
-                    <span>Less than 1.000.000</span>
+                    <span>Kurang dari 1.000.000</span>
                   </label>
                 </div>
                 <?php 
@@ -156,16 +156,16 @@
           <div class="col-md-9">
             <div class="row">
               <div class="col-md-12">
-                <h6 class="mb-4 bold ls-1">Showing 10 Tour Packages</h6>
+                <h6 class="mb-4 bold ls-1">Menampilkan 10 Paket Wisata</h6>
               </div>
               <div class="col-md-12">
                 <div class="border bg-white p-2" style="overflow:auto">
                   <select name="" class="custom-select float-right" style="width:inherit" id="">
-                    <option value="">Popularity</option>
-                    <option value="">Price: Hight to Low</option>
-                    <option value="">Price: Low to High</option>
-                    <option value="">Duration: Hight to Low</option>
-                    <option value="">Duration: Low to High</option>
+                    <option value="">Populer</option>
+                    <option value="">Harga: Tinggi ke Rendah</option>
+                    <option value="">Harga: Rendah ke Tinggi</option>
+                    <option value="">Durasi: Tinggi ke Rendah</option>
+                    <option value="">Durasi: Rendah ke Tinggi</option>
                   </select>
                 </div>
               </div>
@@ -188,7 +188,7 @@
                           <div class="form-check custom-control custom-checkbox">
                             <input type="checkbox" class="form-check-input custom-control-input checkCompare" id="{{$data->id_tour}}">
                             <label class="custom-control-label add-compare" data-id="" for="{{$data->id_tour}}">
-                              <span>Add to compare</span>
+                              <span>Tambah ke compare</span>
                             </label>
                           </div>
                           <div class="form-check custom-control">
@@ -208,7 +208,7 @@
                                   }
                                 }
                             ?>
-                              <span class="heart {{$wl}}"></span>&nbsp; Wishlist
+                              <span class="heart {{$wl}}"></span>&nbsp; Daftar Keinginan
                           </label>
                           </div>
                         </div>
@@ -216,10 +216,10 @@
                       <div class="right-bottom">
                         <div class="left">
                           <div class="durations">
-                             {{$data->day}} Days & {{$data->night}} Nights
+                             {{$data->day}} Hari & {{$data->night}} Malam
                           </div>
                           <div class="price">
-                            <small>Starting from</small>
+                            <small>Mulai dari</small>
                             <?php 
                               if($data->sale>0){
                                   $sale = $data->price*$data->sale/100;
@@ -232,14 +232,14 @@
                             }
                             ?>
                             <div class="perpax">
-                              <span>IDR {{number_format($price,0,',','.')}} / person</span>
+                              <span>IDR {{number_format($price,0,',','.')}} / orang</span>
                               @if($data->sale>0)
                               <del>{{number_format($data->price,0,',','.')}}</del>
                               @endif
                             </div>
                           </div>
                           <div class="include mt-2">
-                              <div class="title"> Package include : 
+                              <div class="title"> Termasuk dipaket : 
                               <br>
                               <?php 
                                 $include = DB::table('tour_informations as ti')
@@ -326,7 +326,7 @@
                       <?php 
                         $name = strtolower(str_replace(' ','-',$data->tour_name));
                       ?>
-                      <a href="{{ url('tour-package/detail-package/'.$data->id_tour.'/'.$name) }}"><span>View Details</span></a>
+                      <a href="{{ url('tour-package/detail-package/'.$data->id_tour.'/'.$name) }}"><span>Lihat Details</span></a>
                     </div>
                   </div>
                 </div>

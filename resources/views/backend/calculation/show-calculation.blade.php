@@ -17,26 +17,26 @@ p{
 <center>
 
     <img src="{{ url('public/direngine/images/BMC-Logo.png') }}" alt="">
-    <p>BMC Travel Service</p>
+    <p>Baratha Travel Service</p>
 </center>
 
 <br>
 <table class="table " width="90%" style="margin:auto">
     <tr>
         <td>
-            <b>Package</b>
+            <b>Paket</b>
         </td>
         <td>:</td>
         <td>{{ $book->tour_name}}</td>
         <td>
-            <b>User</b>
+            <b>Pengguna</b>
         </td>
         <td>:</td>
         <td>{{ $book->email}}</td>
     </tr>
     <tr>
         <td>
-            <b>Booking Date</b>
+            <b>Tanggal Pemesanan</b>
         </td>
         <td>:</td>
         <td>{{ date("l, d F Y", strtotime($book->booking_date))}}</td>
@@ -48,12 +48,12 @@ p{
     </tr>
     <tr>
     <td>
-            <b>Travel Start</b>
+            <b>Mulai Travel</b>
         </td>
         <td>:</td>
         <td>{{ date("l, d F Y",strtotime($book->travel_date))}}</td>
         <td>
-        <b>Travel Finish</b>
+        <b>Travel Berakhir</b>
         </td>
         <td>:</td>
         <?php 
@@ -63,10 +63,10 @@ p{
     </tr>
     <tr>
     <td>
-            <b>Durations</b>
+            <b>Durasi</b>
         </td>
         <td>:</td>
-        <td>{{ $book->day}} Days {{$book->night}} Nights</td>
+        <td>{{ $book->day}} Hari {{$book->night}} Malam</td>
     <td>
             <b>Total</b>
         </td>
@@ -80,8 +80,8 @@ p{
         <tr bgcolor="#ddd">
             <td>#</td>
             <td>Label</td>
-            <td>Price</td>
-            <td>Amount</td>
+            <td>Harga</td>
+            <td>Jumlah</td>
             <td>Subtotal</td>
         </tr>
     </thead>
@@ -107,11 +107,11 @@ p{
             $percent = $profit/$book->price*100;
         ?>
         <tr>
-            <td colspan="4">Total  Calculation</td>
+            <td colspan="4">Total Kalkulasi</td>
             <td>{{number_format($total,0,',','.')}}</td>
         </tr>
         <tr>
-            <td colspan="4">Profit {{(int)$percent}}%</td>
+            <td colspan="4">Keuntungan {{(int)$percent}}%</td>
             <td>{{number_format($profit,0,',','.')}}</td>
         </tr>
     </tbody>
