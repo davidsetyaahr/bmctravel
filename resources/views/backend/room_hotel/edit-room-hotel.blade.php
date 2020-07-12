@@ -15,10 +15,10 @@
                 <form action="{{url('admin/room-hotel/update')}}" method="post">
                 @csrf
                 <input type="hidden" name="id" value="{{ $r->id_room_hotel }}">
-                <label for="">Hotel Name</label>
+                <label for="">Nama Hotel</label>
                         <select disabled class="select form-control @error('id_hotel') is-invalid @enderror" name="id_hotel" id=""
                         value="{{ old('id_hotel')}}">
-                            <option value="">---Select---</option>
+                            <option value="">---Pilihan---</option>
                                 @foreach($hotels as $htl)
                                 <?php
                                     foreach ($room_hotels as $item) {
@@ -31,21 +31,17 @@
                         @error('id_hotel')
                     <div class="invalid-feedback"> {{ $message}} </div>
                     @enderror
-                    {{-- <label for="">Hotel Name</label>
-                    @foreach ($room_hotels as $htl)
-                    <input type="text" disabled class="form-control @error('id_hotel') is-invalid @enderror" name="hotel_name" value="{{ $htl->hotel_name }}">
-                    @endforeach --}}
                 <br>
-                <label for="">Room Name</label>
+                <label for="">Nama Kamar</label>
                 <input type="text" class="form-control @error('room_name') is-invalid @enderror" name="room_name" value="{{ $r->room_name}}">
                 @error('room_name')
                     <div class="invalid-feedback"> {{ $message}} </div>
                     @enderror
                 <br>
-                <label for="">Gallery</label>
+                <label for="">Galeri</label>
                 @include('backend.gallery.gallery-template.gallery-hidden', ['id_gallery' => $r->gallery])
                 <br>
-                <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Save</button>
+                <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Simpan</button>
                 <button class="btn btn-secondary" type="reset"><span class="mdi mdi-refresh"></span> Reset</button>
             </form>
             @endforeach

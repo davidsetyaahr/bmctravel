@@ -7,7 +7,7 @@
       <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
         <div class="col-md-9 mt-5 text-center ftco-animate" data-scrollax=" properties: { translateY: '100%' }">
           <h1 class="color-white mt-5 mb-4" data-scrollax="properties: { translateY: '30%'}"><b class="bold">{{$packages->tour_name}}</b> </h1>
-          <h4 class="color-white" data-scrollax="properties: { translateY: '30%'}">{{$packages->day}} Days / {{$packages->night}} Nights </h4>
+          <h4 class="color-white" data-scrollax="properties: { translateY: '30%'}">{{$packages->day}} Hari / {{$packages->night}} Malam </h4>
           <div class="inline-package detail mt-4">
             <div class="bottom">
               <div class="left" style="width :100%">
@@ -54,11 +54,11 @@
     <li class="nav-item custom-dropup">
       <a href="#" class="nav-link dropup"><span class="ion-ios-more"></span> Others</a>
       <div class="dropup-content">
-        <a href="#itinerary"><span class="ion-ios-calendar"></span> Itinerary</a>
+        <a href="#itinerary"><span class="ion-ios-calendar"></span> Jadwal Perjalanan</a>
         <a href="#hotels"><span class="ion-ios-bed"></span> Hotels</a>
-        <a href="#information"><span class="ion-ios-information-circle"></span> Information</a>
+        <a href="#information"><span class="ion-ios-information-circle"></span> Informasi</a>
         <a href="#review"><span class="ion-ios-quote"></span> Review</a>
-        <a href="#another-package"><span class="ion-ios-globe"></span> Another Package</a>
+        <a href="#another-package"><span class="ion-ios-globe"></span> Paket Lain</a>
       </div>
     </li>
   </ul>
@@ -74,22 +74,22 @@
             <a class="nav-link" href="#maping"><span class="ion-ios-locate"></span> Maping</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#itinerary"><span class="ion-ios-calendar"></span> Itinerary</a>
+            <a class="nav-link" href="#itinerary"><span class="ion-ios-calendar"></span> Jadwal Perjalanan</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#hotels"><span class="ion-ios-bed"></span> Hotels</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#information"><span class="ion-ios-information-circle"></span> Information</a>
+            <a class="nav-link" href="#information"><span class="ion-ios-information-circle"></span> Informasi</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#review"><span class="ion-ios-quote"></span> Review</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#another-package"><span class="ion-ios-globe"></span> Another Package</a>
+            <a class="nav-link" href="#another-package"><span class="ion-ios-globe"></span> Paket Lain</a>
           </li>
           <li class="nav-item" style="border:none">
-            <a class="nav-link" href="#booking"><span class="ion-ios-cart"></span> Booking</a>
+            <a class="nav-link" href="#booking"><span class="ion-ios-cart"></span> Pemesanan</a>
           </li>
         </ul>
 
@@ -157,7 +157,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-10">
-            <h4 class="bold mb-4 mt-3">Itinerary</h4>
+            <h4 class="bold mb-4 mt-3">Jadwla Perjalanan</h4>
         </div>
       </div>
       <?php
@@ -199,7 +199,7 @@
               <div class="layer">
                 <div class="text">
                   <div class="day">
-                    Day {{$iry->day}}
+                    Hari {{$iry->day}}
                   </div>
                   <div class="title">
                   {{$iry->overview}}
@@ -240,7 +240,7 @@
                 <div class="col-md-2 p-0">
                   <div class="trip">
                     <div class="text">
-                      Trip <p>{{$tripKe}}</p>
+                      Perjalanan <p>{{$tripKe}}</p>
                     </div>
                   </div>
                 </div>
@@ -291,7 +291,7 @@
       @endforeach
       <div class="row justify-content-center mb-5" id="hotels">
         <div class="col-md-10">
-          <h4 class="bold mb-4 mt-3">Hotels</h4>
+          <h4 class="bold mb-4 mt-3">Hotel</h4>
           <?php 
             $hotels = DB::table('hotel_when_tour as hw')
             ->join('detail_itinerary as di','di.id_detail','hw.id_detail_itinerary')
@@ -336,14 +336,14 @@
                   </div>
                   <div class="desc">
                       <div class="website">
-                        <a href="">View Website</a>
+                        <a href="">LIhat Website</a>
                       </div>
                   </div>
                 </div>
               </div>
               <div class="col-md-8">
                   <div class="hotel-information">
-                    <h6 class="bold">Day {{$h->day}} &nbsp; <span class="color-green"><small> {{$h->room_name}}</small></span> <span class="float-right color-orange"><small>Bondowoso - East Java</small></span></h6>
+                    <h6 class="bold">Hari {{$h->day}} &nbsp; <span class="color-green"><small> {{$h->room_name}}</small></span> <span class="float-right color-orange"><small>Bondowoso - East Java</small></span></h6>
                     <p>{{$h->overview}}</p>
                     <hr>
                     <iframe src="{{$h->map}}" width="100%" height="150" frameborder="0" style="border:0;" allowfullscreen=""></iframe>                    
@@ -356,18 +356,18 @@
       </div>
       <div class="row justify-content-center" id="information">
           <div class="col-md-10">
-            <h4 class="bold mb-4 mt-3">Informations</h4>
+            <h4 class="bold mb-4 mt-3">Informasi</h4>
             <div class="box-white">
               <!-- Nav tabs -->
               <ul class="nav nav-tabs">
                 <li class="nav-item">
-                  <a class="nav-link active" data-toggle="tab" href="#include">Package Include</a>
+                  <a class="nav-link active" data-toggle="tab" href="#include">Termasuk dipaket</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#exclude">Package Exclude</a>
+                  <a class="nav-link" data-toggle="tab" href="#exclude">Tidak Termasuk dipaket</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" data-toggle="tab" href="#others">What should i pack?</a>
+                  <a class="nav-link" data-toggle="tab" href="#others">Apa yang harus aku siapkan?</a>
                 </li>
               </ul>
               
@@ -583,14 +583,14 @@
                   </div>
                   <div class="col-md-6">
                     <div class="text-confirm mb-4">
-                      Do you want to book this awesome package?
+                      Kamu ingin memesan paket keren ini?
                     </div>
-                      <a href="" class="btn btn-outline-primary f14 mb-3">Another package</a>
+                      <a href="" class="btn btn-outline-primary f14 mb-3">Paket Lain</a>
                       &nbsp;
                       <?php 
                         $name = strtolower(str_replace(' ','-',$packages->tour_name));
                       ?>
-                      <a href="{{url('tour-package/booking/1/'.$name.'?page=1')}}" class="btn btn-primary f14 mb-3">Book this package</a>
+                      <a href="{{url('tour-package/booking/1/'.$name.'?page=1')}}" class="btn btn-primary f14 mb-3">Pesan Paket ini</a>
                   </div>
                 </div>
               </div>

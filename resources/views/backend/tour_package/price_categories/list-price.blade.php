@@ -21,21 +21,21 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Start Pax</th>
-                                <th>End Pax</th>
-                                <th>Option</th>
+                                <th>Mulai Pax</th>
+                                <th>Batas Pax</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                         @foreach( $price_categories as $prc )
                             <tr>
                                 <th>{{ $loop->iteration}}</th>
-                                <td>{{$prc->start_pax}}</td>
-                                <td>{{$prc->end_pax}}</td>
+                                <td>{{ $prc->start_pax}}</td>
+                                <td>{{ $prc->end_pax}}</td>
                                 <td>
                                     <div class="dropdown show">
                                         <a class="btn btn-sm btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Options
+                                            Opsi
                                         </a>
 
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">

@@ -14,13 +14,13 @@
             <form action="{{url("admin/travel-tips/add-tags")}}" method="post">
                 @csrf
                     <br>
-                    <label for="" >Tag Name</label>
+                    <label for="" >Nama Tag</label>
                     <input type="text" class="form-control @error('tag_name') is-invalid @enderror" name="tag_name">
                     @error('tag_name')
                         <div class="invalid-feedback"> {{ $message }} </div>
                         @enderror
                     <br>
-                    <button class="btn btn-primary" type="submit" value="Creaate"><span class="mdi mdi-content-save"></span>  Save</button>
+                    <button class="btn btn-primary" type="submit" value="Creaate"><span class="mdi mdi-content-save"></span>  Simpan</button>
                     <button class="btn btn-secondary" type="reset"><span class="mdi mdi-refresh"></span> Reset</button>
                 </div>
             </form>

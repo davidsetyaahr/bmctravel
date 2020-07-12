@@ -56,13 +56,13 @@
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="{{ url('about') }}" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="{{ url('about') }}" class="nav-link">Tentang Kami</a></li>
           <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="" data-toggle="dropdown">Services</a>
             <div class="dropdown-menu animate slideIn">
               <a class="dropdown-item" href="{{ url('tour-package') }}"><span class="ion-ios-planet"></span> Travel Package For Foreigner</a>
               <a class="dropdown-item" href="{{ url('tour-package') }}"><span class="ion-ios-planet"></span> Travel Package For Domestic</a>
-              <a class="dropdown-item" href="#"><span class="ion-ios-bed"></span> Accommodation</a>
-              <a class="dropdown-item" href="#"><span class="ion-ios-car"></span> Transportations</a>
+              <a class="dropdown-item" href="#"><span class="ion-ios-bed"></span> Akomodasi</a>
+              <a class="dropdown-item" href="#"><span class="ion-ios-car"></span> Transportasi</a>
               <a class="dropdown-item" href="#"><span class="ion-ios-airplane"></span> Airport/City Transfer</a>
               <a class="dropdown-item" href="#"><span class="ion-ios-paw"></span> Outbond</a>
             </div>
@@ -79,10 +79,10 @@
               </a>
               <div class="dropdown-menu animate slideIn">
                 <a href="{{ url('my-account') }}" class="dropdown-item">
-                  My account
+                  Akun saya
                 </a>
                 <a href="{{ url('logout') }}" class="dropdown-item">
-                  Sign out
+                  Keluar
                 </a>
               </div>
             </li>
@@ -90,7 +90,7 @@
             }
             else{
           ?>
-          <li class="nav-item cta"><a href="{{ url('signin') }}" class="nav-link"><span>Sign In</span></a></li>
+          <li class="nav-item cta"><a href="{{ url('signin') }}" class="nav-link"><span>Masuk </span></a></li>
         <?php } ?>
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -122,7 +122,7 @@
           </div>
           <div class="col-md">
             <div class="ftco-footer-widget mb-4 ml-md-5">
-              <h2 class="ftco-heading-2">Information</h2>
+              <h2 class="ftco-heading-2">Informasi</h2>
               <ul class="list-unstyled">
                 <li><a href="#" class="py-2 d-block">About</a></li>
                 <li><a href="#" class="py-2 d-block">Service</a></li>
@@ -147,7 +147,7 @@
           </div>
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<h2 class="ftco-heading-2">Punya pertanyaan?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
 	                <li><a href=""><span class="icon icon-map-marker"></span><span class="text">Jl. Saliwiryo Pranowo Gg. Taman No.11, Kotakulon, Bondowoso, Indonesia</span></a></li>
@@ -163,7 +163,7 @@
             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 <!----  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a!-->
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-	BMC Travel Service - 2019
+	Baratha Travel Service - 2019
 </p>
           </div>
         </div>

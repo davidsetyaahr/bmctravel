@@ -1,6 +1,6 @@
 <html lang="en">
   <head>
-    <title>Bmc Travel Service - Home</title>
+    <title>Baratha Travel Service - Home</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -16,14 +16,14 @@
           <div class="booking">
             <div class="top">
               <img src="{{ url('public/direngine/images/BMC-Logo.png') }}" alt="">
-              <p>Booking Package</p>
+              <p>Paket Pemesanan</p>
             </div>
             <div class="body">
               <ul class="list-unstyled multi-steps">
-                <li class="is-active">Information</li>
-                <li>Scheduling</li>
-                <li>Pax & Price</li>
-                <li>Identity Card</li>
-                <li>Finish</li>
+                <li class="is-active">Informasi</li>
+                <li>Susunan Perjalanan</li>
+                <li>Pax & Harga</li>
+                <li>Karti Identitas(KTP, Passport, dll)</li>
+                <li>Selesai</li>
               </ul>
               <div class="body-data">

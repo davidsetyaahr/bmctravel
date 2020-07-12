@@ -14,24 +14,24 @@
             <div class="card-body">
                 <form action="{{url("admin/tour-package/information/add-information")}}" method="post">
                     @csrf
-                        <label for="">Information Name</label>
+                        <label for="">Nama Informasi</label>
                         <input type="text" class="form-control @error('text') is-invalid @enderror" name="text">
                         @error('text')
                             <div class="invalid-feedback"> {{ $message }} </div>
                         @enderror
                         <br>
-                        <label for="">Type</label>
+                        <label for="">Tipe</label>
                         <select name="type" id="" class="form-control">
-                            <option value="0">---Select---</option>
-                            <option value="0">Include</option>
-                            <option value="1">Exclude</option>
-                            <option value="2">What should I pack</option>
+                            <option value="0">---Pilih---</option>
+                            <option value="0">Termasuk</option>
+                            <option value="1">Tidak Termasuk</option>
+                            <option value="2">Apa yang harus aku siapkan?</option>
                         </select>
                         @error('type')
                             <div class="invalid-feedback"> {{ $message }} </div>
                         @enderror
                         <br>
-                        <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Save</button>
+                        <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Simpan</button>
                         <button class="btn btn-secondary" type="reset"><span class="mdi mdi-refresh"></span> Reset</button>
                     </form>
                 </div>

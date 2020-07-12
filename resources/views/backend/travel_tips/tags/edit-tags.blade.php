@@ -16,13 +16,13 @@
                 <form action="{{url("admin/travel-tips/tags/update")}}" method="post">
                     @csrf
                     <input type="hidden" name="id" value="{{ $tt->id_tag }}">
-                        <label for="">Edit Tags</label>
+                        <label for="">Edit Tag</label>
                         <input type="text" class="form-control @error('tag_name') is-invalid @enderror" name="tag_name" value="{{ $tt->tag_name}}">
                         @error('tag_name')
                             <div class="invalid-feedback"> {{ $message}} </div>
                             @enderror
                     <br>
-                    <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Save</button>
+                    <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Simpan</button>
                     <button class="btn btn-secondary" type="reset"><span class="mdi mdi-refresh"></span> Reset</button>
                 </form>
                 @endforeach

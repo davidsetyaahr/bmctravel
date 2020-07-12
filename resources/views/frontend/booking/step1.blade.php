@@ -1,10 +1,10 @@
               <div class="body-data">
-                <h6 class="bold text-center"><img src="{{ url('public/images/common/location.png') }}" width='30px' alt=""> <br> Meeting Point</h6>
+                <h6 class="bold text-center"><img src="{{ url('public/images/common/location.png') }}" width='30px' alt=""> <br> Tempat Pertemuan</h6>
                 <p class="text-center mt-3">
                   {{$meeting_point}}
                 </p>
                 <br>
-                <h6 class="bold text-center"><img src="{{ url('public/images/common/hotel.png') }}" width='30px' alt=""> <br> Accommodation</h6>
+                <h6 class="bold text-center"><img src="{{ url('public/images/common/hotel.png') }}" width='30px' alt=""> <br> Akomodasi</h6>
 
                 @foreach($hotels as $h)
           <div class="hotel">
@@ -37,14 +37,14 @@
                   </div>
                   <div class="desc">
                       <div class="website">
-                        <a href="">View Website</a>
+                        <a href="">Lihat Website</a>
                       </div>
                   </div>
                 </div>
               </div>
               <div class="col-md-8">
                   <div class="hotel-information">
-                    <h6 class="bold">Day {{$h->day}} &nbsp; <span class="color-green"><small> {{$h->room_name}}</small></span> <span class="float-right color-orange"><small>Bondowoso - East Java</small></span></h6>
+                    <h6 class="bold">Hari {{$h->day}} &nbsp; <span class="color-green"><small> {{$h->room_name}}</small></span> <span class="float-right color-orange"><small>Bondowoso - Jawa Timur</small></span></h6>
                     <p>{{$h->overview}}</p>
                     <hr>
                     <iframe src="{{$h->map}}" width="100%" height="150" frameborder="0" style="border:0;" allowfullscreen=""></iframe>                    

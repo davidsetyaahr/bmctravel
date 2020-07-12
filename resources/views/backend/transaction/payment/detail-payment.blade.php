@@ -16,41 +16,41 @@
                 <div class="col-md-6">
                     <table width="100%" cellpadding="5" style="font-size :14px;">
                         <tr>
-                            <td class="bold">Name</td>
+                            <td class="bold">Nama</td>
                             <td>:</td>
                             <td>{{$payment->firstname}} {{$payment->lastname}}</td>
                         </tr>
                         <tr>
-                            <td class="bold">Person / Pax</td>
+                            <td class="bold">Orang / Pax</td>
                             <td>:</td>
                             <td>{{$payment->pax}} pax</td>
                         </tr>
                         <tr>
-                            <td class="bold">Package</td>
+                            <td class="bold">Paket</td>
                             <td>:</td>
                             <td><a href="">{{$payment->tour_name}}</a></td>
                         </tr>
                         <tr>
-                            <td class="bold">Type</td>
+                            <td class="bold">Tipe</td>
                             <td>:</td>
                             <td>{{$payment->type_name}}</td>
                         </tr>
                         <tr>
-                            <td class="bold">Durations</td>
+                            <td class="bold">Durasi</td>
                             <td>:</td>
-                            <td>{{$payment->day}} Days {{$payment->night}} Nights</td>
+                            <td>{{$payment->day}} Hari {{$payment->night}} Malam</td>
                         </tr>
                     </table>
                 </div>
                 <div class="col-md-6">
                     <table width="100%" cellpadding="5" style="font-size :14px;">
                         <tr>
-                            <td class="bold">Travel Start</td>
+                            <td class="bold">Mulai Travel</td>
                             <td>:</td>
                             <td>{{ date("l, d F Y", strtotime($payment->travel_date)) }}</td>
                         </tr>
                         <tr>
-                            <td class="bold">Travel Finish</td>
+                            <td class="bold">Travel Berakhir</td>
                             <td>:</td>
                             <?php 
                                 $plus = $payment->day-1;
@@ -63,7 +63,7 @@
                             <td>IDR {{number_format($payment->price,0,',','.')}}</td>
                         </tr>
                         <tr>
-                            <td class="bold">Payment</td>
+                            <td class="bold">Pembayaran</td>
                             <td>:</td>
                             <td>IDR 
                                 <?php 
@@ -80,9 +80,9 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="bold">Attachment</td>
+                            <td class="bold">Lampiran</td>
                             <td>:</td>
-                            <td><a href="" data-toggle="modal" data-target="#attach">View Attachment</a></td>
+                            <td><a href="" data-toggle="modal" data-target="#attach">Lihat Lampiran</a></td>
                         </tr>
                     </table>
                 </div>
@@ -91,8 +91,8 @@
                     <?php 
                         if($payment->status=='11' || $payment->status=='22' || $payment->status=='222'){
                     ?>
-                    <a href="{{url('admin/transaction/payment/status/'.$payment->id_payment.'?status=0')}}" class="btn btn-default">Decline</a>
-                    <a href="{{url('admin/transaction/payment/status/'.$payment->id_payment.'?status=1')}}" class="btn btn-success" id="accPayment">Accept</a>
+                    <a href="{{url('admin/transaction/payment/status/'.$payment->id_payment.'?status=0')}}" class="btn btn-default">Tolak</a>
+                    <a href="{{url('admin/transaction/payment/status/'.$payment->id_payment.'?status=1')}}" class="btn btn-success" id="accPayment">Terima</a>
                     <?php } ?>
                 </div>
                 </div>
@@ -106,7 +106,7 @@
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h5 class="modal-title">Attachment</h5>
+        <h5 class="modal-title">Lampiran</h5>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
 

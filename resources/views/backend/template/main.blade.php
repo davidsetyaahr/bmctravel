@@ -20,7 +20,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/matrix-admin-bt4') }}/assets/images/favicon.png">
-    <title>Admin BMC Travel Service</title>
+    <title>Admin Baratha Travel Service</title>
     <!-- Custom CSS -->
     <link href="{{ asset('public/matrix-admin-bt4') }}/assets/libs/flot/css/float-chart.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -83,7 +83,7 @@
                         <!--End Logo icon -->
                          <!-- Logo text -->
                         <span class="logo-text">
-                            BMC TRAVEL SERVICE
+                            BARATHA TRAVEL SERVICE
                              <!-- dark Logo text -->
 
                         </span>
@@ -155,15 +155,15 @@
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('public/matrix-admin-bt4') }}/assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31"></a>
                                         <div class="dropdown-menu dropdown-menu-right user-dd animated">
-                                            <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
-                                            <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
-                                            <a class="dropdown-item" href="javascript:void(0)"><i class="ti-email m-r-5 m-l-5"></i> Inbox</a>
+                                            <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> Profil Saya</a>
+                                            <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i> Saldo</a>
+                                            <a class="dropdown-item" href="javascript:void(0)"><i class="ti-email m-r-5 m-l-5"></i> Kotak Masuk</a>
                                             <div class="dropdown-divider"></div>
-                                            <a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
+                                            <a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings m-r-5 m-l-5"></i> Pengaturan Akun</a>
                                             <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="{{url('admin/logout')}}"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
+                                        <a class="dropdown-item" href="{{url('admin/logout')}}"><i class="fa fa-power-off m-r-5 m-l-5"></i> Keluar</a>
                                             <div class="dropdown-divider"></div>
-                                            <div class="p-l-30 p-10"><a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">View Profile</a></div>
+                                            <div class="p-l-30 p-10"><a href="javascript:void(0)" class="btn btn-sm btn-success btn-rounded">Lihat Profil</a></div>
                                         </div>
                                     </li>
                                     <!-- ============================================================== -->
@@ -217,55 +217,55 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="p-t-10 mt-4">
                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link active" href="{{url('admin/dashboard')}}" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>            
-                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link active" href="{{url('admin/review')}}" aria-expanded="false"><i class="mdi mdi-comment"></i><span class="hide-menu">Trip Review</span></a></li>                                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-coin"></i><span class="hide-menu">Transaction </span></a>
+                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link active" href="{{url('admin/review')}}" aria-expanded="false"><i class="mdi mdi-comment"></i><span class="hide-menu">Ulasan Perjalanan</span></a></li>                                 <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-coin"></i><span class="hide-menu">Transaksi </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="{{ url('admin/transaction/booking/list-booking') }}" class="sidebar-link"><i class="mdi mdi-calendar-multiple-check"></i><span class="hide-menu"> Booking </span></a></li>
-                                <li class="sidebar-item"><a href="{{ url('admin/transaction/payment/list-payment') }}" class="sidebar-link"><i class="mdi mdi-credit-card-multiple"></i><span class="hide-menu"> Payment </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('admin/transaction/booking/list-booking') }}" class="sidebar-link"><i class="mdi mdi-calendar-multiple-check"></i><span class="hide-menu"> Pesan </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('admin/transaction/payment/list-payment') }}" class="sidebar-link"><i class="mdi mdi-credit-card-multiple"></i><span class="hide-menu"> Pembayaran </span></a></li>
                             </ul>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-package"></i><span class="hide-menu">Tour Package </span></a>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-package"></i><span class="hide-menu">Paket Wisata </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="{{ url('admin/tour-package/tour-package') }}" class="sidebar-link"><i class="mdi mdi-package"></i><span class="hide-menu"> Tour Package </span></a></li>
-                                <li class="sidebar-item"><a href="{{ url('admin/tour-package/categories') }}" class="sidebar-link"><i class="mdi mdi-format-list-bulleted-type"></i><span class="hide-menu"> Categories </span></a></li>
-                                <li class="sidebar-item"><a href="{{ url('admin/tour-package/tour-type') }}" class="sidebar-link"><i class="mdi mdi-heart-box-outline"></i><span class="hide-menu"> Tour Type </span></a></li>
-                                <li class="sidebar-item"><a href="{{ url('admin/tour-package/durations') }}" class="sidebar-link"><i class="mdi mdi-av-timer"></i><span class="hide-menu"> Durations </span></a></li>
-                                <li class="sidebar-item"><a href="{{ url('admin/tour-package/information') }}" class="sidebar-link"><i class="mdi mdi-information"></i><span class="hide-menu"> Information </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('admin/tour-package/tour-package') }}" class="sidebar-link"><i class="mdi mdi-package"></i><span class="hide-menu"> Paket Wisata </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('admin/tour-package/categories') }}" class="sidebar-link"><i class="mdi mdi-format-list-bulleted-type"></i><span class="hide-menu"> Kategori </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('admin/tour-package/tour-type') }}" class="sidebar-link"><i class="mdi mdi-heart-box-outline"></i><span class="hide-menu"> Tipe Wisata </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('admin/tour-package/durations') }}" class="sidebar-link"><i class="mdi mdi-av-timer"></i><span class="hide-menu"> Durasi </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('admin/tour-package/information') }}" class="sidebar-link"><i class="mdi mdi-information"></i><span class="hide-menu"> Informasi </span></a></li>
                                 <!--li class="sidebar-item"><a href="{{ url('admin/tour-package/price-categories') }}" class="sidebar-link"><i class="mdi mdi-cash-usd"></i><span class="hide-menu"> Price Categories </span></a></li-->
                               </ul>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-find-replace"></i><span class="hide-menu">Destinations </span></a>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-find-replace"></i><span class="hide-menu">Destinasi/Tujuan </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="{{ url('admin/destinations/destinations/list') }}" class="sidebar-link"><i class="mdi mdi-find-replace"></i><span class="hide-menu"> Destinations </span></a></li>
-                                <li class="sidebar-item"><a href="{{ url('admin/destinations/categories') }}" class="sidebar-link"><i class="mdi mdi-format-list-bulleted-type"></i><span class="hide-menu"> Categories </span></a></li>
-                                <li class="sidebar-item"><a href="{{ url('admin/destinations/activities') }}" class="sidebar-link"><i class="mdi mdi-format-list-bulleted-type"></i><span class="hide-menu"> Activities </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('admin/destinations/destinations/list') }}" class="sidebar-link"><i class="mdi mdi-find-replace"></i><span class="hide-menu"> Destinasi/Tujuan </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('admin/destinations/categories') }}" class="sidebar-link"><i class="mdi mdi-format-list-bulleted-type"></i><span class="hide-menu"> Kategori </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('admin/destinations/activities') }}" class="sidebar-link"><i class="mdi mdi-format-list-bulleted-type"></i><span class="hide-menu"> Aktivitas </span></a></li>
                             </ul>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-move-resize-variant"></i><span class="hide-menu">Gallery </span></a>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-move-resize-variant"></i><span class="hide-menu">Galeri </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="{{ url('admin/gallery/gallery') }}" class="sidebar-link"><i class="mdi mdi-google-photos"></i><span class="hide-menu"> Gallery </span></a></li>
-                                <li class="sidebar-item"><a href="{{ url('admin/gallery/categories') }}" class="sidebar-link"><i class="mdi mdi-format-list-bulleted-type"></i><span class="hide-menu"> Categories </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('admin/gallery/gallery') }}" class="sidebar-link"><i class="mdi mdi-google-photos"></i><span class="hide-menu"> Galeri </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('admin/gallery/categories') }}" class="sidebar-link"><i class="mdi mdi-format-list-bulleted-type"></i><span class="hide-menu"> Kategori </span></a></li>
                             </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-hotel"></i><span class="hide-menu">Hotel </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item"><a href="{{ url('admin/hotel/hotel') }}" class="sidebar-link"><i class="mdi mdi-hotel"></i><span class="hide-menu"> Hotel </span></a></li>
-                                <li class="sidebar-item"><a href="{{ url('admin/hotel/room-hotel') }}" class="sidebar-link"><i class="mdi mdi-city"></i><span class="hide-menu"> Room Hotel </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('admin/hotel/room-hotel') }}" class="sidebar-link"><i class="mdi mdi-city"></i><span class="hide-menu"> Kamar Hotel </span></a></li>
                             </ul>
                         </li>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-help"></i><span class="hide-menu">Travel Tips </span></a>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-help"></i><span class="hide-menu">Tips Perjalanan </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="{{ url('admin/travel-tips/travel-tips/list') }}" class="sidebar-link"><i class="mdi mdi-help"></i><span class="hide-menu"> Travel Tips </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('admin/travel-tips/travel-tips/list') }}" class="sidebar-link"><i class="mdi mdi-help"></i><span class="hide-menu"> Tips Perjalanan </span></a></li>
                                 <li class="sidebar-item"><a href="{{ url('admin/travel-tips/tags') }}" class="sidebar-link"><i class="mdi mdi-sign-caution"></i><span class="hide-menu"> Tags </span></a></li>
                             </ul>
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account"></i><span class="hide-menu">Users </span></a>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-account"></i><span class="hide-menu">Pengguna </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="{{ url('admin/users/user') }}" class="sidebar-link"><i class="mdi mdi-account"></i><span class="hide-menu"> User </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('admin/users/user') }}" class="sidebar-link"><i class="mdi mdi-account"></i><span class="hide-menu"> Pengguna </span></a></li>
                             </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-database"></i><span class="hide-menu">Data Master </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="{{ url('admin/data-master/province') }}" class="sidebar-link"><i class="mdi mdi-map"></i><span class="hide-menu"> Province </span></a></li>
-                                <li class="sidebar-item"><a href="{{ url('admin/data-master/city') }}" class="sidebar-link"><i class="mdi mdi-city"></i><span class="hide-menu"> City </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('admin/data-master/province') }}" class="sidebar-link"><i class="mdi mdi-map"></i><span class="hide-menu"> Provinsi </span></a></li>
+                                <li class="sidebar-item"><a href="{{ url('admin/data-master/city') }}" class="sidebar-link"><i class="mdi mdi-city"></i><span class="hide-menu"> Kota </span></a></li>
                             </ul>
                         </li>
                     </ul>

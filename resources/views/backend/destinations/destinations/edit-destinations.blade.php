@@ -17,13 +17,13 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-12 m-t-15">
-                                <label for="">Destination Name</label>
+                                <label for="">Nama Destinasi/Tujuan</label>
                                 <input type="text" name="destination_name" value="{{ $d->destination_name}}" class="form-control" placeholder="Destination Name">
                             </div>
                             <div class="col-md-6 m-t-15">
-                                <label for="">Category</label>
+                                <label for="">Kategori</label>
                                 <select class="form-control" name="id_category" id="">
-                                    <option value="">---Select---</option>
+                                    <option value="">---Pilih---</option>
                                     @foreach($destination_categories as $c)
                                     <option value="{{ $c->id_category }}">{{ $c->category_name}}</option>
                                     @endforeach
@@ -31,16 +31,16 @@
 
                             </div>
                             <div class="col-md-6 m-t-15">
-                                <label for="">City & Province</label>
+                                <label for="">Kota & Provinsi</label>
                                 <select class="form-control" name="id_city" id="">
-                                    <option value="">---Select---</option>
+                                    <option value="">---Pilih---</option>
                                     @foreach($city as $cty)
                                     <option value="{{ $cty->id_city }}">{{ $cty->city_name}}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="col-md-12 m-t-15">
-                                <label for="">Gallery</label>
+                                <label for="">Galeri</label>
                                 @include('backend.gallery.gallery-template.gallery-hidden')
                             </div>
                             <div class="col-md-12 m-t-15">
@@ -48,16 +48,16 @@
                                 <input type="text" name="map" value="{{ $d->map}}" class="form-control">
                             </div>
                             <div class="col-md-12 m-t-30">
-                                <label for="">OverView</label>
+                                <label for="">Gambaran</label>
                                 <textarea class="form-control" name="overview" id="" cols="30" rows="10">{{ $d->overview}}</textarea>
                             </div>
                             <div class="col-md-12 text-center m-t-15">
-                                <label for="">Information</label>
+                                <label for="">Informasi</label>
                                 <textarea class="form-control" id="ckeditor1" name="information" cols="30" rows="10">{{ $d->information}}</textarea>
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Save</button>
+                    <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Simpan</button>
                     <button class="btn btn-secondary" type="reset"><span class="mdi mdi-refresh"></span> Reset</button>
                 </form>
                 @endforeach

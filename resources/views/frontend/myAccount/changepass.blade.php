@@ -11,15 +11,15 @@
             <form action="{{url('my-account/actchangepassword')}}" method="post">
             @csrf
                 <div class="form-group">
-                    <label>Current Password :</label>
+                    <label>Password Lama :</label>
                     <input type="password" class="form-control custom normal" name="old_password" id="email">
                 </div>
                 <div class="form-group">
-                    <label>New Password :</label>
+                    <label>Password Baru :</label>
                     <input type="password" class="form-control custom normal" name="new_password" id="pwd">
                 </div>
                 <button type="reset" class="btn btn-default">Reset</button>
-                <button type="submit" class="btn btn-warning">Submit</button>
+                <button type="submit" class="btn btn-warning">Perbarui</button>
             </form>
         </div>
     </div>  

@@ -7,13 +7,13 @@
 <input type="hidden" name="step" value="3">
     <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#include">Package Include</a>
+            <a class="nav-link active" data-toggle="tab" href="#include">Termasuk di Paket</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#exclude">Package Exclude</a>
+            <a class="nav-link" data-toggle="tab" href="#exclude">Tidak Termasuk di Paket</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#others">What Should I Pack?</a>
+            <a class="nav-link" data-toggle="tab" href="#others">Apa yang harus aku siapkan?</a>
         </li>
     </ul>
     <div class="tab-content mt-3">
@@ -55,7 +55,7 @@
         </div>
     </div>
     <div class="float-right">
-    <button class="btn btn-default" type="reset"><span class="mdi mdi-menu-left"></span> Prev</button>
-    <button class="btn btn-primary" type="submit">Next <span class="mdi mdi-menu-right"></span></button>
+    <button class="btn btn-default" type="reset"><span class="mdi mdi-menu-left"></span> Sebelumnya</button>
+    <button class="btn btn-primary" type="submit">Selanjutnya <span class="mdi mdi-menu-right"></span></button>
   </div>
 </form>

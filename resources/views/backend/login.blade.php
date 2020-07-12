@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('/public/matrix-admin-bt4') }}/assets/images/favicon.png">
-    <title>Matrix Template - The Ultimate Multipurpose admin template</title>
+    <title>Login Baratha Travel Service</title>
     <!-- Custom CSS -->
     <link href="{{ asset('/public/matrix-admin-bt4') }}/dist/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -77,8 +77,8 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <div class="p-t-20">
-                                        <button class="btn btn-info" id="to-recover" type="button"><i class="fa fa-lock m-r-5"></i> Lost password?</button>
-                                        <button class="btn btn-success float-right" type="submit">Login</button>
+                                        <button class="btn btn-info" id="to-recover" type="button"><i class="fa fa-lock m-r-5"></i> Lupa Password?</button>
+                                        <button class="btn btn-success float-right" type="submit">Masuk</button>
                                     </div>
                                 </div>
                             </div>
@@ -87,7 +87,7 @@
                 </div>
                 <div id="recoverform">
                     <div class="text-center">
-                        <span class="text-white">Enter your e-mail address below and we will send you instructions how to recover a password.</span>
+                        <span class="text-white">Masukkan alamat email Anda di bawah ini dan kami akan mengirimkan Anda petunjuk bagaimana memulihkan kata sandi.</span>
                     </div>
                     <div class="row m-t-20">
                         <!-- Form -->
@@ -102,8 +102,8 @@
                             <!-- pwd -->
                             <div class="row m-t-20 p-t-20 border-top border-secondary">
                                 <div class="col-12">
-                                    <a class="btn btn-success" href="#" id="to-login" name="action">Back To Login</a>
-                                    <button class="btn btn-info float-right" type="button" name="action">Recover</button>
+                                    <a class="btn btn-success" href="#" id="to-login" name="action">Kembali Masuk</a>
+                                    <button class="btn btn-info float-right" type="button" name="action">Pulihkan</button>
                                 </div>
                             </div>
                         </form>
@@ -160,3 +160,4 @@
 </body>
 
 </html>
+w

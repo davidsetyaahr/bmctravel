@@ -22,12 +22,12 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>User</th>
-                                <th>Package</th>
-                                <th>Rate</th>
-                                <th>Comment</th>
-                                <th>Date</th>
-                                <th>Option</th>
+                                <th>Pengguna</th>
+                                <th>Paket</th>
+                                <th>Nilai</th>
+                                <th>Komentar</th>
+                                <th>Tanggal</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,12 +43,12 @@
                                     <?php 
                                         if($r->status=="0"){
                                             ?>
-                                            <a class='btn btn-default statusReview' href="{{url('admin/review/action/'.$r->id_review.'?status=1')}}">Activate</a>
+                                            <a class='btn btn-default statusReview' href="{{url('admin/review/action/'.$r->id_review.'?status=1')}}">Aktif</a>
                                             <?php
                                         }
                                         else{
                                             ?>
-                                            <a class='btn btn-warning statusReview' href="{{url('admin/review/action/'.$r->id_review.'?status=0')}}">Deactive</a>
+                                            <a class='btn btn-warning statusReview' href="{{url('admin/review/action/'.$r->id_review.'?status=0')}}">Nonaktif</a>
                                             <?php
                                         }
                                     ?>

@@ -3,7 +3,7 @@
     <div class="d-flex no-block align-items-center p-10">
         <span class="btn btn-<?php echo $notif->status==11 ? 'primary' :"success" ?> btn-circle"><i class="ti-calendar"></i></span>
         <div class="m-l-10">
-            <h5 class="m-b-0">Upload <?php echo $notif->status==11 ? "50%" : "100%" ?> Payment</h5>
+            <h5 class="m-b-0">Unggah <?php echo $notif->status==11 ? "50%" : "100%" ?> Pembayaran</h5>
             <span class="mail-desc">{{$notif->firstname}} {{$notif->lastname}}</span>
         </div>
     </div>
@@ -12,7 +12,7 @@
 <a href="javascript:void(0)" class="link border-top">
     <div class="d-flex no-block align-items-center p-10">
         <div class="m-l-10 text-center">
-            <span class="mail-desc">Check all notifications</span>
+            <span class="mail-desc">Cek Semua Pemberitahuan</span>
         </div>
     </div>
 </a>

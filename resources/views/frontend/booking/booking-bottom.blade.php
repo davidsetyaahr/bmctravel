@@ -1,8 +1,8 @@
               </div>
             </div>
             <div class="bottom">
-                <a href="" class="info">Step {{$_GET['page']}} of 5</a>
-                <a href="" class="next">Next <span class="ion-ios-arrow-dropright"></span> </a>
+                <a href="" class="info">Langkah {{$_GET['page']}} of 5</a>
+                <a href="" class="next">Selanjutnya <span class="ion-ios-arrow-dropright"></span> </a>
             </div>
           </div>
         </div>

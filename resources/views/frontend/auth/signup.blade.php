@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Bmc Travel Service - Home</title>
+    <title>Bartha Travel Service - Home</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -24,10 +24,10 @@
               <div class="sign-in">
                 <div class="left">
                   <div class="logo">
-                    BMC Travel Service
+                    Bartha Travel Service
                   </div>
                   <div class="info">
-                    Sign up for new account
+                    Daftar untuk akun baru
                   </div>
                   <div class="sosmed">
                     <a href="" class="google">
@@ -52,36 +52,36 @@
                           }
                         ?>
                           <div class="col-md-6">
-                            <label for="">First Name</label>
-                            <p>Lorem ipsum dolor sit </p>
+                            <label for="">Nama Depan</label>
+                            <p>Masukan nama depan </p>
                             <p class="error" data-id="firstname"></p>
                             <input type="text" class="form-control" id="firstname" name="firstname">
                           </div>
                           <div class="col-md-6">
-                            <label for="">Last Name</label>
-                            <p>Lorem ipsum dolor sit</p>
+                            <label for="">Nama Belakang</label>
+                            <p>Masukan nama belakang</p>
                             <p class="error" data-id="lastname"></p>
                             <input type="text" class="form-control" id="lastname" name="lastname">
                           </div>
                           <div class="col-md-6">
                               <br>
                               <label for="">Email</label>
-                              <p>Lorem ipsum dolor sit</p>
+                              <p>Masukan email</p>
                               <p class="error" data-id="email"></p>
                               <input type="email" class="form-control" id="email" name="email">
                             </div>
                             <div class="col-md-6">
                               <br>
                               <label for="">Password</label>
-                              <p>Lorem ipsum dolor sit</p>
+                              <p>Masukan kata sandi</p>
                               <p class="error" data-id="password"></p>
                             <input type="password" class="form-control" id="password" name="password">
                           </div>
                       </div>
                       <br>
-                    <input type="submit" class="btn btn-danger btn-red" value="Sign up">
+                    <input type="submit" class="btn btn-danger btn-red" value="Daftar">
                     </form>
-                    <p class="mt-1 text-center">Already have account? <a href="{{ url('signin') }}" class="link-red"> Sign in here</a></p>
+                    <p class="mt-1 text-center">Sudah Memiliki Akun? <a href="{{ url('signin') }}" class="link-red"> Masuk disini</a></p>
                   </div>
                 </div>
                 <div class="right" style="background:url('{{url('images/banner/market.jpg')}}');background-size:cover;background-position:center">
@@ -97,7 +97,7 @@
                   </div>
                 </div>
               </div>
-              <p class="copyright-login">Copyright 2019 - BMC Travel Service</p>
+              <p class="copyright-login">Copyright 2019 - Baratha Travel Service</p>
             </div>
         </div>
     </div>

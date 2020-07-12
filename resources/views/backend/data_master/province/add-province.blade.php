@@ -13,14 +13,14 @@
             <div class="card-body">
             <form action="/bmctravel/admin/data-master/add-province" method="post">
             @csrf
-                <label for="">Province</label>
+                <label for="">Provinsi</label>
                 <input type="text" class="form-control @error('province_name') is-invalid @enderror" name="province_name"
                 value="{{ old('province_name')}}">
                 @error('province_name')
                     <div class="invalid-feedback"> {{ $message}} </div>
                     @enderror
                 <br>
-                <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Save</button>
+                <button class="btn btn-primary" type="submit"><span class="mdi mdi-content-save"></span>  Simpan</button>
                 <button class="btn btn-secondary" type="reset"><span class="mdi mdi-refresh"></span> Reset</button>
             </form>
             </div>

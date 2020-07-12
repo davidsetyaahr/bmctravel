@@ -20,16 +20,16 @@
                     <table id="zero_config" class="table table-striped table-bordered">
                         <thead>
                             <th>#</th>
-                            <th>Tour Name</th>
-                            <th>Category</th>
+                            <th>Nama Wisata</th>
+                            <th>Kategori</th>
                             <th>Tipe</th>
-                            <th>Durations Day</th>
-                            <th>Durations Night</th>
-                            <th>Overview</th>
-                            <th>Gallery</th>
-                            <th>Price</th>
-                            <th>Sale</th>
-                            <th>Meeting Point</th>
+                            <th>Durasi Hari</th>
+                            <th>Durasi Malam</th>
+                            <th>Gambaran</th>
+                            <th>Galeri</th>
+                            <th>Harga</th>
+                            <th>Jual</th>
+                            <th>Tempat Pertemuan</th>
                         </thead>
                         <tbody>
                         @foreach($tour_packages as $tp)
@@ -43,7 +43,6 @@
                                 <th>{{substr(strip_tags($tp->overview),0,100). ' ...'}}</th>
 
                                 <th><img style="height: 50px; width: 50px;" src="{{ url('images/gallery/'.$tp->img) }}" alt="" class="img-fluid transition"></th>
-                                {{-- <th>{{$tp->img}}</th> --}}
                                 <th>{{$tp->price}}</th>
                                 <th>{{$tp->sale}}</th>
                                 <th>{{$tp->meeting_point}}</th>

@@ -29,7 +29,7 @@
                             <div class="form-check custom-control custom-checkbox">
                                 <input type="checkbox" class="form-check-input custom-control-input checkCompare" id="{{$data->id_tour}}">
                                 <label class="custom-control-label add-compare" data-id="" for="{{$data->id_tour}}">
-                              <span>Add to compare</span>
+                              <span>Tambah ke compare</span>
                             </label>
                         </div>
                         <div class="form-check custom-control">
@@ -49,7 +49,7 @@
                                     }
                                 }
                             ?>
-                              <span class="heart {{$wl}}"></span>&nbsp; Wishlist
+                              <span class="heart {{$wl}}"></span>&nbsp; Daftar Keinginan
                           </label>
                           </div>
                         </div>
@@ -57,10 +57,10 @@
                       <div class="right-bottom">
                           <div class="left">
                           <div class="durations">
-                              {{$data->day}} Days & {{$data->night}} Nights
+                              {{$data->day}} Hari & {{$data->night}} Malam
                             </div>
                             <div class="price">
-                                <small>Starting from</small>
+                                <small>Mulai dari</small>
                             <?php 
                               if($data->sale>0){
                                   $sale = $data->price*$data->sale/100;
@@ -80,7 +80,7 @@
                             </div>
                         </div>
                           <div class="include mt-2">
-                              <div class="title"> Package include : 
+                              <div class="title"> Termasuk dipaket : 
                               <br>
                               <?php 
                                 $include = DB::table('tour_informations as ti')
@@ -167,7 +167,7 @@
                       <?php 
                         $name = strtolower(str_replace(' ','-',$data->tour_name));
                         ?>
-                      <a href="{{ url('tour-package/detail-package/'.$data->id_tour.'/'.$name) }}"><span>View Details</span></a>
+                      <a href="{{ url('tour-package/detail-package/'.$data->id_tour.'/'.$name) }}"><span>Lihat Details</span></a>
                     </div>
                   </div>
                 </div>

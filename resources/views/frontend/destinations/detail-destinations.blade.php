@@ -69,7 +69,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12 text-center heading-section ftco-animate">
-              <h2 class="mb-4 pb-3"><strong>Overview</strong></h2>
+              <h2 class="mb-4 pb-3"><strong>Gambaran</strong></h2>
               <p>{{ $item->overview}}</p>
             </div>
           </div>
@@ -94,7 +94,7 @@
       <div class="container">
         <div class="row">
             <div class="col-md-12 text-center heading-section ftco-animate">
-              <h2 class="mb-4 pb-3"><strong>Information</strong></h2>
+              <h2 class="mb-4 pb-3"><strong>Informasi</strong></h2>
             </div>
             <div class="col-md-12">
             <?php echo $item->information ?>

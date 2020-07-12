@@ -22,12 +22,12 @@
                     <table id="zero_config" class="table table-striped table-bordered">
                         <thead>
                             <th>#</th>
-                            <th>User</th>
-                            <th>Package</th>
-                            <th>Total Payment</th>
-                            <th>Total Price</th>
-                            <th>Payment date</th>
-                            <th>Action</th>
+                            <th>Pengguna</th>
+                            <th>Paket</th>
+                            <th>Total Pembayaran</th>
+                            <th>Total Harga</th>
+                            <th>Tanggal Pembayaran</th>
+                            <th>Aksi</th>
                         </thead>
                         <tbody>
                         @foreach($payment as $p)

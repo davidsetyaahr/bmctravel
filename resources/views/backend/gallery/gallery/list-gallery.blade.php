@@ -21,9 +21,9 @@
                         <table id="zero_config" class="table table-striped table-bordered">
                             <thead>
                                     <th>#</th>
-                                    <th>Gallery</th>
-                                    <th>Category</th>
-                                    <th>Option</th>
+                                    <th>Galeri</th>
+                                    <th>Kategori</th>
+                                    <th>Aksi</th>
                             </thead>
                             <tbody>
                                     @foreach ($gallery as $gc)
@@ -34,7 +34,7 @@
                                             <td>
                                                 <div class="dropdown show">
                                                     <a class="btn btn-sm btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        Options
+                                                        Opsi
                                                     </a>
 
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">

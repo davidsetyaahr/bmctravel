@@ -78,7 +78,7 @@ window.onload = function() {
 					<h1>Baratha Travel Service</h1>
 				</div>
 					<h5 style="opacity:.8" class="ls-1 mb-3 color-white ftco-animation">One Stop Travel Solution</h5>
-					<a href="" class="btn btn-primary ftco-animation btn-tour-finder">Let's Find The Destination <span class="span ion-ios-search"></span> </a>
+					<a href="" class="btn btn-primary ftco-animation btn-tour-finder">Cari Tempat Wisata <span class="span ion-ios-search"></span> </a>
 				</div>
 			</div>
 		</div>
@@ -97,34 +97,34 @@ window.onload = function() {
 								<input type="hidden" name="tourfinder">
 								<div class="row">
 									<div class="col-md-3">
-										<label for="">Category</label>
+										<label for="">Kategori</label>
 									<select name="id_category" class="form-control" id="">
-										<option value="">--Option---</option>
+										<option value="">--pilih---</option>
 										@foreach($tour_categories as $data)
 											<option value="{{$data->id_category}}">{{$data->category_name}}</option>
 											@endforeach
 									</select>
 								</div>
 								<div class="col-md-3">
-									<label for="">Durations</label>
+									<label for="">Durasi</label>
 									<select name="id_duration" class="form-control" id="">
-										<option value="">--Option---</option>
+										<option value="">--Pilih---</option>
 										@foreach($tour_durations as $data)
-										<option value="{{$data->id_duration}}">{{$data->day}} Days {{$data->night}} Nights</option>
+										<option value="{{$data->id_duration}}">{{$data->day}} Hari {{$data->night}} Malam</option>
 										@endforeach
 									</select>
 								</div>
 								<div class="col-md-3">
-									<label for="">Destination</label>
+									<label for="">Destinasi/Tujuan</label>
 									<select name="id_destination" class="form-control" id="">
-										<option value="">--Option---</option>
+										<option value="">--Pilih---</option>
 										@foreach($destinations as $data)
 										<option value="{{$data->id_destination}}">{{$data->destination_name}}</option>
 										@endforeach
 									</select>
 								</div>
 								<div class="col-md-3">
-									<label for="">Budget</label>
+									<label for="">Anggaran</label>
 									<div class="input-group">
 										<div class="input-group-prepend">
 											<span class="input-group-text">IDR</span>
@@ -135,7 +135,7 @@ window.onload = function() {
 								<div class="col-md-12 text-center mt-4">
 									<button class="btn btn-primary" type="submit">
 										<span class="ion-ios-search"></span>
-										Find tour
+										Cari Wisata
 									</button>
 								</div>
 							</div>
@@ -154,7 +154,7 @@ window.onload = function() {
 						<p class="ls-1">Selamat datang di BMC Travel Service. Traveling saat ini telah menjadi kebutuhan pokok disamping kebutuhan akan sandang, pangan, dan papan. Kebutuhan akan merefreshing pikiran karena penat dengan aktifitas pekerjaan dan kehidupan sehari-hari mendorong orang-orang untuk melakukan traveling untuk menyegarkan kembali pikiran. Perkembangan golongan menengah juga menjadi pendorong industri tour dan travel merespon permintaan pasar akan layanagn tour dan travel yang semakin meningkat. Selayaknya usaha di bidang jasa lainnya, BMC Travel Service selaku perusahaan di bidang tour dan travel akan selalu memberikan pelayanan yang maksimal kepada tamu-tamu kami. Peningkatan kualitas dan kuantitas layanan senantiasa kami jaga sebaik mungkin demi kepuasan tamu. Kami dengan setulus hati melayani anda, memberikan kepuasan akan layanan wisata yang terbaik yang dapat kami lakukan. Terimakasih telah memilih BMC Travel Service sebagai mitra perjalanan wisata anda.</p>
 					<p>Salam Hangat</p>
 					<h1 style="font-family: 'Sacramento', cursive;">Fajar N Eristyawan</h1>
-					<p class="bold">CEO BMC Travel Service</p>
+					<p class="bold">CEO Baratha Travel Service</p>
 				</div>
 			</div>
 		</div>
@@ -167,7 +167,7 @@ window.onload = function() {
 					<h4 class="mb-4"><strong>Featured</strong> Destination</h4>
 				</div>
 				<div class="col-md-2">
-					<a href="{{url('destinations')}}" class="btn border-grey">Explore More <span class="ion-md-arrow-dropright"></span> </a>
+					<a href="{{url('destinations')}}" class="btn border-grey">Cari lebih banyak <span class="ion-md-arrow-dropright"></span> </a>
 				</div>
 			</div>
 		</div>
@@ -195,10 +195,10 @@ window.onload = function() {
     	<div class="container">
 			<div class="row">
 				<div class="col-md-10 heading-section ftco-animate">
-					<h4 class="mb-4"><strong>Top</strong> Tour Packages</h4>
+					<h4 class="mb-4"><strong>Top</strong> Paket Wisata</h4>
 				</div>
 				<div class="col-md-2">
-					<a href="{{ url('tour-package') }}" class="btn border-grey">Explore More  <span class="ion-md-arrow-dropright"></span></a>
+					<a href="{{ url('tour-package') }}" class="btn border-grey">Cari lebih banyak  <span class="ion-md-arrow-dropright"></span></a>
 				</div>
 	        </div>
  		</div>
@@ -217,12 +217,12 @@ window.onload = function() {
                       	  $name = strtolower(str_replace(' ','-',$item->tour_name));
                       ?>
                       <a href="{{ url('tour-package/detail-package/'.$item->id_tour.'/'.$name) }}">
-						<div class="view-link transition">View Package</div>
+						<div class="view-link transition">Lihat Paket</div>
 					  </a>
 						</div>
 						<div class="text-bottom mt-2">
 							<div class="title">{{$item->day}}D {{$item->night}}N {{$item->tour_name}}</div>
-							<div class="price-tour"><span><small>start from</small>@currency($item->price) </span></div>
+							<div class="price-tour"><span><small>muali dari</small>@currency($item->price) </span></div>
 						</div>
 					</div>
 				</div>
@@ -283,7 +283,7 @@ window.onload = function() {
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-12 text-center">
-					<h4 class="mb-4 pb-3"><strong>Browse</strong> package by categories</h4>
+					<h4 class="mb-4 pb-3"><strong>Cari</strong> Paket berdasarkan kategori</h4>
 				</div>
 			</div>
 			<div class="row justify-content-center">
@@ -369,10 +369,10 @@ window.onload = function() {
       <div class="container">
         <div class="row justify-content-start mb-3 pb-3">
           <div class="col-md-10 heading-section ftco-animate">
-            <h4><strong>Tips</strong> &amp; Articles</h4>
+            <h4><strong>Tips</strong> &amp; Artikel</h4>
           </div>
 		  <div class="col-md-2">
-			<a href="" class="btn border-grey">Explore More <span class="ion-md-arrow-dropright"></span> </a>
+			<a href="" class="btn border-grey">Cari lebih lanjut <span class="ion-md-arrow-dropright"></span> </a>
 			</div>
         </div>
         <div class="row d-flex">
@@ -387,7 +387,7 @@ window.onload = function() {
 					<div class="title">{{$item->title}}</div>
 					<div class="link">
 						<a href="#" class="by">By: {{$item->firstname}}</a>
-						<a href="{{url('travel-tips/detail-travel/'.$item->permalink)}}" class="float-right">Read More</a>
+						<a href="{{url('travel-tips/detail-travel/'.$item->permalink)}}" class="float-right">Baca lebih lanjut</a>
 					</div>
 				</div>
 			</div>

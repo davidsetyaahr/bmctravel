@@ -20,10 +20,10 @@
                     <table id="zero_config" class="table table-bordered table-hover table-striped">
                         <thead>
                             <tr>
-                                <th>Id</th>
-                                <th>Province</th>
-                                <th>City</th>
-                                <th>Option</th>
+                                <th>ID</th>
+                                <th>Provinsi</th>
+                                <th>Kota</th>
+                                <th>Opsi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -35,7 +35,7 @@
                                 <td>
                                 <div class="dropdown show">
                                         <a class="btn btn-sm btn-default dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Options
+                                            Opsi
                                         </a>
 
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">

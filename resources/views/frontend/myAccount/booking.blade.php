@@ -9,14 +9,14 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Tour Name</th>
-      <th scope="col">Booking date</th>
-      <th scope="col">Travel Start</th>
-      <th scope="col">Travel Finish</th>
+      <th scope="col">Nama Wisata</th>
+      <th scope="col">Tanggal Pemesanan</th>
+      <th scope="col">Mulai Travel</th>
+      <th scope="col">Travel Berakhir</th>
       <th scope="col">Pax</th>
       <th scope="col">Total</th>
       <th scope="col">Status</th>
-      <th scope="col">Options</th>
+      <th scope="col">Aksi</th>
     </tr>
   </thead>
   <tbody>
@@ -36,22 +36,22 @@
         <?php 
         switch ($b->status) {
           case '0':
-          echo "<span class='badge badge-info'>Booked</span>";
+          echo "<span class='badge badge-info'>Sudah dipesan</span>";
           break;
           case '11':
-          echo "<span class='badge badge-warning'>Waiting for approval (50% payment)</span>";
+          echo "<span class='badge badge-warning'>Menunggu Persetujuan (50% Pembayaran)</span>";
           break;
           case '1':
-          echo "<span class='badge badge-primary'>50% Payment</span>";
+          echo "<span class='badge badge-primary'>50% Pembayaran</span>";
           break;
           case '22':
-          echo "<span class='badge badge-warning'>Waiting for approval (100% payment)</span>";
+          echo "<span class='badge badge-warning'>Menunggu Persetujuan (100% Pembayaran)</span>";
           break;
           case '222':
-          echo "<span class='badge badge-warning'>Waiting for approval (pelunasan)</span>";
+          echo "<span class='badge badge-warning'>Menunggu Persetujuan (Pelunasan)</span>";
           break;
           case '2':
-          echo "<span class='badge badge-success'>Payment Success</span>";
+          echo "<span class='badge badge-success'>Pembayaran Berhasil</span>";
           break;
         }
         ?>
@@ -59,7 +59,7 @@
       <td>
       <div class="dropdown">
         <button type="button" class="btn btn-default dropdown-toggle bold" data-toggle="dropdown">
-          Options
+          Opsi
         </button>
         <div class="dropdown-menu">
           <a class="dropdown-item" href="booking/detail/{{$b->id_booking}}">Detail</a>
@@ -67,12 +67,12 @@
             if($b->status=='0' || $b->status=='1')
             {
           ?>
-            <a class="dropdown-item" href="booking/payment/{{$b->id_booking}}">Payment</a>
+            <a class="dropdown-item" href="booking/payment/{{$b->id_booking}}">Pembayaran</a>
             <?php }
             if($b->status=='2'){
               $name = strtolower(str_replace(' ','-',$b->tour_name));
               ?>
-            <a class="dropdown-item" href="{{url('/tour-package/detail-package/'.$b->id_tour.'/'.$name)}}">Write Review</a>
+            <a class="dropdown-item" href="{{url('/tour-package/detail-package/'.$b->id_tour.'/'.$name)}}">Tulis Ulasan</a>
             <?php } ?>
 
         </div>

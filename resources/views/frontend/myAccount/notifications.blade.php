@@ -25,7 +25,7 @@
     }
 ?>
 <div class="<?php echo $class ?>">
-    Upload file for payment {{$notif->tour_name}} {{$status}}
+    Unggah file untuk Pembayaran {{$notif->tour_name}} {{$status}}
     <p><?php echo date("d F Y, H:i", strtotime($notif->datetime)) ?></p>
 </div>
 @endforeach

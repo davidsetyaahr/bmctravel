@@ -13,8 +13,8 @@
             <tr>
                 <th></th>
                 <th>#</th>
-                <th>Start Date</th>
-                <th>Finish Date</th>
+                <th>Tanggal Mulai</th>
+                <th>Tanggal Berakhir</th>
             </tr>
         </thead>
         <tbody>

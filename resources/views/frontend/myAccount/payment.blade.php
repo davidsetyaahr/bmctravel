@@ -14,23 +14,23 @@
     <input type="hidden" name="id_booking" value="{{$booking->id_booking}}">
     <div class="row">
         <div class="col-md-3">
-            <p class="bold mb-2">Bank Option</p>
+            <p class="bold mb-2">Bank</p>
             <select name="bank_option" id="" class="form-control normal custom">
-                <option value="">---Option---</option>
+                <option value="">---Pilih---</option>
                 @foreach($bank as $b)
                     <option value="{{$b->id_bank}}">{{$b->bank_name}} - {{$b->number}} ({{$b->name}})</option>
                 @endforeach
             </select>
         </div>
         <div class="col-md-3">
-            <p class="bold mb-2">Payment Option</p>
+            <p class="bold mb-2">Metode Pemabayaran</p>
             <select name="payment_option" id="" class="form-control normal custom payment-option" data-price="{{$booking->price}}">
                 <?php 
                     if($booking->status=='0'){
                         $price  = $booking->price;
                 ?>
                 <option value="100">Full 100%</option>
-                <option value="50">50%  Payment</option>
+                <option value="50">Pemabayaran 50% </option>
                 <?php } else{
                     $price = $booking->price/2;
                     echo "<option value='0'>Pelunasan</option>";
@@ -53,7 +53,7 @@
                     <button class="btn">
                         <div>
                             <img src="{{ url('public/images/common/image.png') }}" alt="">
-                            <p>Upload your proof of payment</p>
+                            <p>Unggah Bukti Pembayaran</p>
                         </div>
                     </button>
                     <input type="file" name="attach" id="fileUpload">
@@ -74,7 +74,7 @@
 
     <div class="row">
         <div class="col-md-6">
-            <p class="bold color-blue">Payment Option, transfer to:</p>
+            <p class="bold color-blue">Pilih Pembayaran, transfer ke:</p>
             <div class="bank-list">
                 @foreach($bank as $b)
                     <img src="{{ url('images/gallery/'.$b->img) }}" alt="">
@@ -92,7 +92,7 @@
 
       <!-- Modal Header -->
       <div class="modal-header">
-        <h5 class="modal-title">Attachment</h5>
+        <h5 class="modal-title">Lampiran</h5>
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div>
 

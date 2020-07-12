@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Bmc Travel Service - Home</title>
+    <title>Baratha Travel Service - Home</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -25,10 +25,10 @@
               <div class="sign-in">
                 <div class="left">
                   <div class="logo">
-                    BMC Travel Service
+                    Baratha Travel Service
                   </div>
                   <div class="info">
-                    Sign in to your account
+                    Masuk ke akunmu
                   </div>
                   <div class="sosmed">
                     <a href="" class="google">
@@ -47,17 +47,17 @@
                       <form action="{{ url("signin/auth" )}}" method="post" class="formNoLoad">
                       @csrf
                       <label for="">Email</label>
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+                      <p>Masukan Email yang telah kamu daftarkan. </p>
                       <p class="error" data-id="error"></p>
                       <input type="email" name="email" id="error" class="form-control">
                       <br>
                       <label for="">Password</label>
-                      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. </p>
+                      <p>Masukan Kata Sandi yang telah daftarkan. </p>
                       <input type="password" name="password" class="form-control">
-                      <a href="" class="link-red">Forgot password?</a>
-                      <input type="submit" class="btn btn-danger btn-red" value="Sign in">
+                      <a href="" class="link-red">Lupa password?</a>
+                      <input type="submit" class="btn btn-danger btn-red" value="Masuk">
                     </form>
-                    <p class="mt-1 text-center">Dont have account? <a href="{{ url('signup') }}" class="link-red"> Sign up here</a></p>
+                    <p class="mt-1 text-center">Belum Memiliki Akun? <a href="{{ url('signup') }}" class="link-red"> Daftar Disini</a></p>
                   </div>
                 </div>
                 <div class="right">
@@ -73,7 +73,7 @@
                   </div>
                 </div>
               </div>
-              <p class="copyright-login">Copyright 2019 - BMC Travel Service</p>
+              <p class="copyright-login">Copyright 2019 - Baratha Travel Service</p>
             </div>
         </div>
     </div>

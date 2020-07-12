@@ -2,7 +2,7 @@
 <?php 
     $session = session()->all();
 ?>    
-    <p class="bold text-center">Upload your identity card</p>
+    <p class="bold text-center">Unggah Karti Identitasmu</p>
     <div class="attach">
         <div class="left <?php echo isset($session['booking'][$session['user']['id_user']]['step4']) ?  "uploaded" : "" ?>">
             <div class="upload-btn-wrapper">
@@ -11,7 +11,7 @@
                     <button class="btn">
                         <div>
                             <img src="{{ url('public/images/common/image.png') }}" alt="">
-                            <p>Choose file here</p>
+                            <p>pilih file</p>
                         </div>
                     </button>
                     <input type="file" name="attach" id="fileUpload">

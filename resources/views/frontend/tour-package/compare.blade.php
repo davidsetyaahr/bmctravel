@@ -5,7 +5,7 @@
             <div class="col-md-9">
                 <div class="card">
                     <div class="card-header text-center color-white bg-orange bold">
-                        Compare Package
+                        Compare Paket
                     </div>
                     <div class="row p-4">
                         @foreach($packages as $key => $p)
@@ -139,25 +139,25 @@
                                 <div class="compare-info text-right">
                                     <div>
                                         <span>
-                                            Number of day
+                                            Banyak hari
                                         </span>
                                         <button class="btn btn-{{$dayBtn}}">{{$p->day}}</button>
                                     </div>
                                     <div>
                                         <span>
-                                            Number of night
+                                            Banyak malam
                                         </span>
                                         <button class="btn btn-{{$nightBtn}}">{{$p->night}}</button>
                                     </div>
                                     <div>
                                         <span>
-                                            Number of destinations
+                                            Banyak destinasi/tujuan
                                         </span>
                                         <button class="btn btn-{{$destBtn}}">{{count($dest)}}</button>
                                     </div>
                                     <div>
                                         <span>
-                                            Review from users
+                                            Ulasan dari pengguna
                                         </span>
                                         <button class="btn btn-{{$rateBtn}}">{{ceil($average)}}</button>
                                     </div>
@@ -167,25 +167,25 @@
                                     <div>
                                         <button class="btn btn-{{$dayBtn}}">{{$p->day}}</button>
                                         <span>
-                                            Number of day
+                                            Banyak hari
                                         </span>
                                     </div>
                                     <div>
                                         <button class="btn btn-{{$dayBtn}}">{{$p->night}}</button>
                                         <span>
-                                            Number of night
+                                            Banyak malam
                                         </span>
                                     </div>
                                     <div>
                                         <button class="btn btn-{{$destBtn}}">{{count($dest)}}</button>
                                         <span>
-                                            Number of destinations
+                                            Banyak destinasi/tujuan
                                         </span>
                                     </div>
                                     <div>
                                         <button class="btn btn-{{$rateBtn}}">{{ceil($average)}}</button>
                                         <span>
-                                            Review from users
+                                            Ulasan pengguna
                                         </span>
                                     </div>
                                 </div>

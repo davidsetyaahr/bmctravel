@@ -10,8 +10,8 @@
                             <img src="{{url('/images/gallery/'.$getImg[0]->img)}}" class="img-fluid" alt="">
                             <div class="overlay"></div>
                             <div class="option">
-                                <span class="zoom" data-src="{{url('/images/gallery/'.$getImg[0]->img)}}">Open</span> 
-                                <span class="remove" data-id="{{$id_gallery}}">X Remove</span>
+                                <span class="zoom" data-src="{{url('/images/gallery/'.$getImg[0]->img)}}">Buka</span> 
+                                <span class="remove" data-id="{{$id_gallery}}">X Hapus</span>
                             </div>
                         </div>
                     </div>
