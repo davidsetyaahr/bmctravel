@@ -14300,7 +14300,7 @@
                             height: 52px !important;
                             background: #fff !important;
                             color: #000000 !important;
-                            font-size: 18px;
+                            font-size: 16px;
                             border-radius: 0px;
                             -webkit-box-shadow: none !important;
                             box-shadow: none !important;
@@ -14452,8 +14452,14 @@
                             border-top: 1px solid #ddd;
                             font-size: 16px;
                             padding: 8em 0 8em 0;
-                            background : #343645;
+                            background : #162d5c;
                             color : white;
+                        }
+                        .ftco-footer a{
+                            color  : #7186A0;
+                        }
+                        .ftco-footer p,.ftco-footer .ftco-footer-widget h2{
+                            opacity: .8;
                         }
 
                         .ftco-footer .ftco-footer-logo {

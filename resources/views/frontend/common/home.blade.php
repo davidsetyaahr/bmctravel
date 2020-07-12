@@ -160,7 +160,7 @@ window.onload = function() {
 		</div>
     </section>
  
-    <section class="ftco-section pb-0">
+    <section class="ftco-section">
     	<div class="container">
     		<div class="row">
 				<div class="col-md-10 heading-section ftco-animate">
@@ -191,7 +191,7 @@ window.onload = function() {
     	</div>
     </section>
 
-    <section class="ftco-section pb-0">
+    <section class="ftco-section">
     	<div class="container">
 			<div class="row">
 				<div class="col-md-10 heading-section ftco-animate">
@@ -279,7 +279,7 @@ window.onload = function() {
 		</div>
 	</section>
  -->
-	<section class="ftco-section ftco-animate bg-light">
+	<section class="ftco-section ftco-animate">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-12 text-center">
@@ -293,7 +293,7 @@ window.onload = function() {
 					<div class="row">
 				@foreach ($destination_categories as $item)
 				<div class="col-md-3 col-6 mb-4">
-					<div class="border text-center p-3" style="border:2px solid white !important">
+					<div class="border text-center p-3">
 						<img src="{{url('images/gallery/'.$item->img)}}" alt="">
 						<h6 class="mt-3">{{$item->category_name}}</h6>
 					</div>
